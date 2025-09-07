@@ -1,0 +1,700 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="imagetoolbar" content="no">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<title>달력예약 1 페이지 | 샤이닝 - 피부과 홈페이지 샘플</title>
+<link rel="stylesheet" href="https://skincare1007.shiningcorp.com/css/default.css?ver=171222">
+<link rel="stylesheet" href="https://skincare1007.shiningcorp.com/sh_img/hd/r_quickmenu/style.css?ver=171222">
+<link rel="stylesheet" href="https://skincare1007.shiningcorp.com/sh_img/hd/top_menu/style.css?ver=171222">
+<link rel="stylesheet" href="https://skincare1007.shiningcorp.com/sh_img/hd/sub_main_banner/style.css?ver=171222">
+<link rel="stylesheet" href="https://skincare1007.shiningcorp.com/sh_img/hd/aside/style.css?ver=171222">
+<link rel="stylesheet" href="https://skincare1007.shiningcorp.com/skin/board/hos_calendar/sh_style.css?ver=171222">
+<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/themes/base/jquery-ui.css"  />
+<link rel="stylesheet" href="https://skincare1007.shiningcorp.com/plugin/jquery-ui/style.css?ver=171222">
+<link rel="stylesheet" href="https://skincare1007.shiningcorp.com/css/user.css?ver=171222">
+<link rel="stylesheet" href="https://skincare1007.shiningcorp.com/css/page_style.css?ver=171222">
+<style>
+@import url(//fonts.googleapis.com/earlyaccess/nanumpenscript.css);
+@import url(//fonts.googleapis.com/earlyaccess/nanumbrushscript.css);
+@import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
+@import url(//fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
+@import url(//fonts.googleapis.com/earlyaccess/nanumgothiccoding.css);
+
+/* 나눔스퀘어 */
+@font-face {
+	font-family: 'NanumSquare';
+	src: url(//font.shiningcorp.com/css/font/NanumSquareR.eot);
+	src: url(//font.shiningcorp.com/css/font/NanumSquareR.eot?#iefix) format('embedded-opentype'),
+		 url(//font.shiningcorp.com/css/font/NanumSquareR.woff) format('woff'),
+		 url(//font.shiningcorp.com/css/font/NanumSquareR.ttf) format('truetype');
+}
+
+/* 본고딕 */
+@font-face {
+	font-family: 'notokr-thin';
+	src: url(//font.shiningcorp.com/css/font/notokr-thin.eot);
+	src: url(//font.shiningcorp.com/css/font/notokr-thin.eot?#iefix) format('embedded-opentype'),
+		 url(//font.shiningcorp.com/css/font/notokr-thin.woff2) format('woff2'),
+		 url(//font.shiningcorp.com/css/font/notokr-thin.woff) format('woff'),
+		 url(//font.shiningcorp.com/css/font/notokr-thin.ttf) format('truetype'),
+		 url(//font.shiningcorp.com/css/font/notokr-thin.svg#notokr-thin) format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+    font-family: 'notokr-regular';
+    src: url(//font.shiningcorp.com/css/font/notokr-regular.eot);
+    src: url(//font.shiningcorp.com/css/font/notokr-regular.eot?#iefix) format('embedded-opentype'),
+         url(//font.shiningcorp.com/css/font/notokr-regular.woff2) format('woff2'),
+         url(//font.shiningcorp.com/css/font/notokr-regular.woff) format('woff'),
+         url(//font.shiningcorp.com/css/font/notokr-regular.svg#notokr-regular) format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'notokr-medium';
+    src: url(//font.shiningcorp.com/css/font/notokr-medium.eot);
+    src: url(//font.shiningcorp.com/css/font/notokr-medium.eot?#iefix) format('embedded-opentype'),
+         url(//font.shiningcorp.com/css/font/notokr-medium.woff2) format('woff2'),
+         url(//font.shiningcorp.com/css/font/notokr-medium.woff) format('woff'),
+         url(//font.shiningcorp.com/css/font/notokr-medium.svg#notokr-medium) format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'notokr-light';
+    src: url(//font.shiningcorp.com/css/font/notokr-light.eot);
+    src: url(//font.shiningcorp.com/css/font/notokr-light.eot?#iefix) format('embedded-opentype'),
+         url(//font.shiningcorp.com/css/font/notokr-light.woff2) format('woff2'),
+         url(//font.shiningcorp.com/css/font/notokr-light.woff) format('woff'),
+         url(//font.shiningcorp.com/css/font/notokr-light.ttf) format('truetype'),
+         url(//font.shiningcorp.com/css/font/notokr-light.svg#notokr-light) format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'notokr-demilight';
+    src: url(//font.shiningcorp.com/css/font/notokr-demilight.eot);
+    src: url(//font.shiningcorp.com/css/font/notokr-demilight.eot?#iefix) format('embedded-opentype'),
+         url(//font.shiningcorp.com/css/font/notokr-demilight.woff2) format('woff2'),
+         url(//font.shiningcorp.com/css/font/notokr-demilight.woff) format('woff'),
+         url(//font.shiningcorp.com/css/font/notokr-demilight.ttf) format('truetype'),
+         url(//font.shiningcorp.com/css/font/notokr-demilight.svg#notokr-demilight) format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'notokr-bold';
+    src: url(//font.shiningcorp.com/css/font/notokr-bold.eot);
+    src: url(//font.shiningcorp.com/css/font/notokr-bold.eot?#iefix) format('embedded-opentype'),
+         url(//font.shiningcorp.com/css/font/notokr-bold.woff2) format('woff2'),
+         url(//font.shiningcorp.com/css/font/notokr-bold.woff) format('woff'),
+         url(//font.shiningcorp.com/css/font/notokr-bold.svg#notokr-bold) format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'notokr-black';
+    src: url(//font.shiningcorp.com/css/font/notokr-black.eot);
+    src: url(//font.shiningcorp.com/css/font/notokr-black.eot?#iefix) format('embedded-opentype'),
+         url(//font.shiningcorp.com/css/font/notokr-black.woff2) format('woff2'),
+         url(//font.shiningcorp.com/css/font/notokr-black.woff) format('woff'),
+         url(//font.shiningcorp.com/css/font/notokr-black.ttf) format('truetype'),
+         url(//font.shiningcorp.com/css/font/notokr-black.svg#notokr-black) format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+/* 아리따 */
+@font-face {
+	font-family: 'arita-thin';
+	src: url(//font.shiningcorp.com/css/font/arita-Thin.eot);
+	src: url(//font.shiningcorp.com/css/font/arita-Thin.eot?#iefix) format('embedded-opentype'),
+		 url(//font.shiningcorp.com/css/font/arita-Thin.woff) format('woff'),
+		 url(//font.shiningcorp.com/css/font/arita-Thin.ttf) format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'arita-light';
+	src: url(//font.shiningcorp.com/css/font/arita-Light.eot);
+	src: url(//font.shiningcorp.com/css/font/arita-Light.eot?#iefix) format('embedded-opentype'),
+		 url(//font.shiningcorp.com/css/font/arita-Light.woff) format('woff'),
+		 url(//font.shiningcorp.com/css/font/arita-Light.ttf) format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'arita-medium';
+	src: url(//font.shiningcorp.com/css/font/arita-Medium.eot);
+	src: url(//font.shiningcorp.com/css/font/arita-Medium.eot?#iefix) format('embedded-opentype'),
+		 url(//font.shiningcorp.com/css/font/arita-Medium.woff) format('woff'),
+		 url(//font.shiningcorp.com/css/font/arita-Medium.ttf) format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'arita-semibold';
+	src: url(//font.shiningcorp.com/css/font/arita-SemiBold.eot);
+	src: url(//font.shiningcorp.com/css/font/arita-SemiBold.eot?#iefix) format('embedded-opentype'),
+		 url(//font.shiningcorp.com/css/font/arita-SemiBold.woff) format('woff'),
+		 url(//font.shiningcorp.com/css/font/arita-SemiBold.ttf) format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'arita-bold';
+	src: url(//font.shiningcorp.com/css/font/arita-Bold.eot);
+	src: url(//font.shiningcorp.com/css/font/arita-Bold.eot?#iefix) format('embedded-opentype'),
+		 url(//font.shiningcorp.com/css/font/arita-Bold.woff) format('woff'),
+		 url(//font.shiningcorp.com/css/font/arita-Bold.ttf) format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+</style><!--[if lte IE 8]>
+<script src="https://skincare1007.shiningcorp.com/js/html5.js"></script>
+<![endif]-->
+<script>
+// 자바스크립트에서 사용하는 전역변수 선언
+var g5_url       = "https://skincare1007.shiningcorp.com";
+var g5_bbs_url   = "https://skincare1007.shiningcorp.com/bbs";
+var g5_is_member = "";
+var g5_is_admin  = "";
+var g5_is_mobile = "";
+var g5_bo_table  = "table36";
+var g5_sca       = "";
+var g5_editor    = "smarteditor2";
+var g5_cookie_domain = "";
+</script>
+<script src="https://skincare1007.shiningcorp.com/js/jquery-1.8.3.min.js"></script>
+<script src="https://skincare1007.shiningcorp.com/js/jquery-ui.js"></script>
+<script src="https://skincare1007.shiningcorp.com/js/jquery.menu.js?ver=171222"></script>
+<script src="https://skincare1007.shiningcorp.com/js/common.js?ver=171222"></script>
+<script src="https://skincare1007.shiningcorp.com/js/wrest.js?ver=171222"></script>
+<script src="https://skincare1007.shiningcorp.com/js/placeholders.min.js"></script>
+<link rel="stylesheet" href="https://skincare1007.shiningcorp.com/js/font-awesome/css/font-awesome.min.css">
+<script src="https://skincare1007.shiningcorp.com/sh_img/js/feather.min.js"></script>
+<script src="https://skincare1007.shiningcorp.com/sh_img/hd/top_menu/script.js?ver=171222"></script>
+<script src="https://skincare1007.shiningcorp.com/skin/board/hos_calendar/script.js?ver=171222"></script>
+</head>
+<body>
+<style>
+/* 디자인샘플 보러가기 */
+#goToDesign{position:relative;width:100%;padding:7px 0;border-bottom:1px solid #fff073;font-size:12px;text-align:center;background-color:#fffbd9;font-family:dotum} 
+#goToDesign a{padding-left:10px;font-weight:bold;color:#f96319}
+#goToDesign a:hover{text-decoration:underline}
+</style>
+
+<script>
+$(document).on('click', 'a', function() {
+  var href = $(this).attr('href');
+  href += (href.indexOf('?') == -1 ? '?' : '&') + 'designkits=1';
+  $(this).attr('href', href);
+});
+</script>
+
+<!-- 100% 배경이미지 때문에 사용 -->
+<div id="sh_wrapper">
+    
+<!-- 퀵메뉴 -->
+
+<div id="quickList">
+    <a class="plus_link" href="/sh_page/page6.php">
+        <div class="pl">플러스친구
+            전용혜택</div>
+        <div class="go">바로가기 <span data-feather="chevron-right"></span></div>
+    </a>
+    <ul class="list">
+        <li>
+            <a href="/bbs/board.php?bo_table=table36">
+                <div class="kakao"></div>
+                <div class="cate">카톡상담</div>
+            </a>
+        </li>
+        <li>
+            <a href="/bbs/board.php?bo_table=table36">
+                <div class="youtube"></div>
+                <div class="cate">유튜브</div>
+            </a>
+        </li>
+        <li>
+            <a href="/bbs/board.php?bo_table=table41">
+                <i data-feather="gift"></i>
+                <div class="cate">이벤트</div>
+            </a>
+        </li>
+        <li>
+            <a href="/bbs/write.php?bo_table=table34">
+                <i data-feather="edit-3"></i>
+                <div class="cate">예약하기</div>
+            </a>
+        </li>
+        <li>
+            <a href="/sh_page/page6.php">
+                <i data-feather="phone-call"></i>
+                <div class="cate">전화상담</div>
+                <div class="number pl">1544
+                    6062</div>
+            </a>
+        </li>
+    </ul>
+    <div class="progress-wrap">
+        <span><i data-feather="arrow-up"></i></span>
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"></path>
+        </svg>
+    </div>
+</div>
+
+<script>
+   $(document).ready(function() {
+        scrollTop();
+    });
+    function scrollTop(){
+        var progressPath = document.querySelector('.progress-wrap path');
+        var pathLength = progressPath.getTotalLength();
+        progressPath.style.transition = progressPath.style.WebkitTransition = 'none';
+        progressPath.style.strokeDasharray = pathLength + ' ' + pathLength;
+        progressPath.style.strokeDashoffset = pathLength;
+        progressPath.getBoundingClientRect();
+        progressPath.style.transition = progressPath.style.WebkitTransition = 'stroke-dashoffset 10ms linear';
+        var updateProgress = function() {
+            var scroll = $(window).scrollTop();
+            var height = $(document).height() - $(window).height();
+            var progress = pathLength - scroll * pathLength / height;
+            progressPath.style.strokeDashoffset = progress;
+        };
+        updateProgress();
+        $(window).scroll(updateProgress);
+        jQuery(window).on('scroll', function() {
+            if (jQuery(this).scrollTop() > 50) {
+                jQuery('.progress-wrap').addClass('active');
+            } else {
+                jQuery('.progress-wrap').removeClass('active');
+            }
+        });
+        jQuery('.progress-wrap').on('click', function(event) {
+            event.preventDefault();
+            jQuery('html, body').animate({scrollTop: 0}, 550);
+            return false;
+        });
+    }
+</script>
+<!-- 퀵메뉴 끝 -->
+
+<!-- 상단 시작 { -->
+<header id="sh_hd">	
+    <div id="skip_to_container"><a href="#sh_container">본문 바로가기</a></div>
+        <div id="sh_hd_wrapper">
+		 
+<div id="top_nav_wrap">
+	<!-- 로고 -->
+	<div id="top_logo">
+		<a href="/"><img src="https://skincare1007.shiningcorp.com/sh_img/hd/top_menu/logo.png" alt="샤이닝 - 피부과 홈페이지 샘플" /></a>
+	</div>
+    <div class="right">
+        <nav id="r_menu">
+            <!-- 상단메뉴 -->
+            <ul id="top_nav">   
+                                <li class="list01">
+                    <a class="list" href="/bbs/board.php?bo_table=table18">이벤트</a>
+                    <ul class="sub_ul1">
+                                                <li><a href="/bbs/board.php?bo_table=table18">공지 및 이벤트</a></li>
+                                            </ul>
+                </li>
+                                <li class="list02">
+                    <a class="list" href="/sh_page/page10.php">실비항목</a>
+                    <ul class="sub_ul2">
+                                                <li><a href="/sh_page/page10.php">여드름/물광</a></li>
+                                                <li><a href="/sh_page/page11.php">흉터/재생</a></li>
+                                            </ul>
+                </li>
+                                <li class="list03">
+                    <a class="list" href="/bbs/board.php?bo_table=table36">상담·예약</a>
+                    <ul class="sub_ul3">
+                                                <li><a href="/bbs/board.php?bo_table=table36">달력예약</a></li>
+                                                <li><a href="/bbs/write.php?bo_table=table34">온라인예약</a></li>
+                                            </ul>
+                </li>
+                                <li class="list04">
+                    <a class="list" href="/bbs/board.php?bo_table=table15">시술전후</a>
+                    <ul class="sub_ul4">
+                                                <li><a href="/bbs/board.php?bo_table=table15">이용후기</a></li>
+                                            </ul>
+                </li>
+                                <li class="list05">
+                    <a class="list" href="/sh_page/page13.php">시술정보</a>
+                    <ul class="sub_ul5">
+                                                <li><a href="/sh_page/page13.php">보톡스/필러</a></li>
+                                                <li><a href="/sh_page/page26.php">리프팅</a></li>
+                                                <li><a href="/bbs/board.php?bo_table=table41">이벤트 시술</a></li>
+                                                <li><a href="/bbs/board.php?bo_table=table43">시술 정보 및 꿀팁</a></li>
+                                            </ul>
+                </li>
+                                <li class="list06">
+                    <a class="list" href="/sh_page/page6.php">병원소개</a>
+                    <ul class="sub_ul6">
+                                                <li><a href="/sh_page/page6.php">클리닉 소개</a></li>
+                                                <li><a href="/sh_page/page35.php">의료진 소개</a></li>
+                                                <li><a href="/bbs/board.php?bo_table=table8">오시는 길</a></li>
+                                            </ul>
+                </li>
+                            </ul>
+        </nav>
+    </div>
+        <a class="event" href="/bbs/board.php?bo_table=table41">9월 이벤트 확인하기</a>
+</div>
+
+<script>
+     
+</script>	
+	</div>
+</header>
+<!-- } 상단 끝 -->
+
+<!-- 콘텐츠 시작 { -->
+<main id="sh_container">
+	<div id="sh_container_wrapper">
+	
+		<!-- 서브 비주얼영역 -->
+		<div id="sub_main_banner">
+			<div id="shSub">
+    <div class="txt_area">
+    	<p>상담·예약</p>
+        <div>
+            <a href="/">Home</a>
+            <i class="fa fa-angle-right"></i>
+            상담·예약            <i class="fa fa-angle-right"></i>
+            달력예약        </div>
+    </div>
+</div>
+		</div>
+		<!-- 서브 비주얼영역 끝 -->	
+	
+		<!-- 서브메뉴 -->
+		<div id="sh_aside">
+			<div id="sh_aside_wrapper">
+<div id="shSnb">
+    <ul>
+                <li class='on'>
+            <a href="/bbs/board.php?bo_table=table36">달력예약</a>
+        </li>
+                <li >
+            <a href="/bbs/write.php?bo_table=table34">온라인예약</a>
+        </li>
+            </ul>
+</div></div>
+		</div>
+		<!-- 콘텐츠영역 -->
+		<div id="sh_content">
+
+	
+<script>
+jQuery(function($){
+    $.datepicker.regional["ko"] = {
+        closeText: "닫기",
+        prevText: "이전달",
+        nextText: "다음달",
+        currentText: "오늘",
+        monthNames: ["1월(JAN)","2월(FEB)","3월(MAR)","4월(APR)","5월(MAY)","6월(JUN)", "7월(JUL)","8월(AUG)","9월(SEP)","10월(OCT)","11월(NOV)","12월(DEC)"],
+        monthNamesShort: ["1월","2월","3월","4월","5월","6월", "7월","8월","9월","10월","11월","12월"],
+        dayNames: ["일","월","화","수","목","금","토"],
+        dayNamesShort: ["일","월","화","수","목","금","토"],
+        dayNamesMin: ["일","월","화","수","목","금","토"],
+        weekHeader: "Wk",
+        dateFormat: "yymmdd",
+        firstDay: 0,
+        isRTL: false,
+        showMonthAfterYear: true,
+        yearSuffix: ""
+    };
+	$.datepicker.setDefaults($.datepicker.regional["ko"]);
+});
+</script>
+<!-- 달력 시작 -->
+<div id="mara_cal_view">
+    <input type="hidden" name="week" value="1|2|3|4|5|6|7">
+    <input type="hidden" name="holiday" value="1">
+    <input type="hidden" name="link" value="https://skincare1007.shiningcorp.com/skin/board/hos_calendar">
+    <div class="title" >
+        <a href="#none" onclick="movePage('');"><span class="c_btn prev_btn"><i class="fa fa-angle-left"></i></span></a>
+        2025년 09월
+        <a href="#none" onclick="movePage('2025-10-01');"><span class="c_btn next_btn"><i class="fa fa-angle-right"></i></span></a>
+    </div>
+    <p class="stit">원하시는 예약 날짜를 선택해주세요.</p>
+    <div class="cal_btn_area">
+    	<button class="rsv_btn_t rsv_sch" onclick="rsv_chk('https://skincare1007.shiningcorp.com/skin/board/hos_calendar','form')"><i class="fa fa-calendar-check-o"></i>예약확인</button>
+    </div>
+
+    <div class="tbl_mara">
+        <table cellpadding="0" cellspacing="0" summary="예약 현황">
+        <caption class="sound_only">예약 현황</caption>
+            <col style="width:15%">
+            <col style="width:14%">
+            <col style="width:14%">
+            <col style="width:14%">
+            <col style="width:14%">
+            <col style="width:14%">
+            <col style="width:15%">
+        <thead>
+            <tr>
+                <th scope="col" class="red">일요일</th>
+                <th scope="col">월요일</th>
+                <th scope="col">화요일</th>
+                <th scope="col">수요일</th>
+                <th scope="col">목요일</th>
+                <th scope="col">금요일</th>
+                <th scope="col" class="blue">토요일</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+            <td class="null">&nbsp;</td><td class="null"><p class="title_day t_gray"><span class="day t_gray">1 </span></p>예약종료</td><td class="null"><p class="title_day t_gray"><span class="day t_gray">2 </span></p>예약종료</td><td class="null"><p class="title_day t_gray"><span class="day t_gray">3 </span></p>예약종료</td><td class="null"><p class="title_day t_gray"><span class="day t_gray">4 </span></p>예약종료</td><td class="null"><p class="title_day t_gray"><span class="day t_gray">5 </span></p>예약종료</td><td class="null"><p class="title_day t_gray"><span class="day t_gray">6 </span></p>예약종료</td></tr><tr><td class=""><p class="title_day t_red"><a class="day t_red" href ="javascript:void(0)" onclick="calendar_inqOpen();selectday('https://skincare1007.shiningcorp.com/skin/board/hos_calendar','2025-09-07','','1','','')">7 </a></p><a href="javascript:void(0)" onclick="calendar_inqOpen();selectday('https://skincare1007.shiningcorp.com/skin/board/hos_calendar','2025-09-07','','1','','')">예약가능</a></td><td class=""><p class="title_day "><a class="day " href ="javascript:void(0)" onclick="calendar_inqOpen();selectday('https://skincare1007.shiningcorp.com/skin/board/hos_calendar','2025-09-08','','2','','')">8 </a></p><a href="javascript:void(0)" onclick="calendar_inqOpen();selectday('https://skincare1007.shiningcorp.com/skin/board/hos_calendar','2025-09-08','','2','','')">예약가능</a></td><td class=""><p class="title_day "><a class="day " href ="javascript:void(0)" onclick="calendar_inqOpen();selectday('https://skincare1007.shiningcorp.com/skin/board/hos_calendar','2025-09-09','','3','','')">9 </a></p><a href="javascript:void(0)" onclick="calendar_inqOpen();selectday('https://skincare1007.shiningcorp.com/skin/board/hos_calendar','2025-09-09','','3','','')">예약가능</a></td><td class=""><p class="title_day "><a class="day " href ="javascript:void(0)" onclick="calendar_inqOpen();selectday('https://skincare1007.shiningcorp.com/skin/board/hos_calendar','2025-09-10','','4','','')">10 </a></p><a href="javascript:void(0)" onclick="calendar_inqOpen();selectday('https://skincare1007.shiningcorp.com/skin/board/hos_calendar','2025-09-10','','4','','')">예약가능</a></td><td class=""><p class="title_day "><a class="day " href ="javascript:void(0)" onclick="calendar_inqOpen();selectday('https://skincare1007.shiningcorp.com/skin/board/hos_calendar','2025-09-11','','5','','')">11 </a></p><a href="javascript:void(0)" onclick="calendar_inqOpen();selectday('https://skincare1007.shiningcorp.com/skin/board/hos_calendar','2025-09-11','','5','','')">예약가능</a></td><td class=""><p class="title_day "><a class="day " href ="javascript:void(0)" onclick="calendar_inqOpen();selectday('https://skincare1007.shiningcorp.com/skin/board/hos_calendar','2025-09-12','','6','','')">12 </a></p><a href="javascript:void(0)" onclick="calendar_inqOpen();selectday('https://skincare1007.shiningcorp.com/skin/board/hos_calendar','2025-09-12','','6','','')">예약가능</a></td><td class=""><p class="title_day t_blue"><a class="day t_blue" href ="javascript:void(0)" onclick="calendar_inqOpen();selectday('https://skincare1007.shiningcorp.com/skin/board/hos_calendar','2025-09-13','','7','','')">13 </a></p><a href="javascript:void(0)" onclick="calendar_inqOpen();selectday('https://skincare1007.shiningcorp.com/skin/board/hos_calendar','2025-09-13','','7','','')">예약가능</a></td></tr><tr><td class=""><p class="title_day t_red"><a class="day t_red" href ="javascript:void(0)" onclick="calendar_inqOpen();selectday('https://skincare1007.shiningcorp.com/skin/board/hos_calendar','2025-09-14','','1','','')">14 </a></p><a href="javascript:void(0)" onclick="calendar_inqOpen();selectday('https://skincare1007.shiningcorp.com/skin/board/hos_calendar','2025-09-14','','1','','')">예약가능</a></td><td class=""><p class="title_day "><a class="day " href ="javascript:void(0)" onclick="calendar_inqOpen();selectday('https://skincare1007.shiningcorp.com/skin/board/hos_calendar','2025-09-15','','2','','')">15 </a></p><a href="javascript:void(0)" onclick="calendar_inqOpen();selectday('https://skincare1007.shiningcorp.com/skin/board/hos_calendar','2025-09-15','','2','','')">예약가능</a></td><td class=""><p class="title_day "><a class="day " href ="javascript:void(0)" onclick="calendar_inqOpen();selectday('https://skincare1007.shiningcorp.com/skin/board/hos_calendar','2025-09-16','','3','','')">16 </a></p><a href="javascript:void(0)" onclick="calendar_inqOpen();selectday('https://skincare1007.shiningcorp.com/skin/board/hos_calendar','2025-09-16','','3','','')">예약가능</a></td><td class=""><p class="title_day "><a class="day " href ="javascript:void(0)" onclick="calendar_inqOpen();selectday('https://skincare1007.shiningcorp.com/skin/board/hos_calendar','2025-09-17','','4','','')">17 </a></p><a href="javascript:void(0)" onclick="calendar_inqOpen();selectday('https://skincare1007.shiningcorp.com/skin/board/hos_calendar','2025-09-17','','4','','')">예약가능</a></td><td class=""><p class="title_day "><a class="day " href ="javascript:void(0)" onclick="calendar_inqOpen();selectday('https://skincare1007.shiningcorp.com/skin/board/hos_calendar','2025-09-18','','5','','')">18 </a></p><a href="javascript:void(0)" onclick="calendar_inqOpen();selectday('https://skincare1007.shiningcorp.com/skin/board/hos_calendar','2025-09-18','','5','','')">예약가능</a></td><td class=""><p class="title_day "><a class="day " href ="javascript:void(0)" onclick="calendar_inqOpen();selectday('https://skincare1007.shiningcorp.com/skin/board/hos_calendar','2025-09-19','','6','','')">19 </a></p><a href="javascript:void(0)" onclick="calendar_inqOpen();selectday('https://skincare1007.shiningcorp.com/skin/board/hos_calendar','2025-09-19','','6','','')">예약가능</a></td><td class=""><p class="title_day t_blue"><a class="day t_blue" href ="javascript:void(0)" onclick="calendar_inqOpen();selectday('https://skincare1007.shiningcorp.com/skin/board/hos_calendar','2025-09-20','','7','','')">20 </a></p><a href="javascript:void(0)" onclick="calendar_inqOpen();selectday('https://skincare1007.shiningcorp.com/skin/board/hos_calendar','2025-09-20','','7','','')">예약가능</a></td></tr><tr><td class=""><p class="title_day t_red"><a class="day t_red" href ="javascript:void(0)" onclick="calendar_inqOpen();selectday('https://skincare1007.shiningcorp.com/skin/board/hos_calendar','2025-09-21','','1','','')">21 </a></p><a href="javascript:void(0)" onclick="calendar_inqOpen();selectday('https://skincare1007.shiningcorp.com/skin/board/hos_calendar','2025-09-21','','1','','')">예약가능</a></td><td class=""><p class="title_day "><a class="day " href ="javascript:void(0)" onclick="calendar_inqOpen();selectday('https://skincare1007.shiningcorp.com/skin/board/hos_calendar','2025-09-22','','2','','')">22 </a></p><a href="javascript:void(0)" onclick="calendar_inqOpen();selectday('https://skincare1007.shiningcorp.com/skin/board/hos_calendar','2025-09-22','','2','','')">예약가능</a></td><td class=""><p class="title_day "><a class="day " href ="javascript:void(0)" onclick="calendar_inqOpen();selectday('https://skincare1007.shiningcorp.com/skin/board/hos_calendar','2025-09-23','','3','','')">23 </a></p><a href="javascript:void(0)" onclick="calendar_inqOpen();selectday('https://skincare1007.shiningcorp.com/skin/board/hos_calendar','2025-09-23','','3','','')">예약가능</a></td><td class=""><p class="title_day "><a class="day " href ="javascript:void(0)" onclick="calendar_inqOpen();selectday('https://skincare1007.shiningcorp.com/skin/board/hos_calendar','2025-09-24','','4','','')">24 </a></p><a href="javascript:void(0)" onclick="calendar_inqOpen();selectday('https://skincare1007.shiningcorp.com/skin/board/hos_calendar','2025-09-24','','4','','')">예약가능</a></td><td class=""><p class="title_day "><a class="day " href ="javascript:void(0)" onclick="calendar_inqOpen();selectday('https://skincare1007.shiningcorp.com/skin/board/hos_calendar','2025-09-25','','5','','')">25 </a></p><a href="javascript:void(0)" onclick="calendar_inqOpen();selectday('https://skincare1007.shiningcorp.com/skin/board/hos_calendar','2025-09-25','','5','','')">예약가능</a></td><td class=""><p class="title_day "><a class="day " href ="javascript:void(0)" onclick="calendar_inqOpen();selectday('https://skincare1007.shiningcorp.com/skin/board/hos_calendar','2025-09-26','','6','','')">26 </a></p><a href="javascript:void(0)" onclick="calendar_inqOpen();selectday('https://skincare1007.shiningcorp.com/skin/board/hos_calendar','2025-09-26','','6','','')">예약가능</a></td><td class=""><p class="title_day t_blue"><a class="day t_blue" href ="javascript:void(0)" onclick="calendar_inqOpen();selectday('https://skincare1007.shiningcorp.com/skin/board/hos_calendar','2025-09-27','','7','','')">27 </a></p><a href="javascript:void(0)" onclick="calendar_inqOpen();selectday('https://skincare1007.shiningcorp.com/skin/board/hos_calendar','2025-09-27','','7','','')">예약가능</a></td></tr><tr><td class=""><p class="title_day t_red"><a class="day t_red" href ="javascript:void(0)" onclick="calendar_inqOpen();selectday('https://skincare1007.shiningcorp.com/skin/board/hos_calendar','2025-09-28','','1','','')">28 </a></p><a href="javascript:void(0)" onclick="calendar_inqOpen();selectday('https://skincare1007.shiningcorp.com/skin/board/hos_calendar','2025-09-28','','1','','')">예약가능</a></td><td class=""><p class="title_day "><a class="day " href ="javascript:void(0)" onclick="calendar_inqOpen();selectday('https://skincare1007.shiningcorp.com/skin/board/hos_calendar','2025-09-29','','2','','')">29 </a></p><a href="javascript:void(0)" onclick="calendar_inqOpen();selectday('https://skincare1007.shiningcorp.com/skin/board/hos_calendar','2025-09-29','','2','','')">예약가능</a></td><td class=""><p class="title_day "><a class="day " href ="javascript:void(0)" onclick="calendar_inqOpen();selectday('https://skincare1007.shiningcorp.com/skin/board/hos_calendar','2025-09-30','','3','','')">30 </a></p><a href="javascript:void(0)" onclick="calendar_inqOpen();selectday('https://skincare1007.shiningcorp.com/skin/board/hos_calendar','2025-09-30','','3','','')">예약가능</a></td><td class="null">&nbsp;</td><td class="null">&nbsp;</td><td class="null">&nbsp;</td><td class="null">&nbsp;</td>            </tr>
+        </tbody>
+        </table>
+        
+<div id="calendar_form">
+	<button class="close" type="button" onclick="calendar_inqClose()"><span></span><p class="sound_only">닫기</p></button>
+  	<div class="tit">예약자 정보</div>
+	<div class="inner">
+        <form name="inq_popup" method="post" action="https://skincare1007.shiningcorp.com/skin/board/hos_calendar/calendar_form_update.php" autocomplete="off" onsubmit="return view_submit(this);">
+            <input type="hidden" name="bo_table" value="table36" />
+            <input type="hidden" name="max_date" value="90">
+            <input type="hidden" name="today_date" value="0">
+        	<ul class="form">
+                <li>
+                    <label for="sh_checkday">예약 선택일</label>
+                    <input type="text" name="sh_checkday" id="sh_checkday" required class="sh_input required" placeholder="예약 선택일" readonly>
+                </li>
+                <li>
+                    <label for="sh_checktime">예약 선택 시간</label>
+                    <select name="sh_checktime" id="sh_checktime" required>
+                        <option value="">예약 시간을 선택해주세요.</option>
+                    </select>            
+                </li>
+                <li>
+                    <label for="wr_name">이름</label>
+                    <input type="text" name="wr_name" id="wr_name" required class="sh_input required" placeholder="이름" oninput="korean_ck(this);check_day()">
+                </li>
+                <li>
+                    <label for="sh_phone">연락처</label>
+                    <input type="text" name="sh_phone" id="sh_phone" required class="sh_input required" placeholder="- 를 제외한 숫자만 입력" oninput='Num_ck(this);' inputmode="tel">             
+                </li>
+            	<li>
+                	<label for="sh_birth">생년월일</label>
+                    <input type="text" name="sh_birth" id="sh_birth" required class="sh_input required" placeholder="생년월일(YYYY-MM-DD)" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" oninput="sh_birth_input(this);" maxlength="10" inputmode="tel">
+                </li>
+            	<li class="type">
+                    <label for="sh_sex">성별</label>
+                    <div>
+                                                <span><input type="radio" name="sh_sex" value="남" id="sh_sex_0"> <label for="sh_sex_0">남</label></span>
+                                                <span><input type="radio" name="sh_sex" value="여" id="sh_sex_1"> <label for="sh_sex_1">여</label></span>
+                                            </div>
+                </li>
+                                <li class="type">
+                    <label for="sh_type">진료종류</label>
+                    <div>
+                                                <span><input type="radio" name="sh_type" value="초진" id="sh_type_0"> <label for="sh_type_0">초진</label></span>
+                                                <span><input type="radio" name="sh_type" value="재진" id="sh_type_1"> <label for="sh_type_1">재진</label></span>
+                                            </div>
+                </li>
+                <li>
+            	   	<label for="wr_content">희망진료사항</label>
+					<textarea name="wr_content" id="wr_content" class="sh_input sh_txtarea"></textarea>
+                </li>
+                <li class="full">2024년 5월 20일부터 건강보험 본인확인 의무화 제도가 시행되어 병원 방문시 신분증을 필수로 제시해주어야합니다.
+</li>
+            </ul>
+            <div class="agree_area">
+                <p><input type="checkbox" id="ckall" class="all_ck ck_cm" onclick="checkAll();"><label for="ckall"> 모두 동의합니다</label></p>
+                <ul>
+                    <li>
+                        <input type="checkbox" class="prv_ck" id="pvc_agree"> </label><label for="pvc_agree"> 이용약관 동의</label>
+                        <button type="button" onclick="window.open('https://skincare1007.shiningcorp.com/skin/board/hos_calendar/sh_stipulation.php', 'window', 'width=600; height=800; left=150; top=0; scrollbars=no');" >약관보기</button>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="prv_ck" id="pvc_agree2"> </label><label for="pvc_agree2"> 개인정보 취급방침 동의</label>
+                        <button type="button" onclick="window.open('https://skincare1007.shiningcorp.com/skin/board/hos_calendar/sh_privacy.php', 'window', 'width=600; height=800; left=150; top=0; scrollbars=no');" >약관보기</button>
+                    </li>
+                </ul>
+            </div>    
+        </div>
+        <button type="submit" class="sbm_btn">예약신청</button>  
+    </form>
+</div>    </div>
+
+	</div><!-- } 게시판 목록 끝 -->
+    	</div><!-- sh_content -->
+    
+   
+	</div><!-- sh_container_wrapper --> 
+</main><!-- sh_container -->
+
+<!-- } 콘텐츠 끝 -->
+
+
+<!-- 하단 시작 { -->
+<footer id="sh_ft">
+	<div id="sh_ft_wrapper">
+        <div class="contact">
+            <div class="top">
+                <div class="form_area">
+                    <h2>CONTACT US</h2>
+                    <p>정량을 지키는 정확한 시술, 안전한 아름다움을 제공합니다.</p>
+                    <form class="consult" name="fmain_form" method="post" action="/sh_img/ft/footer_update.php" autocomplete="off" onsubmit="return fmain_submit(this);">
+                        <input type="hidden" name="form_url" value="/bbs/board.php?bo_table=table36&designkits=1" />
+                        <div class="p_info">
+                            <ul class="input_01">
+                                <li><label for="wr_name">이름</label><input class="sh_input" type="text" name="wr_name" id="wr_name" placeholder="이름" oninput="korean_ck(this)" required maxlength="20"></li>
+                            </ul>
+                            <ul class="input_02">
+                                <li><label for="sh_phone">연락처</label><input class="sh_input" type="text" name="sh_phone" id="sh_phone" oninput="Num_ck(this)" placeholder="연락처" required ></li>
+                            </ul>
+                        </div>
+                        <ul class="input_03">
+                            <li>
+                                <label for="wr_content">문의내용</label>
+                                <textarea class="sh_input inc_input" name="wr_content" id="wr_content" placeholder="문의내용"></textarea>
+                            </li>
+                        </ul>
+                        <div class="prv_area">
+                            <div class="send_btn"><button type="submit">상담신청</button></div>
+                            <div class="consent"><a href="javascript:void(0)" onclick="window.open('/sh_page/sh_privacy.php', 'window', 'width=600; height=800; left=150; top=0; scrollbars=no');">개인정보 수집 · 이용에 동의</a> <label for="prv_check">동의</label><input type="checkbox" class="ck_box" id="prv_check"></div>
+                        </div> 
+                    </form>
+                </div>
+                <div class="map_area">
+                    <iframe src="https://www.shiningcorp.com/sh_page/sh_map.php?sh_x=37.5040637&amp;sh_y=126.7752269&amp;sh_name=샘플클리닉의원&amp;sh_set=utf8&amp;sh_height=400&amp;sh_width=1380" frameborder="0" border="0" marginwidth="0" marginheight="0" scrolling="no" title="샘플크리닉의원 오시는길"></iframe>
+                </div>
+            </div>
+            <div class="bottom">
+                <ul class="info_box">
+                    <li>
+                        <i data-feather="phone-call"></i>
+                        <div class="cate">대표전화</div>
+                        <div class="number">1544-6062</div>
+                    </li>
+                    <li>
+                        <i data-feather="clock"></i>
+                        <div class="cate">진료시간</div>
+                        <ul>
+                            <li>
+                                <div class="day">월~금</div>
+                                <div class="time">오전10시 ~ 오후8시</div>
+                            </li>
+                            <li>
+                                <div class="day">토요일</div>
+                                <div class="time">오전10시 ~ 오후4시</div>
+                            </li>
+                            <li>
+                                <div class="day">점심시간</div>
+                                <div class="time">오후1시 ~ 오후2시</div>
+                            </li>
+                            <li class="notice">※일요일, 공휴일 휴진입니다.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="same_as">
+                    <li>
+                        <i data-feather="map-pin"></i>
+                        <address>경기 부천시 원미구 신흥로 223 신중동역 랜드마크 푸르지오 시티 101동 오피스 49층</address>
+                    </li>
+                    <li>
+                        <span class="youtube"></span>
+                        <div class="cate">카톡상담</div>
+                        <a href="/sh_page/page35.php">@샘플클리닉</a>
+                    </li>
+                    <li>
+                        <span class="kakao"></span>
+                        <div class="cate">유튜브</div>
+                        <a href="/sh_page/page35.php">@뷰티솔루션 샘플클리닉</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="copy">
+            <div class="top">
+                <img class="ft_logo" src="/sh_img/hd/top_menu/logo_w.png" alt="샤이닝 - 피부과 홈페이지 샘플" />
+                <div>
+                    <a href="javascript:void(0)" onclick="window.open('/sh_page/sh_privacy.php', 'window', 'width=600; height=800; left=150; top=0; scrollbars=no')">개인정보취급방침</a>
+                    <a href="javascript:void(0)" onclick="window.open('/sh_page/sh_stipulation.php', 'window', 'width=600; height=800; left=150; top=0; scrollbars=no')">이용약관</a>
+                    <a href="/sh_page/page13.php">비급여 수가표</a>
+                    <a href="/sh_page/page6.php">병원소개</a>
+                    <a href="/bbs/board.php?bo_table=table8&wr_id=1">오시는길</a>
+                </div>
+            </div>
+            <div class="main_info">고객사 주소, 사업자번호, 전화번호 등 하단 정보가 들어가는 곳입니다.</div>
+            <div class="bottom">
+                <p>© Sample Clinic. ALL RIGHTS RESERVED.</p>
+                <div class="adm">
+                    <a href="/admin/admin.login.php">ADMIN</a>
+                    <a href="https://www.hdweb.co.kr/" target="blank">HDWEB</a>
+                </div>
+            </div>
+        </div>
+	</div>
+</footer>
+<!-- 100% 배경이미지 때문에 사용 -->
+</div>
+
+
+
+<script>
+function fmain_submit(f){        
+    if (!$("#prv_check").is(":checked")) {
+        alert("개인정보취급방침의 내용에 동의하셔야 작성가능 합니다.");
+        return false;
+    }
+    return true;
+}
+feather.replace();
+function Num_ck(obj) { 
+    var val = obj.value; 
+    if(isNaN(val)) { 
+        alert("숫자만 입력해 주세요"); 
+        obj.value = val.replace(/[^0-9]/gi, ''); 
+    }  
+}
+function korean_ck(obj) {
+    var val = obj.value;
+    var korean = /^[가-힣ㄱ-ㅎㅏ-ㅣㆍ ᆢ\s]*$/;
+    if (!korean.test(val)) {
+        alert("한글만 입력해 주세요");
+        obj.value = val.replace(/[^가-힣ㄱ-ㅎㅏ-ㅣㆍ ᆢ\s]+/g, '');
+    }
+}	
+</script>
+<!-- } 하단 끝 -->
+
+
+
+
+<!-- ie6,7에서 사이드뷰가 게시판 목록에서 아래 사이드뷰에 가려지는 현상 수정 -->
+<!--[if lte IE 7]>
+<script>
+$(function() {
+    var $sv_use = $(".sv_use");
+    var count = $sv_use.length;
+
+    $sv_use.each(function() {
+        $(this).css("z-index", count);
+        $(this).css("position", "relative");
+        count = count - 1;
+    });
+});
+</script>
+<![endif]-->
+
+</body>
+<script src="https://www.shiningcorp.com/designTail.js"></script>
+</html>
+
+<!-- 사용스킨 : hos_calendar -->
