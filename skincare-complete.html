@@ -190,25 +190,6 @@ var g5_cookie_domain = "";
 </head>
 <body>
 
-<!-- 사이드 퀵메뉴 추가 -->
-<div class="side_quick_menu">
-    <ul>
-        <li><a href="about.html">병원소개</a></li>
-        <li><a href="board-page.html">이벤트</a></li>
-        <li><a href="calendar-page.html">상담예약</a></li>
-        <li class="has_sub">
-            <a href="#">시술안내</a>
-            <ul class="sub_menu">
-                <li><a href="blog-details-1.html">보톡스</a></li>
-                <li><a href="blog-details-3.html">필러</a></li>
-                <li><a href="blog-details-5.html">리프팅</a></li>
-                <li><a href="blog-details-6.html">여드름</a></li>
-                <li><a href="blog-details-11.html">제모</a></li>
-            </ul>
-        </li>
-        <li><a href="tel:02-1234-5678">📞 전화상담</a></li>
-    </ul>
-</div>
 
 <style>
 /* 미소핀 통일된 색상 팔레트 */
@@ -238,80 +219,6 @@ var g5_cookie_domain = "";
     --misopin-shadow-light: rgba(0,0,0,0.05);
 }
 
-/* 사이드 퀵메뉴 스타일 */
-.side_quick_menu {
-    position: fixed;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 999;
-    background: var(--misopin-bg-main);
-    border-radius: 10px;
-    box-shadow: 0 5px 20px var(--misopin-shadow);
-    padding: 15px 0;
-    min-width: 150px;
-}
-
-.side_quick_menu ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.side_quick_menu li {
-    margin: 0;
-    position: relative;
-}
-
-.side_quick_menu a {
-    display: block;
-    padding: 12px 20px;
-    color: var(--misopin-text-normal);
-    text-decoration: none;
-    font-size: 14px;
-    transition: all 0.3s;
-    border-bottom: 1px solid var(--misopin-border-light);
-}
-
-.side_quick_menu a:hover {
-    background: var(--misopin-bg-light);
-    color: var(--misopin-primary);
-    padding-left: 25px;
-}
-
-.side_quick_menu .sub_menu {
-    display: none;
-    position: absolute;
-    right: 100%;
-    top: 0;
-    background: var(--misopin-bg-main);
-    border-radius: 10px;
-    box-shadow: 0 5px 20px var(--misopin-shadow);
-    min-width: 120px;
-    margin-right: 10px;
-}
-
-.side_quick_menu .has_sub:hover .sub_menu {
-    display: block;
-}
-
-.side_quick_menu .sub_menu a {
-    font-size: 13px;
-    border-bottom: 1px solid var(--misopin-border-light);
-}
-
-.side_quick_menu li:last-child a {
-    border-bottom: none;
-    color: var(--misopin-primary);
-    font-weight: bold;
-}
-
-/* 모바일에서 숨기기 */
-@media (max-width: 768px) {
-    .side_quick_menu {
-        display: none;
-    }
-}
 
 /* 미소핀 추가 색상 테마 적용 */
 #top_nav_wrap {
@@ -541,42 +448,36 @@ $(document).on('click', 'a', function() {
 <!-- 퀵메뉴 -->
 
 <div id="quickList">
-    <a class="plus_link" href="/sh_page/page6.php">
-        <div class="pl">플러스친구
-            전용혜택</div>
-        <div class="go">바로가기 <span data-feather="chevron-right"></span></div>
-    </a>
     <ul class="list">
         <li>
-            <a href="/bbs/board.php?bo_table=table36">
+            <a href="http://pf.kakao.com/_xjxeLxj" target="_blank">
                 <div class="kakao"></div>
                 <div class="cate">카톡상담</div>
             </a>
         </li>
         <li>
-            <a href="/bbs/board.php?bo_table=table36">
-                <div class="youtube"></div>
-                <div class="cate">유튜브</div>
+            <a href="https://www.instagram.com/misopin_clinic" target="_blank">
+                <div class="instagram" style="width: 24px; height: 24px; margin: 0 auto 5px; background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iIzNDMUUxRSIgZD0iTTcuOCAyQTUuOCA1LjggMCAwIDAgMiA3Ljh2OC40QTUuOCA1LjggMCAwIDAgNy44IDIyaDguNGE1LjggNS44IDAgMCAwIDUuOC01LjhWNy44QTUuOCA1LjggMCAwIDAgMTYuMiAySDcuOHptMCAxLjloOC40YTMuOSAzLjkgMCAwIDEgMy45IDMuOXY4LjRhMy45IDMuOSAwIDAgMS0zLjkgMy45SDcuOGEzLjkgMy45IDAgMCAxLTMuOS0zLjlWNy44YTMuOSAzLjkgMCAwIDEgMy45LTMuOXpNMTcuMjUgNS41YTEuMjUgMS4yNSAwIDEgMCAwIDIuNSAxLjI1IDEuMjUgMCAwIDAgMC0yLjV6TTEyIDdhNSA1IDAgMSAwIDAgMTAgNSA1IDAgMCAwIDAtMTB6bTAgMS45YTMuMSAzLjEgMCAxIDEgMCA2LjIgMy4xIDMuMSAwIDAgMSAwLTYuMnoiLz48L3N2Zz4=') center/contain no-repeat;"></div>
+                <div class="cate">인스타그램</div>
             </a>
         </li>
         <li>
-            <a href="/bbs/board.php?bo_table=table41">
+            <a href="board-page.html">
                 <i data-feather="gift"></i>
                 <div class="cate">이벤트</div>
             </a>
         </li>
         <li>
-            <a href="/bbs/write.php?bo_table=table34">
+            <a href="calendar-page.html">
                 <i data-feather="edit-3"></i>
                 <div class="cate">예약하기</div>
             </a>
         </li>
         <li>
-            <a href="/sh_page/page6.php">
+            <a href="tel:061-277-1001">
                 <i data-feather="phone-call"></i>
                 <div class="cate">전화상담</div>
-                <div class="number pl">1544
-                    6062</div>
+                <div class="number pl">061-277-1001</div>
             </a>
         </li>
     </ul>
@@ -651,24 +552,7 @@ $(function() {
 });
 </script>
 <!-- } 팝업레이어 끝 -->    <div id="sh_hd_wrapper">
-		    <div id="top_notice" class="swiper-container">
-        <ul class="swiper-wrapper">
-            			
-                <li class="swiper-slide">
-                    <p>불필요한 시술 없이 꼭 필요한 케어만 권장합니다.</p>
-                </li>
-            			
-                <li class="swiper-slide">
-                    <p>과장 없는 솔직한 상담과 합리적인 시술을 제공합니다.</p>
-                </li>
-            			
-                <li class="swiper-slide">
-                    <p>3正 정품·정량·정성으로 꼭 맞는 시술만을 제안합니다.</p>
-                </li>
-             
-        </ul>
-    </div>
- 
+		 
 <div id="top_nav_wrap">
 	<!-- 로고 -->
 	<div id="top_logo">
