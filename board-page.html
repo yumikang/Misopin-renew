@@ -191,11 +191,12 @@ var g5_cookie_domain = "";
 </style>
 
 <script>
-$(document).on('click', 'a', function() {
-  var href = $(this).attr('href');
-  href += (href.indexOf('?') == -1 ? '?' : '&') + 'designkits=1';
-  $(this).attr('href', href);
-});
+// designkits 파라미터 추가 코드 비활성화
+// $(document).on('click', 'a', function() {
+//   var href = $(this).attr('href');
+//   href += (href.indexOf('?') == -1 ? '?' : '&') + 'designkits=1';
+//   $(this).attr('href', href);
+// });
 </script>
 
 <!-- 100% 배경이미지 때문에 사용 -->
