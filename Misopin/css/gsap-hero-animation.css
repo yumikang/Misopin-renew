@@ -1,0 +1,66 @@
+/* ========================================
+   MISOPIN CLINIC GSAP 히어로 애니메이션
+   생성일: 2025-09-06
+   목적: GSAP 애니메이션을 위한 초기 상태 설정
+   ======================================== */
+
+/* 히어로 텍스트 초기 상태 (GSAP 애니메이션 전) */
+.h1_mst .ltr {
+    opacity: 0;
+    visibility: visible !important;
+    display: inline-block !important;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    will-change: transform, opacity;
+}
+
+/* 컨테이너 설정 */
+.h1_mst {
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+
+/* MISOPIN 위치 */
+.h1_mst01 {
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 10;
+}
+
+/* CLINIC 위치 */
+.h1_mst02 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 10;
+}
+
+/* 애니메이션 완료 후 호버 효과 */
+.h1_mst[style*="pointer-events: auto"] .ltr:hover {
+    transform: translateY(-5px) scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+/* 모바일 반응형 */
+@media (max-width: 768px) {
+    .h1_mst01 {
+        top: 35%;
+    }
+    
+    .h1_mst02 {
+        top: 45%;
+    }
+    
+    .h1_mst .ltr {
+        font-size: 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    .h1_mst .ltr {
+        font-size: 40px;
+    }
+}

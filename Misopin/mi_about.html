@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex">
+    <title>미소핀의원 : 병원 소개</title>
+    <!-- CDN 프리커넥트 추가 -->
+    <link rel="preconnect" href="https://fastly.jsdelivr.net" crossorigin>
+    <link rel="dns-prefetch" href="https://fastly.jsdelivr.net">
+
+    <link rel="preload" href="css/lib.min.css" as="style">
+    <link rel="preload" href="css/about.min.css" as="style">
+    <link rel="preload" href="js/jquery-3.6.0.min.js" as="script">
+    <link rel="preload" href="js/about.min.js" as="script">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="img/favicon/site.webmanifest">
+    <link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="img/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    <meta name="description" content="Magical SPA Salon">
+    <meta name="keywords" content="Magical SPA Salon">
+    
+    <!-- <link rel="stylesheet" href="css/fonts.css"> -->
+    <link rel="stylesheet" href="css/lib.min.css">
+    <link rel="stylesheet" href="css/about.min.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/mi_about_custom_clean.css?v=5">
+    
+    <style>
+    /* 전체 페이지 배경색 설정 */
+    body {
+        background-color: #FAFAFA !important;
+    }
+    
+    /* 헤더와 히어로 영역 겹침 문제 해결 - PC에서만 적용 */
+    @media (min-width: 1025px) {
+        #header {
+            position: relative !important;  /* PC에서는 relative */
+            z-index: 999;
+            background: #fff;
+        }
+    }
+    
+    /* 히어로 영역(.j_top)이 헤더 아래에 자연스럽게 위치 */
+    .j_top {
+        margin-top: 0 !important;
+        padding-top: 80px !important;  /* 적절한 상단 여백 */
+        position: relative !important;
+        z-index: 1;
+    }
+    
+    /* 헤더가 끝나고 자연스럽게 이어지도록 */
+    #wrapper {
+        padding-top: 0 !important;
+        margin-top: 0 !important;
+    }
+    
+    /* 모바일에서도 동일하게 적용 */
+    @media (max-width: 768px) {
+        .j_top {
+            padding-top: 60px !important;
+        }
+        
+        /* 모바일 햄버거 메뉴 수정 */
+        .header .rows .cols.cols02 {
+            display: none !important;
+        }
+        
+        .header .rows .cols.cols05 {
+            display: flex !important;
+        }
+        
+        .burger {
+            display: block !important;
+        }
+        
+        .burger .burger_btn {
+            display: flex !important;
+        }
+        
+        .left_menu {
+            display: block !important;
+        }
+    }
+    
+    /* YouTube 비디오 배경 섹션 스타일 */
+    .video-section {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+        background: #000;
+        margin: 80px 0;
+    }
+    
+    .video-section .cover {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .video-section .hi {
+        color: #fff;
+        font-family: "Roboto Slab", serif, "Noto Sans KR", sans-serif;
+        font-size: 24px;
+        line-height: 32px;
+        text-align: center;
+        padding: 20px;
+        background: rgba(0, 0, 0, 0.6);
+        border-radius: 10px;
+    }
+    
+    .video-section .hi span {
+        color: #ff0;
+        cursor: pointer;
+        text-decoration: underline;
+    }
+    
+    .video-section .hi em {
+        font-style: normal;
+    }
+    
+    .video-section .hi em.hidden {
+        display: none;
+    }
+    
+    .video-section .tv {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+    
+    .video-section .tv .screen {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+        margin: auto;
+        opacity: 0;
+        transition: opacity 0.5s;
+    }
+    
+    .video-section .tv .screen.active {
+        opacity: 1;
+    }
+    
+    @media (max-width: 768px) {
+        .video-section {
+            height: 60vh;
+            margin: 40px 0;
+        }
+        
+        .video-section .hi {
+            font-size: 18px;
+            line-height: 24px;
+        }
+    }
+    
+    /* shadcn/ui 스타일 CSS 변수 정의 */
+    :root {
+        --background: hsl(0 0% 100%);
+        --foreground: hsl(222.2 84% 4.9%);
+        --card: hsl(0 0% 100%);
+        --card-foreground: hsl(222.2 84% 4.9%);
+        --popover: hsl(0 0% 100%);
+        --popover-foreground: hsl(222.2 84% 4.9%);
+        --primary: hsl(222.2 47.4% 11.2%);
+        --primary-foreground: hsl(210 40% 98%);
+        --secondary: hsl(210 40% 96%);
+        --secondary-foreground: hsl(222.2 84% 4.9%);
+        --muted: hsl(210 40% 96%);
+        --muted-foreground: hsl(215.4 16.3% 46.9%);
+        --accent: hsl(210 40% 96%);
+        --accent-foreground: hsl(222.2 84% 4.9%);
+        --destructive: hsl(0 84.2% 60.2%);
+        --destructive-foreground: hsl(210 40% 98%);
+        --border: hsl(214.3 31.8% 91.4%);
+        --input: hsl(214.3 31.8% 91.4%);
+        --ring: hsl(222.2 84% 4.9%);
+        --radius: 0.5rem;
+    }
+    
+    /* 호버 영역 확장을 위한 가상 요소 */
+    .has-sub::before {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: -20px;
+        right: -20px;
+        height: 20px;
+        z-index: 999;
+    }
+    
+    .sub-menu {
+        position: absolute !important;
+        top: calc(100% + 0.2rem) !important;
+        left: 50% !important;
+        transform: translateX(-50%) translateY(-8px) !important;
+        min-width: 200px !important;
+        background: var(--popover) !important;
+        border: 1px solid var(--border) !important;
+        border-radius: var(--radius) !important;
+        padding: 10px !important;
+        box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1) !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+        z-index: 1000 !important;
+    }
+    
+    .has-sub:hover .sub-menu {
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: translateX(-50%) translateY(0) !important;
+    }
+    
+    /* shadcn/ui 스타일 서브메뉴 아이템 */
+    .sub-menu li {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    .sub-menu li a,
+    .sub-menu li a:link,
+    .sub-menu li a:visited {
+        color: var(--foreground) !important;
+        -webkit-text-fill-color: var(--foreground) !important;
+        display: flex !important;
+        align-items: center !important;
+        padding: 0.6rem 1rem !important;
+        text-decoration: none !important;
+        border-radius: calc(var(--radius) - 2px) !important;
+        margin: 2px !important;
+        font-size: 20px !important;
+        font-weight: 700 !important;
+        line-height: 1.25 !important;
+        transition: all 0.15s ease !important;
+        cursor: pointer !important;
+        position: relative !important;
+    }
+    
+    .sub-menu li a:hover,
+    .sub-menu li a:focus {
+        color: #97b3d8 !important;
+        -webkit-text-fill-color: #97b3d8 !important;
+        background-color: transparent !important;
+        text-decoration: none !important;
+        font-weight: 800 !important;
+        outline: none !important;
+    }
+    
+    .sub-menu li a:active {
+        background-color: transparent !important;
+        transform: scale(0.98) !important;
+    }
+    
+    /* 드롭다운 화살표 표시 */
+    .has-sub > a::after {
+        content: '';
+        display: inline-block;
+        width: 0;
+        height: 0;
+        margin-left: 0.5rem;
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        border-top: 4px solid currentColor;
+        transition: transform 0.2s ease;
+    }
+    
+    .has-sub:hover > a::after {
+        transform: rotate(180deg);
+    }
+    
+    /* 부드러운 진입 애니메이션 */
+    @keyframes slideDown {
+        from {
+            opacity: 0;
+            transform: translateX(-50%) translateY(-8px) scale(0.95);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0) scale(1);
+        }
+    }
+    
+    .has-sub:hover .sub-menu {
+        animation: slideDown 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    }
+    </style>
+    
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/about.min.js"></script>
+    <script src="js/mi_about_runtime_fix.js"></script>
+    <script>
+        // 데이터 속성으로 배경 이미지 설정
+        document.addEventListener('DOMContentLoaded', function() {
+            // 배경 이미지 설정
+            const bgMain = document.querySelector('.bg_main[data-bg]');
+            if (bgMain) {
+                const bgUrl = bgMain.getAttribute('data-bg');
+                const lazyBg = bgMain.querySelector('.lazy_bg');
+                if (lazyBg && bgUrl) {
+                    lazyBg.style.backgroundImage = `url('${bgUrl}')`;
+                }
+            }
+            
+            // 모바일 사이드 메뉴 드롭다운 기능
+            // 메인 링크 클릭 시 서브메뉴 토글
+            const hasSubmenuLinks = document.querySelectorAll('.left_menu .has-submenu > a');
+            hasSubmenuLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const parentLi = this.closest('.has-submenu');
+                    
+                    // 다른 열린 메뉴들을 닫기
+                    document.querySelectorAll('.left_menu .has-submenu.active').forEach(item => {
+                        if (item !== parentLi) {
+                            item.classList.remove('active');
+                        }
+                    });
+                    
+                    // 현재 메뉴 토글
+                    parentLi.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</head>
+
+<body class="mi-about">
+	<div class="scroller">
+		<div id="wrap">
+			<div id="wrapper">
+				<div id="header" class="header">
+					<div class="header_in">
+						<div class="container">
+							<div class="rows">
+								<div class="cols cols01">
+									<div class="logo">
+										<a href="index.html"><img src="img/logo.svg" width="160" height="24" alt="미소핀의원" title="미소핀의원"></a>
+									</div>
+								</div>
+								<div class="cols cols02">
+									<div class="main_menu">
+										<ul class="menu_list">
+											<li class="has-sub">
+												<a href="mi_about.html">미소핀 소개</a>
+												<ul class="sub-menu">
+													<li><a href="mi_about.html">병원 소개</a></li>
+													<li><a href="blog.html">이벤트/공지</a></li>
+												</ul>
+											</li>
+											<li class="has-sub">
+												<a href="blog-details-1.html">주름/보톡스</a>
+												<ul class="sub-menu">
+													<li><a href="blog-details-1.html">보톡스</a></li>
+													<li><a href="blog-details-2.html">제오민</a></li>
+												</ul>
+											</li>
+											<li class="has-sub">
+												<a href="blog-details-2.html">볼륨/리프팅</a>
+												<ul class="sub-menu">
+													<li><a href="blog-details-3.html">필러</a></li>
+													<li><a href="blog-details-4.html">스킨부스터</a></li>
+													<li><a href="blog-details-5.html">리프팅</a></li>
+												</ul>
+											</li>
+											<li class="has-sub">
+												<a href="blog-details-3.html">피부케어</a>
+												<ul class="sub-menu">
+													<li><a href="blog-details-6.html">여드름치료</a></li>
+													<li><a href="blog-details-7.html">필링</a></li>
+												</ul>
+											</li>
+											<li class="has-sub">
+												<a href="blog-details-4.html">제거시술</a>
+												<ul class="sub-menu">
+													<li><a href="blog-details-8.html">점</a></li>
+													<li><a href="blog-details-9.html">비립종</a></li>
+													<li><a href="blog-details-10.html">문신제거</a></li>
+												</ul>
+											</li>
+											<li class="has-sub">
+												<a href="#">바디케어</a>
+												<ul class="sub-menu">
+													<li><a href="blog-details-11.html">제모</a></li>
+													<li><a href="blog-details-12.html">다이어트</a></li>
+												</ul>
+											</li>
+											<li><a href="#">예약</a></li>
+										</ul> 
+									</div>	
+								</div>
+								<!-- <div class="cols cols03">
+									<div class="book_a_treatment">
+										<a href="#e_win" class="e_win_lnk bat_lnk">book a treatment</a>
+									</div>
+								</div> -->
+								<div class="cols cols05"> 
+									<div class="burger">
+										<button class="burger_btn">
+											<span></span>
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="j_top">
+					<div class="container">
+						<div class="h2 t_split">병원소개</div>
+						<div class="l_mb"></div>
+						<div class="txt up">
+							MISOPIN CLINIC’S EXPERTISE<span class="br">BLENDING KOREAN PRECISION WITH GLOBAL AESTHETIC CARE</span> 
+						</div>
+					</div>
+				</div>
+
+
+				<div class="glry_rows">
+					<div class="cols cols01 cols_tp">
+						<div class="up_icol" style="background-image: url(img/about/about_01.webp);"></div>
+						<div class="lr_icol" style="background-image: url(img/about/about_02.webp);"></div>
+					</div>
+					<div class="cols cols02 cols_bp">
+						<div class="up_icol" style="background-image: url(img/about/about_03.webp);"></div>
+						<div class="lr_icol" style="background-image: url(img/about/about_04.webp);"></div>
+					</div>
+					<div class="cols cols03 cols_tp">
+						<div class="up_icol" style="background-image: url(img/about/about_05.webp);"></div>
+						<div class="lr_icol" style="background-image: url(img/about/about_06.webp);"></div>
+					</div>
+					<div class="cols cols04 cols_bp">
+						<div class="up_icol" style="background-image: url(img/about/about_07.webp);"></div>
+						<div class="lr_icol" style="background-image: url(img/about/about_08.webp);"></div>
+					</div>
+					<div class="cols cols05 cols_tp">
+						<div class="up_icol" style="background-image: url(img/about/about_09.webp);"></div>
+						<div class="lr_icol" style="background-image: url(img/about/about_10.webp);"></div>
+					</div>
+				</div>
+				
+				<div class="mob_glry_rows">
+					<div class="lt_col">
+						<div class="lt_col_img" style="background-image: url(img/about/about_01.webp);"></div>
+						<div class="lt_col_img" style="background-image: url(img/about/about_02.webp);"></div>
+						<div class="lt_col_img" style="background-image: url(img/about/about_03.webp);"></div>
+						<div class="lt_col_img" style="background-image: url(img/about/about_06.webp);"></div>
+						<div class="lt_col_img" style="background-image: url(img/about/about_13.webp);"></div>
+						<div class="lt_col_img" style="background-image: url(img/about/about_16.webp);"></div>
+						<div class="lt_col_img" style="background-image: url(img/about/about_17.webp);"></div>
+						<div class="lt_col_img" style="background-image: url(img/about/about_18.webp);"></div>
+						<div class="lt_col_img" style="background-image: url(img/about/about_19.webp);"></div>
+						<div class="lt_col_img" style="background-image: url(img/about/about_20.webp);"></div>
+						<div class="lt_col_img" style="background-image: url(img/about/about_21.webp);"></div>
+
+					</div>
+				</div>
+				
+				<div class="srces_ovr">
+					<div class="container">
+						<div class="srces">
+							<div class="h2 t_split">
+								<span class="st st01"></span>
+									<span class="smaller-text">
+										<span class="text-line">맑고 균일한 피부, 차이가 보입니다.</span>
+										<span class="text-line">Clear, Even Skin Makes</span>
+										<span class="text-line">All the Difference</span>
+										<span class="text-line">미소핀의 치료는 원인을 정확히 찾고</span>
+										<span class="text-line">고객만의 빛을 되찾아 드립니다.</span>
+
+									</span>
+								<span class="st st02"></span>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				
+				<div class="ms_bg">
+					<div class="container">
+						<div class="section-header">
+							<p class="subtitle">MISOPIN Special</p>
+							<h2 class="main-title">미소핀의원의 진단·치료 철학</h2>
+						</div>
+						<div class="rows">
+							<div class="cols cols01">
+								<div class="desc">
+									<div class="d_img up">
+										<img src="img/about/about18-2.jpg" width="214" height="317" alt="">
+									</div>
+									<div class="h3 t_split">
+										정밀 진단의 시작
+									</div>
+									<div class="t up">미소핀은 개인의 피부 타입·톤·민감도까지<br>
+										다양한 색소의 특성을 구분하고, 세밀하게 분석합니다.<br>
+										정확한 진단이 곧 치료의 절반이라고 믿습니다.</div>
+								</div>
+							</div>
+							<div class="cols cols02">
+								<div class="desc">
+									<div class="d_img up">
+										<img src="img/about/about20.jpg" width="214" height="317" alt="">
+									</div>
+									<div class="h3 t_split">
+										맞춤형 복합 솔루션
+									</div>
+									<div class="t up">하나의 방법으로 모든 피부를 치료할 수는 없습니다.<br>
+										피부고민 원인과 상태에 맞춘 다양한 치료법을 조합해<br>
+										오직 하나의 솔루션을 만듭니다.</div>
+								</div>
+							</div>
+							<div class="cols cols03">
+								<div class="desc">
+									<div class="d_img up">
+										<img src="img/about/about21.jpg" width="214" height="317" alt="">
+									</div>
+									<div class="h3 t_split">
+										치료 후까지 이어지는 케어
+									</div>
+									<div class="t up">치료만으로는 완성되지 않습니다.<br>
+										치료 효과를 오래 유지하고 피부 회복력을 높이는<br>
+										재생관리 프로그램을 병행합니다.</div>
+								</div>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+				
+				<!-- YouTube 비디오 배경 섹션 추가 -->
+				<div class="video-section" style="position: relative; width: 100%; height: 100vh; overflow: hidden;">
+					<div class="cover">
+						<div class="hi">
+							미소핀의원의 특별한 치료 공간을 경험해보세요<br><br>
+							<span>여기</span>를 클릭하여 소리를 <em>켜거나 끄고</em>, 
+							<span>여기</span>를 클릭하여 다른 영상을 보세요 
+							(<em>0</em> / <em>0</em>)
+						</div>
+					</div>
+					<div class="tv">
+						<div class="screen mute" id="tv"></div>
+					</div>
+				</div>
+
+				<!-- moves_text 섹션 완전 제거 -->
+				
+				
+			</div>
+		</div>
+		<div id="footer">
+		    <div class="container">
+		        <div class="business_info" style="text-align: left; padding: 20px 0; border-top: 1px solid #ddd; margin-bottom: 20px;">
+		            <div class="business_links" style="margin-bottom: 15px;">
+		                <a href="#" style="color: #666; text-decoration: none; margin: 0 10px;">비급여항목안내</a> |
+		                <a href="#" style="color: #666; text-decoration: none; margin: 0 10px;">개인정보취급방침</a> |
+		                <a href="#" style="color: #666; text-decoration: none; margin: 0 10px;">이용약관</a> 
+		                
+		            </div>
+		            <p style="color: #666; font-size: 13px; margin: 5px 0;">상호 : 미소핀의원　|　대표자 : 김지식　사업자등록번호 : 123-56-789　|　전화번호 : 061–277-1001</p>
+		            <p style="color: #666; font-size: 13px; margin: 5px 0;">주소 : 전남 목포시 영산로 362 미소핀의원</p>
+		            <p style="color: #666; font-size: 13px; margin: 5px 0;">© 2025 미소핀의원. ALL RIGHTS RESERVED.</p>
+		        </div>
+		     
+		        </div>
+		    </div>
+		</div>  
+		
+				
+	</div>	
+		<div class="left_menu lef_menu_w">
+	    <div class="left_menu_in">
+	        <img src="img/logo.svg" alt="미소핀의원" width="160" height="24" class="lf_logo">
+	        <div class="left_close_m"></div> 
+	        <div class="desc">
+	            <ul class="l_nav">
+	                <li class="has-submenu">
+                    <a href="#">미소핀 소개</a>
+                    <ul class="l_nav_sub">
+                        <li><a href="mi_about.html">병원 소개</a></li>
+                        <li><a href="blog.html">이벤트/공지</a></li>
+                    </ul>
+                </li>
+	                <li class="has-submenu">
+                    <a href="#">주름/보톡스</a>
+                    <ul class="l_nav_sub">
+                        <li><a href="blog-details-1.html">보톡스</a></li>
+                        <li><a href="blog-details-2.html">제오민</a></li>
+                    </ul>
+                </li>
+	                <li class="has-submenu">
+                    <a href="#">볼륨/리프팅</a>
+                    <ul class="l_nav_sub">
+                        <li><a href="blog-details-3.html">필러</a></li>
+                        <li><a href="blog-details-4.html">스킨부스터</a></li>
+                        <li><a href="blog-details-5.html">리프팅</a></li>
+                    </ul>
+                </li>
+	                <li class="has-submenu">
+                    <a href="#">피부케어</a>
+                    <ul class="l_nav_sub">
+                        <li><a href="blog-details-6.html">여드름치료</a></li>
+                        <li><a href="blog-details-7.html">필링</a></li>
+                    </ul>
+                </li>
+	                <li class="has-submenu">
+                    <a href="#">제거시술</a>
+                    <ul class="l_nav_sub">
+                        <li><a href="blog-details-8.html">점</a></li>
+                        <li><a href="blog-details-9.html">비립종</a></li>
+                        <li><a href="blog-details-10.html">문신제거</a></li>
+                    </ul>
+                </li>
+	                <li class="has-submenu">
+                    <a href="#">바디케어</a>
+                    <ul class="l_nav_sub">
+                        <li><a href="blog-details-11.html">제모</a></li>
+                        <li><a href="blog-details-12.html">다이어트</a></li>
+                    </ul>
+                </li>
+	                <li><a href="#">예약</a></li>
+	            </ul>
+	            <div class="desc_btm">
+	                <div class="clinic_hours" style="padding: 20px; background: rgba(255,255,255,0.3); border-radius: 10px; margin: 20px; border: 1px solid rgba(255,255,255,0.2);">
+	                    <h4 style="color: #1a1a1a; font-size: 18px; font-weight: 600; margin-bottom: 15px; text-align: center;">진료시간 안내</h4>
+	                    <div style="color: #333; font-size: 14px; line-height: 2; text-align: center;">
+	                        <p style="margin: 8px 0;"><strong>월/화/목/금:</strong> 08:30 - 19:30</p>
+	                        <p style="margin: 8px 0;"><strong>수요일:</strong> 08:30 - 12:00</p>
+	                        <p style="margin: 8px 0;"><strong>토요일:</strong> 09:00 - 14:00</p>
+	                        <p style="margin: 8px 0; padding-top: 10px; border-top: 1px solid rgba(0,0,0,0.1);"><strong>휴게시간:</strong> 12:00 - 14:00</p>
+	                        <p style="margin: 8px 0;"><strong>일요일/공휴일:</strong> 정기휴무</p>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>    
+	    </div>
+	</div>
+<div id="connect_with_us" class="hides win_popup">
+	    <div class="win_popup_ovr">
+	        <div class="win_popup_in">
+	            <div class="line_pp">
+	                <div class="h3">문의사항이 있으신가요?</div>
+	                <div class="h3">언제든지 연락주세요</div>
+	            </div>
+	            <div class="blc_pp_wt">
+	                <form action="about.html#" method="post" class="f1">
+	                    <div class="rows rows50">
+	                        <div class="cols cols01">
+	                            <input type="text" required placeholder="이름*" data-parsley-length="[2, 80]" data-parsley-length-message="2자 이상 80자 이하로 입력해주세요." data-parsley-pattern="^[가-힣a-zA-Z ]+$" data-parsley-pattern-message="한글 또는 영문으로 입력해주세요.">
+	                        </div>
+	                        <div class="cols cols02">
+	                            <input type="text" name="PHONE" class="phone" placeholder="전화번호*" required data-parsley-pattern="^[\d\+\-\.\(\)\/\s]*$" data-parsley-pattern-message="올바른 전화번호를 입력해주세요."> 
+	                            <input type="text" name="EMAIL" class="email" placeholder="이메일*" required>
+	                        </div>
+	                    </div>
+	                    <div class="rows rows100">
+	                        <div class="iagree">
+	                            <input type="checkbox" name="checkboxGB" id="checkboxGB" class="css-checkbox" checked/>
+	                            <label for="checkboxGB" class="css-label label_ch">개인정보 수집 및 이용에 동의합니다</label>
+	                        </div> 
+	                    </div>  
+	                    <div class="rows rows100">
+	                        <div class="cols">
+	                            <button class="get_go">전송하기</button>
+	                        </div>
+	                    </div>
+	                </form>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+	
+	 
+	<div id="e_win" class="l_popup">
+	    <div class="l_close"></div> 
+	    <div class="l_popup_in">
+	        <div class="desc_ovr active">
+	            <div class="ttl">
+	                <div class="h2">Buy now</div>
+	                <p>Leave a request and our managers will contact you shortly to clarify the details.</p>
+	            </div>
+	            <div class="desc">
+	                <!-- <form action="#" class="f1" data-parsley-validate data-parsley-errors-messages-disabled> -->
+	                <form action="about.html#" class="f1">
+	                    <div class="rows">
+	                        <div class="cols cols01">
+	                            <div class="t">Name</div>
+	                        </div>
+	                        <div class="cols cols02">
+	                            <input type="text" name="NAME" required placeholder="Enter your name*" data-parsley-length="[3, 80]" data-parsley-length-message="The value must be between 3 and 80 characters." data-parsley-pattern="^[a-zA-Z ]+$" data-parsley-pattern-message="The value must contain English characters.">
+	                        </div>
+	                    </div> 
+	                    <div class="rows">
+	                        <div class="cols cols01">
+	                            <div class="t">email address</div>
+	                            
+	                        </div>
+	                        <div class="cols cols02">
+	                            <input type="text" name="EMAIL" class="email" placeholder="E-mail*" required>
+	                        </div>
+	                    </div>
+	                    <div class="rows">
+	                        <div class="cols cols01">
+	                            <div class="t">email address</div>
+	                            
+	                        </div>
+	                        <div class="cols cols02">
+	                            <input type="text" name="PHONE" class="phone" placeholder="Enter your mobile number*"> 
+	                        </div>
+	                    </div>
+	                    <p><input id="price_calc_1" type="hidden" name="price_evoucher" value="0" /></p>
+	                    <p><input id="price_calc_2" type="hidden" name="price_giftcard" value="0" /></p>
+	                    <p><input id="tab_name" type="hidden" name="tab_name" value="0" /></p>
+	                    <div class="rows rows_btn">
+	                        <button class="get_go" >
+	                            <span class="t">Submit <span class="a"></span></span>  
+	                        </button>
+	                    </div>
+	                </form>
+	            </div>
+	        </div> 
+	        <div class="desc_ovr ">
+	            <div class="ttl">
+	                <div class="h2">Thank you for <span class="br">your message!</span></div>
+	                <p>Our manager will contact you shortly.</p>
+	            </div>
+	        </div>   
+	    </div>
+	</div> 
+	
+	
+	
+	
+	
+	<div id="thank_you" class="hides win_popup thank_you">
+	    <div class="line_pp">
+	        <h3>감사합니다!</h3>
+	    </div>
+	    <div class="blc_pp_wt">
+	        <p>문의 주셔서 감사합니다. 접수가 완료되었습니다.</p>
+	        <span>담당자가 영업일 기준 1일 이내에 연락드리겠습니다.</span>
+	    </div>
+	</div>
+	
+<!-- YouTube 비디오 배경 JavaScript -->
+<script>
+// YouTube API 로드
+var tag = document.createElement('script');
+tag.src = 'https://www.youtube.com/player_api';
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+var tv,
+    playerDefaults = {
+        autoplay: 0, 
+        autohide: 1, 
+        modestbranding: 0, 
+        rel: 0, 
+        showinfo: 0, 
+        controls: 0, 
+        disablekb: 1, 
+        enablejsapi: 0, 
+        iv_load_policy: 3
+    };
+
+// 미소핀의원 관련 YouTube 비디오 ID들 (예시)
+var vid = [
+    {'videoId': '2b5QNj-BVhs', 'startSeconds': 515, 'endSeconds': 690, 'suggestedQuality': 'hd720'},
+    {'videoId': '9ge5PzHSS0Y', 'startSeconds': 465, 'endSeconds': 657, 'suggestedQuality': 'hd720'},
+    {'videoId': 'OWsCt7B-KWs', 'startSeconds': 0, 'endSeconds': 240, 'suggestedQuality': 'hd720'},
+    {'videoId': 'qMR-mPlyduE', 'startSeconds': 19, 'endSeconds': 241, 'suggestedQuality': 'hd720'}
+],
+randomVid = Math.floor(Math.random() * vid.length),
+currVid = randomVid;
+
+// 비디오 개수 표시
+document.addEventListener('DOMContentLoaded', function() {
+    var lastEm = document.querySelector('.video-section .hi em:last-of-type');
+    if (lastEm) {
+        lastEm.innerHTML = vid.length;
+    }
+});
+
+function onYouTubePlayerAPIReady(){
+    tv = new YT.Player('tv', {
+        events: {
+            'onReady': onPlayerReady, 
+            'onStateChange': onPlayerStateChange
+        }, 
+        playerVars: playerDefaults
+    });
+}
+
+function onPlayerReady(){
+    tv.loadVideoById(vid[currVid]);
+    tv.mute();
+}
+
+function onPlayerStateChange(e) {
+    if (e.data === 1){
+        document.getElementById('tv').classList.add('active');
+        var secondEm = document.querySelector('.video-section .hi em:nth-of-type(2)');
+        if (secondEm) {
+            secondEm.innerHTML = currVid + 1;
+        }
+    } else if (e.data === 2){
+        document.getElementById('tv').classList.remove('active');
+        if(currVid === vid.length - 1){
+            currVid = 0;
+        } else {
+            currVid++;  
+        }
+        tv.loadVideoById(vid[currVid]);
+        tv.seekTo(vid[currVid].startSeconds);
+    }
+}
+
+function vidRescale(){
+    var w = window.innerWidth + 200,
+        h = window.innerHeight + 200;
+
+    if (w/h > 16/9){
+        tv.setSize(w, w/16*9);
+        document.querySelector('.tv .screen').style.left = '0px';
+    } else {
+        tv.setSize(h/9*16, h);
+        var screenWidth = document.querySelector('.tv .screen').offsetWidth;
+        document.querySelector('.tv .screen').style.left = -(screenWidth - window.innerWidth)/2 + 'px';
+    }
+}
+
+// 윈도우 리사이즈 이벤트
+window.addEventListener('load', vidRescale);
+window.addEventListener('resize', vidRescale);
+
+// 음소거/음소거 해제 토글
+document.addEventListener('DOMContentLoaded', function() {
+    var firstSpan = document.querySelector('.video-section .hi span:first-of-type');
+    if (firstSpan) {
+        firstSpan.addEventListener('click', function(){
+            document.getElementById('tv').classList.toggle('mute');
+            var firstEm = document.querySelector('.video-section .hi em:first-of-type');
+            if (firstEm) {
+                firstEm.classList.toggle('hidden');
+            }
+            if(document.getElementById('tv').classList.contains('mute')){
+                tv.mute();
+            } else {
+                tv.unMute();
+            }
+        });
+    }
+
+    // 다음 비디오 보기
+    var lastSpan = document.querySelector('.video-section .hi span:last-of-type');
+    if (lastSpan) {
+        lastSpan.addEventListener('click', function(){
+            var secondEm = document.querySelector('.video-section .hi em:nth-of-type(2)');
+            if (secondEm) {
+                secondEm.innerHTML = '~';
+            }
+            tv.pauseVideo();
+        });
+    }
+});
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,1328 @@
+/* Custom CSS for h1_mst adjustments */
+
+/* 빈 div들 숨기기 - 검은색 여백 제거 */
+#bg_full,
+#h1_mst,
+#sspm {
+    display: none !important;
+}
+
+/* GSAP pin-spacer 제거 */
+.pin-spacer {
+    height: auto !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* fx_top_text 관련 요소들 완전 제거 */
+.fx_top_text,
+[class*="fx_top_text"],
+.h1_mst02_chng,
+.bg_full_logo,
+.txt_bf_btm,
+.btn_bf_btm {
+    display: none !important;
+}
+
+/* 검은색 배경 제거 */
+.main_screen {
+    background: transparent !important;
+}
+
+/* sky_spa_programm_menu 위치 조정 - 검은 띠 제거 */
+.sky_spa_programm_menu {
+    margin-top: 0 !important;
+    padding-top: 80px !important;
+    background: #fff !important;
+}
+
+/* SUIT 웹폰트 추가 */
+@font-face {
+    font-family: 'SUIT-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 전체 폰트를 SUIT-Regular로 변경 */
+body, html {
+    font-family: 'SUIT-Regular', SuisseIntl, sans-serif !important;
+}
+
+/* 모든 요소에 SUIT 폰트 적용 */
+* {
+    font-family: 'SUIT-Regular', SuisseIntl, sans-serif !important;
+}
+
+/* trio_itms 라운딩 - 오른쪽 상단만 60px, 나머지는 0 */
+.trio_itms .rows .itm_lnk {
+    border-radius: 0 60px 0 0 !important;
+}
+
+.trio_itms .rows .desc {
+    border-radius: 0 60px 0 0 !important;
+}
+
+/* trio_itms h3 폰트 스타일 조정 */
+.trio_itms .rows .desc .itm_ttl .h3 {
+    font-size: 48px !important;
+    line-height: 52px !important;
+    font-weight: 600 !important;
+}
+
+/* PC 메뉴 폰트 크기 증가 및 색상 조정 */
+.header .main_menu .menu_list li a {
+    font-size: 20px !important;
+    line-height: 20px !important;
+    color: #2a2a2a !important; /* 진한 차콜 그레이로 변경 */
+    opacity: 1 !important;
+    font-weight: 600 !important; /* 약간 더 굵게 */
+}
+
+/* 메뉴 호버 시 색상 */
+.header .main_menu .menu_list li a:hover {
+    color: #000000 !important; /* 호버 시 완전 검정 */
+}
+
+/* book a treatment 버튼 텍스트 색상 조정 */
+.header .book_a_treatment a,
+.header .bat_lnk {
+    color: #2a2a2a !important; /* 진한 차콜 그레이 */
+    opacity: 1 !important;
+    font-weight: 600 !important;
+}
+
+/* Card 버튼 텍스트 색상 조정 */
+.header .card_lnk .t {
+    color: #2a2a2a !important; /* 진한 차콜 그레이 */
+    opacity: 1 !important;
+    font-weight: 600 !important;
+}
+
+/* 드롭다운 하위 메뉴는 밝은 색상 유지 + 크기 조정 */
+.header .main_menu .sub-menu li a {
+    color: #ffffff !important; /* 흰색 유지 */
+    opacity: 0.9 !important;
+    font-weight: 400 !important; /* 일반 굵기 */
+    font-size: 14px !important; /* 폰트 크기 축소 */
+    line-height: 20px !important; /* 줄 높이 조정 */
+    white-space: nowrap !important; /* 텍스트 줄바꿈 방지 */
+}
+
+.header .main_menu .sub-menu li a:hover {
+    color: #ffffff !important;
+    opacity: 1 !important; /* 호버 시 완전 불투명 */
+}
+
+/* 드롭다운 메뉴 너비 조정 */
+.header .main_menu .sub-menu {
+    min-width: 140px !important; /* 최소 너비 설정 */
+    width: auto !important; /* 자동 너비 */
+}
+
+/* 모바일 사이드 메뉴 스타일 */
+.left_menu .l_nav > li > a {
+    color: #2a2a2a !important; /* 상위 메뉴 진한 색상 */
+    font-weight: 600 !important;
+    font-size: 18px !important;
+}
+
+/* 사이드 메뉴 하위 메뉴 스타일 */
+.left_menu .l_nav_sub {
+    background: rgba(0, 0, 0, 0.05) !important;
+    padding: 10px 0 !important;
+    margin-top: 10px !important;
+}
+
+.left_menu .l_nav_sub li a {
+    color: #555555 !important; /* 하위 메뉴는 중간 톤 */
+    font-weight: 400 !important;
+    font-size: 16px !important;
+    padding: 8px 20px !important;
+}
+
+.left_menu .l_nav_sub li a:hover {
+    color: #000000 !important;
+    background: rgba(0, 0, 0, 0.05) !important;
+}
+
+/* === 헤더 네비게이션 높이 확장 === */
+#header {
+  min-height: 80px;              /* 전체 헤더 높이 확보 */
+  display: flex;
+  align-items: center;
+}
+
+#header .header_in {
+  padding: 20px 0 !important;    /* 위아래 여백 추가 */
+}
+
+#header .main_menu .menu_list li a {
+  line-height: 40px !important;  /* 각 메뉴 텍스트 세로 간격 */
+  padding: 10px 0 !important;    /* 위아래 패딩 */
+}
+
+/* 로고를 검은색으로 변경 */
+.header .logo img,
+#header .logo img {
+  filter: brightness(0) saturate(100%) !important;  /* 검은색으로 변환 */
+}
+
+/* 네비게이션 메뉴를 우측 정렬 */
+.header .rows {
+  justify-content: space-between !important;
+}
+
+.header .cols.cols02 {
+  margin-left: auto !important;  /* 메뉴를 우측으로 밀기 */
+  margin-right: 30px !important;  /* 우측 여백 */
+}
+
+.header .main_menu {
+  display: flex !important;
+  justify-content: flex-end !important;  /* 우측 정렬 */
+}
+
+/* 모바일 헤더 고정 (스크롤 시에도 계속 보이도록) */
+@media (max-width: 768px) {
+    .header {
+        position: fixed !important;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        z-index: 9999;
+        background: #ffffff !important; /* 배경 흰색으로 변경 */
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* 그림자 추가로 구분감 */
+    }
+    
+    /* 로고와 햄버거 메뉴 보이도록 */
+    .header .logo {
+        pointer-events: auto !important;
+        opacity: 1 !important;
+        display: block !important;
+        visibility: visible !important;
+    }
+    
+    .header .logo img {
+        filter: none !important; /* 로고 원본 색상 유지 (검은색) */
+    }
+    
+    /* 햄버거 메뉴 아이콘 색상 및 표시 */
+    .header .burger {
+        color: #000000 !important; /* 검은색으로 변경 */
+        display: block !important;
+        visibility: visible !important;
+        position: relative !important;
+        z-index: 10000 !important;
+    }
+    
+    .header .burger span,
+    .header .burger span::before,
+    .header .burger span::after {
+        background-color: #000000 !important; /* 검은색으로 변경 */
+        width: 25px !important;
+        height: 2px !important;
+        display: block !important;
+    }
+    
+    /* 헤더가 fixed일 때 콘텐츠가 헤더 아래로 밀리도록 */
+    body {
+        padding-top: 60px !important;
+    }
+    
+    /* 헤더 내부 요소들이 제대로 보이도록 */
+    .header .header_in {
+        background: transparent !important;
+    }
+    
+    /* 로고 이미지도 보이도록 */
+    .header .logo img {
+        filter: none; /* 로고 원본 색상 유지 (검은색) */
+    }
+}
+
+/* h1_mst02_chng 스타일 - h1_mst02와 동일한 letter-spacing 적용 */
+.h1_mst02_chng {
+    letter-spacing: -0.035em !important;
+    margin: 0 !important;
+    position: relative !important;
+    top: -22px !important; /* 위로 22px 이동 */
+}
+
+/* h1_mst02_chng의 마지막 C 위치 조정 제거 */
+.h1_mst02_chng .ltr:last-child {
+    position: static !important;
+    left: auto !important;
+}
+
+/* 가장 큰 화면 - 폰트 크기를 200px로 조정 */
+.h1_mst01 {
+    font: normal 200px/200px Gallient !important;
+}
+
+.h1_mst02 {
+    font: normal 200px/200px Gallient !important;
+}
+
+/* h1_mst02_chng도 200px로 조정 */
+.h1_mst02_chng {
+    font: normal 200px/200px Gallient !important;
+}
+
+/* 글자 간격 조정 - m과 i 사이 간격 제거 */
+.h1_mst01 .ltr:first-child {
+    margin-right: 0 !important;
+}
+
+/* C의 위치 조정 제거 */
+.h1_mst02 .ltr:last-child {
+    position: static !important;
+    left: auto !important;
+}
+
+/* 반응형 미디어 쿼리 - 중간 화면들 */
+@media (max-width: 1400px) {
+    .h1_mst01, .h1_mst02 {
+        font: normal 210px/200px Gallient !important;
+    }
+}
+
+@media (max-width: 1200px) {
+    .h1_mst01, .h1_mst02 {
+        font: normal 190px/180px Gallient !important;
+    }
+}
+
+@media (max-width: 992px) {
+    .h1_mst01, .h1_mst02 {
+        font: normal 170px/160px Gallient !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .h1_mst01, .h1_mst02 {
+        font: normal 150px/140px Gallient !important;
+    }
+}
+
+/* 가장 작은 화면 */
+@media (max-width: 576px) {
+    .h1_mst01, .h1_mst02 {
+        font: normal 127px/122px Gallient !important;
+    }
+}
+
+/* h2.h2m 스타일 - 폰트 크기 줄이고 font-weight 600 설정 */
+.h2.h2m {
+    font-size: 120px !important;
+    line-height: 120px !important;
+    font-weight: 600 !important;
+}
+
+/* gallery_ovr을 화면 중앙으로 이동 */
+.gallery_ovr {
+    position: relative;
+    top: 25vh;
+}
+
+/* 드롭다운 메뉴 스타일 */
+.main_menu .menu_list {
+    position: relative;
+}
+
+.main_menu .menu_list > li {
+    position: relative;
+}
+
+.main_menu .menu_list > li.has-sub > a:after {
+    content: '';
+    display: inline-block;
+    margin-left: 5px;
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid #fff;
+    vertical-align: middle;
+}
+
+.main_menu .sub-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: rgba(30, 30, 30, 0.95);
+    min-width: 200px;
+    padding: 10px 0;
+    display: none;
+    z-index: 999;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.main_menu .menu_list > li:hover .sub-menu {
+    display: block;
+}
+
+.main_menu .sub-menu li {
+    list-style: none;
+}
+
+.main_menu .sub-menu li a {
+    display: block;
+    padding: 10px 25px;
+    color: #fff !important;
+    font-size: 16px !important;
+    transition: all 0.3s ease;
+}
+
+.main_menu .sub-menu li a:hover {
+    background: rgba(255, 255, 255, 0.1);
+    padding-left: 30px;
+}
+
+/* MISOPIN CLINIC SIGNATURE 섹션 스타일 */
+.signature_section {
+    padding: 60px 0 120px;  /* 상단 패딩을 120px에서 60px로 줄임 */
+    margin-bottom: 100px;
+    background: #ffffff;
+    position: relative;
+}
+
+.signature_section .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.section_header {
+    text-align: left;
+    margin-bottom: 80px;
+}
+
+.main_title {
+    font-size: 48px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    color: #333;
+    margin-bottom: 40px;
+    line-height: 1.3;
+}
+
+.description {
+    max-width: 800px;
+}
+
+.description p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+/* 4개 시술 그리드 - 1줄 4개 */
+.treatment_grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.treatment_item {
+    text-align: left;
+    transition: all 0.3s ease;
+}
+
+.treatment_item:hover {
+    transform: translateY(-10px);
+}
+
+.treatment_image {
+    position: relative;
+    width: 100%;
+    height: 400px;  /* 280px에서 400px로 증가 */
+    background: #f8f8f8;
+    margin-bottom: 20px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.treatment_image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.treatment_badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(255, 255, 255, 0.9);
+    color: #666;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    font-style: italic;
+}
+
+.treatment_title {
+    font-size: 22px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.treatment_desc {
+    font-size: 15px;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* SNS 섹션 스타일 */
+.sns_section {
+    padding: 140px 0;
+    min-height: 700px;
+    margin-bottom: 100px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* 배경 오버레이 */
+.overlay_background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('img/DSC08146-2.jpg') center center/cover no-repeat;
+    z-index: 1;
+}
+
+.overlay_background::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/* SNS 컨텐츠 */
+.sns_content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.section_intro {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.section_title {
+    font-size: 42px;
+    font-weight: 300;
+    color: white;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.section_desc {
+    font-size: 18px;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* SNS 그리드 */
+.sns_grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    position: relative;
+}
+
+/* 하얀색 구분선 - 위 */
+.sns_grid::before {
+    content: '';
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* 하얀색 구분선 - 아래 */
+.sns_grid::after {
+    content: '';
+    position: absolute;
+    bottom: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* SNS 카드 */
+/* SNS 카드 링크 스타일 */
+.sns_card_link {
+    text-decoration: none;
+    display: block;
+    color: inherit;
+}
+
+.sns_card {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 50px 40px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    transition: all 0.3s ease;
+    border-radius: 0;
+    cursor: pointer;
+}
+
+.sns_card:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.sns_icon {
+    flex: 0 0 80px !important;
+    width: 80px !important;
+    height: 80px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: none !important;
+    border-radius: 0 !important;
+    /* 배경과 원형 완전 제거 */
+}
+
+.sns_icon img {
+    width: 80px !important;
+    height: 80px !important;
+    object-fit: contain !important;
+    filter: none !important;
+    /* 필터 완전 제거 - 원본 색상 유지 */
+}
+
+.sns_info {
+    flex: 1;
+    text-align: left;
+}
+
+.sns_title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.sns_desc {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #666;
+}
+
+/* 의사 소개 섹션은 기존 스타일 유지 */
+.doctor_section {
+    padding: 120px 0;
+    margin-bottom: 100px;
+    background: #f9f9f9;
+    position: relative;
+}
+
+.doctor_container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: stretch;
+    background: white;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.doctor_image_wrapper {
+    flex: 0 0 50%;
+    position: relative;
+    overflow: hidden;
+    min-height: 600px;
+}
+
+.doctor_image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.gradient_overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, 
+        rgba(255, 255, 255, 0) 0%, 
+        rgba(255, 255, 255, 0) 50%, 
+        rgba(255, 255, 255, 0.3) 70%, 
+        rgba(255, 255, 255, 0.7) 85%, 
+        rgba(255, 255, 255, 1) 100%);
+    pointer-events: none;
+}
+
+.doctor_content {
+    flex: 1;
+    padding: 80px 100px 80px 80px;
+    background-color: white;
+}
+
+.doctor_header {
+    margin-bottom: 40px;
+}
+
+.clinic_logo {
+    font-size: 36px;
+    font-weight: 300;
+    color: #333;
+    display: block;
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
+.doctor_title {
+    font-size: 24px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 10px;
+    margin-top: 0;
+}
+
+.doctor_name {
+    font-size: 42px;
+    font-weight: 700;
+    color: #333;
+    margin: 0 0 30px 0;
+}
+
+.doctor_description {
+    margin-bottom: 40px;
+}
+
+.doctor_description p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #555;
+    margin: 0;
+}
+
+.doctor_credentials ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: right;
+}
+
+.doctor_credentials li {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #888;
+    margin-bottom: 5px;
+    text-align: right;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 1200px) {
+    .treatment_grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+    }
+    
+    .treatment_image {
+        height: 350px;  /* 모바일에서도 세로 길이 증가 */
+    }
+}
+
+@media (max-width: 992px) {
+    .treatment_grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+    
+    .sns_grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .sns_card {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .sns_info {
+        text-align: center;
+    }
+    
+    .doctor_container {
+        flex-direction: column;
+    }
+    
+    .doctor_image_wrapper {
+        flex: none;
+        width: 100%;
+        height: 400px;
+    }
+    
+    .gradient_overlay {
+        background: linear-gradient(to bottom, 
+            rgba(255, 255, 255, 0) 0%, 
+            rgba(255, 255, 255, 0) 50%, 
+            rgba(255, 255, 255, 0.5) 80%, 
+            rgba(255, 255, 255, 1) 100%);
+    }
+    
+    .doctor_content {
+        padding: 60px 40px;
+    }
+}
+
+@media (max-width: 640px) {
+    .signature_section,
+    .sns_section,
+    .doctor_section {
+        padding: 80px 0;
+        margin-bottom: 60px;
+    }
+    
+    .main_title {
+        font-size: 32px;
+    }
+    
+    .treatment_grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    .treatment_image {
+        height: 350px;  /* 모바일에서도 세로 길이 증가 */
+    }
+    
+    .section_title {
+        font-size: 32px;
+    }
+    
+    .sns_content {
+        padding: 0 20px;
+    }
+    
+    .sns_card {
+        padding: 30px 25px;
+    }
+    
+    .doctor_image_wrapper {
+        height: 300px;
+    }
+    
+    .doctor_content {
+        padding: 40px 20px;
+    }
+    
+    .doctor_name {
+        font-size: 28px;
+    }
+    
+    .doctor_credentials li {
+        text-align: left;
+    }
+}
+
+/* CONTACT US 섹션 스타일 */
+.contact_section {
+    padding: 120px 0;
+    background: #3a3a3a;
+    position: relative;
+}
+
+.contact_container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.contact_title {
+    font-size: 48px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    color: white;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.contact_wrapper {
+    display: flex;
+    gap: 0;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    min-height: 500px;
+}
+
+/* 지도 영역 */
+.map_area {
+    flex: 1.2;
+    position: relative;
+    min-height: 500px;
+}
+
+.map_area iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* 정보 영역 */
+.info_area {
+    flex: 1;
+    background: white;
+    padding: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.info_content {
+    width: 100%;
+}
+
+.info_group {
+    margin-bottom: 30px;
+}
+
+.info_group h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 12px;
+}
+
+.info_group p {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #666;
+    margin: 0;
+}
+
+.info_group.contact_details p,
+.info_group.hours p {
+    font-size: 13px;
+    color: #888;
+}
+
+/* 예약 버튼 */
+.reserve_btn {
+    background: #d13035;
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 30px;
+    transition: all 0.3s ease;
+}
+
+.reserve_btn:hover {
+    background: #c33035;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(216, 64, 69, 0.3);
+}
+
+/* 반응형 */
+@media (max-width: 992px) {
+    .contact_wrapper {
+        flex-direction: column;
+    }
+    
+    .map_area {
+        min-height: 400px;
+    }
+    
+    .info_area {
+        padding: 40px;
+    }
+}
+
+@media (max-width: 640px) {
+    .contact_section {
+        padding: 80px 0;
+    }
+    
+    .contact_title {
+        font-size: 32px;
+    }
+    
+    .contact_container {
+        padding: 0 20px;
+    }
+    
+    .map_area {
+        min-height: 300px;
+    }
+    
+    .info_area {
+        padding: 30px 20px;
+    }
+    
+    .info_group h3 {
+        font-size: 16px;
+    }
+    
+    .reserve_btn {
+        width: 100%;
+    }
+}
+
+/* =========================================
+   MOBILE HEADER RECONCILE (keep design, fix bar)
+   index-custom_base.css 맨 아래에 추가
+   ========================================= */
+:root{
+  --header-h: 60px;              /* 모바일 헤더 실제 높이 - 60px로 증가 */
+}
+
+@media (max-width: 1024px){
+  /* 1) 회색바 원인 제거: body 패딩 제거 */
+  body { padding-top: 0 !important; }  /* backup의 padding-top:60px을 무력화 */
+
+  /* 2) 헤더는 고정 유지(디자인 유지), 포인터/레이어 안전값 정리 */
+  #header, .header{
+    position: fixed !important;
+    top: 0; left: 0; right: 0;
+    z-index: 9999 !important;
+    pointer-events: auto !important;
+    height: 60px !important;  /* 1024px 이하 헤더 높이 60px로 증가 */
+    min-height: 60px !important;
+    /* 배경은 backup 쪽 설정(반투명 검정) 그대로 두되, 중복 바를 만드는
+       placeholder/가상요소가 있으면 꺼준다 */
+  }
+  
+  /* 헤더 내부 패딩 조정 */
+  #header .header_in,
+  .header .header_in {
+    padding: 15px 20px !important;  /* 패딩도 증가 */
+    height: 100% !important;
+    display: flex !important;
+    align-items: center !important;  /* 수직 중앙 정렬 */
+  }
+  
+  /* 혹시 상단 보조바/플레이스홀더가 있으면 숨김(두 겹 헤더 방지) */
+  .top_panel, .top_bar, .header_placeholder { display: none !important; }
+  #header::before { content: none !important; }
+
+  /* 3) PC 메뉴는 접고, 버거만 확실히 켠다 */
+  .header .cols.cols02,
+  .header .main_menu,
+  .menu_list { display: none !important; }          /* 테마 PC 메뉴 감춤 */
+  .header .cols.cols05 { 
+    display: flex !important; 
+    justify-content: flex-end !important;  /* 버거를 우측 정렬 */
+    flex: 1 !important;  /* 남은 공간 차지 */
+  }
+  .burger { 
+    display: block !important; 
+    visibility: visible !important;
+    margin-right: 20px !important;  /* 우측 여백 */
+  }
+  
+  /* 햄버거 메뉴 색상 검은색으로 변경 */
+  .burger .burger_btn span,
+  .burger .burger_btn span::before,
+  .burger .burger_btn span::after {
+    background: #000000 !important;
+  }
+  
+  /* 헤더 내부 정렬 */
+  .header .rows,
+  #header .rows {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    height: 100% !important;  /* 높이 100% 설정 */
+  }
+  
+  /* 로고 영역 및 크기 조정 */
+  .header .cols.cols01 {
+    flex: 0 0 auto !important;
+  }
+  
+  .header .logo img,
+  #header .logo img {
+    height: 35px !important;  /* 로고 크기 35px로 증가 */
+    width: auto !important;
+  }
+
+  /* 4) 헤더 고정에 따른 첫 섹션 보정:
+        body 패딩 대신 첫 콘텐츠에 상단 여유만 준다(회색바 방지) */
+  .j_ttl,
+  .main_screen,
+  .moves_text:first-child {
+    padding-top: var(--header-h) !important;
+  }
+}
+
+/* 데스크톱 리듬: 테마 기본 .j_ttl 상단 187px 과다 → 현실값으로 */
+.j_ttl{
+  padding-top: clamp(72px, 10vw, 120px) !important;
+  padding-bottom: clamp(24px, 5vw, 48px) !important;
+}
+
+/* SNS 섹션 레이어만 정리(디자인 유지) */
+.sns_section{ position:relative; overflow:hidden; }
+.sns_section .sns_video,
+.sns_section .sns_video video,
+.sns_section .sns_video canvas{ position:relative; z-index:0; }
+.sns_section .sns_grid,
+.sns_section .sns_grid_wrap{ position:relative; z-index:2; }
+.overlay_background{ display:none !important; }
+
+
+/* 태블릿 헤더 크기 조정 */
+@media (max-width: 768px) and (min-width: 481px) {
+    :root {
+      --header-h: 55px;  /* 태블릿 헤더 높이 55px로 증가 */
+    }
+    
+    #header, .header {
+      height: 55px !important;
+      min-height: 55px !important;
+      background-color: #fff !important;
+    }
+    
+    #header .header_in,
+    .header .header_in {
+      padding: 12px 20px !important;  /* 패딩도 증가 */
+      display: flex !important;
+      align-items: center !important;  /* 수직 중앙 정렬 */
+    }
+    
+    .header .logo img,
+    #header .logo img {
+      height: 32px !important;  /* 로고 크기도 증가 */
+    }
+}
+
+/* 모바일 헤더 크기 조정 */
+@media (max-width: 480px) {
+    :root {
+      --header-h: 50px;  /* 모바일 헤더 높이 - 50px로 증가 */
+    }
+    
+    #header, .header {
+      height: 50px !important;
+      min-height: 50px !important;
+      background-color: #fff !important;
+    }
+    
+    #header .header_in,
+    .header .header_in {
+      padding: 10px 15px !important;  /* 패딩도 증가 */
+      display: flex !important;
+      align-items: center !important;  /* 수직 중앙 정렬 */
+    }
+    
+    .header .logo img,
+    #header .logo img {
+      height: 30px !important;  /* 로고 크기도 30px로 */
+    }
+    
+    /* 햄버거 메뉴 크기 조정 */
+    .burger .burger_btn {
+      width: 20px !important;
+      height: 20px !important;
+    }
+    
+    .burger .burger_btn span {
+      width: 20px !important;
+      height: 2px !important;
+      background: #2a2a2a !important;
+    }
+    
+    .burger .burger_btn span::before,
+    .burger .burger_btn span::after {
+      width: 20px !important;
+      height: 2px !important;
+      background: #2a2a2a !important;
+    }
+    
+    .burger {
+      margin-right: 15px !important;
+    }
+}
+
+/* 모바일 전용 헤더 배경색 및 햄버거 색상 */
+@media (max-width: 768px) {
+    #header,
+    .header {
+      background-color: #fff !important;
+    }
+    
+    /* 햄버거 메뉴 색상 검은색으로 변경 */
+    .burger .burger_btn span {
+      background: #2a2a2a !important;
+    }
+    .burger .burger_btn span::before,
+    .burger .burger_btn span::after {
+      background: #2a2a2a !important;
+    }
+}
+
+/* ===== 모바일 통합 정리 (1024px 기준 통일) ===== */
+
+/* 헤더는 모바일에서 한 번만 고정, 오버레이 열릴 땐 숨김 */
+@media (max-width: 1024px){
+  body.leftmenu-open #header,
+  body.leftmenu-open .header{ 
+    display:none !important; 
+    visibility:hidden !important;
+    opacity:0 !important;
+    z-index:-1 !important;
+  }
+  
+  /* SNS 섹션 이후 헤더 숨기기 - 스크롤 시 더 이상 따라오지 않도록 */
+  body.past-hero #header,
+  body.past-hero .header {
+    position: absolute !important;
+    top: 0 !important;
+  }
+  
+  /* 버거 메뉴 우측 정렬 보장 */
+  .header .rows{ 
+    display:flex !important; 
+    align-items:center !important; 
+    justify-content:space-between !important;
+  }
+  
+  .header .rows .cols.cols05{
+    display:flex !important; 
+    margin-left:auto !important; 
+    justify-content:flex-end !important;
+    order:99 !important; 
+    flex:0 0 auto !important;
+  }
+  
+  /* 버거 버튼 표시 */
+  .burger {
+    display: block !important;
+  }
+  
+  /* 로고와 버거 사이 적절한 간격 */
+  .header .logo {
+    flex: 0 0 auto !important;
+  }
+  
+  /* 모바일 헤더 수직 중앙 정렬 */
+  #header, .header {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 0 15px !important;
+    transition: none !important;
+  }
+}
+
+/* 모바일에서 헤더가 absolute일 때 z-index 조정 */
+@media (max-width: 768px) {
+  #header[style*="position: absolute"],
+  .header[style*="position: absolute"] {
+    z-index: 999 !important;
+  }
+}
+
+/* === 모바일/태블릿 헤더: JS가 준 inline을 무력화하고 흰 배경 고정 === */
+@media (max-width: 1200px){
+  #header, 
+  .header, 
+  header#header,
+  div#header,
+  .header .header_in,
+  #header .header_in,
+  #header .rows,
+  .header .rows {
+    position: fixed !important;
+    top: 0 !important; 
+    left: 0 !important; 
+    right: 0 !important;
+    inset: 0 0 auto 0 !important;        /* inline inset 무력화 */
+    transform: none !important;           /* translate(0,0) 제거 */
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 100% !important;
+    height: var(--header-h, 60px) !important;
+    max-height: var(--header-h, 60px) !important;
+    min-height: var(--header-h, 60px) !important;
+    padding: 0 15px !important;
+
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    background-image: none !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,.1) !important;
+    z-index: 99999 !important;
+  }
+
+  /* 헤더 위 레이어(어두운 띠) 차단 */
+  #header::before,
+  #header::after,
+  .header::before,
+  .header::after,
+  .header .header_overlay,
+  .header .header_bg,
+  .header_in::before,
+  .header_in::after{
+    display: none !important;
+    content: none !important;
+    background: transparent !important;
+    background-image: none !important;
+  }
+  
+  /* 로고 SVG를 검은색으로 변경 */
+  #header .logo img,
+  .header .logo img,
+  #header .logo svg,
+  .header .logo svg {
+    filter: brightness(0) !important; /* SVG를 검은색으로 변경 */
+  }
+  
+  /* SVG 내부 path도 검은색으로 */
+  #header .logo svg path,
+  .header .logo svg path,
+  #header .logo svg *,
+  .header .logo svg * {
+    fill: #000000 !important;
+    stroke: #000000 !important;
+  }
+  
+  /* 햄버거 메뉴 검은색으로 변경 (흰 배경에서 보이도록) */
+  #header .burger .burger_btn span,
+  .header .burger .burger_btn span,
+  .burger_btn span,
+  #header .burger .burger_btn span::before,
+  .header .burger .burger_btn span::before,
+  .burger_btn span::before,
+  #header .burger .burger_btn span::after,
+  .header .burger .burger_btn span::after,
+  .burger_btn span::after {
+    background: #000000 !important;
+    background-color: #000000 !important;
+  }
+}
