@@ -436,11 +436,12 @@ table thead, th {
 </style>
 
 <script>
-$(document).on('click', 'a', function() {
-  var href = $(this).attr('href');
-  href += (href.indexOf('?') == -1 ? '?' : '&') + 'designkits=1';
-  $(this).attr('href', href);
-});
+// designkits 파라미터 추가 코드 비활성화
+// $(document).on('click', 'a', function() {
+//   var href = $(this).attr('href');
+//   href += (href.indexOf('?') == -1 ? '?' : '&') + 'designkits=1';
+//   $(this).attr('href', href);
+// });
 </script>
 
 <!-- 100% 배경이미지 때문에 사용 -->
@@ -571,40 +572,40 @@ $(function() {
                                             </ul>
                 </li>
                                 <li class="list02">
-                    <a class="list" href="blog-details-1.html">주름/보톡스</a>
+                    <a class="list" href="dist/botox.html">주름/보톡스</a>
                     <ul class="sub_ul2">
-                                                <li><a href="blog-details-1.html">보톡스</a></li>
-                                                <li><a href="blog-details-2.html">제오민</a></li>
+                                                <li><a href="dist/botox.html">보톡스</a></li>
+                                                <li><a href="dist/jeomin.html">제오민</a></li>
                                             </ul>
                 </li>
                                 <li class="list03">
-                    <a class="list" href="blog-details-3.html">볼륨/리프팅</a>
+                    <a class="list" href="dist/filler.html">볼륨/리프팅</a>
                     <ul class="sub_ul3">
-                                                <li><a href="blog-details-3.html">필러</a></li>
-                                                <li><a href="blog-details-4.html">스킨부스터</a></li>
-                                                <li><a href="blog-details-5.html">리프팅</a></li>
+                                                <li><a href="dist/filler.html">필러</a></li>
+                                                <li><a href="dist/skinbooster.html">스킨부스터</a></li>
+                                                <li><a href="dist/lifting.html">리프팅</a></li>
                                             </ul>
                 </li>
                                 <li class="list04">
-                    <a class="list" href="blog-details-6.html">피부케어</a>
+                    <a class="list" href="dist/acne.html">피부케어</a>
                     <ul class="sub_ul4">
-                                                <li><a href="blog-details-6.html">여드름치료</a></li>
-                                                <li><a href="blog-details-7.html">필링</a></li>
+                                                <li><a href="dist/acne.html">여드름치료</a></li>
+                                                <li><a href="dist/peeling.html">필링</a></li>
                                             </ul>
                 </li>
                                 <li class="list05">
-                    <a class="list" href="blog-details-8.html">제거시술</a>
+                    <a class="list" href="dist/mole.html">제거시술</a>
                     <ul class="sub_ul5">
-                                                <li><a href="blog-details-8.html">점</a></li>
-                                                <li><a href="blog-details-9.html">비립종</a></li>
-                                                <li><a href="blog-details-10.html">문신제거</a></li>
+                                                <li><a href="dist/mole.html">점</a></li>
+                                                <li><a href="dist/milia.html">비립종</a></li>
+                                                <li><a href="dist/tattoo.html">문신제거</a></li>
                                             </ul>
                 </li>
                                 <li class="list06">
-                    <a class="list" href="blog-details-11.html">바디케어</a>
+                    <a class="list" href="dist/hair-removal.html">바디케어</a>
                     <ul class="sub_ul6">
-                                                <li><a href="blog-details-11.html">제모</a></li>
-                                                <li><a href="blog-details-12.html">다이어트</a></li>
+                                                <li><a href="dist/hair-removal.html">제모</a></li>
+                                                <li><a href="dist/diet.html">다이어트</a></li>
                                             </ul>
                 </li>
                                 <li class="list07">
@@ -1191,7 +1192,7 @@ $(function() {
                     <h2>CONTACT US</h2>
                     <p>미소가 피어나는 곳, 미소핀의원에서 건강한 아름다움을 만나보세요.</p>
                     <form class="consult" name="fmain_form" method="post" action="/sh_img/ft/footer_update.php" autocomplete="off" onsubmit="return fmain_submit(this);">
-                        <input type="hidden" name="form_url" value="/index.php?device=pc&designkits=1" />
+                        <input type="hidden" name="form_url" value="/index.php?device=pc" />
                         <div class="p_info">
                             <ul class="input_01">
                                 <li><label for="wr_name">이름</label><input class="sh_input" type="text" name="wr_name" id="wr_name" placeholder="이름" oninput="korean_ck(this)" required maxlength="20"></li>

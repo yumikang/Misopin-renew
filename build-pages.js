@@ -14,8 +14,106 @@ const config = {
             content: "treatments/botox.html",
             output: "botox.html",
             banner_bg: "/images/banners/treatment-banner.jpg"
+        },
+        {
+            name: "jeomin",
+            title: "제오민",
+            category: "주름/탄력",
+            template: "treatment-master",
+            content: "treatments/jeomin.html",
+            output: "jeomin.html",
+            banner_bg: "/images/banners/treatment-banner.jpg"
+        },
+        {
+            name: "filler",
+            title: "필러",
+            category: "볼륨/리프팅",
+            template: "treatment-master",
+            content: "treatments/filler.html",
+            output: "filler.html",
+            banner_bg: "/images/banners/treatment-banner.jpg"
+        },
+        {
+            name: "skinbooster",
+            title: "스킨부스터",
+            category: "볼륨/리프팅",
+            template: "treatment-master",
+            content: "treatments/skinbooster.html",
+            output: "skinbooster.html",
+            banner_bg: "/images/banners/treatment-banner.jpg"
+        },
+        {
+            name: "lifting",
+            title: "리프팅",
+            category: "볼륨/리프팅",
+            template: "treatment-master",
+            content: "treatments/lifting.html",
+            output: "lifting.html",
+            banner_bg: "/images/banners/treatment-banner.jpg"
+        },
+        {
+            name: "acne",
+            title: "여드름치료",
+            category: "피부케어",
+            template: "treatment-master",
+            content: "treatments/acne.html",
+            output: "acne.html",
+            banner_bg: "/images/banners/treatment-banner.jpg"
+        },
+        {
+            name: "peeling",
+            title: "필링",
+            category: "피부케어",
+            template: "treatment-master",
+            content: "treatments/peeling.html",
+            output: "peeling.html",
+            banner_bg: "/images/banners/treatment-banner.jpg"
+        },
+        {
+            name: "mole",
+            title: "점",
+            category: "제거시술",
+            template: "treatment-master",
+            content: "treatments/mole.html",
+            output: "mole.html",
+            banner_bg: "/images/banners/treatment-banner.jpg"
+        },
+        {
+            name: "milia",
+            title: "비립종",
+            category: "제거시술",
+            template: "treatment-master",
+            content: "treatments/milia.html",
+            output: "milia.html",
+            banner_bg: "/images/banners/treatment-banner.jpg"
+        },
+        {
+            name: "tattoo",
+            title: "문신제거",
+            category: "제거시술",
+            template: "treatment-master",
+            content: "treatments/tattoo.html",
+            output: "tattoo.html",
+            banner_bg: "/images/banners/treatment-banner.jpg"
+        },
+        {
+            name: "hair-removal",
+            title: "제모",
+            category: "바디케어",
+            template: "treatment-master",
+            content: "treatments/hair-removal.html",
+            output: "hair-removal.html",
+            banner_bg: "/images/banners/treatment-banner.jpg"
+        },
+        {
+            name: "diet",
+            title: "다이어트",
+            category: "바디케어",
+            template: "treatment-master",
+            content: "treatments/diet.html",
+            output: "diet.html",
+            banner_bg: "/images/banners/treatment-banner.jpg"
         }
-        // 추가 페이지는 여기에 정의
     ]
 };
 
@@ -71,7 +169,7 @@ function buildPage(pageConfig) {
     const header = loadTemplate('master/header.html');
     const footer = loadTemplate('master/footer.html');
     const quickmenu = loadTemplate('master/quickmenu.html');
-    const subBanner = loadTemplate('components/sub-banner.html');
+    const subBanner = loadTemplate('master/sub-banner.html');
     
     // 컨텐츠 로드
     const content = loadContent(pageConfig.content);
