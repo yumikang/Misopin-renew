@@ -187,6 +187,9 @@ var g5_cookie_domain = "";
 <script src="https://skincare1007.shiningcorp.com/sh_img/js/feather.min.js"></script>
 <script src="https://skincare1007.shiningcorp.com/sh_img/hd/top_menu/script.js?ver=171222"></script>
 <script src="https://skincare1007.shiningcorp.com/js/swiper/swiper.min.js?ver=171222"></script>
+<!-- Misopin 히어로 애니메이션 CSS -->
+<link rel="stylesheet" href="Misopin/css/gsap-hero-animation.css">
+<link rel="stylesheet" href="Misopin/index-custom.css">
 </head>
 <body>
 
@@ -644,50 +647,86 @@ $(function() {
 <!-- 메인 비주얼 -->
 <div id="main_banner">
 	
-<div id="MainVisual">
-    <div class="tit">
-        <h2 data-aos="fade-up" style="color: var(--misopin-primary);">MISOPIN CLINIC</h2>
-        <h1 class="pl" data-aos="fade-up"><span>미소가 피어나는 곳</span>
-            premium anti-aging clinic</h1>
-        <div class="controller" data-aos="fade-up" data-aos-offset="-100">
-            <div class="pager"></div>
-            <div class="nav_container">
-                <div class="prev_nav">
-                    <i data-feather="chevron-left"></i>
-                </div>
-                <div class="next_nav">
-                    <i data-feather="chevron-right"></i>
-                </div>
-            </div>
-        </div>
+<div id="MainVisual" style="position: relative; height: 100vh; background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%); overflow: hidden; display: flex; align-items: center; justify-content: center;">
+    <!-- MISOPIN 텍스트 -->
+    <div class="h1_mst h1_mst01">
+        <div class="ltr">M</div>
+        <div class="ltr">I</div>
+        <div class="ltr">S</div>
+        <div class="ltr">O</div>
+        <div class="ltr">P</div>
+        <div class="ltr">I</div>
+        <div class="ltr">N</div>
     </div>
-    <div class="swiper-container main_slide" data-aos="fade-in">
-        <ul class="swiper-wrapper">
-            <li class="swiper-slide bg01"></li>
-            <li class="swiper-slide bg02"></li>
-            <li class="swiper-slide bg03"></li>
-        </ul>
+    <!-- CLINIC 텍스트 -->
+    <div class="h1_mst h1_mst02">
+        <div class="ltr">C</div>
+        <div class="ltr">L</div>
+        <div class="ltr">I</div>
+        <div class="ltr">N</div>
+        <div class="ltr">I</div>
+        <div class="ltr">C</div>
+    </div>
+    <!-- 서브 텍스트 -->
+    <div class="subtitle" style="position: absolute; left: 50%; top: 60%; transform: translateX(-50%); text-align: center; opacity: 0;">
+        <h2 style="font-size: 24px; color: #9F988C; font-weight: 300;">미소가 피어나는 곳</h2>
     </div>
 </div>
 
+<!-- GSAP 라이브러리 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
 <script>
-    const main_slide = new Swiper("#MainVisual .main_slide", {
-        loop:true,
-        speed:1200,
-        effect:"fade",
-        pagination:{
-            el:"#MainVisual .pager",
-            type: 'fraction'
-        },
-        navigation:{
-            prevEl:"#MainVisual .prev_nav",
-            nextEl:"#MainVisual .next_nav",
-        },
-        autoplay: {
-            delay: 3000,
-            disableOnInteraction: false
+    // GSAP 히어로 애니메이션
+    window.addEventListener('load', function() {
+        if (typeof gsap !== 'undefined') {
+            // MISOPIN 텍스트 애니메이션
+            gsap.fromTo('.h1_mst01 .ltr', 
+                { 
+                    opacity: 0, 
+                    y: 50,
+                    scale: 0.8
+                },
+                { 
+                    opacity: 1, 
+                    y: 0,
+                    scale: 1,
+                    duration: 1.2,
+                    stagger: 0.1,
+                    ease: "power2.out",
+                    delay: 0.5
+                }
+            );
+            
+            // CLINIC 텍스트 애니메이션
+            gsap.fromTo('.h1_mst02 .ltr', 
+                { 
+                    opacity: 0, 
+                    y: 50,
+                    scale: 0.8
+                },
+                { 
+                    opacity: 1, 
+                    y: 0,
+                    scale: 1,
+                    duration: 1.2,
+                    stagger: 0.1,
+                    ease: "power2.out",
+                    delay: 1
+                }
+            );
+            
+            // 서브타이틀 애니메이션
+            gsap.to('.subtitle', {
+                opacity: 1,
+                y: -20,
+                duration: 1,
+                ease: "power2.out",
+                delay: 2
+            });
         }
-    })
+    });
+    
 </script></div>
 <section id="sh_section">
 	<article id="atc01">
