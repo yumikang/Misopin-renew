@@ -1,0 +1,251 @@
+/* ========================================
+   skincare-hero-custom.css
+   생성일: 2025-01-08
+   목적: skincare-complete.html 히어로 섹션 커스터마이징
+   ======================================== */
+
+/* ========================================
+   1. 폰트 임포트
+   ======================================== */
+@font-face {
+    font-family: 'OneStoreMobileGothicTitleFont';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-Title.woff') format('woff');
+    font-weight: normal;
+    font-display: swap;
+}
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&display=swap');
+
+/* ========================================
+   2. MISOPIN CLINIC 텍스트 스타일 오버라이드
+   ======================================== */
+
+/* 메인 텍스트 컨테이너 - 크기 조정 */
+#MainVisual .h1_mst {
+    font-family: 'OneStoreMobileGothicTitleFont', 'Helvetica', sans-serif !important;
+    font-size: 140px !important;  /* 180px → 140px로 축소 */
+    font-weight: 600 !important;  /* 좀 더 두껍게 */
+    letter-spacing: 0.12em !important;  /* 자간 넓게 */
+}
+
+/* MISOPIN 위치 미세 조정 */
+#MainVisual .h1_mst01 {
+    top: 40% !important;  /* 42% → 40% 살짝 위로 */
+}
+
+/* CLINIC 위치 미세 조정 */
+#MainVisual .h1_mst02 {
+    top: 52% !important;  /* 55% → 52% 살짝 위로 */
+}
+
+/* 각 글자 스타일 개선 */
+#MainVisual .h1_mst .ltr {
+    font-weight: 700 !important;
+    text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3) !important;  /* 그림자 추가로 가독성 향상 */
+}
+
+/* ========================================
+   3. 서브타이틀 "미소가 피어나는 곳" 위치 조정
+   ======================================== */
+
+#MainVisual .subtitle {
+    top: 62% !important;  /* 65% → 62% 위로 이동 */
+}
+
+#MainVisual .subtitle h2 {
+    font-size: 24px !important;  /* 22px → 24px 크기 증가 */
+    font-weight: 500 !important;
+    letter-spacing: 0.3em !important;  /* 자간 넓게 */
+    text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5) !important;
+    font-family: 'Noto Sans KR', sans-serif !important;
+}
+
+/* ========================================
+   4. "피부과 전문의" 텍스트 색상 개선
+   ======================================== */
+
+.opening_hours .cols01 .nm {
+    font-size: 26px !important;  /* 살짝 크게 */
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7) !important;
+}
+
+.opening_hours .cols01 .nm .br {
+    color: #d6b871 !important;  /* 골드 색상 */
+    font-weight: 700 !important;  /* 굵게 */
+    font-size: 28px !important;  /* 조금 더 크게 */
+    margin-top: 5px !important;
+    display: inline-block !important;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8) !important;
+}
+
+/* ========================================
+   5. 진료시간 및 스크롤 안내 텍스트
+   ======================================== */
+
+.opening_hours .everyday p {
+    font-size: 20px !important;
+    font-weight: 500 !important;
+    text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.6) !important;
+    color: #ffffff !important;
+}
+
+.opening_hours .scr p {
+    font-size: 13px !important;
+    font-weight: 400 !important;
+    letter-spacing: 3px !important;
+    color: rgba(255, 255, 255, 0.9) !important;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* ========================================
+   6. 배경 이미지 조정
+   ======================================== */
+
+#MainVisual .bg_ms {
+    filter: brightness(0.85) contrast(1.05) !important;  /* 더 밝게 조정 */
+}
+
+/* ========================================
+   7. 반응형 디자인
+   ======================================== */
+
+/* 태블릿 (1024px 이하) */
+@media (max-width: 1024px) {
+    #MainVisual .h1_mst {
+        font-size: 100px !important;  /* 120px → 100px */
+    }
+    
+    #MainVisual .h1_mst01 {
+        top: 38% !important;
+    }
+    
+    #MainVisual .h1_mst02 {
+        top: 50% !important;
+    }
+    
+    #MainVisual .subtitle {
+        top: 60% !important;
+    }
+    
+    #MainVisual .subtitle h2 {
+        font-size: 20px !important;
+    }
+    
+    .opening_hours .cols01 .nm {
+        font-size: 22px !important;
+    }
+    
+    .opening_hours .cols01 .nm .br {
+        font-size: 24px !important;
+    }
+}
+
+/* 모바일 (768px 이하) */
+@media (max-width: 768px) {
+    #MainVisual .h1_mst {
+        font-size: 50px !important;  /* 60px → 50px */
+        letter-spacing: 0.05em !important;
+    }
+    
+    #MainVisual .h1_mst01 {
+        top: 36% !important;
+    }
+    
+    #MainVisual .h1_mst02 {
+        top: 46% !important;
+    }
+    
+    #MainVisual .subtitle {
+        top: 56% !important;
+    }
+    
+    #MainVisual .subtitle h2 {
+        font-size: 16px !important;
+        letter-spacing: 0.2em !important;
+    }
+    
+    .opening_hours .cols01 .nm {
+        font-size: 18px !important;
+    }
+    
+    .opening_hours .cols01 .nm .br {
+        font-size: 20px !important;
+    }
+    
+    .opening_hours .everyday p {
+        font-size: 16px !important;
+    }
+    
+    .opening_hours .scr p {
+        font-size: 11px !important;
+    }
+}
+
+/* 소형 모바일 (480px 이하) */
+@media (max-width: 480px) {
+    #MainVisual .h1_mst {
+        font-size: 40px !important;
+    }
+    
+    #MainVisual .subtitle h2 {
+        font-size: 14px !important;
+    }
+    
+    .opening_hours .cols01 .nm {
+        font-size: 16px !important;
+    }
+    
+    .opening_hours .cols01 .nm .br {
+        font-size: 18px !important;
+    }
+}
+
+/* ========================================
+   8. 애니메이션 효과 개선
+   ======================================== */
+
+/* 호버 효과 추가 */
+#MainVisual .h1_mst .ltr {
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+#MainVisual .h1_mst:hover .ltr {
+    transform: translateY(-3px) scale(1.02);
+}
+
+/* 서브타이틀 부드러운 등장 */
+#MainVisual .subtitle {
+    animation: fadeInUp 1.5s ease-out 2s both;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+/* ========================================
+   9. 추가 시각 효과
+   ======================================== */
+
+/* MISOPIN CLINIC 텍스트에 subtle glow 효과 */
+#MainVisual .h1_mst .ltr {
+    text-shadow: 
+        2px 4px 8px rgba(0, 0, 0, 0.3),
+        0 0 30px rgba(255, 255, 255, 0.1),
+        0 0 60px rgba(255, 255, 255, 0.05) !important;
+}
+
+/* 피부과 전문의 강조 효과 */
+.opening_hours .cols01 .nm .br {
+    background: linear-gradient(90deg, #FFD700, #FFA500);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.8));
+}

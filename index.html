@@ -152,14 +152,12 @@
         box-shadow: inset 0 0 0 3px rgba(200, 200, 200, 0.5);
         background-color: #fff;
         cursor: pointer;
-        opacity: 0;
-        visibility: hidden;
-        transition: opacity 0.3s, visibility 0.3s;
+        opacity: 0.3;
+        transition: opacity 0.3s;
     }
     
     #quickList .progress-wrap.active {
         opacity: 1;
-        visibility: visible;
     }
     
     #quickList .progress-wrap span {
@@ -167,11 +165,36 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    #quickList .progress-wrap span svg {
+        width: 20px;
+        height: 20px;
+        stroke: #999;
+        stroke-width: 1.5px;
+    }
+    
+    #quickList .progress-wrap:hover span svg {
+        stroke: var(--misopin-primary);
     }
     
     /* 프로그레스 서클 */
-    .progress-wrap svg path {
+    #quickList .progress-wrap svg.progress-circle {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    
+    #quickList .progress-wrap svg.progress-circle path {
         stroke: var(--misopin-primary) !important;
+        stroke-width: 4;
+        fill: none;
+        transition: all 0.2s;
     }
     
     /* 이벤트 버튼 스타일 */
@@ -781,35 +804,54 @@
         
         // 퀵메뉴 스크롤 프로그레스
         $(document).ready(function() {
-            scrollTop();
+            // 스크롤 투 탑 기능 초기화
+            initScrollTop();
         });
         
-        function scrollTop(){
-            var progressPath = document.querySelector('.progress-wrap path');
+        function initScrollTop() {
+            var progressWrap = document.querySelector('#quickList .progress-wrap');
+            var progressPath = document.querySelector('#quickList .progress-wrap path');
+            
+            if (!progressWrap || !progressPath) {
+                console.log('Progress wrap or path not found');
+                return;
+            }
+            
             var pathLength = progressPath.getTotalLength();
             progressPath.style.transition = progressPath.style.WebkitTransition = 'none';
             progressPath.style.strokeDasharray = pathLength + ' ' + pathLength;
             progressPath.style.strokeDashoffset = pathLength;
             progressPath.getBoundingClientRect();
             progressPath.style.transition = progressPath.style.WebkitTransition = 'stroke-dashoffset 10ms linear';
+            
+            // 스크롤 프로그레스 업데이트
             var updateProgress = function() {
                 var scroll = $(window).scrollTop();
                 var height = $(document).height() - $(window).height();
-                var progress = pathLength - scroll * pathLength / height;
-                progressPath.style.strokeDashoffset = progress;
+                if (height > 0) {
+                    var progress = pathLength - (scroll * pathLength / height);
+                    progressPath.style.strokeDashoffset = progress;
+                }
             };
+            
             updateProgress();
-            $(window).scroll(updateProgress);
-            jQuery(window).on('scroll', function() {
-                if (jQuery(this).scrollTop() > 50) {
-                    jQuery('.progress-wrap').addClass('active');
+            
+            // 스크롤 이벤트
+            $(window).on('scroll', function() {
+                updateProgress();
+                
+                if ($(this).scrollTop() > 50) {
+                    $('#quickList .progress-wrap').addClass('active');
                 } else {
-                    jQuery('.progress-wrap').removeClass('active');
+                    $('#quickList .progress-wrap').removeClass('active');
                 }
             });
-            jQuery('.progress-wrap').on('click', function(event) {
+            
+            // 클릭 이벤트
+            $('#quickList .progress-wrap').on('click', function(event) {
                 event.preventDefault();
-                jQuery('html, body').animate({scrollTop: 0}, 550);
+                event.stopPropagation();
+                $('html, body').animate({scrollTop: 0}, 550);
                 return false;
             });
         }
