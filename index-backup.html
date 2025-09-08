@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex">
+    <title>미소핀의원 : The best luxury CLINIC</title>
+
+    <!-- 폰트 프리로드 -->
+    <link rel="preload" as="font" crossorigin="crossorigin" type="font/woff2" href="Misopin/fonts/SuisseIntl/SuisseIntl-Regular.woff2">
+    <link rel="preload" as="font" crossorigin="crossorigin" type="font/woff2" href="Misopin/fonts/Gallient/Gallient.woff2">
+
+    <!-- CSS 프리로드 -->
+    <link rel="preload" href="Misopin/css/lib.min.css" as="style">
+    <link rel="preload" href="Misopin/css/main.min.css" as="style">
+
+    <!-- JS 프리로드 -->
+    <link rel="preload" href="Misopin/js/jquery-3.6.0.min.js" as="script">
+    <link rel="preload" href="Misopin/js/main.min.js" as="script">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+    
+    <!-- 파비콘 -->
+    <link rel="icon" type="image/x-icon" href="Misopin/img/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="Misopin/img/favicon/apple-touch-icon.png">
+    
+    <meta name="description" content="미소핀의원 - 미소가 피어나는 곳">
+    <meta name="keywords" content="미소핀의원, 피부과, 성형외과, 미용시술">
+
+    <!-- CSS 파일들 -->
+    <link rel="stylesheet" href="Misopin/css/lib.min.css">
+    <link rel="stylesheet" href="Misopin/css/main.min.css">
+    <link rel="stylesheet" href="css/hero-animation.css">
+    <!-- clinic 템플릿 CSS 추가 -->
+    <link rel="stylesheet" href="https://skincare1007.shiningcorp.com/css/default.css?ver=171222">
+    <link rel="stylesheet" href="https://skincare1007.shiningcorp.com/sh_img/hd/r_quickmenu/style.css?ver=171222">
+    <link rel="stylesheet" href="https://skincare1007.shiningcorp.com/sh_img/hd/top_menu/style.css?ver=171222">
+    <link rel="stylesheet" href="https://skincare1007.shiningcorp.com/css/user.css?ver=171222">
+    
+    <!-- 폰트 스타일 -->
+    <style>
+    @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
+    @font-face {
+        font-family: 'NanumSquare';
+        src: url(//font.shiningcorp.com/css/font/NanumSquareR.eot);
+        src: url(//font.shiningcorp.com/css/font/NanumSquareR.eot?#iefix) format('embedded-opentype'),
+             url(//font.shiningcorp.com/css/font/NanumSquareR.woff) format('woff'),
+             url(//font.shiningcorp.com/css/font/NanumSquareR.ttf) format('truetype');
+    }
+    
+    /* 미소핀 통일된 색상 팔레트 */
+    :root {
+        /* 메인 색상 */
+        --misopin-primary: #9F988C;    /* 메인 브랜드 색상 */
+        --misopin-secondary: #87857E;  /* 보조 색상 */
+        --misopin-accent: #EFEDE5;     /* 강조 색상 */
+        
+        /* 배경 색상 */
+        --misopin-bg-main: #FFFFFF;    /* 메인 배경 */
+        --misopin-bg-light: #FAFAFA;   /* 연한 배경 */
+        --misopin-bg-accent: #EFEDE5;  /* 포인트 배경 */
+        
+        /* 텍스트 색상 */
+        --misopin-text-dark: #2C2C2C;  /* 진한 텍스트 */
+        --misopin-text-normal: #555555; /* 일반 텍스트 */
+        --misopin-text-light: #888888;  /* 연한 텍스트 */
+        --misopin-text-white: #FFFFFF;  /* 흰색 텍스트 */
+        
+        /* 테두리 색상 */
+        --misopin-border: #E0E0E0;     /* 일반 테두리 */
+        --misopin-border-light: #F0F0F0; /* 연한 테두리 */
+        
+        /* 그림자 */
+        --misopin-shadow: rgba(0,0,0,0.1);
+        --misopin-shadow-light: rgba(0,0,0,0.05);
+    }
+    
+    /* 퀵메뉴 스타일 */
+    #quickList {
+        position: fixed !important;
+        z-index: 9998 !important;
+        top: 50%;
+        right: 1.5%;
+        transform: translateY(-50%);
+        background-color: var(--misopin-bg-main) !important;
+        border: 1px solid var(--misopin-border-light) !important;
+    }
+    
+    #quickList .list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 10px;
+        max-width: 94px;
+        border-radius: 8px;
+        box-shadow: 4px 4px 20px rgba(17, 17, 17, 0.3);
+        background-color: #fff;
+    }
+    
+    #quickList .list li {
+        width: 100%;
+        list-style: none;
+    }
+    
+    #quickList .list li a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+        margin-bottom: 15px;
+        padding-bottom: 15px;
+        width: 100%;
+        border-bottom: 1px solid #e1e1e1;
+        text-decoration: none;
+        color: #111;
+    }
+    
+    #quickList .list li:last-child a {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        border-bottom: 0;
+    }
+    
+    #quickList .list li a:hover {
+        background-color: var(--misopin-bg-accent) !important;
+    }
+    
+    #quickList .kakao {
+        width: 23px;
+        height: 21px;
+        background: url('https://skincare1007.shiningcorp.com/sh_img/hd/r_quickmenu/kakao.png') no-repeat center / contain;
+    }
+    
+    #quickList .cate {
+        font-size: 13px;
+        font-weight: 500;
+        color: #111;
+    }
+    
+    #quickList .number {
+        margin-top: 5px;
+        font-size: 18px;
+        font-weight: 700;
+        color: #111;
+    }
+    
+    #quickList .progress-wrap {
+        position: relative;
+        margin: 10px auto 0;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        box-shadow: inset 0 0 0 3px rgba(200, 200, 200, 0.5);
+        background-color: #fff;
+        cursor: pointer;
+        opacity: 0.3;
+        transition: opacity 0.3s;
+    }
+    
+    #quickList .progress-wrap.active {
+        opacity: 1;
+    }
+    
+    #quickList .progress-wrap span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    #quickList .progress-wrap span svg {
+        width: 20px;
+        height: 20px;
+        stroke: #999;
+        stroke-width: 1.5px;
+    }
+    
+    #quickList .progress-wrap:hover span svg {
+        stroke: var(--misopin-primary);
+    }
+    
+    /* 프로그레스 서클 */
+    #quickList .progress-wrap svg.progress-circle {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    
+    #quickList .progress-wrap svg.progress-circle path {
+        stroke: var(--misopin-primary) !important;
+        stroke-width: 4;
+        fill: none;
+        transition: all 0.2s;
+    }
+    
+    /* 이벤트 버튼 스타일 */
+    .event {
+        background-color: var(--misopin-primary) !important;
+        border: 1px solid var(--misopin-primary) !important;
+        color: #fff !important;
+        padding: 8px 20px;
+        border-radius: 20px;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 500;
+        display: inline-block;
+        transition: all 0.3s ease;
+    }
+    
+    .event:hover {
+        background-color: var(--misopin-secondary) !important;
+        border-color: var(--misopin-secondary) !important;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    </style>
+    
+    <link rel="stylesheet" href="css/index-custom.css">
+
+    <!-- JavaScript 파일들 -->
+    <script src="https://skincare1007.shiningcorp.com/js/jquery-1.12.4.min.js"></script>
+    <script src="https://skincare1007.shiningcorp.com/js/jquery-migrate-1.4.1.min.js"></script>
+    <script src="https://skincare1007.shiningcorp.com/js/common.js?ver=171222"></script>
+    <script defer src="Misopin/js/main.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    
+    <!-- GSAP 히어로 애니메이션 스크립트 -->
+    <script>
+        window.addEventListener('load', function() {
+            if (typeof gsap !== 'undefined') {
+                // MISOPIN 텍스트 애니메이션
+                gsap.fromTo('.h1_mst01 .ltr', 
+                    { 
+                        opacity: 0, 
+                        y: 50,
+                        scale: 0.8
+                    },
+                    { 
+                        opacity: 1, 
+                        y: 0,
+                        scale: 1,
+                        duration: 1.2,
+                        stagger: 0.1,
+                        ease: "power2.out",
+                        delay: 0.5
+                    }
+                );
+                
+                // CLINIC 텍스트 애니메이션
+                gsap.fromTo('.h1_mst02 .ltr', 
+                    { 
+                        opacity: 0, 
+                        y: 50,
+                        scale: 0.8
+                    },
+                    { 
+                        opacity: 1, 
+                        y: 0,
+                        scale: 1,
+                        duration: 1.2,
+                        stagger: 0.1,
+                        ease: "power2.out",
+                        delay: 1
+                    }
+                );
+
+                // 서브타이틀 애니메이션
+                gsap.to('.subtitle', {
+                    opacity: 1,
+                    y: -20,
+                    duration: 1,
+                    ease: "power2.out",
+                    delay: 2
+                });
+            }
+        });
+        
+        // ScrollTrigger 정리
+        window.addEventListener('load', function() {
+            if (typeof ScrollTrigger !== 'undefined') {
+                ScrollTrigger.getAll().forEach(trigger => {
+                    if (trigger.vars && trigger.vars.trigger) {
+                        const triggerEl = trigger.vars.trigger;
+                        const triggerStr = typeof triggerEl === 'string' ? triggerEl : 
+                                          (triggerEl.className || triggerEl.id || '');
+                        
+                        if (triggerStr.includes('fx_top_text') || 
+                            triggerStr.includes('#sspm') ||
+                            triggerStr.includes('bg_full_logo') ||
+                            triggerStr.includes('pin-spacer')) {
+                            trigger.kill();
+                        }
+                    }
+                });
+                
+                ScrollTrigger.refresh();
+            }
+            
+            // 불필요한 요소들 제거
+            document.querySelectorAll('.pin-spacer').forEach(spacer => {
+                spacer.style.cssText = 'height: auto !important; padding: 0 !important; margin: 0 !important;';
+            });
+            
+            const gone = ['.fx_top_text', '.h1_mst02_chng', '.bg_full_logo', '.txt_bf_btm', '.btn_bf_btm'];
+            gone.forEach(sel => document.querySelectorAll(sel).forEach(el => el.remove()));
+        });
+    </script>
+    
+    <!-- 스타일 오버라이드 -->
+    <style>
+        /* 히어로 섹션 배경 이미지 설정 */
+        .main_screen .bg_ms {
+            background-image: url('img/hero-background.webp') !important;
+            background-size: cover !important;
+            background-position: center !important;
+        }
+        
+        /* 페이지별 스타일 조정 */
+        body {
+            background: #f4f5f7 !important;
+        }
+        
+        /* 네비게이션 메뉴 스타일 */
+        .menu_list {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .menu_list li {
+            list-style: none;
+            position: relative;
+        }
+        
+        .menu_list li a {
+            color: #333 !important;
+            font-size: 16px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .menu_list li a:hover {
+            color: #555 !important;
+            opacity: 0.8;
+        }
+        
+        /* 드롭다운 메뉴 */
+        .has-sub .sub-menu {
+            position: absolute;
+            top: calc(100% + 0.2rem);
+            left: 50%;
+            transform: translateX(-50%) translateY(-8px);
+            min-width: 200px;
+            background: #fff;
+            border: 1px solid #e5e5e5;
+            border-radius: 8px;
+            padding: 10px;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.2s ease;
+            z-index: 1000;
+        }
+        
+        .has-sub:hover .sub-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+        }
+        
+        .sub-menu li a {
+            display: block;
+            padding: 10px 15px;
+            color: #333 !important;
+            font-size: 14px;
+            font-weight: 600;
+            border-radius: 6px;
+            transition: all 0.15s ease;
+        }
+        
+        .sub-menu li a:hover {
+            background-color: #f8f9fa;
+            color: #97b3d8 !important;
+        }
+        
+        /* 드롭다운 화살표 */
+        .has-sub > a::after {
+            content: '';
+            display: inline-block;
+            width: 0;
+            height: 0;
+            margin-left: 0.5rem;
+            border-left: 4px solid transparent;
+            border-right: 4px solid transparent;
+            border-top: 4px solid currentColor;
+            transition: transform 0.2s ease;
+        }
+        
+        .has-sub:hover > a::after {
+            transform: rotate(180deg);
+        }
+        
+        /* 헤더 스타일 */
+        #header {
+            background: #fff;
+            border-bottom: 1px solid #e5e5e5;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 퀵메뉴 시작 -->
+    <div id="quickList">
+        <ul class="list">
+            <li>
+                <a href="http://pf.kakao.com/_xjxeLxj" target="_blank">
+                    <div class="kakao"></div>
+                    <div class="cate">카톡상담</div>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/misopin_clinic" target="_blank">
+                    <div class="instagram" style="width: 24px; height: 24px; margin: 0 auto 5px; background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iIzNDMUUxRSIgZD0iTTcuOCAyQTUuOCA1LjggMCAwIDAgMiA3Ljh2OC40QTUuOCA1LjggMCAwIDAgNy44IDIyaDguNGE1LjggNS44IDAgMCAwIDUuOC01LjhWNy44QTUuOCA1LjggMCAwIDAgMTYuMiAySDcuOHptMCAxLjloOC40YTMuOSAzLjkgMCAwIDEgMy45IDMuOXY4LjRhMy45IDMuOSAwIDAgMS0zLjkgMy45SDcuOGEzLjkgMy45IDAgMCAxLTMuOS0zLjlWNy44YTMuOSAzLjkgMCAwIDEgMy45LTMuOXpNMTcuMjUgNS41YTEuMjUgMS4yNSAwIDEgMCAwIDIuNSAxLjI1IDEuMjUgMCAwIDAgMC0yLjV6TTEyIDdhNSA1IDAgMSAwIDAgMTAgNSA1IDAgMCAwIDAtMTB6bTAgMS45YTMuMSAzLjEgMCAxIDEgMCA2LjIgMy4xIDMuMSAwIDAgMSAwLTYuMnoiLz48L3N2Zz4=') center/contain no-repeat;"></div>
+                    <div class="cate">인스타그램</div>
+                </a>
+            </li>
+            <li>
+                <a href="board-page.html">
+                    <i data-feather="gift"></i>
+                    <div class="cate">이벤트</div>
+                </a>
+            </li>
+            <li>
+                <a href="calendar-page.html">
+                    <i data-feather="edit-3"></i>
+                    <div class="cate">예약하기</div>
+                </a>
+            </li>
+            <li>
+                <a href="tel:061-277-1001">
+                    <i data-feather="phone-call"></i>
+                    <div class="cate">전화상담</div>
+                    <div class="number pl">061-277-1001</div>
+                </a>
+            </li>
+        </ul>
+        <div class="progress-wrap">
+            <span><i data-feather="arrow-up"></i></span>
+            <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"></path>
+            </svg>
+        </div>
+    </div>
+    <!-- 퀵메뉴 끝 -->
+    
+    <div class="scroller">
+        <div id="wrap">
+            <div id="wrapper">
+                <!-- 헤더 시작 -->
+                <header id="sh_hd">
+                    <div id="sh_hd_wrapper">
+                        <div id="top_nav_wrap">
+                            <!-- 로고 -->
+                            <div id="top_logo">
+                                <a href="index.html"><img src="img/미소핀로고.svg" alt="미소핀의원" style="height: 50px;" /></a>
+                            </div>
+                            <div class="right">
+                                <nav id="r_menu">
+                                    <!-- 상단메뉴 -->
+                                    <ul id="top_nav">   
+                                        <li class="list01">
+                                            <a class="list" href="dist/about.html">미소핀 소개</a>
+                                            <ul class="sub_ul1">
+                                                <li><a href="dist/about.html">병원 소개</a></li>
+                                                <li><a href="board-page.html">공지 및 이벤트</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="list02">
+                                            <a class="list" href="dist/botox.html">주름/보톡스</a>
+                                            <ul class="sub_ul2">
+                                                <li><a href="dist/botox.html">보톡스</a></li>
+                                                <li><a href="dist/jeomin.html">제오민</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="list03">
+                                            <a class="list" href="dist/filler.html">볼륨/리프팅</a>
+                                            <ul class="sub_ul3">
+                                                <li><a href="dist/filler.html">필러</a></li>
+                                                <li><a href="dist/skinbooster.html">스킨부스터</a></li>
+                                                <li><a href="dist/lifting.html">리프팅</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="list04">
+                                            <a class="list" href="dist/acne.html">피부케어</a>
+                                            <ul class="sub_ul4">
+                                                <li><a href="dist/acne.html">여드름치료</a></li>
+                                                <li><a href="dist/peeling.html">필링</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="list05">
+                                            <a class="list" href="dist/mole.html">제거시술</a>
+                                            <ul class="sub_ul5">
+                                                <li><a href="dist/mole.html">점</a></li>
+                                                <li><a href="dist/milia.html">비립종</a></li>
+                                                <li><a href="dist/tattoo.html">문신제거</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="list06">
+                                            <a class="list" href="dist/hair-removal.html">바디케어</a>
+                                            <ul class="sub_ul6">
+                                                <li><a href="dist/hair-removal.html">제모</a></li>
+                                                <li><a href="dist/diet.html">다이어트</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="list07">
+                                            <a class="list" href="calendar-page.html">상담 예약</a>
+                                            <ul class="sub_ul7">
+                                                <li><a href="calendar-page.html">온라인 상담</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <a class="event" href="board-page.html">9월 이벤트</a>
+                        </div>
+                    </div>
+                </header>
+                <!-- 헤더 끝 -->
+
+                <!-- 메인 콘텐츠 시작 -->
+                <main class="main_content">
+                    <!-- 히어로 섹션 시작 -->
+                    <div class="main_screen"> 
+                    <div class="bg_ms" style="background-image: url(img/hero-background.webp)"></div> 
+                    
+                    <div class="opening_hours">
+                        <div class="container">
+                            <div class="rows">
+                                <div class="cols cols01">
+                                    <p class="nm">아름다움을 디자인하는
+                                        <span class="br">피부과 전문의</span>
+                                    </p>
+                                </div>
+                                <div class="cols cols02">
+                                    <div class="everyday">
+                                        <p>월-토요일 8:30AM-7:30PM</p>
+                                    </div>
+                                    <div class="scr">
+                                        <p>scroll to explore</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- MISOPIN CLINIC 텍스트 -->
+                    <div class="h1_mst h1_mst01">
+                        <div class="ltr">M</div>
+                        <div class="ltr">I</div>
+                        <div class="ltr">S</div>
+                        <div class="ltr">O</div>
+                        <div class="ltr">P</div>
+                        <div class="ltr">I</div>
+                        <div class="ltr">N</div>
+                    </div>
+                    <div class="h1_mst h1_mst02">
+                        <div class="ltr">C</div>
+                        <div class="ltr">L</div>
+                        <div class="ltr">I</div>
+                        <div class="ltr">N</div>
+                        <div class="ltr">I</div>
+                        <div class="ltr">C</div>
+                    </div>
+                    
+                    <!-- 서브타이틀 -->
+                    <div class="subtitle">
+                        <h2>미소가 피어나는 곳</h2>
+                    </div>
+                </div>
+                <!-- 히어로 섹션 끝 -->
+
+                </main>
+                <!-- 메인 콘텐츠 끝 -->
+
+                <!-- 푸터 시작 -->
+                <footer id="sh_ft">
+                    <div id="sh_ft_wrapper">
+                        <div class="contact">
+                            <div class="top">
+                                <div class="form_area">
+                                    <h2>CONTACT US</h2>
+                                    <p>미소가 피어나는 곳, 미소핀의원에서 건강한 아름다움을 만나보세요.</p>
+                                    <form class="consult" name="fmain_form" method="post" action="/sh_img/ft/footer_update.php" autocomplete="off" onsubmit="return fmain_submit(this);">
+                                        <input type="hidden" name="form_url" value="/index.php?device=pc" />
+                                        <div class="p_info">
+                                            <ul class="input_01">
+                                                <li><label for="wr_name">이름</label><input class="sh_input" type="text" name="wr_name" id="wr_name" placeholder="이름" oninput="korean_ck(this)" required maxlength="20"></li>
+                                            </ul>
+                                            <ul class="input_02">
+                                                <li><label for="sh_phone">연락처</label><input class="sh_input" type="text" name="sh_phone" id="sh_phone" oninput="Num_ck(this)" placeholder="연락처" required ></li>
+                                            </ul>
+                                        </div>
+                                        <ul class="input_03">
+                                            <li>
+                                                <label for="wr_content">문의내용</label>
+                                                <textarea class="sh_input inc_input" name="wr_content" id="wr_content" placeholder="문의내용"></textarea>
+                                            </li>
+                                        </ul>
+                                        <div class="prv_area">
+                                            <div class="send_btn"><button type="submit">상담신청</button></div>
+                                            <div class="consent"><a href="javascript:void(0)" onclick="window.open('/sh_page/sh_privacy.php', 'window', 'width=600; height=800; left=150; top=0; scrollbars=no');">개인정보 수집 · 이용에 동의</a> <label for="prv_check">동의</label><input type="checkbox" class="ck_box" id="prv_check"></div>
+                                        </div> 
+                                    </form>
+                                </div>
+                                <div class="map_area">
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3265.123456789!2d126.3851234!3d34.8172345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzTCsDQ5JzAyLjAiTiAxMjbCsDIzJzA2LjQiRQ!5e0!3m2!1sko!2skr!4v1234567890" width="100%" height="400" frameborder="0" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                                </div>
+                            </div>
+                            <div class="bottom">
+                                <ul class="info_box">
+                                    <li>
+                                        <i data-feather="phone-call"></i>
+                                        <div class="cate">대표전화</div>
+                                        <div class="number">061-277-1001</div>
+                                    </li>
+                                    <li>
+                                        <i data-feather="clock"></i>
+                                        <div class="cate">진료시간</div>
+                                        <ul>
+                                            <li>
+                                                <div class="day">월/화/목/금</div>
+                                                <div class="time">08:30 ~ 19:30</div>
+                                            </li>
+                                            <li>
+                                                <div class="day">수요일</div>
+                                                <div class="time">08:30 ~ 12:00</div>
+                                            </li>
+                                            <li>
+                                                <div class="day">토요일</div>
+                                                <div class="time">09:00 ~ 14:00</div>
+                                            </li>
+                                            <li class="notice">※점심시간 12:00-14:00 / 일요일, 공휴일 휴진</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <ul class="same_as">
+                                    <li>
+                                        <i data-feather="map-pin"></i>
+                                        <address>전남 목포시 영산로 362 미소핀의원 (2층, 3층)</address>
+                                    </li>
+                                    <li>
+                                        <span class="youtube"></span>
+                                        <div class="cate">인스타그램</div>
+                                        <a href="https://www.instagram.com/misopin_clinic" target="_blank">@misopin_clinic</a>
+                                    </li>
+                                    <li>
+                                        <span class="kakao"></span>
+                                        <div class="cate">카카오톡</div>
+                                        <a href="http://pf.kakao.com/_xjxdxexj" target="_blank">미소핀의원</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="copy">
+                            <div class="top">
+                                <a href="index.html"><img class="ft_logo" src="img/미소핀로고.svg" alt="미소핀의원" style="filter: brightness(0) invert(1); height: 40px;" /></a>
+                                <div>
+                                    <a href="javascript:void(0)" onclick="window.open('/sh_page/sh_privacy.php', 'window', 'width=600; height=800; left=150; top=0; scrollbars=no')">개인정보취급방침</a>
+                                    <a href="javascript:void(0)" onclick="window.open('/sh_page/sh_stipulation.php', 'window', 'width=600; height=800; left=150; top=0; scrollbars=no')">이용약관</a>
+                                    <a href="#">비급여 수가표</a>
+                                    <a href="dist/about.html">병원소개</a>
+                                    <a href="calendar-page.html">오시는길</a>
+                                </div>
+                            </div>
+                            <div class="main_info">상호 : 미소핀의원 | 대표자 : 김지식 | 사업자등록번호 : 123-56-789 | 전화번호 : 061-277-1001 | 주소 : 전남 목포시 영산로 362 미소핀의원</div>
+                            <div class="bottom">
+                                <p>© MISOPIN CLINIC. ALL RIGHTS RESERVED.</p>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+                <!-- 푸터 끝 -->
+            </div>
+        </div>
+    </div>
+
+    <!-- YouTube 비디오 배경 스크립트 -->
+    <script>
+        // YouTube IFrame API 로드
+        var snsVideoTag = document.createElement('script');
+        snsVideoTag.src = 'https://www.youtube.com/iframe_api';
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(snsVideoTag, firstScriptTag);
+
+        var snsPlayer;
+
+        function onYouTubeIframeAPIReady() {
+            snsPlayer = new YT.Player('sns_video_player', {
+                width: '100%',
+                height: '100%',
+                videoId: 'lXSzAac7cZ8',
+                playerVars: {
+                    'autoplay': 1,
+                    'mute': 1,
+                    'controls': 0,
+                    'showinfo': 0,
+                    'rel': 0,
+                    'loop': 1,
+                    'playlist': 'lXSzAac7cZ8',
+                    'modestbranding': 1,
+                    'iv_load_policy': 3,
+                    'disablekb': 1,
+                    'fs': 0,
+                    'playsinline': 1,
+                    'enablejsapi': 1,
+                    'origin': window.location.origin
+                },
+                events: {
+                    'onReady': onSnsPlayerReady,
+                    'onStateChange': onSnsPlayerStateChange
+                }
+            });
+        }
+
+        function onSnsPlayerReady(event) {
+            event.target.playVideo();
+            event.target.mute();
+            resizeSnsVideo();
+        }
+
+        function onSnsPlayerStateChange(event) {
+            if (event.data === YT.PlayerState.ENDED) {
+                snsPlayer.playVideo();
+            }
+        }
+
+        function resizeSnsVideo() {
+            var snsSection = document.querySelector('.sns_section');
+            if (!snsSection || !snsPlayer) return;
+            
+            var width = snsSection.offsetWidth;
+            var height = snsSection.offsetHeight;
+            
+            if (width / height > 16 / 9) {
+                var newHeight = width * 9 / 16;
+                snsPlayer.setSize(width, newHeight);
+            } else {
+                var newWidth = height * 16 / 9;
+                snsPlayer.setSize(newWidth, height);
+            }
+        }
+
+        window.addEventListener('resize', resizeSnsVideo);
+        window.addEventListener('load', resizeSnsVideo);
+    </script>
+
+    <!-- clinic 템플릿 추가 스크립트 -->
+    <script src="https://skincare1007.shiningcorp.com/sh_img/js/feather.min.js"></script>
+    <script>
+        // Feather 아이콘 활성화
+        if (typeof feather !== 'undefined') {
+            feather.replace();
+        }
+        
+        // 한글 입력 검증
+        function korean_ck(obj) { 
+            var val = obj.value; 
+            if (/[^가-힣a-zA-Z\s]/g.test(val)) { 
+                alert("한글과 영문만 입력해 주세요"); 
+                obj.value = val.replace(/[^가-힣a-zA-Z\s]/g, ''); 
+            }  
+        }
+        
+        // 숫자 입력 검증
+        function Num_ck(obj) { 
+            var val = obj.value; 
+            if(isNaN(val)) { 
+                alert("숫자만 입력해 주세요"); 
+                obj.value = val.replace(/[^0-9]/gi, ''); 
+            }  
+        }
+        
+        // 상담 신청 폼 검증
+        function fmain_submit(f){        
+            if (!document.getElementById("prv_check").checked) {
+                alert("개인정보취급방침의 내용에 동의하셔야 작성가능 합니다.");
+                return false;
+            }
+            return true;
+        }
+        
+        // Feather 아이콘 초기화
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof feather !== 'undefined') {
+                feather.replace();
+            }
+        });
+        
+        // 퀵메뉴 스크롤 프로그레스
+        $(document).ready(function() {
+            // 스크롤 투 탑 기능 초기화
+            initScrollTop();
+        });
+        
+        function initScrollTop() {
+            var progressWrap = document.querySelector('#quickList .progress-wrap');
+            var progressPath = document.querySelector('#quickList .progress-wrap path');
+            
+            if (!progressWrap || !progressPath) {
+                console.log('Progress wrap or path not found');
+                return;
+            }
+            
+            var pathLength = progressPath.getTotalLength();
+            progressPath.style.transition = progressPath.style.WebkitTransition = 'none';
+            progressPath.style.strokeDasharray = pathLength + ' ' + pathLength;
+            progressPath.style.strokeDashoffset = pathLength;
+            progressPath.getBoundingClientRect();
+            progressPath.style.transition = progressPath.style.WebkitTransition = 'stroke-dashoffset 10ms linear';
+            
+            // 스크롤 프로그레스 업데이트
+            var updateProgress = function() {
+                var scroll = $(window).scrollTop();
+                var height = $(document).height() - $(window).height();
+                if (height > 0) {
+                    var progress = pathLength - (scroll * pathLength / height);
+                    progressPath.style.strokeDashoffset = progress;
+                }
+            };
+            
+            updateProgress();
+            
+            // 스크롤 이벤트
+            $(window).on('scroll', function() {
+                updateProgress();
+                
+                if ($(this).scrollTop() > 50) {
+                    $('#quickList .progress-wrap').addClass('active');
+                } else {
+                    $('#quickList .progress-wrap').removeClass('active');
+                }
+            });
+            
+            // 클릭 이벤트
+            $('#quickList .progress-wrap').on('click', function(event) {
+                event.preventDefault();
+                event.stopPropagation();
+                $('html, body').animate({scrollTop: 0}, 550);
+                return false;
+            });
+        }
+    </script>
+</body>
+</html>
