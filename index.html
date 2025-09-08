@@ -246,6 +246,274 @@ var g5_cookie_domain = "";
 #atc05 .inc05_text .txt_cont {
     background-color: #F5F3F0 !important;  /* 연한 브라운/베이지 색상 */
 }
+
+/* SNS 섹션 스타일 (atc04) */
+.sns_section {
+    position: relative;
+    overflow: hidden;
+    padding: 150px 0 !important;
+    min-height: 600px !important;
+    height: 70vh !important;
+    max-height: 800px !important;
+}
+
+.video_background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+}
+
+#sns_video_player {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    height: 100vh;
+    min-width: 177.77vh;
+    min-height: 56.25vw;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.video_overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+.sns_content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+    padding: 80px 0;
+}
+
+.section_intro {
+    margin-bottom: 80px;
+}
+
+.section_title {
+    font-size: 48px;
+    font-weight: 300;
+    margin-bottom: 30px;
+    color: white;
+    text-transform: lowercase;
+}
+
+.section_desc {
+    font-size: 18px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.sns_grid {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.sns_card_link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.sns_card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 40px 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    min-width: 280px;
+}
+
+.sns_card:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.sns_icon {
+    margin-bottom: 25px;
+}
+
+.sns_icon img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+
+.sns_title {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.sns_desc {
+    font-size: 16px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* 의사 소개 섹션 스타일 */
+.doctor_section {
+    background: #fff !important;
+    padding: 100px 0 !important;
+}
+
+.doctor_container {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 80px;
+    align-items: center;
+    padding: 0 50px;
+}
+
+.doctor_image_wrapper {
+    flex: 0 0 400px;
+    position: relative;
+    height: 500px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.doctor_image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gradient_overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 150px;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+}
+
+.doctor_content {
+    flex: 1;
+    padding-left: 20px;
+}
+
+.doctor_header {
+    margin-bottom: 30px;
+}
+
+.clinic_logo {
+    font-size: 16px;
+    color: #9F988C;
+    font-weight: 500;
+    text-transform: lowercase;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.doctor_title {
+    font-size: 24px;
+    color: #333;
+    margin: 0 0 10px 0;
+    font-weight: 400;
+}
+
+.doctor_name {
+    font-size: 36px;
+    color: #000;
+    margin: 0 0 20px 0;
+    font-weight: 700;
+}
+
+.doctor_description {
+    margin-bottom: 40px;
+}
+
+.doctor_description p {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #555;
+    margin: 0;
+}
+
+.doctor_credentials ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.doctor_credentials li {
+    font-size: 16px;
+    color: #666;
+    padding: 8px 0;
+    text-align: left !important;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+    .sns_section {
+        padding: 100px 0 !important;
+        min-height: 500px !important;
+        height: 80vh !important;
+        max-height: 600px !important;
+    }
+    
+    .sns_grid {
+        flex-direction: column;
+        gap: 30px;
+        padding: 0 20px;
+    }
+    
+    .section_title {
+        font-size: 36px;
+    }
+    
+    .section_desc {
+        font-size: 16px;
+        padding: 0 20px;
+    }
+    
+    .doctor_container {
+        flex-direction: column;
+        padding: 0 20px;
+        gap: 50px;
+    }
+    
+    .doctor_image_wrapper {
+        flex: none;
+        width: 100%;
+        max-width: 350px;
+        height: 400px;
+    }
+    
+    .doctor_content {
+        padding-left: 0;
+        text-align: center;
+    }
+    
+    .doctor_credentials ul {
+        grid-template-columns: 1fr;
+    }
+}
 </style>
 </head>
 <body>
@@ -1035,59 +1303,160 @@ $(function() {
     inc01SlideClone.each(function () {
     clone_change(this, "txt");
     });
-</script><article id="atc04">
-    <div class="swiper-container inc04_slide">
-        <ul class="swiper-wrapper">
-            <li class="swiper-slide bg01">
-                <h2>최첨단 시설 & 편안한 공간</h2>
-                <p class="pl">최신 의료 장비와 세련된 인테리어를 갖춘 공간에서 고객이 편안하게 시술받을 수 있도록 설계되었습니다. 
-                프라이빗한 진료실과 청결한 관리 시스템으로 최상의 의료 환경을 제공합니다.</p>
-            </li>
-            <li class="swiper-slide bg02">
-                <h2>풍부한 경험을 갖춘 전문의</h2>
-                <p class="pl">각 분야에서 풍부한 임상 경험을 쌓은 전문 의료진이 정확한 진단과 최적의 치료를 제공합니다.  
-                환자 맞춤형 상담을 통해 개개인에 적합한 의료 서비스를 제공하며, 세심한 관리로 최상의 결과를 추구합니다.</p>
-            </li>
-            <li class="swiper-slide bg03">
-                <h2>체계적인 사후 관리</h2>
-                <p class="pl"> 치료 후에도 지속적인 경과 관찰과 맞춤형 사후 관리 프로그램을 제공합니다.  
-                환자의 빠른 회복과 만족도를 높이기 위해 1:1 상담과 정기적인 체크업을 실시합니다.</p>
-            </li>
-        </ul>
-        <div class="nav_container">
-            <div class="up_nav">
-                <i data-feather="chevron-up"></i>
-            </div>
-            <div class="down_nav">
-                <i data-feather="chevron-down"></i>
-            </div>
+</script><article id="atc04" class="sns_section">
+    <!-- YouTube 비디오 배경 -->
+    <div class="video_background">
+        <div id="sns_video_player"></div>
+        <div class="video_overlay"></div>
+    </div>
+    
+    <div class="sns_content">
+        <div class="section_intro">
+            <h2 class="section_title">misopin is your happiness</h2>
+            <p class="section_desc">매일의 스트레스로 지친 피부, 이제는 나를 위한 투자를<br>
+            시작할 때입니다. 미소핀에서 당신의 자신감을 되찾아 드립니다</p>
+        </div>
+        <div class="sns_grid">
+            <a href="https://www.instagram.com/misopin_clinic/" target="_blank" rel="noopener noreferrer" class="sns_card_link">
+                <div class="sns_card">
+                    <div class="sns_icon">
+                        <img src="img/index/insta.png" alt="Instagram">
+                    </div>
+                    <div class="sns_info">
+                        <h3 class="sns_title">미소핀의원 공식 인스타그램</h3>
+                        <p class="sns_desc">미소핀의원의 이벤트 소식을 확인할 수 있습니다.</p>
+                    </div>
+                </div>
+            </a>
+            <a href="https://blog.naver.com/integrate725" target="_blank" rel="noopener noreferrer" class="sns_card_link">
+                <div class="sns_card">
+                    <div class="sns_icon">
+                        <img src="img/index/naver.png" alt="Blog">
+                    </div>
+                    <div class="sns_info">
+                        <h3 class="sns_title">미소핀의원 공식 블로그</h3>
+                        <p class="sns_desc">자세한 시술과정과 의료정보를 확인할 수 있습니다.</p>
+                    </div>
+                </div>
+            </a>
         </div>
     </div>
 </article>
 
+<!-- YouTube 비디오 배경 JavaScript -->
 <script>
-    const inc04_slide = new Swiper("#atc04 .inc04_slide", {
-        loop:true,
-        speed:1200,
-        effect: "creative",
-        creativeEffect: {
-            prev: {
-                translate: [0, 0, -1],
-            },
-            next: {
-                translate: [0, "100%", 0],
-            }
+// YouTube IFrame API 로드
+var snsVideoTag = document.createElement('script');
+snsVideoTag.src = 'https://www.youtube.com/iframe_api';
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(snsVideoTag, firstScriptTag);
+
+var snsPlayer;
+
+// YouTube API가 준비되면 실행
+function onYouTubeIframeAPIReady() {
+    snsPlayer = new YT.Player('sns_video_player', {
+        width: '100%',
+        height: '100%',
+        videoId: 'lXSzAac7cZ8', // 미소핀의원 YouTube 비디오
+        playerVars: {
+            'autoplay': 1,
+            'mute': 1,  // 자동재생을 위해 음소거 필수
+            'controls': 0,
+            'showinfo': 0,
+            'rel': 0,
+            'loop': 1,
+            'playlist': 'lXSzAac7cZ8', // 루프를 위해 동일한 비디오 ID
+            'modestbranding': 1,
+            'iv_load_policy': 3,
+            'disablekb': 1,
+            'fs': 0,
+            'playsinline': 1,
+            'enablejsapi': 1,
+            'origin': window.location.origin
         },
-        navigation:{
-            prevEl:".down_nav",
-            nextEl:".up_nav"
-        },         
-        direction: 'vertical',
-    })
-</script>	
+        events: {
+            'onReady': onSnsPlayerReady,
+            'onStateChange': onSnsPlayerStateChange
+        }
+    });
+}
+
+function onSnsPlayerReady(event) {
+    event.target.playVideo();
+    event.target.mute(); // 자동재생을 위해 음소거
+    
+    // 비디오 크기 조정
+    resizeSnsVideo();
+}
+
+function onSnsPlayerStateChange(event) {
+    // 비디오가 끝나면 다시 재생
+    if (event.data === YT.PlayerState.ENDED) {
+        snsPlayer.playVideo();
+    }
+}
+
+// 화면 크기에 맞춰 비디오 크기 조정
+function resizeSnsVideo() {
+    var snsSection = document.querySelector('.sns_section');
+    if (!snsSection || !snsPlayer) return;
+    
+    var width = snsSection.offsetWidth;
+    var height = snsSection.offsetHeight;
+    
+    // 16:9 비율 유지
+    if (width / height > 16 / 9) {
+        // 너비가 더 넓은 경우
+        var newHeight = width * 9 / 16;
+        snsPlayer.setSize(width, newHeight);
+    } else {
+        // 높이가 더 높은 경우
+        var newWidth = height * 16 / 9;
+        snsPlayer.setSize(newWidth, height);
+    }
+}
+
+// 윈도우 리사이즈 이벤트
+window.addEventListener('resize', resizeSnsVideo);
+window.addEventListener('load', resizeSnsVideo);
+</script>
+
+<!-- 의사 소개 섹션 -->
+<article id="atc_doctor" class="doctor_section">
+    <div class="doctor_container">
+        <div class="doctor_image_wrapper">
+            <img src="img/index/doc.jpg" alt="대표원장 김지식" class="doctor_image">
+            <div class="gradient_overlay"></div>
+        </div>
+        <div class="doctor_content">
+            <div class="doctor_header">
+                <span class="clinic_logo">misopin</span>
+                <h2 class="doctor_title">미소핀의원</h2>
+                <h1 class="doctor_name">대표원장 김지식</h1>
+            </div>
+            <div class="doctor_description">
+                <p>미소로 시작해 미소로 돌아가는 피부과를 만들기 위해<br>
+                초심을 잃지 않고 진심으로 진료하겠습니다.</p>
+            </div>
+            <div class="doctor_credentials">
+                <ul>
+                    <li>연세대학교 동문병원 -</li>
+                    <li>대한 리프팅연구회 정회원 -</li>
+                    <li>대한 레이저 피부 모발학회 정회원 -</li>
+                    <li>대한 미용성형 레이저 의학회 정회원 -</li>
+                    <li>대한 비만미용학회 정회원 -</li>
+                    <li>대한 비만연구 의사회 정회원 -</li>
+                    <li>대한 일차진료학회 정회원 -</li>
+                    <li>대한 영양체 처방학회 정회원 -</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</article>	
 <article id="atc05">
     <div class="section_tit" data-aos="fade-up">
-        <h2 class="section_h2">MISOPIN'S <span>SNS</span></h2>
+        <h2 class="section_h2">BEAUTY <span>TIPS</span></h2>
         <p class="section_p">미소핀의원의 뷰티 꿀팁과 시술정보까지</p>
     </div>
     <div class="inc05_wrap">
