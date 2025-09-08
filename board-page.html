@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta http-equiv="imagetoolbar" content="no">
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-<title>공지 및 이벤트 1 페이지 | 샤이닝 - 피부과 홈페이지 샘플</title>
+<title>공지 및 이벤트 1 페이지</title>
 <link rel="stylesheet" href="https://skincare1007.shiningcorp.com/css/default.css?ver=171222">
 <link rel="stylesheet" href="https://skincare1007.shiningcorp.com/sh_img/hd/r_quickmenu/style.css?ver=171222">
 <link rel="stylesheet" href="https://skincare1007.shiningcorp.com/sh_img/hd/top_menu/style.css?ver=171222">
@@ -182,6 +182,27 @@ var g5_cookie_domain = "";
 <link rel="stylesheet" href="https://skincare1007.shiningcorp.com/js/font-awesome/css/font-awesome.min.css">
 <script src="https://skincare1007.shiningcorp.com/sh_img/js/feather.min.js"></script>
 <script src="https://skincare1007.shiningcorp.com/sh_img/hd/top_menu/script.js?ver=171222"></script>
+<!-- 색상 오버라이드 - 모든 외부 CSS 로드 후 적용 -->
+<style>
+/* 외부 CSS의 --primary 변수를 브라운으로 오버라이드 */
+:root {
+    --primary: #9F988C !important;
+}
+
+/* Notice 카테고리 링크 색상을 브라운으로 변경 */
+#sh_list_tbl .cate_link span {
+    color: #9F988C !important;
+}
+
+/* 버튼 호버 효과 브라운으로 변경 */
+.btn_type01:hover {
+    background-color: #9F988C !important;
+}
+
+#sh_bo_list .w_btn:hover {
+    background-color: #9F988C !important;
+}
+</style>
 </head>
 <body>
 <style>
