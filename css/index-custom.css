@@ -1,0 +1,123 @@
+/* index-custom.css - CSS 충돌 해결 및 통합 스타일 */
+
+/* clinic 헤더/푸터와 Misopin 콘텐츠 통합을 위한 CSS */
+
+/* 1. 헤더 스타일 조정 */
+#sh_hd {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+#sh_hd_wrapper {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0;
+}
+
+/* 2. 메인 콘텐츠 상단 패딩 조정 (헤더 높이만큼) */
+.main_content {
+    margin-top: 80px; /* 헤더 높이에 맞춰 조정 */
+}
+
+/* 3. 히어로 섹션 조정 */
+.hero_section {
+    margin-top: 0; /* 헤더가 fixed이므로 마진 제거 */
+    position: relative;
+}
+
+/* 4. 푸터 스타일 조정 */
+#sh_ft {
+    background: #2c2c2c;
+    color: #fff;
+    margin-top: 0;
+    width: 100%;
+}
+
+#sh_ft_wrapper {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0;
+}
+
+/* 5. Misopin 콘텐츠와 clinic 템플릿 간 여백 조정 */
+.main_section {
+    padding-top: 0;
+}
+
+/* 6. 반응형 조정 */
+@media (max-width: 768px) {
+    .main_content {
+        margin-top: 60px; /* 모바일에서 헤더 높이 조정 */
+    }
+    
+    #sh_hd_wrapper {
+        padding: 0 15px;
+    }
+    
+    #sh_ft_wrapper {
+        padding: 30px 15px;
+    }
+}
+
+/* 7. 스크롤 시 헤더 스타일 조정 */
+#sh_hd.scrolled {
+    background: rgba(255, 255, 255, 0.98);
+}
+
+/* 8. 네비게이션 메뉴 z-index 조정 */
+#r_menu .sub_ul1,
+#r_menu .sub_ul2,
+#r_menu .sub_ul3,
+#r_menu .sub_ul4,
+#r_menu .sub_ul5,
+#r_menu .sub_ul6,
+#r_menu .sub_ul7 {
+    z-index: 10000;
+}
+
+/* 9. 푸터 내 form 스타일 보정 */
+#sh_ft .sh_input {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+#sh_ft .sh_input:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+/* 10. 충돌 방지를 위한 명시적 스타일 */
+.main_section * {
+    box-sizing: border-box;
+}
+
+/* 11. 미소핀 로고 스타일 조정 */
+#top_logo img {
+    height: 50px;
+    width: auto;
+}
+
+/* 12. 이벤트 배너 스타일 */
+.event {
+    background: #ff6b6b;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 14px;
+    margin-left: 20px;
+}
+
+.event:hover {
+    background: #ff5252;
+}
