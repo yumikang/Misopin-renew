@@ -64,3 +64,80 @@
     background-color: var(--misopin-secondary) !important;
     border-color: var(--misopin-secondary) !important;
 }
+
+/* ========================================
+   푸터 스타일 (브라운 배경)
+   ======================================== */
+
+/* 푸터 전체 배경색 */
+#sh_ft {
+    background-color: var(--misopin-primary) !important;
+    color: #fff !important;
+}
+
+/* 푸터 내부 요소들 */
+#sh_ft_wrapper {
+    background-color: transparent !important;
+}
+
+#sh_ft .contact {
+    background-color: transparent !important;
+}
+
+#sh_ft .copy {
+    background-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+/* 푸터 링크 색상 */
+#sh_ft a {
+    color: #fff !important;
+}
+
+#sh_ft a:hover {
+    color: var(--misopin-accent) !important;
+}
+
+/* 푸터 하단 회사 정보 텍스트 - 흰색으로 변경 */
+#sh_ft .copy .main_info {
+    color: #fff !important;
+    opacity: 0.9;
+}
+
+#sh_ft .copy .bottom p {
+    color: #fff !important;
+    opacity: 0.9;
+}
+
+/* ========================================
+   헤더 드롭다운 메뉴 스타일 (브라운 배경)
+   ======================================== */
+
+/* 드롭다운 메뉴 배경색 - 브라운 */
+#top_nav li ul,
+#top_nav .sub_ul1,
+#top_nav .sub_ul2,
+#top_nav .sub_ul3,
+#top_nav .sub_ul4,
+#top_nav .sub_ul5,
+#top_nav .sub_ul6,
+#top_nav .sub_ul7 {
+    background-color: var(--misopin-primary) !important;
+    border: none !important;
+}
+
+/* 드롭다운 메뉴 아이템 */
+#top_nav li ul li {
+    background-color: transparent !important;
+}
+
+/* 드롭다운 메뉴 링크 */
+#top_nav li ul li a {
+    color: #fff !important;
+    background-color: transparent !important;
+}
+
+/* 드롭다운 메뉴 호버 */
+#top_nav li ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    color: var(--misopin-accent) !important;
+}

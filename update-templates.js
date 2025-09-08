@@ -32,7 +32,7 @@ const PAGES_TO_UPDATE = [
     './dist/about.html'
 ];
 
-// 헤더 템플릿에서 이벤트 텍스트 추출 및 업데이트
+// 헤더 템플릿에서 이벤트 텍스트 추출 및 업데이트 + 로고 업데이트
 function updateEventButton() {
     if (!fs.existsSync(HEADER_TEMPLATE)) {
         console.error(`❌ 템플릿 파일을 찾을 수 없습니다: ${HEADER_TEMPLATE}`);
@@ -70,6 +70,18 @@ function updateEventButton() {
         content = content.replace(
             /<a class="event"([^>]*)>[^<]*<\/a>/g,
             `<a class="event"$1>${eventText}</a>`
+        );
+        
+        // 헤더 로고 업데이트 (SVG를 PNG로)
+        content = content.replace(
+            /<img src="..\/img\/미소핀로고\.svg"/g,
+            '<img src="../img/misopin-temporary-logo.png"'
+        );
+        
+        // 푸터 로고 업데이트 (SVG를 PNG로)
+        content = content.replace(
+            /<img class="ft_logo" src="..\/img\/미소핀로고\.svg"/g,
+            '<img class="ft_logo" src="../img/misopin-temporary-logo.png"'
         );
         
         // 변경사항이 있는 경우에만 파일 저장
