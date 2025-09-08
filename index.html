@@ -46,6 +46,69 @@
              url(//font.shiningcorp.com/css/font/NanumSquareR.woff) format('woff'),
              url(//font.shiningcorp.com/css/font/NanumSquareR.ttf) format('truetype');
     }
+    
+    /* 미소핀 통일된 색상 팔레트 */
+    :root {
+        /* 메인 색상 */
+        --misopin-primary: #9F988C;    /* 메인 브랜드 색상 */
+        --misopin-secondary: #87857E;  /* 보조 색상 */
+        --misopin-accent: #EFEDE5;     /* 강조 색상 */
+        
+        /* 배경 색상 */
+        --misopin-bg-main: #FFFFFF;    /* 메인 배경 */
+        --misopin-bg-light: #FAFAFA;   /* 연한 배경 */
+        --misopin-bg-accent: #EFEDE5;  /* 포인트 배경 */
+        
+        /* 텍스트 색상 */
+        --misopin-text-dark: #2C2C2C;  /* 진한 텍스트 */
+        --misopin-text-normal: #555555; /* 일반 텍스트 */
+        --misopin-text-light: #888888;  /* 연한 텍스트 */
+        --misopin-text-white: #FFFFFF;  /* 흰색 텍스트 */
+        
+        /* 테두리 색상 */
+        --misopin-border: #E0E0E0;     /* 일반 테두리 */
+        --misopin-border-light: #F0F0F0; /* 연한 테두리 */
+        
+        /* 그림자 */
+        --misopin-shadow: rgba(0,0,0,0.1);
+        --misopin-shadow-light: rgba(0,0,0,0.05);
+    }
+    
+    /* 퀵메뉴 스타일 */
+    #quickList {
+        background-color: var(--misopin-bg-main) !important;
+        border: 1px solid var(--misopin-border-light) !important;
+    }
+    
+    #quickList .list li a:hover {
+        background-color: var(--misopin-bg-accent) !important;
+    }
+    
+    /* 프로그레스 서클 */
+    .progress-wrap svg path {
+        stroke: var(--misopin-primary) !important;
+    }
+    
+    /* 이벤트 버튼 스타일 */
+    .event {
+        background-color: var(--misopin-primary) !important;
+        border: 1px solid var(--misopin-primary) !important;
+        color: #fff !important;
+        padding: 8px 20px;
+        border-radius: 20px;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 500;
+        display: inline-block;
+        transition: all 0.3s ease;
+    }
+    
+    .event:hover {
+        background-color: var(--misopin-secondary) !important;
+        border-color: var(--misopin-secondary) !important;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
     </style>
     
     <link rel="stylesheet" href="css/index-custom.css">
@@ -244,6 +307,50 @@
 </head>
 
 <body>
+    <!-- 퀵메뉴 시작 -->
+    <div id="quickList">
+        <ul class="list">
+            <li>
+                <a href="http://pf.kakao.com/_xjxeLxj" target="_blank">
+                    <div class="kakao"></div>
+                    <div class="cate">카톡상담</div>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/misopin_clinic" target="_blank">
+                    <div class="instagram" style="width: 24px; height: 24px; margin: 0 auto 5px; background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iIzNDMUUxRSIgZD0iTTcuOCAyQTUuOCA1LjggMCAwIDAgMiA3Ljh2OC40QTUuOCA1LjggMCAwIDAgNy44IDIyaDguNGE1LjggNS44IDAgMCAwIDUuOC01LjhWNy44QTUuOCA1LjggMCAwIDAgMTYuMiAySDcuOHptMCAxLjloOC40YTMuOSAzLjkgMCAwIDEgMy45IDMuOXY4LjRhMy45IDMuOSAwIDAgMS0zLjkgMy45SDcuOGEzLjkgMy45IDAgMCAxLTMuOS0zLjlWNy44YTMuOSAzLjkgMCAwIDEgMy45LTMuOXpNMTcuMjUgNS41YTEuMjUgMS4yNSAwIDEgMCAwIDIuNSAxLjI1IDEuMjUgMCAwIDAgMC0yLjV6TTEyIDdhNSA1IDAgMSAwIDAgMTAgNSA1IDAgMCAwIDAtMTB6bTAgMS45YTMuMSAzLjEgMCAxIDEgMCA2LjIgMy4xIDMuMSAwIDAgMSAwLTYuMnoiLz48L3N2Zz4=') center/contain no-repeat;"></div>
+                    <div class="cate">인스타그램</div>
+                </a>
+            </li>
+            <li>
+                <a href="board-page.html">
+                    <i data-feather="gift"></i>
+                    <div class="cate">이벤트</div>
+                </a>
+            </li>
+            <li>
+                <a href="calendar-page.html">
+                    <i data-feather="edit-3"></i>
+                    <div class="cate">예약하기</div>
+                </a>
+            </li>
+            <li>
+                <a href="tel:061-277-1001">
+                    <i data-feather="phone-call"></i>
+                    <div class="cate">전화상담</div>
+                    <div class="number pl">061-277-1001</div>
+                </a>
+            </li>
+        </ul>
+        <div class="progress-wrap">
+            <span><i data-feather="arrow-up"></i></span>
+            <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"></path>
+            </svg>
+        </div>
+    </div>
+    <!-- 퀵메뉴 끝 -->
+    
     <div class="scroller">
         <div id="wrap">
             <div id="wrapper">
@@ -312,7 +419,7 @@
                                     </ul>
                                 </nav>
                             </div>
-                            <a class="event" href="board-page.html">12월 이벤트 확인하기</a>
+                            <a class="event" href="board-page.html">9월 이벤트</a>
                         </div>
                     </div>
                 </header>
@@ -586,6 +693,41 @@
                 feather.replace();
             }
         });
+        
+        // 퀵메뉴 스크롤 프로그레스
+        $(document).ready(function() {
+            scrollTop();
+        });
+        
+        function scrollTop(){
+            var progressPath = document.querySelector('.progress-wrap path');
+            var pathLength = progressPath.getTotalLength();
+            progressPath.style.transition = progressPath.style.WebkitTransition = 'none';
+            progressPath.style.strokeDasharray = pathLength + ' ' + pathLength;
+            progressPath.style.strokeDashoffset = pathLength;
+            progressPath.getBoundingClientRect();
+            progressPath.style.transition = progressPath.style.WebkitTransition = 'stroke-dashoffset 10ms linear';
+            var updateProgress = function() {
+                var scroll = $(window).scrollTop();
+                var height = $(document).height() - $(window).height();
+                var progress = pathLength - scroll * pathLength / height;
+                progressPath.style.strokeDashoffset = progress;
+            };
+            updateProgress();
+            $(window).scroll(updateProgress);
+            jQuery(window).on('scroll', function() {
+                if (jQuery(this).scrollTop() > 50) {
+                    jQuery('.progress-wrap').addClass('active');
+                } else {
+                    jQuery('.progress-wrap').removeClass('active');
+                }
+            });
+            jQuery('.progress-wrap').on('click', function(event) {
+                event.preventDefault();
+                jQuery('html, body').animate({scrollTop: 0}, 550);
+                return false;
+            });
+        }
     </script>
 </body>
 </html>

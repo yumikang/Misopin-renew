@@ -106,18 +106,3 @@
     height: 50px;
     width: auto;
 }
-
-/* 12. 이벤트 배너 스타일 */
-.event {
-    background: #ff6b6b;
-    color: white;
-    padding: 8px 15px;
-    border-radius: 20px;
-    text-decoration: none;
-    font-size: 14px;
-    margin-left: 20px;
-}
-
-.event:hover {
-    background: #ff5252;
-}
