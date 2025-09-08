@@ -8,12 +8,67 @@
    1. 폰트 임포트
    ======================================== */
 @font-face {
-    font-family: 'OneStoreMobileGothicTitleFont';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-Title.woff') format('woff');
-    font-weight: normal;
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Thin.woff') format('woff');
+    font-weight: 100;
     font-display: swap;
 }
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&display=swap');
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-ExtraLight.woff') format('woff');
+    font-weight: 200;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Light.woff') format('woff');
+    font-weight: 300;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Medium.woff') format('woff');
+    font-weight: 500;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff') format('woff');
+    font-weight: 700;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-ExtraBold.woff') format('woff');
+    font-weight: 800;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Black.woff') format('woff');
+    font-weight: 900;
+    font-display: swap;
+}
 
 /* ========================================
    2. MISOPIN CLINIC 텍스트 스타일 오버라이드
@@ -21,9 +76,9 @@
 
 /* 메인 텍스트 컨테이너 - 크기 조정 */
 #MainVisual .h1_mst {
-    font-family: 'OneStoreMobileGothicTitleFont', 'Helvetica', sans-serif !important;
-    font-size: 140px !important;  /* 180px → 140px로 축소 */
-    font-weight: 600 !important;  /* 좀 더 두껍게 */
+    font-family: 'Pretendard', 'Helvetica', sans-serif !important;
+    font-size: 150px !important;  /* 180px → 140px로 축소 */
+    font-weight: 500 !important;  /* Bold 사용 */
     letter-spacing: 0.12em !important;  /* 자간 넓게 */
 }
 
@@ -40,7 +95,6 @@
 /* 각 글자 스타일 개선 */
 #MainVisual .h1_mst .ltr {
     font-weight: 700 !important;
-    text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3) !important;  /* 그림자 추가로 가독성 향상 */
 }
 
 /* ========================================
@@ -55,7 +109,6 @@
     font-size: 24px !important;  /* 22px → 24px 크기 증가 */
     font-weight: 500 !important;
     letter-spacing: 0.3em !important;  /* 자간 넓게 */
-    text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5) !important;
     font-family: 'Noto Sans KR', sans-serif !important;
 }
 
@@ -65,7 +118,6 @@
 
 .opening_hours .cols01 .nm {
     font-size: 26px !important;  /* 살짝 크게 */
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7) !important;
 }
 
 .opening_hours .cols01 .nm .br {
@@ -74,7 +126,6 @@
     font-size: 28px !important;  /* 조금 더 크게 */
     margin-top: 5px !important;
     display: inline-block !important;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8) !important;
 }
 
 /* ========================================
@@ -84,7 +135,6 @@
 .opening_hours .everyday p {
     font-size: 20px !important;
     font-weight: 500 !important;
-    text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.6) !important;
     color: #ffffff !important;
 }
 
@@ -93,7 +143,6 @@
     font-weight: 400 !important;
     letter-spacing: 3px !important;
     color: rgba(255, 255, 255, 0.9) !important;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5) !important;
 }
 
 /* ========================================
@@ -232,20 +281,8 @@
    9. 추가 시각 효과
    ======================================== */
 
-/* MISOPIN CLINIC 텍스트에 subtle glow 효과 */
-#MainVisual .h1_mst .ltr {
-    text-shadow: 
-        2px 4px 8px rgba(0, 0, 0, 0.3),
-        0 0 30px rgba(255, 255, 255, 0.1),
-        0 0 60px rgba(255, 255, 255, 0.05) !important;
-}
 
 /* 피부과 전문의 강조 효과 */
 .opening_hours .cols01 .nm .br {
-    background: linear-gradient(90deg, #FFD700, #FFA500);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-fill-color: transparent;
-    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.8));
+    color: #d6b871 !important;  /* 미소핀 골드 톤 */
 }
