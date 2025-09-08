@@ -4,12 +4,11 @@
    목적: 메인 페이지 히어로 섹션 GSAP 애니메이션
    ======================================== */
 
-/* Gallient 폰트 정의 */
+/* Pretendard 폰트 정의 - 메인 디스플레이 폰트 */
 @font-face {
-    font-family: 'Gallient';
-    src: url('../Misopin/fonts/Gallient/Gallient.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff') format('woff');
+    font-weight: 700;
     font-display: swap;
 }
 
@@ -45,9 +44,9 @@
 /* 텍스트 컨테이너 설정 */
 .h1_mst {
     position: absolute;
-    font-family: 'Gallient', 'Georgia', 'Times New Roman', serif;
+    font-family: 'Pretendard', 'NanumSquare', sans-serif;
     font-size: 180px;
-    font-weight: normal;
+    font-weight: 700;
     line-height: 1;
     color: #ffffff;
     letter-spacing: 0.08em;
