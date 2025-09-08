@@ -185,6 +185,85 @@ var g5_cookie_domain = "";
 <script src="https://skincare1007.shiningcorp.com/sh_img/js/feather.min.js"></script>
 <script src="https://skincare1007.shiningcorp.com/sh_img/hd/top_menu/script.js?ver=171222"></script>
 <script src="https://skincare1007.shiningcorp.com/skin/board/hos_calendar/script.js?ver=171222"></script>
+<!-- 색상 오버라이드 - 모든 외부 CSS 로드 후 적용 -->
+<style>
+/* 외부 CSS의 --primary 변수를 브라운으로 오버라이드 */
+:root {
+    --primary: #9F988C !important;
+    --misopin-primary: #9F988C !important;
+    --misopin-secondary: #87857E !important;
+}
+
+/* 캘린더 및 예약 관련 블루 색상을 브라운으로 변경 */
+.ui-state-active,
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active {
+    background: #9F988C !important;
+    border-color: #9F988C !important;
+}
+
+.ui-state-hover,
+.ui-widget-content .ui-state-hover,
+.ui-widget-header .ui-state-hover {
+    background: #87857E !important;
+    border-color: #87857E !important;
+}
+
+/* 버튼 호버 효과 브라운으로 변경 */
+.btn_type01:hover {
+    background-color: #9F988C !important;
+}
+
+/* 캘린더 테이블 내 예약 버튼 스타일 */
+#calendar_view td a {
+    display: inline-block;
+    padding: 5px 10px;
+    background: #9F988C !important;
+    color: #fff !important;
+    border-radius: 15px;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+#calendar_view td a:hover {
+    background: #87857E !important;
+    color: #fff !important;
+}
+
+/* 예약종료 스타일 */
+#calendar_view td.null {
+    color: #999 !important;
+}
+
+/* 캘린더 선택된 날짜 스타일 */
+.ui-datepicker-current-day {
+    background: #9F988C !important;
+}
+
+.ui-datepicker-today {
+    background: #F5F3F0 !important;
+}
+
+/* 폼 포커스 색상 */
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #9F988C !important;
+}
+
+/* 예약 버튼 스타일 */
+.submit_btn,
+button[type="submit"] {
+    background: #9F988C !important;
+    border-color: #9F988C !important;
+}
+
+.submit_btn:hover,
+button[type="submit"]:hover {
+    background: #87857E !important;
+    border-color: #87857E !important;
+}
+</style>
 </head>
 <body>
 <style>
@@ -218,7 +297,7 @@ var g5_cookie_domain = "";
         </li>
         <li>
             <a href="https://www.instagram.com/misopin_clinic" target="_blank">
-                <div class="instagram" style="width: 24px; height: 24px; margin: 0 auto 5px; background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iIzNDMUUxRSIgZD0iTTcuOCAyQTUuOCA1LjggMCAwIDAgMiA3Lh2OC40QTUuOCA1LjggMCAwIDAgNy44IDIyaDguNGE1LjggNS44IDAgMCAwIDUuOC01LjhWNy44QTUuOCA1LjggMCAwIDAgMTYuMiAySDcuOHptMCAxLjloOC40YTMuOSAzLjkgMCAwIDEgMy45IDMuOXY4LjRhMy45IDMuOSAwIDAgMS0zLjkgMy45SDcuOGEzLjkgMy45IDAgMCAxLTMuOS0zLjlWNy44YTMuOSAzLjkgMCAwIDEgMy45LTMuOXpNMTcuMjUgNS41YTEuMjUgMS4yNSAwIDEgMCAwIDIuNSAxLjI1IDEuMjUgMCAwIDAgMC0yLjV6TTEyIDdhNSA1IDAgMSAwIDAgMTAgNSA1IDAgMCAwIDAtMTB6bTAgMS45YTMuMSAzLjEgMCAxIDEgMCA2LjIgMy4xIDMuMSAwIDAgMSAwLTYuMnoiLz48L3N2Zz4=') center/contain no-repeat;"></div>
+                <div class="instagram" style="width: 24px; height: 24px; margin: 0 auto 5px; background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iIzNDMUUxRSIgZD0iTTcuOCAyQTUuOCA1LjggMCAwIDAgMiA3Ljh2OC40QTUuOCA1LjggMCAwIDAgNy44IDIyaDguNGE1LjggNS44IDAgMCAwIDUuOC01LjhWNy44QTUuOCA1LjggMCAwIDAgMTYuMiAySDcuOHptMCAxLjloOC40YTMuOSAzLjkgMCAwIDEgMy45IDMuOXY4LjRhMy45IDMuOSAwIDAgMS0zLjkgMy45SDcuOGEzLjkgMy45IDAgMCAxLTMuOS0zLjlWNy44YTMuOSAzLjkgMCAwIDEgMy45LTMuOXpNMTcuMjUgNS41YTEuMjUgMS4yNSAwIDEgMCAwIDIuNSAxLjI1IDEuMjUgMCAwIDAgMC0yLjV6TTEyIDdhNSA1IDAgMSAwIDAgMTAgNSA1IDAgMCAwIDAtMTB6bTAgMS45YTMuMSAzLjEgMCAxIDEgMCA2LjIgMy4xIDMuMSAwIDAgMSAwLTYuMnoiLz48L3N2Zz4=') center/contain no-repeat;"></div>
                 <div class="cate">인스타그램</div>
             </a>
         </li>
