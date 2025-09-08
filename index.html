@@ -193,18 +193,47 @@ var g5_cookie_domain = "";
 <link rel="stylesheet" href="css/skincare-hero-custom.css">
 <!-- 버튼 스타일 CSS -->
 <link rel="stylesheet" href="css/button-styles.css">
+<!-- 색상 오버라이드 - 모든 외부 CSS 로드 후 적용 -->
+<style>
+/* 외부 CSS의 --primary 변수를 브라운으로 강제 오버라이드 */
+:root {
+    --primary: #9F988C !important;  /* 미소핀 브라운으로 오버라이드 */
+    --misopin-primary: #9F988C !important;
+    --misopin-secondary: #87857E !important;
+}
+
+/* 섹션 타이틀 색상 강제 적용 */
+#sh_section .section_h2 span {
+    color: #9F988C !important;
+}
+
+#sh_section .section_p {
+    color: #9F988C !important;
+}
+
+/* 가격 할인 텍스트 */
+.sale {
+    color: #9F988C !important;
+}
+
+/* 더보기 링크 */
+.search {
+    background-color: #9F988C !important;
+    border-color: #9F988C !important;
+}
+
+/* 기타 --primary 사용하는 요소들 */
+[style*="var(--primary)"] {
+    color: #9F988C !important;
+}
+</style>
 </head>
 <body>
 
 
 <style>
-/* 미소핀 통일된 색상 팔레트 */
+/* 미소핀 통일된 색상 팔레트 - 추가 변수 정의 */
 :root {
-    /* 메인 색상 */
-    --misopin-primary: #9F988C;    /* 메인 브랜드 색상 */
-    --misopin-secondary: #87857E;  /* 보조 색상 */
-    --misopin-accent: #EFEDE5;     /* 강조 색상 */
-    
     /* 배경 색상 */
     --misopin-bg-main: #FFFFFF;    /* 메인 배경 */
     --misopin-bg-light: #FAFAFA;   /* 연한 배경 */
@@ -737,7 +766,7 @@ $(function() {
                 </div>
                 <div class="cols cols02">
                     <div class="everyday">
-                        <p>월-토요일 8:30AM-7:30PM</p>
+                        <p>월-금요일 8:30AM-7:30PM</p>
                     </div>
                     <div class="scr">
                         <p>scroll to explore</p>
@@ -830,8 +859,8 @@ $(function() {
 <section id="sh_section">
 	<article id="atc01">
     <div class="section_tit" data-aos="fade-up">
-        <h2 class="section_h2">SAMPLE’S <span>EVENT</span></h2>
-        <p class="section_p">샘플클리닉의원 BEST 시술</p>
+        <h2 class="section_h2">MISOPIN <span>SIGNATURE</span></h2>
+        <p class="section_p">미소핀의원 BEST 시술</p>
     </div>
     <div class="swiper-container inc01_slide" data-aos="fade-in">
         <ul class="swiper-wrapper">
@@ -842,7 +871,7 @@ $(function() {
                     </div>
                     <div class="info">
                         <div class="txt">
-                            <h3>딥 하이드레이션 스킨 테라피</h3>
+                            <h3>원데이리프팅</h3>
                             <p>고농축 수분 에너지가 피부 깊숙이 침투하여 장시간 촉촉한 피부를 유지할 수 있도록 도와주는 집중 보습 케어&nbsp;</p>
                         </div>
                         <div class="price">
@@ -882,7 +911,7 @@ $(function() {
                     </div>
                     <div class="info">
                         <div class="txt">
-                            <h3>프리시전 레이저 스킨 리뉴얼</h3>
+                            <h3>제오민 보톡스</h3>
                             <p>미세한 레이저 에너지가 피부 깊숙이 작용하여 피부 결을 정돈하고 탄력을 강화하는 맞춤형 스킨 케어</p>
                         </div>
                         <div class="price">
@@ -902,7 +931,7 @@ $(function() {
                     </div>
                     <div class="info">
                         <div class="txt">
-                            <h3>벨로테로 리바이브</h3>
+                            <h3>스킨부스터</h3>
                             <p>히알루론산과 글리세롤로 피부 깊숙이 수분을 채우고 탄력을 강화하는 스킨부스터</p>
                         </div>
                         <div class="price">
@@ -922,7 +951,7 @@ $(function() {
                     </div>
                     <div class="info">
                         <div class="txt">
-                            <h3>딥 인젝션 하이드라 부스터</h3>
+                            <h3>필링</h3>
                             <p>히알루론산과 글리세롤이 피부 깊숙이 스며들어 수분을 채우고 탄력을 강화하는 집중 보습 솔루션.</p>
                         </div>
                         <div class="price">
@@ -1038,8 +1067,8 @@ $(function() {
 </script>	
 <article id="atc05">
     <div class="section_tit" data-aos="fade-up">
-        <h2 class="section_h2">SAMPLE’S <span>MEDIA</span></h2>
-        <p class="section_p">샘플클리닉의원의 뷰티 꿀팁과 시술정보까지</p>
+        <h2 class="section_h2">MISOPIN'S <span>SNS</span></h2>
+        <p class="section_p">미소핀의원의 뷰티 꿀팁과 시술정보까지</p>
     </div>
     <div class="inc05_wrap">
         <div class="swiper-container inc05_text">
@@ -1212,7 +1241,7 @@ $(function() {
                     </form>
                 </div>
                 <div class="map_area">
-                    <iframe src="https://www.shiningcorp.com/sh_page/sh_map.php?sh_x=37.5040637&amp;sh_y=126.7752269&amp;sh_name=샘플클리닉의원&amp;sh_set=utf8&amp;sh_height=400&amp;sh_width=1380" frameborder="0" border="0" marginwidth="0" marginheight="0" scrolling="no" title="샘플크리닉의원 오시는길"></iframe>
+                    <iframe src="https://www.shiningcorp.com/sh_page/sh_map.php?sh_x=37.5040637&amp;sh_y=126.7752269&amp;sh_name=미소핀의원&amp;sh_set=utf8&amp;sh_height=400&amp;sh_width=1380" frameborder="0" border="0" marginwidth="0" marginheight="0" scrolling="no" title="미소핀의원 오시는길"></iframe>
                 </div>
             </div>
             <div class="bottom">
@@ -1254,7 +1283,7 @@ $(function() {
                     </li>
                     <li>
                         <span class="kakao"></span>
-                        <div class="cate">유튜브</div>
+                        <div class="cate">인스타그램</div>
                         <a href="https://www.instagram.com/misopin_clinic">@misopin_clinic</a>
                     </li>
                 </ul>
