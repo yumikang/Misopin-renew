@@ -84,12 +84,12 @@
 
 /* MISOPIN 위치 미세 조정 */
 #MainVisual .h1_mst01 {
-    top: 40% !important;  /* 42% → 40% 살짝 위로 */
+    top: 65% !important;  /* 아래쪽으로 이동 */
 }
 
 /* CLINIC 위치 미세 조정 */
 #MainVisual .h1_mst02 {
-    top: 52% !important;  /* 55% → 52% 살짝 위로 */
+    top: 77% !important;  /* 아래쪽으로 이동 */
 }
 
 /* 각 글자 스타일 개선 */
@@ -102,7 +102,7 @@
    ======================================== */
 
 #MainVisual .subtitle {
-    top: 62% !important;  /* 65% → 62% 위로 이동 */
+    top: 87% !important;  /* 서브타이틀도 아래로 이동 */
 }
 
 #MainVisual .subtitle h2 {
@@ -113,36 +113,98 @@
 }
 
 /* ========================================
-   4. "피부과 전문의" 텍스트 색상 개선
+   4. opening_hours 레이아웃 조정
    ======================================== */
 
+.opening_hours {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 1200px;
+    z-index: 5;
+}
+
+.opening_hours .container {
+    width: 100%;
+}
+
+.opening_hours .rows {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+/* 구분선 추가 */
+.opening_hours .rows::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 1px;
+    height: 60px;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.opening_hours .cols {
+    flex: 1;
+    text-align: center;
+}
+
+.opening_hours .cols01 {
+    padding-right: 60px;
+}
+
+.opening_hours .cols02 {
+    padding-left: 60px;
+}
+
 .opening_hours .cols01 .nm {
-    font-size: 26px !important;  /* 살짝 크게 */
+    font-size: 18px !important;  /* 진료시간과 동일한 크기 */
+    font-weight: 400 !important;  /* 일반 굵기 */
+    color: #ffffff;
+    line-height: 1.5;
+    letter-spacing: 0.05em;
 }
 
 .opening_hours .cols01 .nm .br {
-    color: #d6b871 !important;  /* 골드 색상 */
-    font-weight: 700 !important;  /* 굵게 */
-    font-size: 28px !important;  /* 조금 더 크게 */
+    color: #ffffff !important;  /* 흰색으로 통일 */
+    font-weight: 400 !important;  /* 일반 굵기 */
+    font-size: 18px !important;  /* 같은 크기 유지 */
     margin-top: 5px !important;
-    display: inline-block !important;
+    display: block !important;  /* 줄바꿈 유지 */
+    letter-spacing: 0.05em;
 }
 
 /* ========================================
    5. 진료시간 및 스크롤 안내 텍스트
    ======================================== */
 
+.opening_hours .cols02 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
 .opening_hours .everyday p {
-    font-size: 20px !important;
-    font-weight: 500 !important;
+    font-size: 18px !important;
+    font-weight: 400 !important;
     color: #ffffff !important;
+    margin: 0;
+    letter-spacing: 0.05em;
 }
 
 .opening_hours .scr p {
-    font-size: 13px !important;
-    font-weight: 400 !important;
-    letter-spacing: 3px !important;
-    color: rgba(255, 255, 255, 0.9) !important;
+    font-size: 12px !important;
+    font-weight: 300 !important;
+    letter-spacing: 0.2em !important;
+    color: rgba(255, 255, 255, 0.7) !important;
+    text-transform: uppercase;
+    margin: 0;
 }
 
 /* ========================================
@@ -164,15 +226,15 @@
     }
     
     #MainVisual .h1_mst01 {
-        top: 38% !important;
+        top: 63% !important;
     }
     
     #MainVisual .h1_mst02 {
-        top: 50% !important;
+        top: 75% !important;
     }
     
     #MainVisual .subtitle {
-        top: 60% !important;
+        top: 85% !important;
     }
     
     #MainVisual .subtitle h2 {
@@ -196,15 +258,15 @@
     }
     
     #MainVisual .h1_mst01 {
-        top: 36% !important;
+        top: 61% !important;
     }
     
     #MainVisual .h1_mst02 {
-        top: 46% !important;
+        top: 71% !important;
     }
     
     #MainVisual .subtitle {
-        top: 56% !important;
+        top: 81% !important;
     }
     
     #MainVisual .subtitle h2 {
@@ -284,5 +346,5 @@
 
 /* 피부과 전문의 강조 효과 */
 .opening_hours .cols01 .nm .br {
-    color: #d6b871 !important;  /* 미소핀 골드 톤 */
+    color: #ffffff !important;  /* 흰색으로 통일 */
 }
