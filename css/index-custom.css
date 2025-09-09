@@ -160,9 +160,9 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    max-width: 1200px;  /* CONTACT US 영역과 동일한 너비 */
+    max-width: 1440px;  /* 더 넓은 화면에서 여유롭게 */
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 40px;  /* 너비 증가에 따른 패딩 증가 */
     margin-bottom: 30px;
 }
 
@@ -191,14 +191,14 @@
 
 /* 사업자 정보 레이아웃 개선 */
 #sh_ft .copy .main_info {
-    max-width: 1200px;  /* CONTACT US와 동일한 너비 */
+    max-width: 1440px;  /* 더 넓은 화면에서 여유롭게 */
     margin: 0 auto;
-    padding: 30px 20px;
+    padding: 30px 40px;  /* 너비 증가에 따른 패딩 증가 */
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));  /* 미니멀 너비 증가 */
+    gap: 24px;  /* 간격 증가 */
     color: rgba(255, 255, 255, 0.7) !important;
     font-size: 13px;
     line-height: 1.8;
@@ -221,9 +221,9 @@
 
 /* Copyright 영역 */
 #sh_ft .copy .bottom {
-    max-width: 1200px;  /* CONTACT US와 동일한 너비 */
+    max-width: 1440px;  /* 더 넓은 화면에서 여유롭게 */
     margin: 0 auto;
-    padding: 20px 20px 0;
+    padding: 20px 40px 0;  /* 너비 증가에 따른 패딩 증가 */
     display: flex;
     justify-content: space-between;
     align-items: center;
