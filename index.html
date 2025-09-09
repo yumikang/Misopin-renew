@@ -299,14 +299,17 @@ var g5_cookie_domain = "";
 
 .section_intro {
     margin-bottom: 80px;
+    text-align: left !important;
+    padding-left: 60px;
 }
 
 .section_title {
     font-size: 48px;
-    font-weight: 300;
+    font-weight: 700;
     margin-bottom: 30px;
     color: white;
     text-transform: lowercase;
+    text-align: left !important;
 }
 
 .section_desc {
@@ -314,15 +317,36 @@ var g5_cookie_domain = "";
     line-height: 1.6;
     color: rgba(255, 255, 255, 0.9);
     max-width: 600px;
-    margin: 0 auto;
+    margin: 0;
+    text-align: left !important;
 }
 
 .sns_grid {
     display: flex;
     justify-content: center;
     gap: 60px;
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
+    position: relative;
+}
+
+.sns_grid::before,
+.sns_grid::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.sns_grid::before {
+    top: -40px;
+}
+
+.sns_grid::after {
+    bottom: -40px;
 }
 
 .sns_card_link {
@@ -331,43 +355,48 @@ var g5_cookie_domain = "";
 }
 
 .sns_card {
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px);
-    border-radius: 20px;
-    padding: 40px 30px;
-    text-align: center;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 35px 40px;
     transition: all 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    min-width: 280px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    min-width: 350px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
 }
 
 .sns_card:hover {
-    background: rgba(255, 255, 255, 0.25);
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    background: rgba(255, 255, 255, 1);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
 }
 
 .sns_icon {
-    margin-bottom: 25px;
+    flex-shrink: 0;
 }
 
 .sns_icon img {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     object-fit: contain;
 }
 
+.sns_info {
+    text-align: left;
+}
+
 .sns_title {
-    font-size: 22px;
-    font-weight: 600;
-    margin-bottom: 15px;
-    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #2c2c2c;
 }
 
 .sns_desc {
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.5;
-    color: rgba(255, 255, 255, 0.8);
+    color: #666666;
+    margin: 0;
 }
 
 /* 의사 소개 섹션 스타일 */
@@ -483,8 +512,14 @@ var g5_cookie_domain = "";
     
     .sns_grid {
         flex-direction: column;
-        gap: 30px;
+        gap: 20px;
         padding: 0 20px;
+    }
+    
+    .sns_card {
+        min-width: unset;
+        width: 100%;
+        padding: 25px 30px;
     }
     
     .section_title {
