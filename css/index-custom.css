@@ -148,3 +148,138 @@
     height: 50px;
     width: auto;
 }
+
+/* 14. 푸터 하단 레이아웃 개선 */
+#sh_ft .copy {
+    background: #1a1a1a;
+    padding: 40px 0;
+}
+
+#sh_ft .copy .top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    margin-bottom: 30px;
+}
+
+#sh_ft .copy .ft_logo {
+    height: 60px !important;  /* 로고 크기 증가 */
+    filter: brightness(0) invert(1);
+    margin-right: 40px;
+}
+
+#sh_ft .copy .top > div {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+#sh_ft .copy .top > div a {
+    color: rgba(255, 255, 255, 0.8) !important;
+    font-size: 14px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+#sh_ft .copy .top > div a:hover {
+    color: #ffffff !important;
+}
+
+/* 사업자 정보 레이아웃 개선 */
+#sh_ft .copy .main_info {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    color: rgba(255, 255, 255, 0.7) !important;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+#sh_ft .copy .main_info .info-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#sh_ft .copy .main_info .info-label {
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 400;
+}
+
+#sh_ft .copy .main_info .info-value {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Copyright 영역 */
+#sh_ft .copy .bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#sh_ft .copy .bottom p {
+    color: rgba(255, 255, 255, 0.5) !important;
+    font-size: 12px;
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+
+#sh_ft .copy .bottom .adm {
+    display: flex;
+    gap: 20px;
+}
+
+#sh_ft .copy .bottom .adm a {
+    color: rgba(255, 255, 255, 0.4) !important;
+    font-size: 11px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+#sh_ft .copy .bottom .adm a:hover {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    #sh_ft .copy .top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+    
+    #sh_ft .copy .ft_logo {
+        height: 50px !important;
+        margin-right: 0;
+    }
+    
+    #sh_ft .copy .top > div {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    
+    #sh_ft .copy .main_info {
+        grid-template-columns: 1fr;
+        text-align: left;
+        gap: 10px;
+    }
+    
+    #sh_ft .copy .bottom {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+}
