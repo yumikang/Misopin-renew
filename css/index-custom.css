@@ -96,12 +96,54 @@
     box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
 }
 
-/* 10. 충돌 방지를 위한 명시적 스타일 */
+/* 10. 푸터 아이콘 및 텍스트 정렬 수정 */
+#sh_ft .same_as li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+#sh_ft .same_as li i[data-feather] {
+    min-width: 24px;
+    margin-right: 10px;
+}
+
+#sh_ft .same_as li .cate {
+    min-width: 80px;
+    margin-right: 10px;
+    font-weight: 600;
+}
+
+#sh_ft .same_as li address,
+#sh_ft .same_as li a {
+    flex: 1;
+}
+
+/* 11. 푸터 info_box 정렬 */
+#sh_ft .info_box > li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+#sh_ft .info_box > li > i[data-feather] {
+    min-width: 24px;
+    margin-right: 10px;
+    margin-top: 2px;
+}
+
+#sh_ft .info_box > li > .cate {
+    min-width: 80px;
+    margin-right: 10px;
+    font-weight: 600;
+}
+
+/* 12. 충돌 방지를 위한 명시적 스타일 */
 .main_section * {
     box-sizing: border-box;
 }
 
-/* 11. 미소핀 로고 스타일 조정 */
+/* 13. 미소핀 로고 스타일 조정 */
 #top_logo img {
     height: 50px;
     width: auto;
