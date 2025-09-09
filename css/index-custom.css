@@ -153,13 +153,14 @@
 #sh_ft .copy {
     background: #1a1a1a;
     padding: 40px 0;
+    width: 100%;
 }
 
 #sh_ft .copy .top {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    max-width: 1200px;
+    max-width: 1200px;  /* CONTACT US 영역과 동일한 너비 */
     margin: 0 auto;
     padding: 0 20px;
     margin-bottom: 30px;
@@ -190,7 +191,7 @@
 
 /* 사업자 정보 레이아웃 개선 */
 #sh_ft .copy .main_info {
-    max-width: 1200px;
+    max-width: 1200px;  /* CONTACT US와 동일한 너비 */
     margin: 0 auto;
     padding: 30px 20px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -220,7 +221,7 @@
 
 /* Copyright 영역 */
 #sh_ft .copy .bottom {
-    max-width: 1200px;
+    max-width: 1200px;  /* CONTACT US와 동일한 너비 */
     margin: 0 auto;
     padding: 20px 20px 0;
     display: flex;
@@ -259,6 +260,7 @@
         flex-direction: column;
         align-items: flex-start;
         gap: 20px;
+        padding: 0 15px;  /* 모바일에서 패딩 감소 */
     }
     
     #sh_ft .copy .ft_logo {
@@ -275,11 +277,13 @@
         grid-template-columns: 1fr;
         text-align: left;
         gap: 10px;
+        padding: 30px 15px;
     }
     
     #sh_ft .copy .bottom {
         flex-direction: column;
         gap: 15px;
         text-align: center;
+        padding: 20px 15px 0;
     }
 }
