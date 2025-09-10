@@ -18,6 +18,11 @@
     .desktop-footer {
         display: block !important;
     }
+    
+    /* 데스크톱에서 퀵메뉴 표시 */
+    #quickList {
+        display: block !important;
+    }
 }
 
 /* ===== 모바일 전용 요소 ===== */
@@ -31,6 +36,11 @@
     .mobile-footer,
     .mobile-only {
         display: block !important;
+    }
+    
+    /* 모바일에서 퀵메뉴 숨김 */
+    #quickList {
+        display: none !important;
     }
     
     /* 모바일 래퍼 설정 */
