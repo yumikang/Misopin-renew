@@ -485,35 +485,41 @@
         margin-bottom: 2px;
     }
     
+    /* 모든 아이콘을 일관된 흑백 테마로 통일 */
     .mobile-bottom-nav a.kakao {
-        color: #FEE500;
+        color: #666;
     }
     
     .mobile-bottom-nav a.kakao:hover {
-        background: rgba(254, 229, 0, 0.1);
-        color: #FEE500;
-    }
-    
-    .mobile-bottom-nav a.phone {
+        background: rgba(56, 176, 201, 0.1);
         color: #38b0c9;
     }
     
-    .mobile-bottom-nav a.youtube {
-        color: #FF0000;
+    .mobile-bottom-nav a.phone {
+        color: #666;
     }
     
-    .mobile-bottom-nav a.youtube:hover {
-        background: rgba(255, 0, 0, 0.1);
-        color: #FF0000;
+    .mobile-bottom-nav a.phone:hover {
+        background: rgba(56, 176, 201, 0.1);
+        color: #38b0c9;
+    }
+    
+    .mobile-bottom-nav a.instagram {
+        color: #666;
+    }
+    
+    .mobile-bottom-nav a.instagram:hover {
+        background: rgba(56, 176, 201, 0.1);
+        color: #38b0c9;
     }
     
     .mobile-bottom-nav a.event {
-        color: #FF6B6B;
+        color: #666;
     }
     
     .mobile-bottom-nav a.event:hover {
-        background: rgba(255, 107, 107, 0.1);
-        color: #FF6B6B;
+        background: rgba(56, 176, 201, 0.1);
+        color: #38b0c9;
     }
     
     /* 데스크톱에서 모바일 전용 요소 숨김 */
