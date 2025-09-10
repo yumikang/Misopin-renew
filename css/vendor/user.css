@@ -1,0 +1,98 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Marcellus&display=swap');
+@import url('https://cdn.jsdelivr.net/gh/fonts-archive/Freesentation/Freesentation.css');
+/* 초기화 */
+* {-webkit-text-size-adjust:none}
+body{background:#fff;font-size:0.81em;font-family:var(--k-font), var(--e-font)}
+h1, h2, h3, h4, h5, h6, input, button, textarea, select{font-family:var(--k-font), var(--e-font)}
+#device_change{border:1px solid #666;font-size:3.5em;box-shadow:none}
+:root{--primary:#38b0c9;--black:#111;--main-black:#383838;--k-font:'Freesentation';--e-font:'Marcellus';--main-size:1500px}
+#sh_wrapper *{word-break:keep-all}
+
+/* HEADER */
+#sh_hd{position:relative;min-width:var(--main-size);width:100%}
+
+/* MAIN  */
+#main_banner{position:relative;width:100%;min-width:var(--main-size)}
+
+/* INDEX */
+#sh_section{position:relative;min-width:var(--main-size);width:100%;line-height:1.5;font-family:var(--k-font), var(--e-font)}
+#sh_section .pl{white-space:pre-line}
+#sh_section .section_tit{text-align:center}
+#sh_section .section_h2{font-size:55px;font-weight:400;font-family:var(--e-font);color:var(--black)}
+#sh_section .section_h2 span{color:var(--primary)}
+#sh_section .section_p{font-size:20px;font-weight:500;color:var(--primary)}
+
+/* CONTENT */
+#sh_container{position:relative;min-width:var(--main-size);width:100%}
+#sh_container_wrapper{position:relative;width:100%}
+#sh_content{position:relative;width:1200px;min-height:620px;padding:70px 0;margin:0 auto}
+
+/* SNB */
+#sh_aside{position:relative;min-width:var(--main-size);width:100%;border-bottom:solid 1px #e5e5e5}
+#sh_aside_wrapper{position:relative;width:1200px;margin:0 auto;zoom:1}
+
+/* FOOTER */
+#sh_ft{position:relative;min-width:var(--main-size);padding:180px 0 40px;width:100%;line-height:1.5;font-family:var(--k-font), var(--e-font);color:#fff;background-color:#282828}
+#sh_ft .top{display:flex;margin:auto;width:80%}
+#sh_ft .form_area{width:50%}
+#sh_ft .form_area h2{font-size:55px;font-weight:400;font-family:var(--e-font)}
+#sh_ft .form_area p{font-size:20px;font-weight:500}
+#sh_ft .form_area form{margin-top:50px;width:80%}
+#sh_ft .form_area .sh_input:focus{outline:none !important;border:none !important;border-bottom:1px solid rgb(255, 255, 255, 0.3) !important;box-shadow:none !important}
+#sh_ft .form_area .sh_input{padding:25px 0;width:100%;font-size:16px;font-weight:600;border:none;outline:none;box-shadow:none;border-bottom:1px solid rgb(255, 255, 255, 0.3);color:#fff;background-color:transparent}
+#sh_ft .form_area .sh_input::placeholder {color:rgb(255, 255, 255, 0.3)}
+#sh_ft .form_area textarea{padding:25px 0 60px !important}
+#sh_ft .form_area .p_info{display:flex;gap:20px}
+#sh_ft .form_area .p_info ul{width:50%}
+#sh_ft .form_area ul li, #sh_ft .form_area ul input, #sh_ft .form_area ul textarea{width:100%}
+#sh_ft .form_area label{display:none}
+#sh_ft .form_area .prv_area{display:flex;justify-content:space-between;align-items:start;margin-top:20px}
+#sh_ft .form_area .send_btn{display:flex;justify-content:center;align-items:center;width:max-content;padding-top:20px}
+#sh_ft .form_area .send_btn button{width:150px;height:58px;border-radius:29px;font-size:17px;font-weight:700;border:2px solid var(--primary);color:#fff;background-color:var(--primary);transition:all .3s}
+#sh_ft .form_area .consent{display:flex;align-items:center;gap:5px}
+#sh_ft .form_area .consent a{font-size:13px;font-weight:400;color:rgb(255, 255, 255, 0.6)}
+#sh_ft .form_area .ck_box{cursor:pointer}
+#sh_ft .map_area{overflow:hidden; width:50%;height:400px;border-radius:10px}
+#sh_ft iframe{width:100%;height:100%}
+#sh_ft .bottom{display:flex;margin:100px auto;width:80%}
+#sh_ft .bottom .cate{font-size:20px;font-weight:700;color:#fff}
+#sh_ft .info_box{width:50%}
+#sh_ft .info_box{display:flex;flex-direction:column;gap:20px}
+#sh_ft .info_box li{display:flex;gap:32px}
+#sh_ft .info_box li:first-child{align-items:center}
+#sh_ft .info_box li:last-child ul li+li{margin-top:10px}
+#sh_ft .info_box .number{font-size:30px;font-weight:400;font-family:var(--e-font)}
+#sh_ft .info_box .day, #sh_ft .bottom .info_box .time{font-size:18px;font-weight:600} 
+#sh_ft .info_box .notice{font-size:13px;font-weight:600}
+#sh_ft .same_as{width:50%}
+#sh_ft .same_as li{display:flex;align-items:center;gap:32px}
+#sh_ft .same_as li+li{margin-top:20px}
+#sh_ft .same_as address{font-style:unset;font-size:20px;font-weight:700}
+#sh_ft .same_as .cate{min-width:65px}
+#sh_ft .same_as .youtube{width:24px;height:17px;background:url(../sh_img/ft/youtube.png) no-repeat center / contain} 
+#sh_ft .same_as .kakao{width:22px;height:20px;background:url(../sh_img/ft/kakao.png) no-repeat center / contain} 
+#sh_ft .same_as a{font-size:18px;font-weight:400;color:#fff;transition:all .3s}
+#sh_ft .copy{padding-top:100px;margin-top:100px;border-top:1px solid #777;font-size:15px;font-weight:400;color:#777}
+#sh_ft .copy .top{justify-content:space-between}
+#sh_ft .copy .top a{font-size:15px;font-weight:400;color:#777;transition:all .3s}
+#sh_ft .copy .top a+a{margin-left:25px}
+#sh_ft .copy .main_info{margin:140px auto;width:80%}
+#sh_ft .copy .bottom{justify-content:space-between;margin:0 auto;font-family:var(--e-font)}
+#sh_ft .copy .bottom a{font-size:12px;color:#777;transition:all .3s}
+#sh_ft .copy .bottom a+a{margin-left:15px}
+
+#sh_ft .form_area .send_btn button:hover{border:2px solid #fff;color:var(--primary);background-color:#fff}
+#sh_ft .same_as a:hover{color:var(--primary)}
+#sh_ft .copy .top a:hover{color:#fff}
+#sh_ft .copy .bottom a:hover{color:#fff}
+
+/* 사이트맵 */
+#sh_site_map {position:relative;width:100%;min-height:500px;height:500px auto;margin:0 auto;font-family:'notokr-regular'}
+.sh_site_map01 {float:left;width:30%;margin-right:3%;min-height:200px;height:200px auto}
+.sh_site_map_title {padding-left:17px;font-size:1.4em;font-weight:normal;font-family:'notokr-medium'}
+.sh_site_map_title a {color:#333}
+.sh_site_map_line {margin:10px 0;border-bottom:2px solid #8b8b8b}
+.sh_site_map_box {width:100%;margin:0 auto;padding:10px;border-bottom:1px solid #ebebeb;border-top:1px solid #ebebeb;min-height:80px;background:#f7f7f7}
+.sh_site_map_txt {padding:5px;font-size:14px;line-height:1.2em}
+.sh_site_map_txt a{color:#666;font-family:notokr-medium}
