@@ -358,7 +358,8 @@
     /* ===== 모바일 푸터 스타일 ===== */
     #mo_ft {
         margin-top: 0;
-        padding-bottom: 70px; /* 하단 네비게이션 공간 확보 */
+        padding-bottom: 95px; /* 하단 네비게이션 공간 확보 (85px → 95px) */
+        padding-top: 35px; /* 상단 패딩 추가 (25px → 35px) */
         font-size: 13px;
         color: #666;
         word-break: keep-all;
@@ -376,7 +377,7 @@
     
     
     #mo_ft ul {
-        padding: 20px 0;
+        padding: 30px 0; /* 25px → 30px로 증가 */
     }
     
     #mo_ft ul li {
@@ -395,7 +396,7 @@
     }
     
     #mo_ft .inner {
-        padding: 20px 15px;
+        padding: 30px 15px; /* 25px → 30px로 증가 */
         color: #aaa;
     }
     
@@ -406,7 +407,7 @@
     }
     
     #mo_ft .copy {
-        padding: 15px 0;
+        padding: 25px 0; /* 20px → 25px로 증가 */
         margin-top: 0;
         background-color: #111;
     }
@@ -454,7 +455,7 @@
         display: none; /* 기본적으로 숨김 */
         justify-content: space-around;
         align-items: center;
-        padding: 8px 0 12px 0;
+        padding: 10px 0 14px 0; /* 8px 0 12px 0 → 10px 0 14px 0 */
         z-index: 1000;
         border-top: 1px solid #eee;
         width: 100%;
