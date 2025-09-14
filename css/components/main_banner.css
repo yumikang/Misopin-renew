@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-#MainVisual{position:relative;width:100%}
+#MainVisual{position:relative;width:100vw;margin-left:calc(-50vw + 50%);margin-right:calc(-50vw + 50%)}
 #MainVisual .pl{white-space:pre-line}
 #MainVisual .tit{display:flex;flex-direction:column;position:absolute;z-index:2;top:50%;left:50%;transform:translate(-50%, -50%);width:80%}
 #MainVisual .tit h2{font-size:25px;font-weight:400;font-family:var(--e-font);color:var(--primary)}

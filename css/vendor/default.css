@@ -43,15 +43,23 @@ border: 1px solid #558ab7 !important;
 }
 .placeholdersjs { color: #aaa !important; }
 
-/* 레이아웃 크기 지정 */
-#hd, #wrapper, #ft{min-width:1200px}
+/* 레이아웃 크기 지정 - 1450px 반응형으로 변경 */
+#hd, #wrapper, #ft{
+    width: 100%;
+    max-width: 100%;
+}
 
 #hd_pop,
 #hd_wrapper,
 #tnb ul,
 #gnb .gnb_wrap,
 #container_wr,
-#ft_wr{width:1200px}
+#ft_wr{
+    width: 100%;
+    max-width: 1450px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
 
 /* 팝업레이어 */
 #hd_pop {z-index:1000;position:relative;margin:0 auto;height:0}

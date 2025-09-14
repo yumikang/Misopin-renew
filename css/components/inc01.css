@@ -3,8 +3,8 @@
 #atc01 .inc01_slide{overflow:hidden;position:relative;padding-top:100px;width:100%}
 #atc01 .inc01_slide li{display:flex;flex-direction:column;justify-content:center;width:100%}
 #atc01 .inc01_slide li .img_cont{display:flex;justify-content:center;align-items:center;border-radius:20px;width:100%;height:580px}
-#atc01 .inc01_slide li img{margin:auto;width:80%;height:460px;border-radius:20px;object-fit:cover;transition:all 0.8s}
-#atc01 .inc01_slide li.on img{width:100%;height:100%}
+#atc01 .inc01_slide li img{margin:auto;width:400px;height:300px;border-radius:30px;object-fit:cover;transition:all 0.8s;box-shadow:0 8px 25px rgba(0,0,0,0.15)}
+#atc01 .inc01_slide li.on img{width:500px;height:400px}
 #atc01 .inc01_slide li .info{opacity:0;position:relative;padding:40px 60px;width:100%;transition:all 0.8s}
 #atc01 .inc01_slide li.on .info{opacity:1}
 #atc01 .inc01_slide li .info h3, #atc01 .inc01_slide li .info div{font-size:30px;font-weight:700;color:var(--black)}
@@ -21,17 +21,17 @@
 #atc01 .inc01_slide .pager span.on{width:28px;height:8px;border-radius:4px;background-color:var(--primary)}
 #atc01 .inc01_slide .nav_container{display:flex;justify-content:space-between;position:absolute;top:39%;left:50%;transform:translate(-50%, -50%);width:62%}
 #atc01 .inc01_slide .nav_container div{display:flex;justify-content:center;align-items:center;width:70px;height:70px;border:2px solid #e1e1e1;border-radius:50%;cursor:pointer;transition:all .3s}
-#atc01 .inc01_slide .nav_container span{display:block;width:21px;height:17px;background-repeat:no-repeat;background-size:contain;background-position:center;transition:all .3s}
-#atc01 .inc01_slide .nav_container div:first-child span{background-image:url(./img/arrow_left.png)}
-#atc01 .inc01_slide .nav_container div:last-child span{background-image:url(./img/arrow_right.png)}
+#atc01 .inc01_slide .nav_container span{display:block;width:12px;height:12px;border-top:3px solid #999;border-right:3px solid #999;transition:all .3s}
+#atc01 .inc01_slide .nav_container div:first-child span{transform:rotate(-135deg)}
+#atc01 .inc01_slide .nav_container div:last-child span{transform:rotate(45deg)}
 
 #atc01 .inc01_slide li .search:hover{background-color:var(--primary)}
 #atc01 .inc01_slide li .search:hover svg{color:#fff}
 #atc01 .inc01_slide .nav_container div:hover{border:2px solid var(--primary)}
-#atc01 .inc01_slide .nav_container div:first-child:hover span{background-image:url(./img/arrow_left_c.png)}
-#atc01 .inc01_slide .nav_container div:last-child:hover span{background-image:url(./img/arrow_right_c.png)}
+#atc01 .inc01_slide .nav_container div:hover span{border-color:var(--primary)}
 
 @media (max-width:1980px){
 #atc01 .inc01_slide li .img_cont{height:450px}
-#atc01 .inc01_slide li img{height:320px}
+#atc01 .inc01_slide li img{width:350px;height:250px}
+#atc01 .inc01_slide li.on img{width:450px;height:350px}
 }
