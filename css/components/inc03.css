@@ -26,3 +26,64 @@
 #atc03 .inc03_slide li .img_cont{height:500px}
 #atc03 .inc03_slide li h3, #atc03 .inc03_slide li div{font-size:20px}
 }
+
+/* 태블릿 반응형 */
+@media (max-width:1024px){
+#atc03{margin:120px auto;padding:0 30px}
+#atc03 .inc03_slide{padding-top:100px}
+#atc03 .inc03_slide li .img_cont{height:400px}
+#atc03 .inc03_slide li h3, #atc03 .inc03_slide li div{font-size:18px}
+#atc03 .inc03_slide li .view{font-size:35px}
+}
+
+/* 모바일 반응형 */
+@media (max-width:768px){
+#atc03{margin:80px auto;padding:0 15px}
+#atc03 .inc03_slide{padding-top:70px}
+#atc03 .inc03_slide li .img_cont{
+    height:350px;
+    border-radius:20px;
+}
+#atc03 .inc03_slide li img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center;
+}
+#atc03 .inc03_slide li h3, #atc03 .inc03_slide li div{
+    margin-top:15px;
+    font-size:16px;
+}
+#atc03 .inc03_slide li .view{
+    font-size:28px;
+    top:50%;
+}
+#atc03 .inc03_slide .nav_container{
+    top:20px;
+    gap:8px;
+}
+#atc03 .inc03_slide .nav_container div{
+    width:40px;
+    height:40px;
+}
+#atc03 .inc03_slide .nav_container div svg{
+    width:16px;
+    height:16px;
+}
+}
+
+/* 작은 모바일 반응형 */
+@media (max-width:480px){
+#atc03{margin:60px auto}
+#atc03 .inc03_slide{padding-top:60px}
+#atc03 .inc03_slide li .img_cont{
+    height:280px;
+    border-radius:15px;
+}
+#atc03 .inc03_slide li h3, #atc03 .inc03_slide li div{
+    font-size:14px;
+}
+#atc03 .inc03_slide li .view{
+    font-size:24px;
+}
+}
