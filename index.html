@@ -1342,11 +1342,28 @@ table thead, th {
     const inc01_slide = new Swiper(".inc01_slide", {
         loop:true,
         speed:1200,
-        slidesPerView:2,
+        slidesPerView:1,
         centeredSlides:true,
         slideDuplicateClass: 'clone',
-        spaceBetween:200,
+        spaceBetween:30,
         slideActiveClass: 'on',
+        breakpoints: {
+            // 모바일
+            320: {
+                slidesPerView: 1,
+                spaceBetween: 20
+            },
+            // 태블릿
+            768: {
+                slidesPerView: 1.5,
+                spaceBetween: 60
+            },
+            // 데스크톱
+            1024: {
+                slidesPerView: 2,
+                spaceBetween: 200
+            }
+        },
         pagination:{
             el:"#atc01 .pager",
             clickable:true,
