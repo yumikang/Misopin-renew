@@ -17,6 +17,18 @@
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="css/button-styles.css">
 <style>
+/* rem 기준 설정 - 16px 기준 */
+html {
+    font-size: 16px;  /* 1rem = 16px 기준 설정 */
+}
+
+/* 반응형 조정 */
+@media (max-width: 768px) {
+    html {
+        font-size: 14px;  /* 모바일에서 기준 크기 조정 */
+    }
+}
+
 @import url(//fonts.googleapis.com/earlyaccess/nanumpenscript.css);
 @import url(//fonts.googleapis.com/earlyaccess/nanumbrushscript.css);
 @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
@@ -210,8 +222,8 @@ var g5_cookie_domain = "";
 <body>
 <style>
 /* 디자인샘플 보러가기 */
-#goToDesign{position:relative;width:100%;padding:7px 0;border-bottom:1px solid #fff073;font-size:12px;text-align:center;background-color:#fffbd9;font-family:dotum} 
-#goToDesign a{padding-left:10px;font-weight:bold;color:#f96319}
+#goToDesign{position:relative;width:100%;padding:0.4375rem 0;border-bottom:0.0625rem solid #fff073;font-size:0.75rem;text-align:center;background-color:#fffbd9;font-family:dotum} 
+#goToDesign a{padding-left:0.625rem;font-weight:bold;color:#f96319}
 #goToDesign a:hover{text-decoration:underline}
 </style>
 
@@ -239,7 +251,7 @@ var g5_cookie_domain = "";
         </li>
         <li>
             <a href="https://www.instagram.com/misopin_clinic" target="_blank">
-                <div class="instagram" style="width: 24px; height: 24px; margin: 0 auto 5px; background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iIzNDMUUxRSIgZD0iTTcuOCAyQTUuOCA1LjggMCAwIDAgMiA3Ljh2OC40QTUuOCA1LjggMCAwIDAgNy44IDIyaDguNGE1LjggNS44IDAgMCAwIDUuOC01LjhWNy44QTUuOCA1LjggMCAwIDAgMTYuMiAySDcuOHptMCAxLjloOC40YTMuOSAzLjkgMCAwIDEgMy45IDMuOXY4LjRhMy45IDMuOSAwIDAgMS0zLjkgMy45SDcuOGEzLjkgMy45IDAgMCAxLTMuOS0zLjlWNy44YTMuOSAzLjkgMCAwIDEgMy45LTMuOXpNMTcuMjUgNS41YTEuMjUgMS4yNSAwIDEgMCAwIDIuNSAxLjI1IDEuMjUgMCAwIDAgMC0yLjV6TTEyIDdhNSA1IDAgMSAwIDAgMTAgNSA1IDAgMCAwIDAtMTB6bTAgMS45YTMuMSAzLjEgMCAxIDEgMCA2LjIgMy4xIDMuMSAwIDAgMSAwLTYuMnoiLz48L3N2Zz4=') center/contain no-repeat;"></div>
+                <div class="instagram" style="width: 1.5rem; height: 1.5rem; margin: 0 auto 0.3125rem; background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iIzNDMUUxRSIgZD0iTTcuOCAyQTUuOCA1LjggMCAwIDAgMiA3Ljh2OC40QTUuOCA1LjggMCAwIDAgNy44IDIyaDguNGE1LjggNS44IDAgMCAwIDUuOC01LjhWNy44QTUuOCA1LjggMCAwIDAgMTYuMiAySDcuOHptMCAxLjloOC40YTMuOSAzLjkgMCAwIDEgMy45IDMuOXY4LjRhMy45IDMuOSAwIDAgMS0zLjkgMy45SDcuOGEzLjkgMy45IDAgMCAxLTMuOS0zLjlWNy44YTMuOSAzLjkgMCAwIDEgMy45LTMuOXpNMTcuMjUgNS41YTEuMjUgMS4yNSAwIDEgMCAwIDIuNSAxLjI1IDEuMjUgMCAwIDAgMC0yLjV6TTEyIDdhNSA1IDAgMSAwIDAgMTAgNSA1IDAgMCAwIDAtMTB6bTAgMS45YTMuMSAzLjEgMCAxIDEgMCA2LjIgMy4xIDMuMSAwIDAgMSAwLTYuMnoiLz48L3N2Zz4=') center/contain no-repeat;"></div>
                 <div class="cate">인스타그램</div>
             </a>
         </li>
@@ -316,7 +328,7 @@ var g5_cookie_domain = "";
         <div id="top_nav_wrap">
             <!-- 로고 -->
             <div id="top_logo">
-                <a href="index.html"><img src="img/misopin-temporary-logo.png" srcset="img/misopin-temporary-logo.png 2048w, img/misopin-temporary-logo.png 1024w, img/misopin-temporary-logo.png 512w" sizes="(max-width: 768px) 100px, 150px" alt="미소핀의원" style="height: 50px;" /></a>
+                <a href="index.html"><img src="img/misopin-temporary-logo.png" srcset="img/misopin-temporary-logo.png 2048w, img/misopin-temporary-logo.png 1024w, img/misopin-temporary-logo.png 512w" sizes="(max-width: 768px) 100px, 150px" alt="미소핀의원" style="height: 3.125rem;" /></a>
             </div>
             <div class="right">
                 <nav id="r_menu">
@@ -386,7 +398,7 @@ var g5_cookie_domain = "";
         <!-- 모바일 로고 -->
         <div id="mo_logo">
             <a href="index.html">
-                <img src="img/misopin-temporary-logo.png" srcset="img/misopin-temporary-logo.png 2048w, img/misopin-temporary-logo.png 1024w, img/misopin-temporary-logo.png 512w" sizes="(max-width: 768px) 80px, 120px" alt="미소핀의원" style="height: 40px;" />
+                <img src="img/misopin-temporary-logo.png" srcset="img/misopin-temporary-logo.png 2048w, img/misopin-temporary-logo.png 1024w, img/misopin-temporary-logo.png 512w" sizes="(max-width: 768px) 80px, 120px" alt="미소핀의원" style="height: 2.5rem;" />
             </a>
         </div>
         
@@ -671,7 +683,7 @@ var g5_cookie_domain = "";
         </div>
         <div class="copy">
             <div class="top">
-                <a href="index.html"><img class="ft_logo" src="img/misopin-temporary-logo.png" srcset="img/misopin-temporary-logo.png 2048w, img/misopin-temporary-logo.png 1024w, img/misopin-temporary-logo.png 512w" sizes="(max-width: 768px) 80px, 120px" alt="미소핀의원" style="filter: brightness(0) invert(1); height: 40px;" loading="lazy" /></a>
+                <a href="index.html"><img class="ft_logo" src="img/misopin-temporary-logo.png" srcset="img/misopin-temporary-logo.png 2048w, img/misopin-temporary-logo.png 1024w, img/misopin-temporary-logo.png 512w" sizes="(max-width: 768px) 80px, 120px" alt="미소핀의원" style="filter: brightness(0) invert(1); height: 2.5rem;" loading="lazy" /></a>
                 <div>
                     <a href="javascript:void(0)" onclick="window.open('privacy.html', 'window', 'width=600; height=800; left=150; top=0; scrollbars=no')">개인정보취급방침</a>
                     <a href="javascript:void(0)" onclick="window.open('stipulation.html', 'window', 'width=600; height=800; left=150; top=0; scrollbars=no')">이용약관</a>
