@@ -16,8 +16,10 @@
 <link rel="stylesheet" href="https://skincare1007.shiningcorp.com/plugin/jquery-ui/style.css?ver=171222">
 <link rel="stylesheet" href="css/vendor/user.css">
 <link rel="stylesheet" href="css/pages/page_style.css">
-    <link rel="stylesheet" href="css/responsive.css">
-    <link rel="stylesheet" href="css/button-styles.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/button-styles.css">
+<!-- 1450px Grid System CSS 추가 -->
+<link rel="stylesheet" href="css/grid-system-1450.css">
 <style>
 @import url(//fonts.googleapis.com/earlyaccess/nanumpenscript.css);
 @import url(//fonts.googleapis.com/earlyaccess/nanumbrushscript.css);
@@ -436,13 +438,6 @@ textarea:focus {
                     <ul class="smenu">
                         <li><a href="calendar-page.html">온라인 상담</a></li>
                     </ul>
-                    
-                    <!-- 고객센터 -->
-                    <button class="bmenu">고객센터</button>
-                    <ul class="smenu">
-                        <li><a href="faq.html">자주 묻는 질문</a></li>
-                        <li><a href="contact.html">문의하기</a></li>
-                    </ul>
                 </nav>
                 
                 <!-- 하단 정보 -->
@@ -516,7 +511,8 @@ textarea:focus {
 </div></div>
 		</div>
 		<!-- 콘텐츠영역 -->
-		<div id="sh_content">
+		<div class="container">
+			<div id="sh_content">
 
 	
 <script>
@@ -654,7 +650,8 @@ jQuery(function($){
 </div>    </div>
 
 	</div><!-- } 게시판 목록 끝 -->
-    	</div><!-- sh_content -->
+			</div><!-- sh_content -->
+		</div><!-- container -->
     
    
 	</div><!-- sh_container_wrapper --> 

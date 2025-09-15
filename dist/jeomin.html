@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="../css/vendor/user.css">
     <link rel="stylesheet" href="../css/pages/page_style.css">
     <link rel="stylesheet" href="../css/button-styles.css">
+    <link rel="stylesheet" href="../css/grid-system-1450.css">
     <link rel="stylesheet" href="../css/responsive.css">
     
     <!-- Swiper CSS -->
@@ -139,19 +140,6 @@
         margin-bottom: 80px;
     }
     
-    .treatment-section h2 {
-        font-size: 32px;
-        color: var(--misopin-text-dark);
-        margin-bottom: 20px;
-        font-weight: 700;
-    }
-    
-    .treatment-section h3 {
-        font-size: 24px;
-        color: var(--misopin-primary);
-        margin-bottom: 30px;
-        font-weight: 600;
-    }
     
     .treatment-section p {
         font-size: 16px;
@@ -269,7 +257,7 @@
 
     <link rel="stylesheet" href="../css/index-custom.css">
 </head>
-<body>
+<body class="dist-page">
     <!-- 헤더 -->
     <!-- 헤더 시작 -->
 <header id="sh_hd" class="desktop-header">
@@ -439,14 +427,17 @@
     
     <!-- 메인 컨텐츠 -->
     <main class="treatment-container">
+        <div class="container">
         <!-- Hero 이미지 (옵션) -->
         
         
         <!-- 동적 컨텐츠 영역 -->
         <!-- 제오민 시술 컨텐츠 -->
 <section class="treatment-section">
-    <h2>제오민 시술</h2>
-    <h3>순수한 보툴리눔 톡신으로 더 안전하게</h3>
+    <div class="section_tit">
+        <h2 class="section_h2">제오민 시술</h2>
+        <p class="section_p">순수한 보툴리눔 톡신으로 더 안전하게</p>
+    </div>
     
     <div class="content-row">
         <div class="col-text">
@@ -461,7 +452,9 @@
 </section>
 
 <section class="treatment-section">
-    <h2>시술 효과</h2>
+    <div class="section_tit">
+        <h2 class="section_h2">시술 효과</h2>
+    </div>
     
     <div class="content-row reverse">
         <div class="col-text">
@@ -480,7 +473,9 @@
 </section>
 
 <section class="treatment-section">
-    <h2>시술 과정</h2>
+    <div class="section_tit">
+        <h2 class="section_h2">시술 과정</h2>
+    </div>
     
     <div class="process-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 40px;">
         <div class="process-step" style="text-align: center; padding: 30px; background: var(--misopin-bg-accent); border-radius: 10px;">
@@ -510,7 +505,9 @@
 </section>
 
 <section class="treatment-section">
-    <h2>제오민 vs 보톡스</h2>
+    <div class="section_tit">
+        <h2 class="section_h2">제오민 vs 보톡스</h2>
+    </div>
     
     <ul style="line-height: 2.2; font-size: 16px; color: var(--misopin-text-light);">
         <li><strong style="color: var(--misopin-primary);">순수 독소:</strong> 복합 단백질이 없어 더 안전</li>
@@ -519,11 +516,36 @@
         <li><strong style="color: var(--misopin-primary);">빠른 효과:</strong> 3-7일 내 효과 확인</li>
     </ul>
 </section>
-        
+
         <!-- 관련 시술 추천 -->
-        
+
+        </div>
     </main>
-    
+
+    <!-- 모바일 하단 네비게이션 -->
+    <div class="mobile-bottom-nav mobile-only">
+        <a href="javascript:void(0);" onclick="openKakaoChat();" class="kakao">
+            <i class="fas fa-comment"></i>
+            카톡상담
+        </a>
+        <a href="https://instagram.com/misopin_clinic" target="_blank" class="instagram">
+            <i class="fab fa-instagram"></i>
+            인스타그램
+        </a>
+        <a href="../board-page.html">
+            <i class="fas fa-gift"></i>
+            이벤트
+        </a>
+        <a href="../calendar-page.html">
+            <i class="fas fa-edit"></i>
+            예약하기
+        </a>
+        <a href="tel:061-277-1001" class="phone">
+            <i class="fas fa-phone"></i>
+            전화상담
+        </a>
+    </div>
+
     <!-- 푸터 -->
     <!-- 푸터 시작 -->
 <footer id="sh_ft">

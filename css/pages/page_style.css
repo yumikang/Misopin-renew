@@ -4,6 +4,68 @@ li{list-style:none}
 img {border:0}
 a {text-decoration:none}
 
+/* About 페이지 intro-text 스타일 */
+.intro-text {
+    font-size: var(--font-lg);  /* 18px */
+    line-height: 1.7;
+}
+
+.intro-text h2 {
+    font-size: var(--font-4xl);  /* 34px */
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.intro-text p {
+    font-size: var(--font-lg);  /* 18px */
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+/* About 페이지 이미지 반응형 */
+.intro-image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* 모바일 반응형 조정 */
+@media (max-width: 1023px) {
+    .intro-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .intro-image {
+        order: -1;
+        margin-bottom: 2rem;
+    }
+
+    .intro-image img {
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 767px) {
+    .intro-text h2 {
+        font-size: var(--font-3xl);  /* 30px */
+    }
+
+    .intro-text {
+        font-size: var(--font-base);  /* 16px */
+    }
+
+    .intro-text p {
+        font-size: var(--font-base);  /* 16px */
+    }
+
+    .intro-image img {
+        max-width: 300px;
+    }
+}
+
 @font-face { font-family: ngb; src:url(http://www.hdweb.co.kr/NanumGothicBold.eot); } 
 #comingsoon {width:100%;padding-top:100px;text-align:center}
 
