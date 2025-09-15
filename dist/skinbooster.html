@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="../css/vendor/user.css">
     <link rel="stylesheet" href="../css/pages/page_style.css">
     <link rel="stylesheet" href="../css/button-styles.css">
+    <link rel="stylesheet" href="../css/responsive.css">
     
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="../css/vendor/swiper.min.css">
@@ -259,17 +260,19 @@
     </style>
     
     <!-- jQuery -->
-    <script src="../js/vendor/jquery-1.8.3.min.js"></script>
+    <script src="../js/vendor/jquery-3.7.1.min.js"></script>
+    <script src="../js/vendor/jquery-migrate-3.4.1.min.js"></script>
     <script src="https://unpkg.com/feather-icons"></script>
     <script src="../js/vendor/swiper.min.js"></script>
     <script src="../js/common.js"></script>
     <script src="../js/wrest.js"></script>
-<link rel="stylesheet" href="../css/index-custom.css">
+
+    <link rel="stylesheet" href="../css/index-custom.css">
 </head>
 <body>
     <!-- 헤더 -->
     <!-- 헤더 시작 -->
-<header id="sh_hd">
+<header id="sh_hd" class="desktop-header">
     <div id="sh_hd_wrapper">
         <div id="top_nav_wrap">
             <!-- 로고 -->
@@ -338,6 +341,84 @@
     </div>
 </header>
 <!-- 헤더 끝 -->
+<!-- 모바일 헤더 (768px 미만) -->
+<header id="mo_hd" class="mobile-header">
+    <div id="mo_hd_wrapper">
+        <!-- 모바일 로고 -->
+        <div id="mo_logo">
+            <a href="../index.html"><img src="../img/misopin-temporary-logo.png" alt="미소핀의원" style="height: 3.125rem;" /></a>
+        </div>
+
+        <!-- 햄버거 메뉴 버튼 -->
+        <button id="navBtn" type="button" aria-label="메뉴 열기">
+            <span></span>
+        </button>
+
+        <!-- 슬라이드 네비게이션 -->
+        <div id="navWrap">
+            <div class="inner">
+                <!-- 대메뉴 리스트 -->
+                <nav class="lnb">
+                    <!-- 미소핀 소개 -->
+                    <button class="bmenu">미소핀 소개</button>
+                    <ul class="smenu">
+                        <li><a href="../about.html">병원 소개</a></li>
+                        <li><a href="../board-page.html">공지 및 이벤트</a></li>
+                    </ul>
+
+                    <!-- 주름/보톡스 -->
+                    <button class="bmenu">주름/보톡스</button>
+                    <ul class="smenu">
+                        <li><a href="botox.html">보톡스</a></li>
+                        <li><a href="jeomin.html">제오민</a></li>
+                    </ul>
+
+                    <!-- 볼륨/리프팅 -->
+                    <button class="bmenu">볼륨/리프팅</button>
+                    <ul class="smenu">
+                        <li><a href="filler.html">필러</a></li>
+                        <li><a href="skinbooster.html">스킨부스터</a></li>
+                        <li><a href="lifting.html">리프팅</a></li>
+                    </ul>
+
+                    <!-- 피부케어 -->
+                    <button class="bmenu">피부케어</button>
+                    <ul class="smenu">
+                        <li><a href="acne.html">여드름치료</a></li>
+                        <li><a href="peeling.html">필링</a></li>
+                    </ul>
+
+                    <!-- 제거시술 -->
+                    <button class="bmenu">제거시술</button>
+                    <ul class="smenu">
+                        <li><a href="mole.html">점</a></li>
+                        <li><a href="milia.html">비립종</a></li>
+                        <li><a href="tattoo.html">문신제거</a></li>
+                    </ul>
+
+                    <!-- 바디케어 -->
+                    <button class="bmenu">바디케어</button>
+                    <ul class="smenu">
+                        <li><a href="hair-removal.html">제모</a></li>
+                        <li><a href="diet.html">다이어트</a></li>
+                    </ul>
+
+                    <!-- 상담 예약 -->
+                    <button class="bmenu">상담 예약</button>
+                    <ul class="smenu">
+                        <li><a href="../calendar-page.html">온라인 상담</a></li>
+                    </ul>
+                </nav>
+
+                <!-- 하단 정보 -->
+                <div class="copy">
+                    © 2024 미소핀의원
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
     
     <!-- 서브 배너 -->
     <!-- 서브페이지 배너 -->
@@ -542,3 +623,6 @@
     
     <!-- 퀵메뉴 iframe -->
     <iframe src="../quickmenu.html" style="position:fixed;top:50%;right:1.5%;transform:translateY(-50%);width:140px;height:800px;border:none;z-index:8;background:transparent;" scrolling="no"></iframe>
+<script src="../js/mobile-nav.js" defer></script>
+</body>
+</html>
