@@ -17,6 +17,7 @@
 @media (max-width: 767px) {
     .container {
         padding: 0 15px;
+        max-width: 100%;
     }
 }
 
@@ -362,36 +363,5 @@ img {
         display: block;
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
-    }
-
-    /* 게시판 테이블을 카드 형식으로 */
-    #sh_list_tbl table {
-        border: 0;
-    }
-
-    #sh_list_tbl thead {
-        display: none;
-    }
-
-    #sh_list_tbl tr {
-        display: block;
-        margin-bottom: 15px;
-        border: 1px solid #ddd;
-        border-radius: 8px;
-        padding: 15px;
-        background: #fff;
-    }
-
-    #sh_list_tbl td {
-        display: block;
-        text-align: right;
-        padding: 5px 0;
-        border: 0;
-    }
-
-    #sh_list_tbl td:before {
-        content: attr(data-label);
-        float: left;
-        font-weight: bold;
     }
 }

@@ -836,6 +836,181 @@
     }
 }
 
+/* ===== 게시판 모바일 전용 스타일 (max-width: 768px) ===== */
+@media (max-width: 768px) {
+    /* ===== 게시판 모바일 스타일 ===== */
+    /* 게시판 테이블을 카드 형식으로 */
+    #sh_list_tbl {
+        padding: 0 !important;
+    }
+
+    #sh_list_tbl table {
+        border: 0 !important;
+        width: 100% !important;
+        display: block !important;
+    }
+
+    #sh_list_tbl table thead {
+        display: none !important;
+    }
+
+    #sh_list_tbl table tbody {
+        display: block !important;
+        width: 100% !important;
+    }
+
+    #sh_list_tbl table tbody tr {
+        display: block !important;
+        margin: 0 0 12px 0 !important;
+        border: 1px solid #e0e0e0 !important;
+        border-radius: 12px !important;
+        padding: 16px !important;
+        background: #fff !important;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.08) !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    #sh_list_tbl table tbody tr td {
+        display: block !important;
+        text-align: left !important;
+        padding: 8px 0 !important;
+        border: 0 !important;
+        position: relative !important;
+        width: 100% !important;
+    }
+
+    #sh_list_tbl table tbody tr td.num {
+        font-size: 0.875rem !important;
+        color: #999 !important;
+        padding-bottom: 5px !important;
+    }
+
+    #sh_list_tbl table tbody tr td.subject {
+        padding: 10px 0 !important;
+        border-bottom: 1px solid #f0f0f0 !important;
+        margin-bottom: 10px !important;
+    }
+
+    #sh_list_tbl table tbody tr td.subject .cate_link {
+        display: inline-block !important;
+        margin-bottom: 8px !important;
+    }
+
+    #sh_list_tbl table tbody tr td.subject .cate_link span {
+        background: #38b0c9 !important;
+        color: #fff !important;
+        padding: 3px 10px !important;
+        border-radius: 15px !important;
+        font-size: 0.75rem !important;
+        font-weight: 500 !important;
+    }
+
+    #sh_list_tbl table tbody tr td.subject a:last-child {
+        display: block !important;
+        font-size: 1rem !important;
+        line-height: 1.5 !important;
+        color: #333 !important;
+        font-weight: 500 !important;
+    }
+
+    #sh_list_tbl table tbody tr td.name,
+    #sh_list_tbl table tbody tr td.datetime {
+        display: inline-block !important;
+        font-size: 0.875rem !important;
+        color: #666 !important;
+    }
+
+    #sh_list_tbl table tbody tr td.name {
+        margin-right: 15px !important;
+    }
+
+    #sh_list_tbl table tbody tr td:before {
+        content: attr(data-label) !important;
+        font-weight: 600 !important;
+        color: #555 !important;
+        margin-right: 10px !important;
+        display: none !important;
+    }
+
+    #sh_list_tbl table tbody tr td.num:before {
+        content: "No. " !important;
+        display: inline !important;
+    }
+
+    /* 게시판 상단 영역 모바일 스타일 */
+    #sh_bo_list .list_top {
+        padding: 10px 0;
+        margin-bottom: 15px;
+    }
+
+    #sh_bo_list .list_top a[href*="rss"] {
+        display: inline-block;
+        padding: 8px 15px;
+        background: #f5f5f5;
+        border-radius: 20px;
+        font-size: 0.875rem;
+        margin-bottom: 10px;
+    }
+
+    #sh_bo_sch {
+        margin-top: 10px;
+        width: 100%;
+    }
+
+    #sh_bo_sch select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        font-size: 1rem;
+    }
+
+    #sh_bo_sch .sch_input {
+        width: calc(100% - 50px);
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        font-size: 1rem;
+    }
+
+    #sh_bo_sch input[type="image"] {
+        width: 40px;
+        height: 40px;
+        vertical-align: middle;
+        margin-left: 5px;
+    }
+
+    /* 카테고리 탭 모바일 스타일 */
+    #bo_cate_ul_line {
+        display: flex;
+        justify-content: space-around;
+        border-bottom: 1px solid #e0e0e0;
+        margin-bottom: 15px;
+        padding: 0;
+    }
+
+    #bo_cate_ul_line li {
+        flex: 1;
+        text-align: center;
+    }
+
+    #bo_cate_ul_line li a {
+        display: block;
+        padding: 12px 5px;
+        font-size: 0.9rem;
+        color: #666;
+        border-bottom: 2px solid transparent;
+    }
+
+    #bo_cate_ul_line li a#bo_cate_on {
+        color: #38b0c9;
+        border-bottom-color: #38b0c9;
+        font-weight: 600;
+    }
+}
+
 /* ===== 극소형 모바일 (320px) ===== */
 @media (max-width: 320px) {
     /* 최소 너비 보장 */
