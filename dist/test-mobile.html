@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>모바일 메뉴 테스트</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/vendor/default.css">
+    <link rel="stylesheet" href="../css/components/top_menu.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+
+    <style>
+        /* 디버깅용 스타일 */
+        .desktop-header {
+            background: red;
+        }
+        .mobile-header {
+            background: green;
+        }
+
+        /* 강제로 모바일 헤더 표시 */
+        @media (max-width: 768px) {
+            .desktop-header {
+                display: none !important;
+            }
+            .mobile-header {
+                display: block !important;
+            }
+        }
+    </style>
+<link rel="stylesheet" href="../css/index-custom.css">
+</head>
+<body>
+    <!-- 데스크톱 헤더 -->
+    <header id="sh_hd" class="desktop-header">
+        <div>데스크톱 헤더입니다 (빨간색)</div>
+    </header>
+
+    <!-- 모바일 헤더 -->
+    <header id="mo_hd" class="mobile-header">
+        <div id="mo_hd_wrapper">
+            <div>모바일 헤더입니다 (초록색)</div>
+            <!-- 햄버거 메뉴 버튼 -->
+            <button id="navBtn" type="button" aria-label="메뉴 열기">
+                <span></span>
+            </button>
+
+            <!-- 슬라이드 네비게이션 -->
+            <div id="navWrap">
+                <div class="inner">
+                    <nav class="lnb">
+                        <button class="bmenu">메뉴 1</button>
+                        <ul class="smenu">
+                            <li><a href="#">서브메뉴 1</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <h1>모바일 메뉴 테스트 페이지</h1>
+    <p>화면 크기를 768px 이하로 줄이면:</p>
+    <ul>
+        <li>데스크톱 헤더(빨간색)가 숨겨지고</li>
+        <li>모바일 헤더(초록색)가 나타나야 합니다</li>
+    </ul>
+
+    <!-- JavaScript -->
+    <script src="../js/vendor/jquery-3.7.1.min.js"></script>
+    <script src="../js/mobile-nav.js"></script>
+
+    <script>
+        // 디버깅
+        console.log('jQuery 버전:', $.fn.jquery);
+        console.log('navBtn 존재:', document.getElementById('navBtn'));
+        console.log('navWrap 존재:', document.getElementById('navWrap'));
+        console.log('화면 너비:', window.innerWidth);
+        console.log('모바일인가?:', window.innerWidth <= 768);
+    </script>
+</body>
+</html>

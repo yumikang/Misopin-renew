@@ -19,6 +19,8 @@
 <link rel="stylesheet" href="css/components/inc04.css">
 <link rel="stylesheet" href="css/components/inc05.css">
 <link rel="stylesheet" href="css/vendor/user.css">
+<!-- 1450px Grid System CSS 추가 -->
+<link rel="stylesheet" href="css/grid-system-1450.css">
 <style>
 @import url(//fonts.googleapis.com/earlyaccess/nanumpenscript.css);
 @import url(//fonts.googleapis.com/earlyaccess/nanumbrushscript.css);
@@ -301,8 +303,11 @@ var g5_cookie_domain = "";
 
 .section_intro {
     margin-bottom: 5rem;
-    text-align: left !important;
-    padding-left: 3.75rem;
+    text-align: center;
+    padding: 0 30px;
+    max-width: 1450px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .section_title {
@@ -311,16 +316,16 @@ var g5_cookie_domain = "";
     margin-bottom: 1.875rem;
     color: white;
     text-transform: lowercase;
-    text-align: left !important;
+    text-align: center;
 }
 
 .section_desc {
     font-size: 1.125rem;
     line-height: 1.6;
     color: rgba(255, 255, 255, 0.9);
-    max-width: 37.5rem;
-    margin: 0;
-    text-align: left !important;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
 }
 
 .sns_grid {
@@ -915,85 +920,8 @@ table thead, th {
 <!-- 100% 배경이미지 때문에 사용 -->
 <div id="sh_wrapper">
     
-<!-- 퀵메뉴 -->
-
-<div id="quickList">
-    <ul class="list">
-        <li>
-            <a href="http://pf.kakao.com/_xjxeLxj" target="_blank">
-                <div class="kakao"></div>
-                <div class="cate">카톡상담</div>
-            </a>
-        </li>
-        <li>
-            <a href="https://www.instagram.com/misopin_clinic" target="_blank">
-                <div class="instagram" style="width: 1.5rem; height: 1.5rem; margin: 0 auto 0.3125rem; background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iIzNDMUUxRSIgZD0iTTcuOCAyQTUuOCA1LjggMCAwIDAgMiA3Ljh2OC40QTUuOCA1LjggMCAwIDAgNy44IDIyaDguNGE1LjggNS44IDAgMCAwIDUuOC01LjhWNy44QTUuOCA1LjggMCAwIDAgMTYuMiAySDcuOHptMCAxLjloOC40YTMuOSAzLjkgMCAwIDEgMy45IDMuOXY4LjRhMy45IDMuOSAwIDAgMS0zLjkgMy45SDcuOGEzLjkgMy45IDAgMCAxLTMuOS0zLjlWNy44YTMuOSAzLjkgMCAwIDEgMy45LTMuOXpNMTcuMjUgNS41YTEuMjUgMS4yNSAwIDEgMCAwIDIuNSAxLjI1IDEuMjUgMCAwIDAgMC0yLjV6TTEyIDdhNSA1IDAgMSAwIDAgMTAgNSA1IDAgMCAwIDAtMTB6bTAgMS45YTMuMSAzLjEgMCAxIDEgMCA2LjIgMy4xIDMuMSAwIDAgMSAwLTYuMnoiLz48L3N2Zz4=') center/contain no-repeat;"></div>
-                <div class="cate">인스타그램</div>
-            </a>
-        </li>
-        <li>
-            <a href="board-page.html">
-                <i data-feather="gift"></i>
-                <div class="cate">이벤트</div>
-            </a>
-        </li>
-        <li>
-            <a href="calendar-page.html">
-                <i data-feather="edit-3"></i>
-                <div class="cate">예약하기</div>
-            </a>
-        </li>
-        <li>
-            <a href="tel:061-277-1001">
-                <i data-feather="phone-call"></i>
-                <div class="cate">전화상담</div>
-                <div class="number pl">061-277-1001</div>
-            </a>
-        </li>
-    </ul>
-    <div class="progress-wrap">
-        <span><i data-feather="arrow-up"></i></span>
-        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"></path>
-        </svg>
-    </div>
-</div>
-
-<script>
-   $(document).ready(function() {
-        scrollTop();
-    });
-    function scrollTop(){
-        var progressPath = document.querySelector('.progress-wrap path');
-        var pathLength = progressPath.getTotalLength();
-        progressPath.style.transition = progressPath.style.WebkitTransition = 'none';
-        progressPath.style.strokeDasharray = pathLength + ' ' + pathLength;
-        progressPath.style.strokeDashoffset = pathLength;
-        progressPath.getBoundingClientRect();
-        progressPath.style.transition = progressPath.style.WebkitTransition = 'stroke-dashoffset 10ms linear';
-        var updateProgress = function() {
-            var scroll = $(window).scrollTop();
-            var height = $(document).height() - $(window).height();
-            var progress = pathLength - scroll * pathLength / height;
-            progressPath.style.strokeDashoffset = progress;
-        };
-        updateProgress();
-        $(window).scroll(updateProgress);
-        jQuery(window).on('scroll', function() {
-            if (jQuery(this).scrollTop() > 50) {
-                jQuery('.progress-wrap').addClass('active');
-            } else {
-                jQuery('.progress-wrap').removeClass('active');
-            }
-        });
-        jQuery('.progress-wrap').on('click', function(event) {
-            event.preventDefault();
-            jQuery('html, body').animate({scrollTop: 0}, 550);
-            return false;
-        });
-    }
-</script>
-<!-- 퀵메뉴 끝 -->
+<!-- 퀵메뉴 iframe -->
+<iframe src="quickmenu.html" style="position:fixed;top:50%;right:1.5%;transform:translateY(-50%);width:140px;height:800px;border:none;z-index:8;background:transparent;" scrolling="no"></iframe>
 
 <!-- 상단 시작 { -->
 <!-- 데스크톱 헤더 (768px 이상) -->
@@ -1145,17 +1073,13 @@ table thead, th {
 </header>
 <!-- } 상단 끝 -->
 
-<!-- 콘텐츠 시작 { -->
-<main id="sh_container">
-	<div id="sh_container_wrapper">
-	
 <!-- 메인 비주얼 -->
 <div id="main_banner">
-	
+
 <div id="MainVisual" class="main_screen">
     <!-- 배경 이미지 -->
     <div class="bg_ms" style="background-image: url(img/hero-background.webp)"></div>
-    
+
     <!-- opening hours 섹션 -->
     <div class="opening_hours">
         <div class="container">
@@ -1255,8 +1179,14 @@ table thead, th {
             });
         }
     });
-    
-</script></div>
+
+</script>
+</div>
+
+<!-- 콘텐츠 시작 { -->
+<main id="sh_container">
+	<div id="sh_container_wrapper">
+
 <section id="sh_section">
 	<article id="atc01">
     <div class="section_tit" data-aos="fade-up">
@@ -1412,11 +1342,28 @@ table thead, th {
     const inc01_slide = new Swiper(".inc01_slide", {
         loop:true,
         speed:1200,
-        slidesPerView:2,
+        slidesPerView:1,
         centeredSlides:true,
         slideDuplicateClass: 'clone',
-        spaceBetween:200,
+        spaceBetween:30,
         slideActiveClass: 'on',
+        breakpoints: {
+            // 모바일
+            320: {
+                slidesPerView: 1,
+                spaceBetween: 20
+            },
+            // 태블릿
+            768: {
+                slidesPerView: 1.5,
+                spaceBetween: 60
+            },
+            // 데스크톱
+            1024: {
+                slidesPerView: 2,
+                spaceBetween: 200
+            }
+        },
         pagination:{
             el:"#atc01 .pager",
             clickable:true,
@@ -1598,8 +1545,8 @@ window.addEventListener('load', resizeSnsVideo);
 </article>	
 <article id="atc05">
     <div class="section_tit" data-aos="fade-up">
-        <h2 class="section_h2">BEAUTY <span>TIPS</span></h2>
-        <p class="section_p">미소핀의원의 뷰티 꿀팁과 시술정보까지</p>
+        <h2 class="section_h2">HOSPITAL <span>INTERIOR</span></h2>
+        <p class="section_p">쾌적하고 편안한 미소핀의원 내부 시설</p>
     </div>
     <div class="inc05_wrap">
         <div class="swiper-container inc05_text">
@@ -1607,9 +1554,9 @@ window.addEventListener('load', resizeSnsVideo);
                 			
                     <li class="swiper-slide">
                         <div class="txt_cont">
-                            <div class="cate">BEAUTY TIP</div>
-                            <h3>손상된 피부 세포를 깨우다! 피부 속부터 채우는 재생 케어</h3>
-                            <p>#세포재생 #피부회복 #스킨리뉴얼</p>                            <a class="arrow" href="/bbs/board.php?bo_table=table43&wr_id=6">
+                            <div class="cate">LOBBY</div>
+                            <h3>편안하고 아늑한 대기 공간</h3>
+                            <p>#모던인테리어 #편안한대기 #프라이빗공간</p>                            <a class="arrow" href="#">
                                 <div class="sound_only">바로가기</div>
                                 <i data-feather="arrow-right"></i>
                             </a>
@@ -1618,9 +1565,9 @@ window.addEventListener('load', resizeSnsVideo);
                 			
                     <li class="swiper-slide">
                         <div class="txt_cont">
-                            <div class="cate">BEAUTY TIP</div>
-                            <h3>외부 환경으로 지친 피부를 편안하게 감싸주는 진정 앰플</h3>
-                            <p>#외부자극 #지친피부 #진정앰플</p>                            <a class="arrow" href="/bbs/board.php?bo_table=table43&wr_id=5">
+                            <div class="cate">TREATMENT</div>
+                            <h3>최신 장비를 갖춘 시술실</h3>
+                            <p>#최신장비 #전문시술 #청결관리</p>                            <a class="arrow" href="#">
                                 <div class="sound_only">바로가기</div>
                                 <i data-feather="arrow-right"></i>
                             </a>
@@ -1629,9 +1576,9 @@ window.addEventListener('load', resizeSnsVideo);
                 			
                     <li class="swiper-slide">
                         <div class="txt_cont">
-                            <div class="cate">BEAUTY TIP</div>
-                            <h3>피부 탄력 개선과 노화 방지를 동시에!</h3>
-                            <p>#노화방지주사 #안티에이징 #동안피부</p>                            <a class="arrow" href="/bbs/board.php?bo_table=table43&wr_id=4">
+                            <div class="cate">CONSULTATION</div>
+                            <h3>프라이빗한 상담실</h3>
+                            <p>#1:1상담 #프라이버시 #맞춤상담</p>                            <a class="arrow" href="#">
                                 <div class="sound_only">바로가기</div>
                                 <i data-feather="arrow-right"></i>
                             </a>
@@ -1640,9 +1587,9 @@ window.addEventListener('load', resizeSnsVideo);
                 			
                     <li class="swiper-slide">
                         <div class="txt_cont">
-                            <div class="cate">BEAUTY TIP</div>
-                            <h3>자연스럽고 아름다운 입술을 위한 맞춤 디자인!</h3>
-                            <p>#볼륨업 #윤곽개선 #입술대칭보안</p>                            <a class="arrow" href="/bbs/board.php?bo_table=table43&wr_id=3">
+                            <div class="cate">RECOVERY</div>
+                            <h3>편안한 회복실</h3>
+                            <p>#안정적회복 #편안한휴식 #케어시스템</p>                            <a class="arrow" href="#">
                                 <div class="sound_only">바로가기</div>
                                 <i data-feather="arrow-right"></i>
                             </a>
@@ -1651,9 +1598,9 @@ window.addEventListener('load', resizeSnsVideo);
                 			
                     <li class="swiper-slide">
                         <div class="txt_cont">
-                            <div class="cate">BEAUTY TIP</div>
-                            <h3>콜라겐 치료, 피부 탄력의 새로운 솔루션</h3>
-                            <p>#콜라겐치료 #피부탄력 #동안피부</p>                            <a class="arrow" href="/bbs/board.php?bo_table=table43&wr_id=2">
+                            <div class="cate">POWDER ROOM</div>
+                            <h3>깔끔한 파우더룸</h3>
+                            <p>#메이크업공간 #편의시설 #청결유지</p>                            <a class="arrow" href="#">
                                 <div class="sound_only">바로가기</div>
                                 <i data-feather="arrow-right"></i>
                             </a>
@@ -1665,46 +1612,46 @@ window.addEventListener('load', resizeSnsVideo);
             <ul class="swiper-wrapper">
                 			
                     <li class="swiper-slide">
-                        <a href="/bbs/board.php?bo_table=table43&wr_id=6">
+                        <a href="#">
                             <picture>
                                 <source media="(max-width: 640px)" srcset="https://skincare1007.shiningcorp.com/data/file/table43/thumb-1846108253_5SMHFa4j_12bf3c4e3f2ef241770cc5393c39b10e47dfc9d9_1380x.jpg">
-                                <img src="https://skincare1007.shiningcorp.com/data/file/table43/thumb-1846108253_5SMHFa4j_12bf3c4e3f2ef241770cc5393c39b10e47dfc9d9_1380x.jpg" alt="시술 전/후" loading="lazy">
+                                <img src="https://skincare1007.shiningcorp.com/data/file/table43/thumb-1846108253_5SMHFa4j_12bf3c4e3f2ef241770cc5393c39b10e47dfc9d9_1380x.jpg" alt="로비 대기공간" loading="lazy">
                             </picture>
                         </a>
                     </li>
                 			
                     <li class="swiper-slide">
-                        <a href="/bbs/board.php?bo_table=table43&wr_id=5">
+                        <a href="#">
                             <picture>
                                 <source media="(max-width: 640px)" srcset="https://skincare1007.shiningcorp.com/data/file/table43/thumb-1846108253_0UxQdrlu_b1e943e5d996f417d36f66b945d7e6c7827175b4_1380x.jpg">
-                                <img src="https://skincare1007.shiningcorp.com/data/file/table43/thumb-1846108253_0UxQdrlu_b1e943e5d996f417d36f66b945d7e6c7827175b4_1380x.jpg" alt="시술 전/후" loading="lazy">
+                                <img src="https://skincare1007.shiningcorp.com/data/file/table43/thumb-1846108253_0UxQdrlu_b1e943e5d996f417d36f66b945d7e6c7827175b4_1380x.jpg" alt="시술실" loading="lazy">
                             </picture>
                         </a>
                     </li>
                 			
                     <li class="swiper-slide">
-                        <a href="/bbs/board.php?bo_table=table43&wr_id=4">
+                        <a href="#">
                             <picture>
                                 <source media="(max-width: 640px)" srcset="https://skincare1007.shiningcorp.com/data/file/table43/thumb-1846108253_HtgnA2OP_c1835edf05c927259b987a849f97c3c9c191a3bf_1380x.jpg">
-                                <img src="https://skincare1007.shiningcorp.com/data/file/table43/thumb-1846108253_HtgnA2OP_c1835edf05c927259b987a849f97c3c9c191a3bf_1380x.jpg" alt="시술 전/후" loading="lazy">
+                                <img src="https://skincare1007.shiningcorp.com/data/file/table43/thumb-1846108253_HtgnA2OP_c1835edf05c927259b987a849f97c3c9c191a3bf_1380x.jpg" alt="상담실" loading="lazy">
                             </picture>
                         </a>
                     </li>
                 			
                     <li class="swiper-slide">
-                        <a href="/bbs/board.php?bo_table=table43&wr_id=3">
+                        <a href="#">
                             <picture>
                                 <source media="(max-width: 640px)" srcset="https://skincare1007.shiningcorp.com/data/file/table43/thumb-1846108253_lpEYnwXG_9e96b94a8223e5c011656027014fd0bb9ef898a6_1380x.jpg">
-                                <img src="https://skincare1007.shiningcorp.com/data/file/table43/thumb-1846108253_lpEYnwXG_9e96b94a8223e5c011656027014fd0bb9ef898a6_1380x.jpg" alt="시술 전/후" loading="lazy">
+                                <img src="https://skincare1007.shiningcorp.com/data/file/table43/thumb-1846108253_lpEYnwXG_9e96b94a8223e5c011656027014fd0bb9ef898a6_1380x.jpg" alt="회복실" loading="lazy">
                             </picture>
                         </a>
                     </li>
                 			
                     <li class="swiper-slide">
-                        <a href="/bbs/board.php?bo_table=table43&wr_id=2">
+                        <a href="#">
                             <picture>
                                 <source media="(max-width: 640px)" srcset="https://skincare1007.shiningcorp.com/data/file/table43/thumb-1846108253_PuXM6R1y_1e0d09057bc45c71770159dcad0c529a062a5525_1380x.jpg">
-                                <img src="https://skincare1007.shiningcorp.com/data/file/table43/thumb-1846108253_PuXM6R1y_1e0d09057bc45c71770159dcad0c529a062a5525_1380x.jpg" alt="시술 전/후" loading="lazy">
+                                <img src="https://skincare1007.shiningcorp.com/data/file/table43/thumb-1846108253_PuXM6R1y_1e0d09057bc45c71770159dcad0c529a062a5525_1380x.jpg" alt="파우더룸" loading="lazy">
                             </picture>
                         </a>
                     </li>
@@ -1722,6 +1669,20 @@ window.addEventListener('load', resizeSnsVideo);
         autoplay: {
             delay: 3000,
             disableOnInteraction: false
+        },
+        breakpoints: {
+            320: {
+                slidesPerView: 1,
+                spaceBetween: 20
+            },
+            768: {
+                slidesPerView: 2,
+                spaceBetween: 30
+            },
+            1024: {
+                slidesPerView: 3,
+                spaceBetween: 40
+            }
         }
     });
 
@@ -1787,7 +1748,7 @@ window.addEventListener('load', resizeSnsVideo);
                     </form>
                 </div>
                 <div class="map_area">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3266.0891025641867!2d126.39052051524942!3d34.80538698040586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3571f3f1b0c0c0c0%3A0x0!2s%EC%A0%84%EB%82%A8%20%EB%AA%A9%ED%8F%AC%EC%8B%9C%20%EC%98%81%EC%82%B0%EB%A1%9C%20362!5e0!3m2!1sko!2skr!4v1234567890" width="100%" height="400" frameborder="0" style="border:0;" allowfullscreen="" loading="lazy" title="미소핀의원 오시는길"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3266.0891025641867!2d126.39052051524942!3d34.80538698040586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3571f3f1b0c0c0c0%3A0x0!2s%EC%A0%84%EB%82%A8%20%EB%AA%A9%ED%8F%AC%EC%8B%9C%20%EC%98%81%EC%82%B0%EB%A1%9C%20362!5e0!3m2!1sko!2skr!4v1234567890" width="100%" height="100%" frameborder="0" style="border:0; display:block;" allowfullscreen="" loading="lazy" title="미소핀의원 오시는길"></iframe>
                 </div>
             </div>
             <div class="bottom">
@@ -1858,29 +1819,6 @@ window.addEventListener('load', resizeSnsVideo);
 	</div>
 </footer>
 
-<!-- 모바일 푸터 (768px 미만) -->
-<footer id="mo_ft" class="mobile-footer">
-    <!-- 푸터 메뉴 -->
-    <ul>
-        <li><a href="privacy.html">개인정보처리방침</a></li>
-        <li><a href="terms.html">이용약관</a></li>
-        <li><a href="location.html">오시는 길</a></li>
-    </ul>
-    
-    <!-- 사업자 정보 -->
-    <div class="inner">
-        <p><strong>미소핀의원</strong></p>
-        <p>대표: 홍길동 | 사업자등록번호: 123-45-67890</p>
-        <p>주소: 서울특별시 강남구 테헤란로 123</p>
-        <p>전화: 02-123-4567 | 팩스: 02-123-4568</p>
-        <p>이메일: info@misopin.com</p>
-    </div>
-    
-    <!-- 저작권 -->
-    <div class="copy">
-        <p>Copyright © 2024 미소핀의원. All Rights Reserved.</p>
-    </div>
-</footer>
 
 
 <!-- 모바일 하단 네비게이션 -->

@@ -212,6 +212,8 @@
    ======================================== */
 
 #MainVisual .bg_ms {
+    width: 100% !important;
+    height: 100% !important;
     filter: brightness(0.85) contrast(1.05) !important;  /* 더 밝게 조정 */
 }
 

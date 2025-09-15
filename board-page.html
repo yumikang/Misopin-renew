@@ -240,83 +240,7 @@ var g5_cookie_domain = "";
 <div id="sh_wrapper">
     
 <!-- 퀵메뉴 -->
-
-<div id="quickList">
-    <ul class="list">
-        <li>
-            <a href="/bbs/board.php?bo_table=table36">
-                <div class="kakao"></div>
-                <div class="cate">카톡상담</div>
-            </a>
-        </li>
-        <li>
-            <a href="https://www.instagram.com/misopin_clinic" target="_blank">
-                <div class="instagram" style="width: 1.5rem; height: 1.5rem; margin: 0 auto 0.3125rem; background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iIzNDMUUxRSIgZD0iTTcuOCAyQTUuOCA1LjggMCAwIDAgMiA3Ljh2OC40QTUuOCA1LjggMCAwIDAgNy44IDIyaDguNGE1LjggNS44IDAgMCAwIDUuOC01LjhWNy44QTUuOCA1LjggMCAwIDAgMTYuMiAySDcuOHptMCAxLjloOC40YTMuOSAzLjkgMCAwIDEgMy45IDMuOXY4LjRhMy45IDMuOSAwIDAgMS0zLjkgMy45SDcuOGEzLjkgMy45IDAgMCAxLTMuOS0zLjlWNy44YTMuOSAzLjkgMCAwIDEgMy45LTMuOXpNMTcuMjUgNS41YTEuMjUgMS4yNSAwIDEgMCAwIDIuNSAxLjI1IDEuMjUgMCAwIDAgMC0yLjV6TTEyIDdhNSA1IDAgMSAwIDAgMTAgNSA1IDAgMCAwIDAtMTB6bTAgMS45YTMuMSAzLjEgMCAxIDEgMCA2LjIgMy4xIDMuMSAwIDAgMSAwLTYuMnoiLz48L3N2Zz4=') center/contain no-repeat;"></div>
-                <div class="cate">인스타그램</div>
-            </a>
-        </li>
-        <li>
-            <a href="/bbs/board.php?bo_table=table41">
-                <i data-feather="gift"></i>
-                <div class="cate">이벤트</div>
-            </a>
-        </li>
-        <li>
-            <a href="/bbs/write.php?bo_table=table34">
-                <i data-feather="edit-3"></i>
-                <div class="cate">예약하기</div>
-            </a>
-        </li>
-        <li>
-            <a href="tel:061-277-1001">
-                <i data-feather="phone-call"></i>
-                <div class="cate">전화상담</div>
-                <div class="number pl">061-277-1001</div>
-            </a>
-        </li>
-    </ul>
-    <div class="progress-wrap">
-        <span><i data-feather="arrow-up"></i></span>
-        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"></path>
-        </svg>
-    </div>
-</div>
-
-<script>
-   $(document).ready(function() {
-        scrollTop();
-    });
-    function scrollTop(){
-        var progressPath = document.querySelector('.progress-wrap path');
-        var pathLength = progressPath.getTotalLength();
-        progressPath.style.transition = progressPath.style.WebkitTransition = 'none';
-        progressPath.style.strokeDasharray = pathLength + ' ' + pathLength;
-        progressPath.style.strokeDashoffset = pathLength;
-        progressPath.getBoundingClientRect();
-        progressPath.style.transition = progressPath.style.WebkitTransition = 'stroke-dashoffset 10ms linear';
-        var updateProgress = function() {
-            var scroll = $(window).scrollTop();
-            var height = $(document).height() - $(window).height();
-            var progress = pathLength - scroll * pathLength / height;
-            progressPath.style.strokeDashoffset = progress;
-        };
-        updateProgress();
-        $(window).scroll(updateProgress);
-        jQuery(window).on('scroll', function() {
-            if (jQuery(this).scrollTop() > 50) {
-                jQuery('.progress-wrap').addClass('active');
-            } else {
-                jQuery('.progress-wrap').removeClass('active');
-            }
-        });
-        jQuery('.progress-wrap').on('click', function(event) {
-            event.preventDefault();
-            jQuery('html, body').animate({scrollTop: 0}, 550);
-            return false;
-        });
-    }
-</script>
+<iframe src="quickmenu.html" style="position:fixed;top:50%;right:1.5%;transform:translateY(-50%);width:140px;height:800px;border:none;z-index:8;background:transparent;" scrolling="no"></iframe>
 <!-- 퀵메뉴 끝 -->
 
 <!-- 헤더 시작 -->
@@ -420,14 +344,14 @@ var g5_cookie_domain = "";
                         <li><a href="about.html">병원 소개</a></li>
                         <li><a href="board-page.html">공지 및 이벤트</a></li>
                     </ul>
-                    
+
                     <!-- 주름/보톡스 -->
                     <button class="bmenu">주름/보톡스</button>
                     <ul class="smenu">
                         <li><a href="dist/botox.html">보톡스</a></li>
                         <li><a href="dist/jeomin.html">제오민</a></li>
                     </ul>
-                    
+
                     <!-- 볼륨/리프팅 -->
                     <button class="bmenu">볼륨/리프팅</button>
                     <ul class="smenu">
@@ -435,14 +359,14 @@ var g5_cookie_domain = "";
                         <li><a href="dist/skinbooster.html">스킨부스터</a></li>
                         <li><a href="dist/lifting.html">리프팅</a></li>
                     </ul>
-                    
+
                     <!-- 피부케어 -->
                     <button class="bmenu">피부케어</button>
                     <ul class="smenu">
                         <li><a href="dist/acne.html">여드름치료</a></li>
                         <li><a href="dist/peeling.html">필링</a></li>
                     </ul>
-                    
+
                     <!-- 제거시술 -->
                     <button class="bmenu">제거시술</button>
                     <ul class="smenu">
@@ -450,18 +374,25 @@ var g5_cookie_domain = "";
                         <li><a href="dist/milia.html">비립종</a></li>
                         <li><a href="dist/tattoo.html">문신제거</a></li>
                     </ul>
-                    
+
                     <!-- 바디케어 -->
                     <button class="bmenu">바디케어</button>
                     <ul class="smenu">
                         <li><a href="dist/hair-removal.html">제모</a></li>
                         <li><a href="dist/diet.html">다이어트</a></li>
                     </ul>
-                    
+
                     <!-- 상담 예약 -->
                     <button class="bmenu">상담 예약</button>
                     <ul class="smenu">
                         <li><a href="calendar-page.html">온라인 상담</a></li>
+                    </ul>
+                    
+                    <!-- 고객센터 -->
+                    <button class="bmenu">고객센터</button>
+                    <ul class="smenu">
+                        <li><a href="faq.html">자주 묻는 질문</a></li>
+                        <li><a href="contact.html">문의하기</a></li>
                     </ul>
                 </nav>
                 
