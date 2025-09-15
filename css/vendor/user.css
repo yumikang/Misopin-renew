@@ -41,10 +41,24 @@ h1, h2, h3, h4, h5, h6, input, button, textarea, select{font-family:var(--k-font
 /* INDEX */
 #sh_section{position:relative;width:100%;line-height:1.5;font-family:var(--k-font), var(--e-font)}
 #sh_section .pl{white-space:pre-line}
-#sh_section .section_tit{text-align:center}
-#sh_section .section_h2{font-size:var(--font-5xl);font-weight:400;font-family:var(--e-font);color:var(--black)}
-#sh_section .section_h2 span{color:var(--primary)}
-#sh_section .section_p{font-size:var(--font-xl);font-weight:500;color:var(--primary)}
+
+/* 공통 섹션 타이틀 스타일 - 모든 페이지 통일 */
+.section_tit{text-align:center;margin-bottom:60px}
+.section_h2{font-size:var(--font-5xl);font-weight:400;font-family:var(--e-font);color:var(--black);line-height:1.3;margin-bottom:20px}
+.section_h2 span{color:var(--primary)}
+.section_p{font-size:var(--font-xl);font-weight:500;color:var(--primary);line-height:1.6}
+
+/* 반응형 섹션 타이틀 */
+@media (max-width: 767px) {
+    .section_h2{font-size:1.875rem}
+    .section_p{font-size:1rem}
+}
+
+/* 공통 섹션 헤더 스타일 - 전체 페이지 통일 */
+.section-header{text-align:center}
+.section-header .section-title{font-size:var(--font-5xl);font-weight:400;font-family:var(--e-font);color:var(--black);line-height:1.3}
+.section-header .section-title .highlight{color:var(--primary)}
+.section-header .section-subtitle{font-size:var(--font-xl);font-weight:500;color:var(--primary);line-height:1.6;margin-top:20px}
 
 /* CONTENT */
 #sh_container{position:relative;width:100%}

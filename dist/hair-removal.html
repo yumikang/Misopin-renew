@@ -139,19 +139,6 @@
         margin-bottom: 80px;
     }
     
-    .treatment-section h2 {
-        font-size: 32px;
-        color: var(--misopin-text-dark);
-        margin-bottom: 20px;
-        font-weight: 700;
-    }
-    
-    .treatment-section h3 {
-        font-size: 24px;
-        color: var(--misopin-primary);
-        margin-bottom: 30px;
-        font-weight: 600;
-    }
     
     .treatment-section p {
         font-size: 16px;
@@ -445,8 +432,10 @@
         <!-- 동적 컨텐츠 영역 -->
         <!-- 제모 시술 컨텐츠 -->
 <section class="treatment-section">
-    <h2>제모 시술</h2>
-    <h3>매끄럽고 깨끗한 피부를 위한 영구 제모</h3>
+    <div class="section_tit">
+        <h2 class="section_h2">제모 시술</h2>
+        <p class="section_p">매끄럽고 깨끗한 피부를 위한 영구 제모</p>
+    </div>
     
     <div class="content-row">
         <div class="col-text">
@@ -461,7 +450,9 @@
 </section>
 
 <section class="treatment-section">
-    <h2>시술 부위</h2>
+    <div class="section_tit">
+        <h2 class="section_h2">시술 부위</h2>
+    </div>
     
     <div class="process-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 40px;">
         <div class="process-step" style="text-align: center; padding: 20px; background: var(--misopin-bg-accent); border-radius: 10px;">
