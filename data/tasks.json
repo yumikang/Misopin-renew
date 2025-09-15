@@ -1,0 +1,170 @@
+{
+  "tasks": [
+    {
+      "id": "46258809-ba68-4069-8260-efcf66f518c6",
+      "name": "dist/botox.html 현재 상태 분석 및 CSS 경로 확인",
+      "description": "dist/botox.html 파일의 현재 헤더/푸터 구조, CSS 링크 상태, 그리고 responsive.css와의 연결 여부를 정확히 파악합니다. CSS 경로 문제(../css/ vs css/) 해결 방안을 결정합니다.",
+      "status": "completed",
+      "dependencies": [],
+      "createdAt": "2025-09-10T07:49:03.680Z",
+      "updatedAt": "2025-09-10T07:50:05.829Z",
+      "relatedFiles": [
+        {
+          "path": "/Users/dongeuncheon/blee_project/Misopin-renew/dist/botox.html",
+          "type": "TO_MODIFY",
+          "description": "반응형 헤더/푸터 추가 대상 파일"
+        },
+        {
+          "path": "/Users/dongeuncheon/blee_project/Misopin-renew/css/responsive.css",
+          "type": "REFERENCE",
+          "description": "반응형 CSS 클래스 참조"
+        }
+      ],
+      "implementationGuide": "1. Read dist/botox.html - 헤더/푸터 구조 분석\n2. CSS 링크 태그들 확인 (responsive.css 연결 여부)\n3. 현재 사용 중인 CSS 경로 패턴 파악\n4. 기존 스타일 클래스명 목록 작성\n5. mobile-nav.js 의존성 확인",
+      "verificationCriteria": "현재 헤더/푸터 구조와 CSS 연결 상태가 명확히 문서화되고, CSS 경로 문제가 식별되었는지 확인",
+      "analysisResult": "dist/botox.html에 반응형 헤더/푸터를 안전하게 추가하기 위한 점진적 접근법. CSS 충돌 방지를 위해 네임스페이싱과 점진적 향상 패턴을 적용하여 기존 스타일을 보존하면서 반응형 기능을 추가합니다.",
+      "summary": "dist/botox.html 현재 상태 분석 완료. 주요 발견사항: 1) responsive.css가 연결되지 않음 - 이것이 핵심 문제, 2) 현재 헤더는 고정형 데스크톱 헤더(#sh_hd)만 존재, 모바일 헤더 구조 없음, 3) 푸터도 고정형(#sh_ft)만 존재, 4) mobile-nav.js도 연결되지 않음, 5) CSS 경로는 ../css/ 패턴 사용 중, 6) 기존 스타일 클래스명 확인됨 (sh_hd, sh_ft, treatment-container 등). 안전한 반응형 추가를 위한 기반 정보 수집 완료.",
+      "completedAt": "2025-09-10T07:50:05.827Z"
+    },
+    {
+      "id": "73e06780-9a5b-4849-8d90-bb697d3efd9d",
+      "name": "반응형 헤더 구조 준비 및 CSS 네임스페이싱",
+      "description": "기존 고정 헤더를 반응형 헤더로 교체하기 위한 HTML 구조를 준비하고, CSS 충돌 방지를 위한 네임스페이스 클래스를 적용합니다.",
+      "status": "pending",
+      "dependencies": [
+        {
+          "taskId": "46258809-ba68-4069-8260-efcf66f518c6"
+        }
+      ],
+      "createdAt": "2025-09-10T07:49:03.680Z",
+      "updatedAt": "2025-09-10T07:49:03.680Z",
+      "relatedFiles": [
+        {
+          "path": "/Users/dongeuncheon/blee_project/Misopin-renew/dist/botox.html",
+          "type": "TO_MODIFY",
+          "description": "헤더 구조 수정"
+        },
+        {
+          "path": "/Users/dongeuncheon/blee_project/Misopin-renew/templates/treatment-master.html",
+          "type": "REFERENCE",
+          "description": "반응형 헤더 구조 참조"
+        }
+      ],
+      "implementationGuide": "1. templates/treatment-master.html에서 반응형 헤더 구조 참조\n2. .dist-responsive-header 네임스페이스 클래스 생성\n3. 기존 헤더를 .legacy-header로 백업\n4. 새 반응형 헤더 구조 삽입 (데스크탑용)\n5. 모바일 햄버거 메뉴 구조 추가",
+      "verificationCriteria": "반응형 헤더가 추가되고 네임스페이스 클래스가 적용되었으며, 기존 스타일과 충돌하지 않는지 확인",
+      "analysisResult": "dist/botox.html에 반응형 헤더/푸터를 안전하게 추가하기 위한 점진적 접근법. CSS 충돌 방지를 위해 네임스페이싱과 점진적 향상 패턴을 적용하여 기존 스타일을 보존하면서 반응형 기능을 추가합니다."
+    },
+    {
+      "id": "77b31c86-64c3-4150-be5a-23608c0dc4fb",
+      "name": "반응형 푸터 구조 준비 및 적용",
+      "description": "기존 고정 푸터를 반응형 푸터로 교체하고, 헤더와 동일한 네임스페이싱 패턴을 적용합니다.",
+      "status": "pending",
+      "dependencies": [
+        {
+          "taskId": "73e06780-9a5b-4849-8d90-bb697d3efd9d"
+        }
+      ],
+      "createdAt": "2025-09-10T07:49:03.680Z",
+      "updatedAt": "2025-09-10T07:49:03.680Z",
+      "relatedFiles": [
+        {
+          "path": "/Users/dongeuncheon/blee_project/Misopin-renew/dist/botox.html",
+          "type": "TO_MODIFY",
+          "description": "푸터 구조 수정"
+        },
+        {
+          "path": "/Users/dongeuncheon/blee_project/Misopin-renew/templates/treatment-master.html",
+          "type": "REFERENCE",
+          "description": "반응형 푸터 구조 참조"
+        }
+      ],
+      "implementationGuide": "1. templates/treatment-master.html에서 반응형 푸터 구조 참조\n2. .dist-responsive-footer 네임스페이스 클래스 생성\n3. 기존 푸터를 .legacy-footer로 백업\n4. 새 반응형 푸터 구조 삽입\n5. 푸터 내 연락처 정보 및 링크 검증",
+      "verificationCriteria": "반응형 푸터가 추가되고 네임스페이스 클래스가 적용되었으며, 연락처 정보가 정확히 표시되는지 확인",
+      "analysisResult": "dist/botox.html에 반응형 헤더/푸터를 안전하게 추가하기 위한 점진적 접근법. CSS 충돌 방지를 위해 네임스페이싱과 점진적 향상 패턴을 적용하여 기존 스타일을 보존하면서 반응형 기능을 추가합니다."
+    },
+    {
+      "id": "49bbf269-a513-457f-add5-d1770d930138",
+      "name": "CSS 연결 및 경로 문제 해결",
+      "description": "responsive.css 연결을 추가하고 CSS 경로 문제를 해결하여 반응형 스타일이 정상 작동하도록 합니다.",
+      "status": "pending",
+      "dependencies": [
+        {
+          "taskId": "77b31c86-64c3-4150-be5a-23608c0dc4fb"
+        }
+      ],
+      "createdAt": "2025-09-10T07:49:03.680Z",
+      "updatedAt": "2025-09-10T07:49:03.680Z",
+      "relatedFiles": [
+        {
+          "path": "/Users/dongeuncheon/blee_project/Misopin-renew/dist/botox.html",
+          "type": "TO_MODIFY",
+          "description": "CSS 링크 추가"
+        },
+        {
+          "path": "/Users/dongeuncheon/blee_project/Misopin-renew/css/responsive.css",
+          "type": "DEPENDENCY",
+          "description": "반응형 스타일 정의"
+        }
+      ],
+      "implementationGuide": "1. dist/botox.html의 <head> 섹션에 responsive.css 링크 추가\n2. CSS 경로를 ../css/responsive.css로 설정\n3. 기존 CSS 링크들과의 로딩 순서 조정\n4. CSS 캐싱 방지를 위한 버전 파라미터 고려\n5. 다른 필요한 CSS 파일들 연결 확인",
+      "verificationCriteria": "responsive.css가 정상 로딩되고, 반응형 스타일이 브라우저에서 적용되는지 확인",
+      "analysisResult": "dist/botox.html에 반응형 헤더/푸터를 안전하게 추가하기 위한 점진적 접근법. CSS 충돌 방지를 위해 네임스페이싱과 점진적 향상 패턴을 적용하여 기존 스타일을 보존하면서 반응형 기능을 추가합니다."
+    },
+    {
+      "id": "ae119f63-00b9-4ef6-94cc-f4c394909cea",
+      "name": "JavaScript 의존성 연결 및 모바일 네비게이션 기능 활성화",
+      "description": "mobile-nav.js를 연결하고 햄버거 메뉴가 정상 작동하도록 JavaScript 의존성을 설정합니다.",
+      "status": "pending",
+      "dependencies": [
+        {
+          "taskId": "49bbf269-a513-457f-add5-d1770d930138"
+        }
+      ],
+      "createdAt": "2025-09-10T07:49:03.680Z",
+      "updatedAt": "2025-09-10T07:49:03.680Z",
+      "relatedFiles": [
+        {
+          "path": "/Users/dongeuncheon/blee_project/Misopin-renew/dist/botox.html",
+          "type": "TO_MODIFY",
+          "description": "JavaScript 스크립트 추가"
+        },
+        {
+          "path": "/Users/dongeuncheon/blee_project/Misopin-renew/js/mobile-nav.js",
+          "type": "DEPENDENCY",
+          "description": "모바일 네비게이션 로직"
+        }
+      ],
+      "implementationGuide": "1. dist/botox.html에 mobile-nav.js 스크립트 추가\n2. JavaScript 경로를 ../js/mobile-nav.js로 설정\n3. DOM 요소 ID 매핑 확인 (navBtn, navWrap 등)\n4. 카카오톡 상담 기능 연결 확인\n5. 스크롤 이벤트 및 리사이즈 이벤트 핸들러 테스트",
+      "verificationCriteria": "햄버거 메뉴 토글, 서브메뉴 펼침/접힘, 배경 클릭 닫기 기능이 모두 정상 작동하는지 확인",
+      "analysisResult": "dist/botox.html에 반응형 헤더/푸터를 안전하게 추가하기 위한 점진적 접근법. CSS 충돌 방지를 위해 네임스페이싱과 점진적 향상 패턴을 적용하여 기존 스타일을 보존하면서 반응형 기능을 추가합니다."
+    },
+    {
+      "id": "17ee6281-3a6e-47c7-858f-663ab91e9e83",
+      "name": "데스크탑/모바일 반응형 테스트 및 스타일 미세 조정",
+      "description": "다양한 화면 크기에서 반응형 동작을 테스트하고 필요한 스타일 미세 조정을 수행합니다.",
+      "status": "pending",
+      "dependencies": [
+        {
+          "taskId": "ae119f63-00b9-4ef6-94cc-f4c394909cea"
+        }
+      ],
+      "createdAt": "2025-09-10T07:49:03.680Z",
+      "updatedAt": "2025-09-10T07:49:03.680Z",
+      "relatedFiles": [
+        {
+          "path": "/Users/dongeuncheon/blee_project/Misopin-renew/dist/botox.html",
+          "type": "TO_MODIFY",
+          "description": "스타일 미세 조정"
+        },
+        {
+          "path": "/Users/dongeuncheon/blee_project/Misopin-renew/css/responsive.css",
+          "type": "REFERENCE",
+          "description": "반응형 스타일 참조"
+        }
+      ],
+      "implementationGuide": "1. 브라우저 개발자 도구로 768px 이상/이하 테스트\n2. 데스크탑 헤더/푸터 표시 확인\n3. 모바일 헤더/푸터 표시 확인\n4. 햄버거 메뉴 동작 테스트\n5. 스타일 충돌이나 레이아웃 깨짐 확인 후 수정",
+      "verificationCriteria": "768px 기준으로 데스크탑/모바일에서 헤더와 푸터가 정상적으로 표시되고 기능이 작동하는지 확인",
+      "analysisResult": "dist/botox.html에 반응형 헤더/푸터를 안전하게 추가하기 위한 점진적 접근법. CSS 충돌 방지를 위해 네임스페이싱과 점진적 향상 패턴을 적용하여 기존 스타일을 보존하면서 반응형 기능을 추가합니다."
+    }
+  ]
+}
