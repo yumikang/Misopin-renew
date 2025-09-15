@@ -323,6 +323,218 @@ img {
     max-width: 100%;
     height: auto;
 }
+
+/* 아코디언 스타일 */
+.facility-section {
+    padding: 80px 0;
+    background: #fff;
+}
+
+.accordion-group {
+    display: flex;
+    width: 100%;
+    height: 600px;
+    max-width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+#facility-accordion {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.accordion-item {
+    position: relative;
+    width: 20%;
+    height: 100%;
+    float: left;
+    transition: width 0.7s;
+    -webkit-transition: width 0.7s;
+    -moz-transition: width 0.7s;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.accordion-item.out {
+    width: 8%;
+}
+
+.accordion-item.active {
+    width: 60%;
+}
+
+.accordion-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    transition: background 0.7s;
+    -webkit-transition: background 0.7s;
+    -moz-transition: background 0.7s;
+}
+
+.accordion-item.active .accordion-overlay {
+    background: linear-gradient(to bottom,
+        rgba(159,152,140,0.0) 0%,
+        rgba(159,152,140,0.0) 40%,
+        rgba(159,152,140,0.65) 100%);
+}
+
+.accordion-item.out .accordion-overlay {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.accordion-item h3 {
+    position: absolute;
+    margin: 0;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    color: #fff;
+    font-family: 'NanumSquare', sans-serif;
+    font-weight: 300;
+    font-size: 2rem;
+    line-height: 2rem;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.7s;
+    -webkit-transition: all 0.7s;
+    -moz-transition: all 0.7s;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.accordion-item.out h3 {
+    font-size: 1rem;
+    transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    letter-spacing: 0;
+    left: 10px;
+    right: auto;
+    bottom: 50%;
+    transform-origin: 0 0;
+    -webkit-transform-origin: 0 0;
+    -moz-transform-origin: 0 0;
+}
+
+.accordion-content {
+    position: absolute;
+    bottom: 80px;
+    left: 15%;
+    right: 15%;
+    opacity: 0;
+    transition: all 0.7s 0.1s;
+    -webkit-transition: all 0.7s 0.1s;
+    -moz-transition: all 0.7s 0.1s;
+}
+
+.accordion-item.active .accordion-content {
+    opacity: 1;
+    transition-delay: 0.5s;
+    -webkit-transition-delay: 0.5s;
+    -moz-transition-delay: 0.5s;
+}
+
+.accordion-content article {
+    text-align: center;
+}
+
+.accordion-content article p {
+    color: #fff;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    font-weight: 300;
+    margin: 0;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* 태블릿 반응형 */
+@media (max-width: 1024px) {
+    .accordion-group {
+        height: 500px;
+    }
+
+    .accordion-item h3 {
+        font-size: 1.5rem;
+    }
+
+    .accordion-item.out h3 {
+        font-size: 0.9rem;
+    }
+}
+
+/* 모바일 반응형 */
+@media (max-width: 767px) {
+    .accordion-group {
+        display: block;
+        height: auto;
+    }
+
+    .accordion-item {
+        width: 100% !important;
+        height: 120px;
+        float: none;
+        border-bottom: 1px solid #ddd;
+        transition: height 0.5s;
+        -webkit-transition: height 0.5s;
+    }
+
+    .accordion-item.active {
+        height: 350px;
+    }
+
+    .accordion-item.out {
+        height: 80px;
+    }
+
+    .accordion-overlay {
+        background: linear-gradient(to bottom,
+            rgba(0,0,0,0.2) 0%,
+            rgba(0,0,0,0.7) 100%);
+    }
+
+    .accordion-item.out .accordion-overlay {
+        background: rgba(0,0,0,0.8);
+    }
+
+    .accordion-item h3 {
+        transform: none !important;
+        -webkit-transform: none !important;
+        bottom: 20px;
+        left: 20px;
+        right: auto;
+        text-align: left;
+        font-size: 1.5rem !important;
+        letter-spacing: 1px;
+    }
+
+    .accordion-item.out h3 {
+        font-size: 1.2rem !important;
+        opacity: 0.7;
+    }
+
+    .accordion-content {
+        left: 20px;
+        right: 20px;
+        bottom: 60px;
+        text-align: left;
+    }
+
+    .accordion-content article {
+        text-align: left;
+    }
+
+    .accordion-content article p {
+        font-size: 1rem;
+    }
+}
 </style>
 <script>
 // 자바스크립트에서 사용하는 전역변수 선언
@@ -609,10 +821,8 @@ var g5_bbs_url   = "https://skincare1007.shiningcorp.com/bbs";
 
 		        <div class="intro-content">
 		            <div class="intro-text">
-		                <h3 style="font-size: 1.5rem; margin-bottom: 20px; color: #333;">전문성과 신뢰의 의료진</h3>
 		                <p style="margin-bottom: 20px; line-height: 1.8; color: #666;">
-		                    미소핀의원은 풍부한 임상 경험을 바탕으로 한 전문 의료진이
-		                    개인별 맞춤 진료를 제공합니다. 첨단 의료 장비와 안전한 시술 환경을
+		                    미소핀의원은 개인별 맞춤 진료를 제공합니다. 첨단 의료 장비와 안전한 시술 환경을
 		                    통해 최상의 치료 결과를 약속드립니다.
 		                </p>
 		                <p style="margin-bottom: 20px; line-height: 1.8; color: #666;">
@@ -686,66 +896,8 @@ var g5_bbs_url   = "https://skincare1007.shiningcorp.com/bbs";
 		    </div>
 		</section>
 
-		<!-- 진료과목 섹션 -->
-		<section class="section" style="background: #f8f9fa;">
-		    <div class="container">
-		        <div class="section-header">
-		            <h2 class="section-title">주요 <span class="highlight">진료과목</span></h2>
-		            <p class="section-subtitle">
-		                전문적이고 다양한 피부과 진료 서비스를 제공합니다.
-		            </p>
-		        </div>
-
-		        <div class="row">
-		            <div class="col col-md-6 col-6">
-		                <div class="feature-card" style="height: 100%;">
-		                    <h3 style="margin-bottom: 20px; color: #9F988C;">주름 개선</h3>
-		                    <ul style="text-align: left; color: #666; line-height: 1.8;">
-		                        <li>보톡스 시술</li>
-		                        <li>제오민 시술</li>
-		                        <li>다양한 주름 개선 치료</li>
-		                    </ul>
-		                </div>
-		            </div>
-
-		            <div class="col col-md-6 col-6">
-		                <div class="feature-card" style="height: 100%;">
-		                    <h3 style="margin-bottom: 20px; color: #9F988C;">볼륨 & 리프팅</h3>
-		                    <ul style="text-align: left; color: #666; line-height: 1.8;">
-		                        <li>필러 시술</li>
-		                        <li>스킨부스터</li>
-		                        <li>리프팅 치료</li>
-		                    </ul>
-		                </div>
-		            </div>
-
-		            <div class="col col-md-6 col-6">
-		                <div class="feature-card" style="height: 100%;">
-		                    <h3 style="margin-bottom: 20px; color: #9F988C;">피부 케어</h3>
-		                    <ul style="text-align: left; color: #666; line-height: 1.8;">
-		                        <li>여드름 치료</li>
-		                        <li>필링 시술</li>
-		                        <li>피부 관리 프로그램</li>
-		                    </ul>
-		                </div>
-		            </div>
-
-		            <div class="col col-md-6 col-6">
-		                <div class="feature-card" style="height: 100%;">
-		                    <h3 style="margin-bottom: 20px; color: #9F988C;">제거 시술</h3>
-		                    <ul style="text-align: left; color: #666; line-height: 1.8;">
-		                        <li>점 제거</li>
-		                        <li>비립종 제거</li>
-		                        <li>문신 제거</li>
-		                    </ul>
-		                </div>
-		            </div>
-		        </div>
-		    </div>
-		</section>
-
-		<!-- 시설 갤러리 섹션 -->
-		<section class="section">
+		<!-- 시설 갤러리 셉션 -->
+		<section class="section facility-section">
 		    <div class="container">
 		        <div class="section-header">
 		            <h2 class="section-title">미소핀의원 <span class="highlight">시설 안내</span></h2>
@@ -754,73 +906,55 @@ var g5_bbs_url   = "https://skincare1007.shiningcorp.com/bbs";
 		            </p>
 		        </div>
 
-		        <div class="gallery-grid">
-		            <div class="gallery-item">
-		                <img src="https://via.placeholder.com/400x300/f5f5f5/cccccc?text=접수+대기실"
-		                     alt="접수 및 대기실" loading="lazy">
-		            </div>
-		            <div class="gallery-item">
-		                <img src="https://via.placeholder.com/400x300/f5f5f5/cccccc?text=진료실"
-		                     alt="진료실" loading="lazy">
-		            </div>
-		            <div class="gallery-item">
-		                <img src="https://via.placeholder.com/400x300/f5f5f5/cccccc?text=시술실"
-		                     alt="시술실" loading="lazy">
-		            </div>
-		            <div class="gallery-item">
-		                <img src="https://via.placeholder.com/400x300/f5f5f5/cccccc?text=회복실"
-		                     alt="회복실" loading="lazy">
-		            </div>
-		            <div class="gallery-item">
-		                <img src="https://via.placeholder.com/400x300/f5f5f5/cccccc?text=의료장비"
-		                     alt="첨단 의료장비" loading="lazy">
-		            </div>
-		            <div class="gallery-item">
-		                <img src="https://via.placeholder.com/400x300/f5f5f5/cccccc?text=상담실"
-		                     alt="상담실" loading="lazy">
-		            </div>
-		        </div>
-		    </div>
-		</section>
-
-		<!-- 연혁 섹션 -->
-		<section class="section" style="background: #f8f9fa;">
-		    <div class="container">
-		        <div class="section-header">
-		            <h2 class="section-title">미소핀의원 <span class="highlight">연혁</span></h2>
-		            <p class="section-subtitle">
-		                지속적인 발전과 성장을 통해 고객의 신뢰를 쌓아왔습니다.
-		            </p>
-		        </div>
-
+		        <!-- 아코디언 시설 갤러리 -->
 		        <div class="row">
-		            <div class="col col-md-8 col-md-offset-2 col-12">
-		                <div class="timeline">
-		                    <div class="timeline-item">
-		                        <div class="timeline-year">2024</div>
-		                        <div class="timeline-content">
-		                            미소핀의원 목포 본원 개원<br>
-		                            최신 의료 장비 도입 및 전문 의료진 구성
-		                        </div>
-		                    </div>
-
-		                    <div class="timeline-item">
-		                        <div class="timeline-year">2024</div>
-		                        <div class="timeline-content">
-		                            피부과 전문의 진료 시작<br>
-		                            보톡스, 필러 등 미용 시술 서비스 개시
-		                        </div>
-		                    </div>
-
-		                    <div class="timeline-item">
-		                        <div class="timeline-year">2024</div>
-		                        <div class="timeline-content">
-		                            온라인 예약 시스템 구축<br>
-		                            고객 만족도 향상을 위한 서비스 시스템 강화
-		                        </div>
-		                    </div>
-		                </div>
-		            </div>
+		            <ul class="accordion-group" id="facility-accordion">
+		                <li class="accordion-item" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');">
+		                    <div class="accordion-overlay"></div>
+		                    <h3>대기실</h3>
+		                    <section class="accordion-content">
+		                        <article>
+		                            <p>편안하고 아늪한 대기 공간<br>고객님의 편의를 위한 최상의 환경</p>
+		                        </article>
+		                    </section>
+		                </li>
+		                <li class="accordion-item out" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');">
+		                    <div class="accordion-overlay"></div>
+		                    <h3>진료실</h3>
+		                    <section class="accordion-content">
+		                        <article>
+		                            <p>청결하고 현대적인 진료 공간<br>전문의와 함께하는 1:1 진료</p>
+		                        </article>
+		                    </section>
+		                </li>
+		                <li class="accordion-item out" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');">
+		                    <div class="accordion-overlay"></div>
+		                    <h3>시술실</h3>
+		                    <section class="accordion-content">
+		                        <article>
+		                            <p>첨단 장비를 갖춘 안전한 시술 공간<br>철저한 소독과 멸균 시스템</p>
+		                        </article>
+		                    </section>
+		                </li>
+		                <li class="accordion-item out" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');">
+		                    <div class="accordion-overlay"></div>
+		                    <h3>회복실</h3>
+		                    <section class="accordion-content">
+		                        <article>
+		                            <p>시술 후 편안한 휴식 공간<br>사후관리를 위한 케어 시스템</p>
+		                        </article>
+		                    </section>
+		                </li>
+		                <li class="accordion-item out" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1565183997392-2f6f122e5912?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');">
+		                    <div class="accordion-overlay"></div>
+		                    <h3>상담실</h3>
+		                    <section class="accordion-content">
+		                        <article>
+		                            <p>1:1 맞춤 상담 공간<br>고객님의 니즈를 위한 상세한 상담</p>
+		                        </article>
+		                    </section>
+		                </li>
+		            </ul>
 		        </div>
 		    </div>
 		</section>
@@ -961,5 +1095,79 @@ function korean_ck(obj) {
 </script>
 
 <script src="js/mobile-nav.js"></script>
+
+<!-- 아코디언 스크립트 -->
+<script>
+$(document).ready(function() {
+    var $accordion = $('#facility-accordion').children('li');
+    var $wideScreen = $(window).width() > 767;
+
+    // 초기 설정: 첫 번째 아이템 활성화
+    if ($wideScreen) {
+        $accordion.first().addClass('active').removeClass('out');
+    }
+
+    // 호버 이벤트 (데스크톱)
+    $accordion.on('mouseenter', function() {
+        if ($(window).width() > 767) {
+            var $this = $(this);
+            $accordion.removeClass('active').addClass('out');
+            $this.addClass('active').removeClass('out');
+        }
+    });
+
+    // 마우스 아웃 시 초기 상태로
+    $('#facility-accordion').on('mouseleave', function() {
+        if ($(window).width() > 767) {
+            $accordion.removeClass('active out');
+            $accordion.first().addClass('active');
+        }
+    });
+
+    // 클릭 이벤트 (모바일)
+    $accordion.on('click', function() {
+        if ($(window).width() <= 767) {
+            var $this = $(this);
+            if ($this.hasClass('active')) {
+                // 이미 활성화된 경우 닫기
+                $this.removeClass('active').addClass('out');
+            } else {
+                // 다른 모든 아이템 닫고 현재 아이템 열기
+                $accordion.removeClass('active').addClass('out');
+                $this.addClass('active').removeClass('out');
+            }
+        }
+    });
+
+    // 터치 이벤트 (모바일)
+    $accordion.on('touchstart', function(e) {
+        if ($(window).width() <= 767) {
+            e.stopPropagation();
+        }
+    });
+
+    // 화면 크기 변경 시 재설정
+    $(window).on('resize', function() {
+        $wideScreen = $(window).width() > 767;
+        if ($wideScreen) {
+            // 데스크톱 모드로 전환 시
+            $accordion.removeClass('active out');
+            $accordion.first().addClass('active');
+        } else {
+            // 모바일 모드로 전환 시
+            $accordion.removeClass('active').addClass('out');
+            $accordion.first().addClass('active').removeClass('out');
+        }
+    });
+
+    // 키보드 접근성
+    $accordion.attr('tabindex', '0').on('keypress', function(e) {
+        if (e.which === 13 || e.which === 32) { // Enter 또는 Space
+            e.preventDefault();
+            $(this).trigger('click');
+        }
+    });
+});
+</script>
 </body>
 </html>
