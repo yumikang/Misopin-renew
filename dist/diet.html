@@ -559,7 +559,113 @@
         </a>
     </div>
 
+    
     <!-- 푸터 -->
-    <!-- 푸터 시작 -->
+    <!-- 하단 푸터 시작 { -->
 <footer id="sh_ft">
-    <div id="sh_ft_wrapper">
+    <div class="footer_wrapper">
+        <div class="copy">
+            <div class="top">
+                <div class="logo_area">
+                    <img class="ft_logo" src="../img/misopin-temporary-logo.png" srcset="../img/misopin-temporary-logo.png 2048w, ../img/misopin-temporary-logo.png 1024w, ../img/misopin-temporary-logo.png 512w" sizes="(max-width: 768px) 80px, 120px" alt="미소핀의원" style="filter: brightness(0) invert(1); height: 2.5rem;" loading="lazy" />
+                </div>
+                <div class="phone_info">
+                    <div class="number">061-277-1001</div>
+                </div>
+                <div class="hours_title">
+                    <div class="cate">진료시간</div>
+                </div>
+                <div class="hours_info">
+                    <div class="hours_row">
+                        <span class="day">월/화/목/금</span>
+                        <span class="time">08:30 ~ 19:30</span>
+                    </div>
+                    <div class="hours_row">
+                        <span class="day">수요일</span>
+                        <span class="time">08:30 ~ 12:00</span>
+                    </div>
+                    <div class="hours_row">
+                        <span class="day">토요일</span>
+                        <span class="time">09:00 ~ 14:00</span>
+                    </div>
+                    <div class="notice">※점심시간 12:00-14:00 / 일요일, 공휴일 휴진</div>
+                </div>
+                <div class="menu_links">
+                    <a href="javascript:void(0)" onclick="window.open('../privacy.html', 'window', 'width=600; height=800; left=150; top=0; scrollbars=no')">개인정보취급방침</a>
+                    <a href="javascript:void(0)" onclick="window.open('../stipulation.html', 'window', 'width=600; height=800; left=150; top=0; scrollbars=no')">이용약관</a>
+                    <a href="javascript:void(0)" onclick="window.open('../fee-schedule.html', 'window', 'width=800; height=800; left=150; top=0; scrollbars=yes')">비급여 수가표</a>
+                </div>
+            </div>
+            <div class="main_info">상호 : 미소핀의원 | 대표자 : 김지식 | 사업자등록번호 : 123-56-789 | 전화번호 : 061-277-1001 | 주소 : 전남 목포시 영산로 362 미소핀의원</div>
+            <div class="bottom">
+                <p>© MISOPIN CLINIC. ALL RIGHTS RESERVED.</p>
+                <div class="adm">
+                    <a href="/admin/admin.login.php">ADMIN</a>
+                    <a href="https://www.hdweb.co.kr/" target="blank">HDWEB</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- 모바일 하단 네비게이션 -->
+<div class="mobile-bottom-nav mobile-only">
+    <a href="javascript:void(0);" onclick="openKakaoChat();" class="kakao">
+        <i class="fas fa-comment"></i>
+        카톡상담
+    </a>
+    <a href="https://instagram.com/misopin_clinic" target="_blank" class="instagram">
+        <i class="fab fa-instagram"></i>
+        인스타그램
+    </a>
+    <a href="../board-page.html">
+        <i class="fas fa-gift"></i>
+        이벤트
+    </a>
+    <a href="../calendar-page.html">
+        <i class="fas fa-edit"></i>
+        예약하기
+    </a>
+    <a href="tel:02-123-4567" class="phone">
+        <i class="fas fa-phone"></i>
+        전화상담
+    </a>
+</div>
+
+<!-- 100% 배경이미지 때문에 사용 -->
+</div>
+
+
+
+<script>
+function fmain_submit(f){
+    if (!$("#prv_check").is(":checked")) {
+        alert("개인정보취급방침의 내용에 동의하셔야 작성가능 합니다.");
+        return false;
+    }
+    return true;
+}
+feather.replace();
+function Num_ck(obj) {
+    var val = obj.value;
+    if(isNaN(val)) {
+        alert("숫자만 입력해 주세요");
+        obj.value = val.replace(/[^0-9]/gi, '');
+    }
+}
+function korean_ck(obj) {
+    var val = obj.value;
+    var korean = /^[가-힣ㄱ-ㅎㅏ-ㅣㆍ ᆢ\s]*$/;
+    if (!korean.test(val)) {
+        alert("한글만 입력해 주세요");
+        obj.value = val.replace(/[^가-힣ㄱ-ㅎㅏ-ㅣㆍ ᆢ\s]+/g, '');
+    }
+}
+</script>
+<!-- } 하단 끝 -->
+
+    <!-- 퀵메뉴 iframe -->
+    <iframe src="../quickmenu.html" style="position:fixed;top:50%;right:1.5%;transform:translateY(-50%);width:140px;height:800px;border:none;z-index:8;background:transparent;" scrolling="no"></iframe>
+<script src="../js/mobile-nav.js" defer></script>
+</body>
+</html>
