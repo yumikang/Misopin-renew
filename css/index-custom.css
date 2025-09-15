@@ -2,6 +2,27 @@
 
 /* clinic 헤더/푸터와 Misopin 콘텐츠 통합을 위한 CSS */
 
+/* 퀵메뉴 아이프레임 설정 - 데스크톱 전용 */
+@media (min-width: 769px) {
+    #quickmenu-iframe {
+        display: block !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+    }
+}
+
+/* 퀵메뉴 아이프레임 모바일 완전 숨김 */
+@media screen and (max-width: 768px) {
+    #quickmenu-iframe {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+        width: 0 !important;
+        height: 0 !important;
+    }
+}
+
 /* 1. 헤더 스타일 조정 */
 #sh_hd {
     position: fixed;

@@ -449,6 +449,46 @@ var g5_cookie_domain = "";
     margin-bottom: 1.5625rem;
 }
 
+.doctor_line_section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    position: relative;
+}
+
+.doctor_line {
+    flex: 1;
+    height: 0.125rem;
+    background-color: var(--misopin-primary);
+    border-radius: 0.0625rem;
+    margin-right: 1rem;
+}
+
+.doctor_category {
+    font-size: 0.875rem;
+    color: var(--misopin-primary);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-right: 1rem;
+    white-space: nowrap;
+}
+
+.doctor_logo {
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: var(--misopin-primary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    position: relative;
+    z-index: 2;
+}
+
 .clinic_logo {
     font-size: 1.25rem;
     color: #2c2c2c;
@@ -477,8 +517,8 @@ var g5_cookie_domain = "";
 }
 
 .doctor_description p {
-    font-size: 1.125rem;
-    line-height: 1.7;
+    font-size: 1.375rem;
+    line-height: 1.6;
     color: #555;
     margin: 0;
 }
@@ -487,18 +527,19 @@ var g5_cookie_domain = "";
     list-style: none;
     padding: 0;
     margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    column-gap: 2rem;
 }
 
 .doctor_credentials li {
-    font-size: 0.875rem;
+    font-size: 1rem;
     color: #666;
-    padding: 0.25rem 0;
+    padding: 0.375rem 0;
     text-align: left !important;
     position: relative;
-    padding-left: 0.9375rem;
+    padding-left: 1.25rem;
 }
 
 .doctor_credentials li::before {
@@ -910,7 +951,7 @@ table thead, th {
 <div id="sh_wrapper">
     
 <!-- 퀵메뉴 iframe -->
-<iframe src="quickmenu.html" style="position:fixed;top:50%;right:1.5%;transform:translateY(-50%);width:140px;height:800px;border:none;z-index:8;background:transparent;" scrolling="no"></iframe>
+<iframe src="quickmenu.html" id="quickmenu-iframe" style="position:fixed;top:50%;right:1.5%;transform:translateY(-50%);width:140px;height:800px;border:none;z-index:8;background:transparent;" scrolling="no"></iframe>
 
 <!-- 상단 시작 { -->
 <!-- 데스크톱 헤더 (768px 이상) -->
@@ -1509,8 +1550,11 @@ window.addEventListener('load', resizeSnsVideo);
         </div>
         <div class="doctor_content">
             <div class="doctor_header">
-                <span class="clinic_logo">Misopin</span>
-                <h2 class="doctor_title">미소핀의원</h2>
+                <div class="doctor_line_section">
+                    <div class="doctor_line"></div>
+                    <span class="doctor_category">MISOPIN Doctor</span>
+                    <div class="doctor_logo">M</div>
+                </div>
                 <h1 class="doctor_name">대표원장 김지식</h1>
             </div>
             <div class="doctor_description">
@@ -1653,7 +1697,7 @@ window.addEventListener('load', resizeSnsVideo);
     const inc05_slide = new Swiper(".inc05_slide", {
         loop:true,
         speed:1200,
-        slidesPerView:3,
+        slidesPerView:2,
         spaceBetween:40,
         autoplay: {
             delay: 3000,
@@ -1669,7 +1713,7 @@ window.addEventListener('load', resizeSnsVideo);
                 spaceBetween: 30
             },
             1024: {
-                slidesPerView: 3,
+                slidesPerView: 2,
                 spaceBetween: 40
             }
         }
@@ -1678,13 +1722,13 @@ window.addEventListener('load', resizeSnsVideo);
     const inc05_slide_text = new Swiper(".inc05_text", {
         loop:true,
         speed:1200,
-        slidesPerView:3,
+        slidesPerView:2,
         slideDuplicateClass: 'clone',
         effect:"fade",
-        fadeEffect: { 
-            crossFade: true 
+        fadeEffect: {
+            crossFade: true
         },
-        loopedSlides: 3
+        loopedSlides: 2
     });
 
     inc05_slide.controller.control = inc05_slide_text;
@@ -1706,95 +1750,54 @@ window.addEventListener('load', resizeSnsVideo);
 <!-- } 콘텐츠 끝 -->
 
 
-<!-- 하단 시작 { -->
-<footer id="sh_ft">
-	<div id="sh_ft_wrapper">
-        <div class="contact">
-            <div class="top">
-                <div class="form_area">
-                    <h2>CONTACT US</h2>
-                    <p>미소가 피어나는 곳, 미소핀의원에서 건강한 아름다움을 만나보세요.</p>
-                    <form class="consult" name="fmain_form" method="post" action="/sh_img/ft/footer_update.php" autocomplete="off" onsubmit="return fmain_submit(this);">
-                        <input type="hidden" name="form_url" value="/index.php?device=pc" />
-                        <div class="p_info">
-                            <ul class="input_01">
-                                <li><label for="wr_name">이름</label><input class="sh_input" type="text" name="wr_name" id="wr_name" placeholder="이름" oninput="korean_ck(this)" required maxlength="20"></li>
-                            </ul>
-                            <ul class="input_02">
-                                <li><label for="sh_phone">연락처</label><input class="sh_input" type="text" name="sh_phone" id="sh_phone" oninput="Num_ck(this)" placeholder="연락처" required ></li>
-                            </ul>
-                        </div>
-                        <ul class="input_03">
-                            <li>
-                                <label for="wr_content">문의내용</label>
-                                <textarea class="sh_input inc_input" name="wr_content" id="wr_content" placeholder="문의내용"></textarea>
-                            </li>
+<!-- CONTACT US 섹션 시작 -->
+<section id="contact_section">
+    <div class="contact_wrapper">
+        <div class="contact_content">
+            <div class="form_area">
+                <h2>CONTACT US</h2>
+                <p>미소가 피어나는 곳, 미소핀의원에서 건강한 아름다움을 만나보세요.</p>
+                <form class="consult" name="fmain_form" method="post" action="/sh_img/ft/footer_update.php" autocomplete="off" onsubmit="return fmain_submit(this);">
+                    <input type="hidden" name="form_url" value="/index.php?device=pc" />
+                    <div class="p_info">
+                        <ul class="input_01">
+                            <li><label for="wr_name">이름</label><input class="sh_input" type="text" name="wr_name" id="wr_name" placeholder="이름" oninput="korean_ck(this)" required maxlength="20"></li>
                         </ul>
-                        <div class="prv_area">
-                            <div class="send_btn"><button type="submit">상담신청</button></div>
-                            <div class="consent"><a href="javascript:void(0)" onclick="window.open('privacy.html', 'window', 'width=600; height=800; left=150; top=0; scrollbars=no');">개인정보 수집 · 이용에 동의</a> <label for="prv_check">동의</label><input type="checkbox" class="ck_box" id="prv_check"></div>
-                        </div> 
-                    </form>
-                </div>
-                <div class="map_area">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3266.0891025641867!2d126.39052051524942!3d34.80538698040586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3571f3f1b0c0c0c0%3A0x0!2s%EC%A0%84%EB%82%A8%20%EB%AA%A9%ED%8F%AC%EC%8B%9C%20%EC%98%81%EC%82%B0%EB%A1%9C%20362!5e0!3m2!1sko!2skr!4v1234567890" width="100%" height="100%" frameborder="0" style="border:0; display:block;" allowfullscreen="" loading="lazy" title="미소핀의원 오시는길"></iframe>
-                </div>
+                        <ul class="input_02">
+                            <li><label for="sh_phone">연락처</label><input class="sh_input" type="text" name="sh_phone" id="sh_phone" oninput="Num_ck(this)" placeholder="연락처" required ></li>
+                        </ul>
+                    </div>
+                    <ul class="input_03">
+                        <li>
+                            <label for="wr_content">문의내용</label>
+                            <textarea class="sh_input inc_input" name="wr_content" id="wr_content" placeholder="문의내용"></textarea>
+                        </li>
+                    </ul>
+                    <div class="prv_area">
+                        <div class="send_btn"><button type="submit">상담신청</button></div>
+                        <div class="consent"><a href="javascript:void(0)" onclick="window.open('privacy.html', 'window', 'width=600; height=800; left=150; top=0; scrollbars=no');">개인정보 수집 · 이용에 동의</a> <label for="prv_check">동의</label><input type="checkbox" class="ck_box" id="prv_check"></div>
+                    </div>
+                </form>
             </div>
-            <div class="bottom">
-                <ul class="info_box">
-                    <li>
-                        <i data-feather="phone-call"></i>
-                        <div class="cate">대표전화</div>
-                        <div class="number">061-277-1001</div>
-                    </li>
-                    <li>
-                        <i data-feather="clock"></i>
-                        <div class="cate">진료시간</div>
-                        <ul>
-                            <li>
-                                <div class="day">월/화/목/금</div>
-                                <div class="time">08:30 ~ 19:30</div>
-                            </li>
-                            <li>
-                                <div class="day">수요일</div>
-                                <div class="time">08:30 ~ 12:00</div>
-                            </li>
-                            <li>
-                                <div class="day">토요일</div>
-                                <div class="time">09:00 ~ 14:00</div>
-                            </li>
-                            <li class="notice">※점심시간 12:00-14:00 / 일요일, 공휴일 휴진</li>
-                        </ul>
-                    </li>
-                </ul>
-                <ul class="same_as">
-                    <li>
-                        <i data-feather="map-pin"></i>
-                        <div class="cate">오시는 길</div>
-                        <address>전남 목포시 영산로 362 미소핀의원 (2층, 3층)</address>
-                    </li>
-                    <li>
-                        <i data-feather="instagram"></i>
-                        <div class="cate">인스타그램</div>
-                        <a href="https://www.instagram.com/misopin_clinic">@misopin_clinic</a>
-                    </li>
-                    <li>
-                        <i data-feather="message-circle"></i>
-                        <div class="cate">카카오톡</div>
-                        <a href="https://www.instagram.com/misopin_clinic">미소핀의원</a>
-                    </li>
-                </ul>
+            <div class="map_area">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3266.0891025641867!2d126.39052051524942!3d34.80538698040586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3571f3f1b0c0c0c0%3A0x0!2s%EC%A0%84%EB%82%A8%20%EB%AA%A9%ED%8F%AC%EC%8B%9C%20%EC%98%81%EC%82%B0%EB%A1%9C%20362!5e0!3m2!1sko!2skr!4v1234567890" width="100%" height="100%" frameborder="0" style="border:0; display:block;" allowfullscreen="" loading="lazy" title="미소핀의원 오시는길"></iframe>
             </div>
         </div>
+    </div>
+</section>
+
+<!-- 하단 푸터 시작 { -->
+<footer id="sh_ft">
+    <div class="footer_wrapper">
         <div class="copy">
             <div class="top">
-                <img class="ft_logo" src="img/misopin-temporary-logo.png" srcset="img/misopin-temporary-logo.png 2048w, img/misopin-temporary-logo.png 1024w, img/misopin-temporary-logo.png 512w" sizes="(max-width: 768px) 80px, 120px" alt="미소핀의원" style="filter: brightness(0) invert(1); height: 2.5rem;" loading="lazy" />
-                <div>
+                <div class="logo_area">
+                    <img class="ft_logo" src="img/misopin-temporary-logo.png" srcset="img/misopin-temporary-logo.png 2048w, img/misopin-temporary-logo.png 1024w, img/misopin-temporary-logo.png 512w" sizes="(max-width: 768px) 80px, 120px" alt="미소핀의원" style="filter: brightness(0) invert(1); height: 2.5rem;" loading="lazy" />
+                </div>
+                <div class="menu_links">
                     <a href="javascript:void(0)" onclick="window.open('privacy.html', 'window', 'width=600; height=800; left=150; top=0; scrollbars=no')">개인정보취급방침</a>
                     <a href="javascript:void(0)" onclick="window.open('stipulation.html', 'window', 'width=600; height=800; left=150; top=0; scrollbars=no')">이용약관</a>
                     <a href="javascript:void(0)" onclick="window.open('fee-schedule.html', 'window', 'width=800; height=800; left=150; top=0; scrollbars=yes')">비급여 수가표</a>
-                    <a href="about.html">병원소개</a>
-                    <a href="javascript:void(0)" onclick="window.open('directions.html', 'window', 'width=800; height=800; left=150; top=0; scrollbars=yes')">오시는길</a>
                 </div>
             </div>
             <div class="main_info">상호 : 미소핀의원 | 대표자 : 김지식 | 사업자등록번호 : 123-56-789 | 전화번호 : 061-277-1001 | 주소 : 전남 목포시 영산로 362 미소핀의원</div>
@@ -1806,7 +1809,7 @@ window.addEventListener('load', resizeSnsVideo);
                 </div>
             </div>
         </div>
-	</div>
+    </div>
 </footer>
 
 
