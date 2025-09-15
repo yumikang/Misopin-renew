@@ -225,7 +225,18 @@
         color: var(--misopin-text-light);
         line-height: 1.6;
     }
-    
+
+    /* Bootstrap 유틸리티 클래스 */
+    .d-none {
+        display: none !important;
+    }
+
+    @media (min-width: 768px) {
+        .d-md-block {
+            display: block !important;
+        }
+    }
+
     /* 반응형 - 그리드 시스템과 연동 */
     @media (max-width: 768px) {
         .content-row,
@@ -252,12 +263,24 @@
 
         .order-md-2 {
             order: 1;
+            margin-bottom: 40px !important; /* 이미지와 텍스트 사이 여백 추가 */
         }
 
         /* Xeomin 제품 이미지 반응형 */
         img[alt="XEOMIN 제품"] {
             max-width: 200px !important;
             margin: 20px auto;
+        }
+
+        /* 모바일에서 컬럼 여백 추가 */
+        .section .row .col {
+            margin-bottom: 30px;
+        }
+
+        /* 섹션별 이미지 여백 */
+        .section img[alt="제오민 시술"],
+        .section img[alt="제오민 효과"] {
+            margin-bottom: 30px;
         }
     }
 
@@ -461,7 +484,7 @@
 <section class="section treatment-section">
     <div class="container">
         <div class="row">
-            <div class="col col-sm-12 col-md-6 col-lg-6">
+            <div class="col col-sm-12 col-md-12 col-lg-6">
                 <div style="color: #d4a574; font-size: 13px; font-weight: 500; letter-spacing: 1px; margin-bottom: 15px;">XEOMIN</div>
                 <h2 style="font-size: 42px; font-weight: 700; line-height: 1.2; margin-bottom: 30px; color: #333;">
                     나만의 특별한<br>
@@ -490,13 +513,8 @@
                     주름 완화, 사각턱·바디라인 개선, 겨드랑이 땀 분비 억제까지 폭넓게 활용됩니다.<br>
                     짧은 시술 시간과 빠른 회복으로, 자연스럽고 세련된 변화를 경험할 수 있습니다.
                 </p>
-
-                <div style="color: #d4a574; font-size: 18px; font-weight: 600; margin-top: 30px;">
-                    걱정하지 마세요!<br>
-                    미소핀의원이 함께합니다.
-                </div>
             </div>
-            <div class="col col-sm-12 col-md-6 col-lg-6">
+            <div class="col col-sm-12 col-md-6 col-lg-6 d-none d-md-block">
                 <img src="../images/jeomin/blog2_cd.webp" alt="제오민 시술" style="width: 100%; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
             </div>
         </div>
