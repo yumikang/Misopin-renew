@@ -226,23 +226,32 @@
         line-height: 1.6;
     }
     
-    /* 반응형 */
+    /* 반응형 - 그리드 시스템과 연동 */
     @media (max-width: 768px) {
         .content-row,
         .content-row.reverse {
             flex-direction: column;
         }
-        
+
         .treatment-container {
             padding: 40px 20px;
         }
-        
+
         .hero-image {
             height: 300px;
         }
-        
+
         #shSub .txt_area p {
             font-size: 28px;
+        }
+
+        /* 모바일에서 이미지 순서 조정 */
+        .order-md-1 {
+            order: 2;
+        }
+
+        .order-md-2 {
+            order: 1;
         }
     }
     </style>
@@ -256,6 +265,8 @@
     <script src="../js/wrest.js"></script>
 
     <link rel="stylesheet" href="../css/index-custom.css">
+    <link rel="stylesheet" href="../css/grid-system-1450.css">
+    <link rel="stylesheet" href="../css/responsive.css">
 </head>
 <body class="dist-page">
     <!-- 헤더 -->
@@ -434,50 +445,85 @@
         <!-- 동적 컨텐츠 영역 -->
         <!-- 제오민 시술 컨텐츠 -->
 <!-- 첫 번째 섹션: 제오민 소개 -->
-<section class="treatment-section">
-    <div class="two-column-layout" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; margin-top: 40px;">
-        <div class="col-text">
-            <div class="section-subtitle" style="color: var(--misopin-secondary); font-size: 14px; font-weight: 600; margin-bottom: 10px;">Xeomin</div>
-            <h2 class="section_h2" style="margin-bottom: 25px;">
-                나만의 특별한<br>
-                프리미엄 톡신
-            </h2>
-            <p style="line-height: 1.8; margin-bottom: 20px; color: var(--misopin-text-light);">
-                제오민(Xeomin)은 독일 MERZ에서 개발한 보툴리눔 톡신 A형 제제로,<br>
-                불필요한 복합 단백질을 제거해 내성 위험을 낮춘 것이 특징입니다.
-            </p>
-            <p style="line-height: 1.8; color: var(--misopin-text-light);">
-                주름 완화, 사각턱·바디라인 개선, 겨드랑이 땀 분비 억제까지 폭넓게 활용됩니다.<br>
-                짧은 시술 시간과 빠른 회복으로, 자연스럽고 세련된 변화를 경험할 수 있습니다.
-            </p>
-        </div>
-        <div class="col-image">
-            <img src="../images/jeomin/blog2_cd.webp" alt="제오민 시술" style="width: 100%; border-radius: 12px;">
+<section class="section treatment-section">
+    <div class="container">
+        <div class="row">
+            <div class="col col-sm-12 col-md-6 col-lg-6">
+                <div style="color: #d4a574; font-size: 13px; font-weight: 500; letter-spacing: 1px; margin-bottom: 15px;">XEOMIN</div>
+                <h2 style="font-size: 42px; font-weight: 700; line-height: 1.2; margin-bottom: 30px; color: #333;">
+                    나만의 특별한<br>
+                    프리미엄 톡신
+                </h2>
+
+                <!-- 태그 버튼들 - 제오민 특징 -->
+                <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;">
+                    <span style="display: inline-block; padding: 10px 24px; background: #d4a574; color: white; border-radius: 25px; font-size: 14px; font-weight: 500;">#이마주름</span>
+                    <span style="display: inline-block; padding: 10px 24px; background: #c19a6b; color: white; border-radius: 25px; font-size: 14px; font-weight: 500;">#팔자주름</span>
+                    <span style="display: inline-block; padding: 10px 24px; background: #b8956a; color: white; border-radius: 25px; font-size: 14px; font-weight: 500;">#미간주름</span>
+                </div>
+
+                <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 40px;">
+                    <span style="display: inline-block; padding: 10px 24px; background: #a08060; color: white; border-radius: 25px; font-size: 14px; font-weight: 500;">#사각턱보톡스</span>
+                    <span style="display: inline-block; padding: 10px 24px; background: #c4a077; color: white; border-radius: 25px; font-size: 14px; font-weight: 500;">#광대축소</span>
+                    <span style="display: inline-block; padding: 10px 24px; background: #b39068; color: white; border-radius: 25px; font-size: 14px; font-weight: 500;">#토끼볼주름</span>
+                </div>
+
+                <p style="line-height: 1.8; margin-bottom: 20px; color: #666; font-size: 16px;">
+                    제오민(Xeomin)은 독일 MERZ에서 개발한 보툴리눔 톡신 A형 제제로,<br>
+                    불필요한 복합 단백질을 제거해 내성 위험을 낮춘 것이 특징입니다.
+                </p>
+
+                <p style="line-height: 1.8; color: #666; font-size: 16px;">
+                    주름 완화, 사각턱·바디라인 개선, 겨드랑이 땀 분비 억제까지 폭넓게 활용됩니다.<br>
+                    짧은 시술 시간과 빠른 회복으로, 자연스럽고 세련된 변화를 경험할 수 있습니다.
+                </p>
+
+                <div style="color: #d4a574; font-size: 18px; font-weight: 600; margin-top: 30px;">
+                    걱정하지 마세요!<br>
+                    미소핀의원이 함께합니다.
+                </div>
+            </div>
+            <div class="col col-sm-12 col-md-6 col-lg-6">
+                <img src="../images/jeomin/blog2_cd.webp" alt="제오민 시술" style="width: 100%; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                <!-- 이미지 위 오버레이 텍스트 (선택사항) -->
+                <div style="position: absolute; bottom: 30px; left: 30px; background: rgba(255,255,255,0.95); padding: 15px 25px; border-radius: 10px;">
+                    <div style="color: #d4a574; font-size: 12px; font-weight: 600; margin-bottom: 5px;">XEOMIN</div>
+                    <div style="color: #333; font-size: 14px; font-weight: 500;">독일 정품 제오민</div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
 
 <!-- 두 번째 섹션: 제오민 효과 -->
-<section class="treatment-section">
-    <div class="two-column-layout" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; margin-top: 60px;">
-        <div class="col-image">
-            <img src="../images/jeomin/blog2_cd06.webp" alt="제오민 효과" style="width: 100%; border-radius: 12px;">
-        </div>
-        <div class="col-text">
-            <div class="section-subtitle" style="color: var(--misopin-secondary); font-size: 14px; font-weight: 600; margin-bottom: 10px;">Balance Effect</div>
-            <h2 class="section_h2" style="margin-bottom: 25px;">
+<section class="section treatment-section">
+    <div class="container">
+        <div class="row">
+            <div class="col col-sm-12 col-md-6 col-lg-6 order-md-2">
+                <img src="../images/jeomin/blog2_cd06.webp" alt="제오민 효과" style="width: 100%; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+            </div>
+            <div class="col col-sm-12 col-md-6 col-lg-6 order-md-1">
+            <div style="color: #d4a574; font-size: 13px; font-weight: 500; letter-spacing: 1px; margin-bottom: 15px;">BALANCE EFFECT</div>
+            <h2 style="font-size: 24px; font-weight: 400; line-height: 1.4; margin-bottom: 10px; color: #666;">
                 한 번의 시술로 완성하는<br>
-                동안 밸런스
+                자연스러운 라인으로 리던
             </h2>
-            <p style="line-height: 1.8; margin-bottom: 20px; color: var(--misopin-text-light);">
-                제오민은 표정근의 과도한 움직임을 부드럽게 조절해 주름 생성을 억제하고 얼굴과 바디의 균형을 맞춥니다.
+            <h3 style="font-size: 36px; font-weight: 700; margin-bottom: 30px; color: #333;">
+                동안 밸런스<br>
+                <span style="background: linear-gradient(135deg, #d4a574 0%, #c19a6b 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">제오민 교정</span>
+            </h3>
+            <p style="line-height: 1.8; margin-bottom: 20px; color: #666; font-size: 15px;">
+                제오민은 표정근의 과도한 움직임을 부드럽게 조절해<br>
+                주름 생성을 억제하고 얼굴과 바디의 균형을 맞춥니다.
             </p>
-            <p style="line-height: 1.8; margin-bottom: 20px; color: var(--misopin-text-light);">
-                특히 반복 시술이 필요한 경우, 복합 단백질이 없는 구조 덕분에 내성 위험을 줄일 수 있어 장기적인 관리에 적합합니다.
+            <p style="line-height: 1.8; margin-bottom: 20px; color: #666; font-size: 15px;">
+                특히 반복 시술이 필요한 경우, 복합 단백질이 없는 구조 덕분에<br>
+                내성 위험을 줄일 수 있어 장기적인 관리에 적합합니다.
             </p>
-            <p style="line-height: 1.8; color: var(--misopin-text-light);">
-                효과는 개인에 따라 평균 3~6개월 지속됩니다.
-            </p>
+            <div style="padding: 15px 20px; background: #f8f8f8; border-left: 3px solid #d4a574; margin-top: 30px;">
+                <p style="color: #d4a574; font-weight: 600; margin-bottom: 5px;">지속 기간</p>
+                <p style="color: #666;">효과는 개인에 따라 평균 3~6개월 지속됩니다.</p>
+            </div>
         </div>
     </div>
 </section>
