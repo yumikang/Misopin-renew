@@ -233,7 +233,18 @@
         color: var(--misopin-text-light);
         line-height: 1.6;
     }
-    
+
+    /* Bootstrap 유틸리티 클래스 */
+    .d-none {
+        display: none !important;
+    }
+
+    @media (min-width: 768px) {
+        .d-md-block {
+            display: block !important;
+        }
+    }
+
     /* 반응형 */
     @media (max-width: 768px) {
         .content-row,
@@ -263,6 +274,8 @@
     <script src="../js/common.js"></script>
     <script src="../js/wrest.js"></script>
     <link rel="stylesheet" href="../css/index-custom.css">
+    <link rel="stylesheet" href="../css/grid-system-1450.css">
+    <link rel="stylesheet" href="../css/responsive.css">
 </head>
 <body class="dist-page">
     <!-- 헤더 -->
@@ -441,27 +454,45 @@
         <!-- 동적 컨텐츠 영역 -->
         <!-- 보톡스 시술 컨텐츠 -->
 <!-- 첫 번째 섹션: 보톡스 소개 -->
-<section class="treatment-section">
-    <div class="two-column-layout" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; margin-top: 40px;">
-        <div class="col-text">
-            <div class="section-subtitle" style="color: var(--misopin-secondary); font-size: 14px; font-weight: 600; margin-bottom: 10px;">ANTI-WRINKLE</div>
-            <h2 class="section_h2" style="margin-bottom: 25px;">
-                주름과 라인<br>
-                한 번에 개선하는 보톡스
-            </h2>
-            <p style="line-height: 1.8; margin-bottom: 20px; color: var(--misopin-text-light);">
-                보툴리눔 톡신을 이용해 근육의 움직임을 조절하여<br>
-                미간·이마·눈가 주름을 완화하고 사각턱·승모근·종아리 라인을 슬림하게 만듭니다.
-            </p>
-            <p style="line-height: 1.8; color: var(--misopin-text-light);">
-                여름철 겨드랑이 땀 분비 억제에도 효과적이며,<br>
-                짧은 시술 시간과 빠른 회복으로 자연스러운 변화를 경험하실 수 있습니다.
-            </p>
-        </div>
-        <div class="col-image">
-            <img src="../images/botox/blog02.webp" alt="보톡스 시술" style="width: 100%; border-radius: 12px;">
+<section class="section treatment-section">
+    <div class="container">
+        <div class="row">
+            <div class="col col-sm-12 col-md-12 col-lg-6">
+                <div style="color: #d4a574; font-size: 0.8125rem; font-weight: 500; letter-spacing: 1px; margin-bottom: 15px;">ANTI-WRINKLE</div>
+                <h2 style="font-size: 2.625rem; font-weight: 700; line-height: 1.2; margin-bottom: 30px; color: #333;">
+                    주름과 라인<br>
+                    한 번에 개선하는 보톡스
+                </h2>
+
+                <!-- 태그 버튼들 -->
+                <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;">
+                    <span style="display: inline-block; padding: 10px 24px; background: #d4a574; color: white; border-radius: 25px; font-size: 0.875rem; font-weight: 500;">#이마주름</span>
+                    <span style="display: inline-block; padding: 10px 24px; background: #c19a6b; color: white; border-radius: 25px; font-size: 0.875rem; font-weight: 500;">#미간주름</span>
+                    <span style="display: inline-block; padding: 10px 24px; background: #b8956a; color: white; border-radius: 25px; font-size: 0.875rem; font-weight: 500;">#눈가주름</span>
+                </div>
+
+                <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 40px;">
+                    <span style="display: inline-block; padding: 10px 24px; background: #a08060; color: white; border-radius: 25px; font-size: 0.875rem; font-weight: 500;">#사각턱</span>
+                    <span style="display: inline-block; padding: 10px 24px; background: #c4a077; color: white; border-radius: 25px; font-size: 0.875rem; font-weight: 500;">#승모근</span>
+                    <span style="display: inline-block; padding: 10px 24px; background: #b39068; color: white; border-radius: 25px; font-size: 0.875rem; font-weight: 500;">#종아리</span>
+                </div>
+
+                <p style="line-height: 1.8; margin-bottom: 20px; color: #666; font-size: 1rem;">
+                    보툴리눔 톡신을 이용해 근육의 움직임을 조절하여<br>
+                    미간·이마·눈가 주름을 완화하고 사각턱·승모근·종아리 라인을 슬림하게 만듭니다.
+                </p>
+
+                <p style="line-height: 1.8; color: #666; font-size: 1rem;">
+                    여름철 겨드랑이 땀 분비 억제에도 효과적이며,<br>
+                    짧은 시술 시간과 빠른 회복으로 자연스러운 변화를 경험하실 수 있습니다.
+                </p>
+            </div>
+            <div class="col col-sm-12 col-md-6 col-lg-6">
+                <img src="../images/botox/blog02.webp" alt="보톡스 시술" style="width: 100%; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+            </div>
         </div>
     </div>
+</section>
 
 <!-- 보톡스 원리 섹션 -->
 <section class="treatment-section" style="background: var(--misopin-bg-accent); padding: 60px 0; margin: 60px 0;">
