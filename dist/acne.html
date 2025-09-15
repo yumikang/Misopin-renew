@@ -28,6 +28,8 @@
     <!-- 폰트 -->
     <style>
     @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
+    @import url('https://fonts.googleapis.com/css2?family=Marcellus&display=swap');
+    @import url('https://cdn.jsdelivr.net/gh/fonts-archive/Freesentation/Freesentation.css');
     @font-face {
         font-family: 'NanumSquare';
         src: url(//font.shiningcorp.com/css/font/NanumSquareR.eot);
@@ -50,6 +52,12 @@
         --misopin-text-dark: #2C2C2C;
         --misopin-text-light: #555555;
         --misopin-border: #E0E0E0;
+        --k-font: 'Freesentation';
+        --e-font: 'Marcellus';
+    }
+
+    body {
+        font-family: var(--k-font), 'Nanum Gothic', sans-serif;
     }
     
     /* 헤더 색상 오버라이드 */
@@ -256,7 +264,7 @@
 
     <link rel="stylesheet" href="../css/index-custom.css">
 </head>
-<body>
+<body class="dist-page">
     <!-- 헤더 -->
     <!-- 헤더 시작 -->
 <header id="sh_hd" class="desktop-header">

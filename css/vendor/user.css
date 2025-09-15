@@ -1,6 +1,70 @@
 @charset "utf-8";
 @import url('https://fonts.googleapis.com/css2?family=Marcellus&display=swap');
 @import url('https://cdn.jsdelivr.net/gh/fonts-archive/Freesentation/Freesentation.css');
+
+/* Suit 폰트 - dist 폴더 페이지용 */
+@font-face {
+    font-family: 'Suit';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Thin.woff2') format('woff2');
+    font-weight: 100;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Suit';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-ExtraLight.woff2') format('woff2');
+    font-weight: 200;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Suit';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Suit';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Suit';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Suit';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Suit';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Suit';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-ExtraBold.woff2') format('woff2');
+    font-weight: 800;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Suit';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Heavy.woff2') format('woff2');
+    font-weight: 900;
+    font-display: swap;
+}
 /* 초기화 */
 * {-webkit-text-size-adjust:none}
 body{background:#fff;font-size:0.81em;font-family:var(--k-font), var(--e-font)}
@@ -14,6 +78,7 @@ h1, h2, h3, h4, h5, h6, input, button, textarea, select{font-family:var(--k-font
 
   /* Fonts */
   --k-font:'Freesentation';
+  --k-font-dist:'Suit';  /* dist 폴더 페이지용 한글 폰트 */
   --e-font:'Marcellus';
 
   /* Sizes */
@@ -144,6 +209,17 @@ h1, h2, h3, h4, h5, h6, input, button, textarea, select{font-family:var(--k-font
     #sh_ft .same_as address { font-size: var(--font-base); }
     #sh_ft .copy .top { flex-direction: column; align-items: center; gap: 20px; }
     #sh_ft .copy .bottom { flex-direction: column; align-items: center; gap: 10px; }
+}
+
+/* dist 폴더 페이지 전용 폰트 설정 */
+.dist-page body,
+body.dist-page {
+    font-family: var(--k-font-dist), var(--e-font), 'Nanum Gothic', sans-serif;
+}
+
+.dist-page h1, .dist-page h2, .dist-page h3, .dist-page h4, .dist-page h5, .dist-page h6,
+.dist-page input, .dist-page button, .dist-page textarea, .dist-page select {
+    font-family: var(--k-font-dist), var(--e-font), 'Nanum Gothic', sans-serif;
 }
 
 @media (max-width: 480px) {
