@@ -175,7 +175,7 @@ h1, h2, h3, h4, h5, h6, input, button, textarea, select{font-family:var(--k-font
 #contact_section iframe{width:100%;height:100%}
 
 /* 푸터 섹션 스타일 */
-#sh_ft{position:relative;padding:0;width:100%;line-height:1.5;font-family:var(--k-font), var(--e-font);color:#fff;background-color:#282828}
+#sh_ft{position:relative;padding:60px 0 40px;width:100%;line-height:1.5;font-family:var(--k-font), var(--e-font);color:#fff;background-color:#282828}
 #sh_ft .footer_wrapper{width:100%}
 #sh_ft .footer_content{display:flex;margin:auto;width:100%;padding:0 40px}
 #sh_ft .bottom .cate{font-size:var(--font-xl);font-weight:700;color:#fff}
@@ -196,17 +196,30 @@ h1, h2, h3, h4, h5, h6, input, button, textarea, select{font-family:var(--k-font
 #sh_ft .same_as .kakao{width:22px;height:20px;background:url(../sh_img/ft/kakao.png) no-repeat center / contain}
 #sh_ft .same_as a{font-size:var(--font-lg);font-weight:400;color:#fff;transition:all .3s}
 #sh_ft .copy{padding:40px 0;margin:0;border-top:1px solid #777;font-size:var(--font-sm);font-weight:400;color:#777}
-#sh_ft .copy .top{display:flex;justify-content:space-between;align-items:center;padding:0 40px}
+#sh_ft .copy .top{display:grid;grid-template-columns:1fr 1fr 0.8fr 1.5fr 1fr;gap:30px;align-items:center;padding:40px 40px}
 
 /* 로고 영역 */
-#sh_ft .copy .top .logo_area{display:flex;justify-content:center}
+#sh_ft .copy .top .logo_area{display:flex;justify-content:flex-start}
+
+/* 전화번호 영역 */
+#sh_ft .copy .top .phone_info .number{font-size:var(--font-xl);font-weight:700;color:var(--primary);font-family:var(--e-font)}
+
+/* 진료시간 타이틀 */
+#sh_ft .copy .top .hours_title{text-align:right}
+#sh_ft .copy .top .hours_title .cate{font-size:var(--font-base);font-weight:600;color:#fff}
+
+/* 진료시간 정보 */
+#sh_ft .copy .top .hours_info{}
+#sh_ft .copy .top .hours_info .day{font-size:var(--font-sm);font-weight:400;color:#ccc;margin-bottom:6px}
+#sh_ft .copy .top .hours_info .day .time{font-weight:500;color:#fff;margin-left:10px}
+#sh_ft .copy .top .hours_info .notice{font-size:var(--font-xs);color:#999;margin-top:10px;line-height:1.4}
 
 /* 메뉴 링크 영역 */
-#sh_ft .copy .top .menu_links{display:flex;gap:25px}
+#sh_ft .copy .top .menu_links{display:flex;flex-direction:column;gap:8px;text-align:right}
 #sh_ft .copy .top .menu_links a{font-size:var(--font-sm);font-weight:400;color:#777;transition:all .3s}
 #sh_ft .copy .top .menu_links a:hover{color:#fff}
 
-#sh_ft .copy .main_info{margin:40px auto;width:100%;padding:0 40px;font-size:var(--font-base);font-weight:400}
+#sh_ft .copy .main_info{margin:20px auto;width:100%;padding:0 40px;font-size:var(--font-sm);font-weight:400;color:#999}
 #sh_ft .copy .bottom{justify-content:space-between;margin:0 auto;font-family:var(--e-font)}
 #sh_ft .copy .bottom a{font-size:var(--font-xs);color:#777;transition:all .3s}
 #sh_ft .copy .bottom a+a{margin-left:15px}
