@@ -466,72 +466,86 @@
     <!-- 메인 컨텐츠 -->
     <main class="treatment-container">
         <div class="container">
-        <!-- Hero 이미지 (옵션) -->
+            <!-- 메인 소개 섹션 -->
+            <section class="treatment-section">
+                <div class="two-column-layout" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; margin-top: 40px;">
+                    <div class="col-text">
+                        <div class="section-subtitle" style="color: var(--misopin-secondary); font-size: 14px; font-weight: 600; margin-bottom: 10px;">바디케어</div>
+                        <h2 class="section_h2" style="margin-bottom: 25px;">
+                            의학적 다이어트
+                        </h2>
+                        <p style="line-height: 1.8; margin-bottom: 20px; color: var(--misopin-text-light);">
+                            의학적 근거를 바탕으로 한 체계적인 체중 감량 프로그램입니다. 건강한 방법으로 체중을 감량하고 지속 가능한 체형 관리를 지원합니다.
+                        </p>
+                        <p style="line-height: 1.8; color: var(--misopin-text-light);">
+                            미소핀의원은 개인별 체질과 생활습관을 분석하여 맞춤형 다이어트 솔루션을 제공합니다.
+                        </p>
+                    </div>
+                    <div class="col-image">
+                        <img src="../images/blog2_cd.png" alt="의학적 다이어트 프로그램" style="width: 100%; border-radius: 12px;">
+                    </div>
+                </div>
+            </section>
 
+            <!-- 원리/효과 섹션 -->
+            <section class="treatment-section" style="background: var(--misopin-bg-accent); padding: 60px 0; margin: 60px 0;">
+                <div class="section_tit">
+                    <h2 class="section_h2">의학적 다이어트 접근법</h2>
+                    <p style="margin-top: 20px; color: var(--misopin-text-light);">
+                        의학적 다이어트는 단순한 체중 감량을 넘어 건강한 신체 조성의 변화를 목표로 합니다. 체성분 분석을 통한 정확한 진단과 개인별 맞춤 처방으로 안전하고 효과적인 체중 관리를 실현합니다.
+                    </p>
+                </div>
+            </section>
 
-        <!-- 동적 컨텐츠 영역 -->
-        <!-- 다이어트 시술 컨텐츠 -->
-<section class="treatment-section">
-    <div class="section_tit">
-        <h2 class="section_h2">다이어트 프로그램</h2>
-        <p class="section_p">건강하고 아름다운 바디라인 완성</p>
-    </div>
-    
-    <div class="content-row">
-        <div class="col-text">
-            <h3>의학적 다이어트란?</h3>
-            <p>의학적 근거를 바탕으로 한 체계적인 체중 감량 프로그램으로, 건강하게 살을 빼고 유지할 수 있도록 도와드립니다.</p>
-            <p>미소핀의원은 개인별 체질과 생활습관을 분석하여 맞춤형 다이어트 솔루션을 제공합니다.</p>
-        </div>
-        <div class="col-image">
-            <img src="/images/treatments/diet-intro.jpg" alt="다이어트 프로그램">
-        </div>
-    </div>
-</section>
+            <!-- 시술 과정 섹션 -->
+            <section class="treatment-section">
+                <div class="section_tit">
+                    <h2 class="section_h2">다이어트 과정</h2>
+                </div>
 
-<section class="treatment-section">
-    <div class="section_tit">
-        <h2 class="section_h2">다이어트 프로그램</h2>
-    </div>
+                <div class="process-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 40px;">
+                    <div class="process-step" style="text-align: center; padding: 30px; background: var(--misopin-bg-accent); border-radius: 10px;">
+                        <div style="font-size: 48px; color: var(--misopin-primary); margin-bottom: 20px;">01</div>
+                        <h4 style="margin-bottom: 15px; color: var(--misopin-text-dark);">체성분 분석</h4>
+                        <p style="font-size: 14px; color: var(--misopin-text-light);">정확한 체지방, 근육량, 기초대사율을 측정하여 개인별 상태를 파악합니다.</p>
+                    </div>
 
-    <div class="process-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 40px;">
-        <div class="process-step" style="text-align: center; padding: 30px; background: var(--misopin-bg-accent); border-radius: 10px;">
-            <h4 style="margin-bottom: 15px; color: var(--misopin-primary); font-size: 20px;">지방분해주사</h4>
-            <p style="font-size: 14px; color: var(--misopin-text-light);">국소 부위 지방 감소</p>
-        </div>
-        
-        <div class="process-step" style="text-align: center; padding: 30px; background: var(--misopin-bg-accent); border-radius: 10px;">
-            <h4 style="margin-bottom: 15px; color: var(--misopin-primary); font-size: 20px;">카복시 테라피</h4>
-            <p style="font-size: 14px; color: var(--misopin-text-light);">셀룰라이트 개선</p>
-        </div>
-        
-        <div class="process-step" style="text-align: center; padding: 30px; background: var(--misopin-bg-accent); border-radius: 10px;">
-            <h4 style="margin-bottom: 15px; color: var(--misopin-primary); font-size: 20px;">처방 다이어트</h4>
-            <p style="font-size: 14px; color: var(--misopin-text-light);">식욕 억제 및 대사 개선</p>
-        </div>
-        
-        <div class="process-step" style="text-align: center; padding: 30px; background: var(--misopin-bg-accent); border-radius: 10px;">
-            <h4 style="margin-bottom: 15px; color: var(--misopin-primary); font-size: 20px;">체형 관리</h4>
-            <p style="font-size: 14px; color: var(--misopin-text-light);">고주파 관리 프로그램</p>
-        </div>
-    </div>
-</section>
+                    <div class="process-step" style="text-align: center; padding: 30px; background: var(--misopin-bg-accent); border-radius: 10px;">
+                        <div style="font-size: 48px; color: var(--misopin-primary); margin-bottom: 20px;">02</div>
+                        <h4 style="margin-bottom: 15px; color: var(--misopin-text-dark);">맞춤 처방</h4>
+                        <p style="font-size: 14px; color: var(--misopin-text-light);">체질과 상태에 맞는 처방약물과 영양제로 건강한 다이어트를 지원합니다.</p>
+                    </div>
 
-<section class="treatment-section">
-    <div class="section_tit">
-        <h2 class="section_h2">체계적인 관리</h2>
-    </div>
-    
-    <ul style="line-height: 2.2; font-size: 16px; color: var(--misopin-text-light);">
-        <li><strong style="color: var(--misopin-primary);">체성분 분석:</strong> 정확한 체지방과 근육량 측정</li>
-        <li><strong style="color: var(--misopin-primary);">맞춤 처방:</strong> 개인별 체질에 맞는 약물 처방</li>
-        <li><strong style="color: var(--misopin-primary);">식단 관리:</strong> 영양 상담 및 식단 가이드</li>
-        <li><strong style="color: var(--misopin-primary);">주기적 관리:</strong> 정기적인 모니터링과 관리</li>
-    </ul>
-</section>
-        
-        <!-- 관련 시술 추천 -->
+                    <div class="process-step" style="text-align: center; padding: 30px; background: var(--misopin-bg-accent); border-radius: 10px;">
+                        <div style="font-size: 48px; color: var(--misopin-primary); margin-bottom: 20px;">03</div>
+                        <h4 style="margin-bottom: 15px; color: var(--misopin-text-dark);">체형 관리</h4>
+                        <p style="font-size: 14px; color: var(--misopin-text-light);">지방분해주사, 고주파 등의 시술로 체형 라인을 개선합니다.</p>
+                    </div>
 
+                    <div class="process-step" style="text-align: center; padding: 30px; background: var(--misopin-bg-accent); border-radius: 10px;">
+                        <div style="font-size: 48px; color: var(--misopin-primary); margin-bottom: 20px;">04</div>
+                        <h4 style="margin-bottom: 15px; color: var(--misopin-text-dark);">지속 관리</h4>
+                        <p style="font-size: 14px; color: var(--misopin-text-light);">정기적인 모니터링과 식단 상담으로 요요 현상 없는 체중 유지를 돕습니다.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 마무리 메시지 섹션 -->
+            <section class="treatment-section" style="background-image: url('../images/blog2/blog_cd08.png'); background-size: cover; background-position: center; position: relative; padding: 100px 0; margin: 60px 0;">
+                <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5);"></div>
+                <div style="position: relative; z-index: 2; text-align: center; color: white;">
+                    <div class="section-subtitle" style="color: #d4af37; font-size: 14px; font-weight: 600; margin-bottom: 10px;">미소핀의원</div>
+                    <h2 style="font-size: 42px; font-weight: 700; margin-bottom: 30px; line-height: 1.3;">
+                        건강한 체형 관리
+                    </h2>
+                    <p style="font-size: 18px; color: rgba(255,255,255,0.95); line-height: 1.8; margin-bottom: 10px;">
+                        무리한 다이어트로 건강을 해치지 마세요. 의학적 근거를 바탕으로 건강하게 체중을 관리하세요.
+                    </p>
+                    <p style="font-size: 18px; color: rgba(255,255,255,0.95); line-height: 1.8;">
+                        미소핀의원의 체계적인 다이어트 프로그램으로 이상적인 체형과 건강한 라이프스타일을 만들어가세요.
+                    </p>
+                </div>
+            </section>
         </div>
     </main>
 

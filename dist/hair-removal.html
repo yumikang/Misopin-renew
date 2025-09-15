@@ -428,59 +428,86 @@
     <!-- 메인 컨텐츠 -->
     <main class="treatment-container">
         <div class="container">
-        <!-- Hero 이미지 (옵션) -->
-        
-        
-        <!-- 동적 컨텐츠 영역 -->
-        <!-- 제모 시술 컨텐츠 -->
-<section class="treatment-section">
-    <div class="section_tit">
-        <h2 class="section_h2">제모 시술</h2>
-        <p class="section_p">매끄럽고 깨끗한 피부를 위한 영구 제모</p>
-    </div>
-    
-    <div class="content-row">
-        <div class="col-text">
-            <h3>레이저 제모란?</h3>
-            <p>레이저를 이용하여 모낭을 선택적으로 파괴하여 영구적으로 체모를 제거하는 시술입니다.</p>
-            <p>미소핀의원은 최신 레이저 장비로 통증은 줄이고 효과는 극대화한 제모 시술을 제공합니다.</p>
-        </div>
-        <div class="col-image">
-            <img src="/images/treatments/hair-removal-intro.jpg" alt="제모 시술">
-        </div>
-    </div>
-</section>
+            <!-- 메인 소개 섹션 -->
+            <section class="treatment-section">
+                <div class="two-column-layout" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; margin-top: 40px;">
+                    <div class="col-text">
+                        <div class="section-subtitle" style="color: var(--misopin-secondary); font-size: 14px; font-weight: 600; margin-bottom: 10px;">바디케어</div>
+                        <h2 class="section_h2" style="margin-bottom: 25px;">
+                            레이저 제모
+                        </h2>
+                        <p style="line-height: 1.8; margin-bottom: 20px; color: var(--misopin-text-light);">
+                            최신 레이저 기술로 모낭을 선택적으로 파괴하여 영구적인 제모 효과를 제공합니다. 통증은 최소화하고 효과는 극대화한 안전한 제모 시술입니다.
+                        </p>
+                        <p style="line-height: 1.8; color: var(--misopin-text-light);">
+                            미소핀의원은 개인의 모발 특성과 피부 타입에 맞춘 맞춤형 제모 프로그램을 제공합니다.
+                        </p>
+                    </div>
+                    <div class="col-image">
+                        <img src="../images/blog2_cd.png" alt="레이저 제모 시술" style="width: 100%; border-radius: 12px;">
+                    </div>
+                </div>
+            </section>
 
-<section class="treatment-section">
-    <div class="section_tit">
-        <h2 class="section_h2">시술 부위</h2>
-    </div>
-    
-    <div class="process-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 40px;">
-        <div class="process-step" style="text-align: center; padding: 20px; background: var(--misopin-bg-accent); border-radius: 10px;">
-            <h4 style="color: var(--misopin-primary);">얼굴</h4>
-            <p style="font-size: 14px; color: var(--misopin-text-light);">인중, 구레나룻</p>
-        </div>
-        
-        <div class="process-step" style="text-align: center; padding: 20px; background: var(--misopin-bg-accent); border-radius: 10px;">
-            <h4 style="color: var(--misopin-primary);">팔/다리</h4>
-            <p style="font-size: 14px; color: var(--misopin-text-light);">팔, 종아리, 허벅지</p>
-        </div>
-        
-        <div class="process-step" style="text-align: center; padding: 20px; background: var(--misopin-bg-accent); border-radius: 10px;">
-            <h4 style="color: var(--misopin-primary);">겨드랑이</h4>
-            <p style="font-size: 14px; color: var(--misopin-text-light);">깨끗한 겨드랑이</p>
-        </div>
-        
-        <div class="process-step" style="text-align: center; padding: 20px; background: var(--misopin-bg-accent); border-radius: 10px;">
-            <h4 style="color: var(--misopin-primary);">비키니</h4>
-            <p style="font-size: 14px; color: var(--misopin-text-light);">V라인, I라인</p>
-        </div>
-    </div>
-</section>
+            <!-- 원리/효과 섹션 -->
+            <section class="treatment-section" style="background: var(--misopin-bg-accent); padding: 60px 0; margin: 60px 0;">
+                <div class="section_tit">
+                    <h2 class="section_h2">레이저 제모 원리</h2>
+                    <p style="margin-top: 20px; color: var(--misopin-text-light);">
+                        레이저 광선이 모발의 멜라닌 색소에 흡수되어 열에너지로 변환됩니다. 이 열이 모낭을 선택적으로 파괴하여 영구적인 제모 효과를 얻게 됩니다. 정상 피부 조직은 손상시키지 않으면서 모낭만을 정확히 타겟팅합니다.
+                    </p>
+                </div>
+            </section>
 
-        <!-- 관련 시술 추천 -->
+            <!-- 시술 과정 섹션 -->
+            <section class="treatment-section">
+                <div class="section_tit">
+                    <h2 class="section_h2">시술 과정</h2>
+                </div>
 
+                <div class="process-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 40px;">
+                    <div class="process-step" style="text-align: center; padding: 30px; background: var(--misopin-bg-accent); border-radius: 10px;">
+                        <div style="font-size: 48px; color: var(--misopin-primary); margin-bottom: 20px;">01</div>
+                        <h4 style="margin-bottom: 15px; color: var(--misopin-text-dark);">피부 타입 분석</h4>
+                        <p style="font-size: 14px; color: var(--misopin-text-light);">피부색과 모발 특성을 분석하여 최적의 레이저 설정값을 결정합니다.</p>
+                    </div>
+
+                    <div class="process-step" style="text-align: center; padding: 30px; background: var(--misopin-bg-accent); border-radius: 10px;">
+                        <div style="font-size: 48px; color: var(--misopin-primary); margin-bottom: 20px;">02</div>
+                        <h4 style="margin-bottom: 15px; color: var(--misopin-text-dark);">전처리 과정</h4>
+                        <p style="font-size: 14px; color: var(--misopin-text-light);">시술 부위를 깨끗하게 세정하고 냉각 젤을 도포합니다.</p>
+                    </div>
+
+                    <div class="process-step" style="text-align: center; padding: 30px; background: var(--misopin-bg-accent); border-radius: 10px;">
+                        <div style="font-size: 48px; color: var(--misopin-primary); margin-bottom: 20px;">03</div>
+                        <h4 style="margin-bottom: 15px; color: var(--misopin-text-dark);">레이저 조사</h4>
+                        <p style="font-size: 14px; color: var(--misopin-text-light);">정밀한 레이저로 모낭을 선택적으로 파괴하며 쿨링 시스템으로 통증을 최소화합니다.</p>
+                    </div>
+
+                    <div class="process-step" style="text-align: center; padding: 30px; background: var(--misopin-bg-accent); border-radius: 10px;">
+                        <div style="font-size: 48px; color: var(--misopin-primary); margin-bottom: 20px;">04</div>
+                        <h4 style="margin-bottom: 15px; color: var(--misopin-text-dark);">진정 관리</h4>
+                        <p style="font-size: 14px; color: var(--misopin-text-light);">시술 후 진정 케어를 진행하고 홈케어 방법을 안내합니다.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 마무리 메시지 섹션 -->
+            <section class="treatment-section" style="background-image: url('../images/blog2/blog_cd08.png'); background-size: cover; background-position: center; position: relative; padding: 100px 0; margin: 60px 0;">
+                <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5);"></div>
+                <div style="position: relative; z-index: 2; text-align: center; color: white;">
+                    <div class="section-subtitle" style="color: #d4af37; font-size: 14px; font-weight: 600; margin-bottom: 10px;">미소핀의원</div>
+                    <h2 style="font-size: 42px; font-weight: 700; margin-bottom: 30px; line-height: 1.3;">
+                        매끈하고 깨끗한 피부
+                    </h2>
+                    <p style="font-size: 18px; color: rgba(255,255,255,0.95); line-height: 1.8; margin-bottom: 10px;">
+                        번거로운 면도와 왁싱에서 해방되어 자신감 넘치는 일상을 시작하세요.
+                    </p>
+                    <p style="font-size: 18px; color: rgba(255,255,255,0.95); line-height: 1.8;">
+                        미소핀의원의 안전하고 효과적인 레이저 제모로 매끈하고 깨끗한 피부를 완성해드립니다.
+                    </p>
+                </div>
+            </section>
         </div>
     </main>
 
