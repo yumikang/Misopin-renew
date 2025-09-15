@@ -836,6 +836,200 @@
     }
 }
 
+/* ===== 달력 페이지 모바일 스타일 (max-width: 768px) ===== */
+@media (max-width: 768px) {
+    /* 달력 영역 모바일 스타일 */
+    #mara_cal_view {
+        padding: 10px !important;
+        overflow-x: auto !important;
+    }
+
+    #mara_cal_view .title {
+        font-size: 1.2rem !important;
+        padding: 15px 0 !important;
+        text-align: center !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 20px !important;
+    }
+
+    #mara_cal_view .c_btn {
+        display: inline-flex !important;
+        width: 35px !important;
+        height: 35px !important;
+        align-items: center !important;
+        justify-content: center !important;
+        background: #f5f5f5 !important;
+        border-radius: 50% !important;
+        font-size: 1.2rem !important;
+    }
+
+    #mara_cal_view .stit {
+        font-size: 0.9rem !important;
+        text-align: center !important;
+        margin: 10px 0 15px !important;
+        color: #666 !important;
+    }
+
+    #mara_cal_view .cal_btn_area {
+        text-align: center !important;
+        margin-bottom: 20px !important;
+    }
+
+    #mara_cal_view .rsv_btn_t {
+        width: 100% !important;
+        max-width: 300px !important;
+        padding: 12px 20px !important;
+        font-size: 1rem !important;
+        background: #38b0c9 !important;
+        color: #fff !important;
+        border: none !important;
+        border-radius: 25px !important;
+        cursor: pointer !important;
+    }
+
+    /* 달력 테이블 모바일 최적화 */
+    #mara_cal_view .tbl_mara {
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+    }
+
+    #mara_cal_view .tbl_mara table {
+        min-width: 320px !important;
+        width: 100% !important;
+        table-layout: fixed !important;
+    }
+
+    #mara_cal_view .tbl_mara th,
+    #mara_cal_view .tbl_mara td {
+        padding: 8px 2px !important;
+        font-size: 0.75rem !important;
+        text-align: center !important;
+        vertical-align: middle !important;
+    }
+
+    #mara_cal_view .tbl_mara th {
+        background: #f8f8f8 !important;
+        font-weight: 600 !important;
+        border-bottom: 2px solid #ddd !important;
+    }
+
+    #mara_cal_view .tbl_mara td {
+        height: 60px !important;
+        border: 1px solid #e0e0e0 !important;
+        position: relative !important;
+    }
+
+    #mara_cal_view .tbl_mara .title_day {
+        margin-bottom: 5px !important;
+        font-weight: bold !important;
+    }
+
+    #mara_cal_view .tbl_mara .day {
+        font-size: 0.9rem !important;
+        display: inline-block !important;
+        width: 24px !important;
+        height: 24px !important;
+        line-height: 24px !important;
+        border-radius: 50% !important;
+    }
+
+    #mara_cal_view .tbl_mara td a:not(.day) {
+        display: block !important;
+        font-size: 0.65rem !important;
+        color: #38b0c9 !important;
+        text-decoration: none !important;
+    }
+
+    #mara_cal_view .tbl_mara td.null {
+        background: #fafafa !important;
+        color: #ccc !important;
+        font-size: 0.65rem !important;
+    }
+
+    /* 예약 폼 모바일 스타일 */
+    #calendar_form {
+        width: 90% !important;
+        max-width: 400px !important;
+        padding: 20px !important;
+        border-radius: 12px !important;
+    }
+
+    #calendar_form .tit {
+        font-size: 1.2rem !important;
+        padding: 15px 0 !important;
+        border-bottom: 2px solid #38b0c9 !important;
+        margin-bottom: 20px !important;
+    }
+
+    #calendar_form .form li {
+        margin-bottom: 15px !important;
+    }
+
+    #calendar_form .form li label {
+        display: block !important;
+        margin-bottom: 8px !important;
+        font-size: 0.9rem !important;
+        font-weight: 600 !important;
+        color: #333 !important;
+    }
+
+    #calendar_form .form li input,
+    #calendar_form .form li select,
+    #calendar_form .form li textarea {
+        width: 100% !important;
+        padding: 10px !important;
+        border: 1px solid #ddd !important;
+        border-radius: 8px !important;
+        font-size: 1rem !important;
+        box-sizing: border-box !important;
+    }
+
+    #calendar_form .form li.type div {
+        display: flex !important;
+        gap: 15px !important;
+    }
+
+    #calendar_form .form li.type span {
+        display: flex !important;
+        align-items: center !important;
+        gap: 5px !important;
+    }
+
+    #calendar_form .agree_area {
+        margin-top: 20px !important;
+        padding: 15px !important;
+        background: #f8f8f8 !important;
+        border-radius: 8px !important;
+    }
+
+    #calendar_form .btn_area {
+        margin-top: 20px !important;
+        display: flex !important;
+        gap: 10px !important;
+    }
+
+    #calendar_form .btn_area button {
+        flex: 1 !important;
+        padding: 12px !important;
+        font-size: 1rem !important;
+        border-radius: 8px !important;
+        border: none !important;
+        cursor: pointer !important;
+    }
+
+    #calendar_form .btn_area .btn_submit {
+        background: #38b0c9 !important;
+        color: #fff !important;
+    }
+
+    #calendar_form .btn_area .btn_cancel {
+        background: #f5f5f5 !important;
+        color: #666 !important;
+    }
+}
+
 /* ===== 게시판 모바일 전용 스타일 (max-width: 768px) ===== */
 @media (max-width: 768px) {
     /* ===== 게시판 모바일 스타일 ===== */
