@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="../css/vendor/user.css">
     <link rel="stylesheet" href="../css/pages/page_style.css">
     <link rel="stylesheet" href="../css/button-styles.css">
+    <link rel="stylesheet" href="../css/grid-system-1450.css">
     <link rel="stylesheet" href="../css/responsive.css">
     
     <!-- Swiper CSS -->
@@ -254,6 +255,44 @@
     <script src="../js/common.js"></script>
     <script src="../js/wrest.js"></script>
 
+    <!-- 모바일 메뉴 JavaScript -->
+    <script>
+    $(document).ready(function() {
+        // 햄버거 메뉴 버튼 클릭 이벤트
+        $('#navBtn').click(function() {
+            $(this).toggleClass('on');
+            $('#navWrap').toggle();
+            if ($(this).hasClass('on')) {
+                $('#navWrap').addClass('on');
+            } else {
+                $('#navWrap').removeClass('on');
+            }
+        });
+
+        // 배경 클릭 시 메뉴 닫기
+        $('#navWrap').click(function(e) {
+            if (e.target === this) {
+                $('#navBtn').removeClass('on');
+                $(this).removeClass('on').hide();
+            }
+        });
+
+        // 대메뉴 클릭 시 하위메뉴 토글
+        $('.bmenu').click(function() {
+            $(this).toggleClass('on');
+            $(this).next('.smenu').slideToggle();
+        });
+
+        // ESC 키로 메뉴 닫기
+        $(document).keyup(function(e) {
+            if (e.keyCode === 27) { // ESC key
+                $('#navBtn').removeClass('on');
+                $('#navWrap').removeClass('on').hide();
+            }
+        });
+    });
+    </script>
+
     <link rel="stylesheet" href="../css/index-custom.css">
 </head>
 <body class="dist-page">
@@ -426,9 +465,10 @@
     
     <!-- 메인 컨텐츠 -->
     <main class="treatment-container">
+        <div class="container">
         <!-- Hero 이미지 (옵션) -->
-        
-        
+
+
         <!-- 동적 컨텐츠 영역 -->
         <!-- 다이어트 시술 컨텐츠 -->
 <section class="treatment-section">
@@ -491,9 +531,34 @@
 </section>
         
         <!-- 관련 시술 추천 -->
-        
+
+        </div>
     </main>
-    
+
+    <!-- 모바일 하단 네비게이션 -->
+    <div class="mobile-bottom-nav mobile-only">
+        <a href="javascript:void(0);" onclick="openKakaoChat();" class="kakao">
+            <i class="fas fa-comment"></i>
+            카톡상담
+        </a>
+        <a href="https://instagram.com/misopin_clinic" target="_blank" class="instagram">
+            <i class="fab fa-instagram"></i>
+            인스타그램
+        </a>
+        <a href="../board-page.html">
+            <i class="fas fa-gift"></i>
+            이벤트
+        </a>
+        <a href="../calendar-page.html">
+            <i class="fas fa-edit"></i>
+            예약하기
+        </a>
+        <a href="tel:061-277-1001" class="phone">
+            <i class="fas fa-phone"></i>
+            전화상담
+        </a>
+    </div>
+
     <!-- 푸터 -->
     <!-- 푸터 시작 -->
 <footer id="sh_ft">
