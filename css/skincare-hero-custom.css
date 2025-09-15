@@ -76,7 +76,7 @@
 
 /* 메인 텍스트 컨테이너 - 크기 조정 */
 #MainVisual .h1_mst {
-    font-family: 'Pretendard', 'Helvetica', sans-serif !important;
+    font-family: var(--e-font), 'Helvetica', sans-serif !important;
     font-size: 150px !important;  /* 180px → 140px로 축소 */
     font-weight: 500 !important;  /* Bold 사용 */
     letter-spacing: 0.12em !important;  /* 자간 넓게 */
@@ -109,7 +109,7 @@
     font-size: 24px !important;  /* 22px → 24px 크기 증가 */
     font-weight: 500 !important;
     letter-spacing: 0.3em !important;  /* 자간 넓게 */
-    font-family: 'Noto Sans KR', sans-serif !important;
+    font-family: var(--k-font), sans-serif !important;
 }
 
 /* ========================================
