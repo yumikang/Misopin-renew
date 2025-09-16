@@ -1,6 +1,9 @@
 # Misopin 원본 파일들 제외
 Misopin/
 
+# CMS 관련 파일들 제외
+misopin-cms/
+
 # OS 파일
 .DS_Store
 Thumbs.db
