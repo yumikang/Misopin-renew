@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>미소핀의원 CMS 연동 데모</title>
+
+    <!-- CMS 연동 스타일 -->
+    <link rel="stylesheet" href="css/misopin-cms.css">
+
+    <!-- 기본 스타일 -->
+    <style>
+        body {
+            font-family: 'Noto Sans KR', Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background: #f5f5f5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: #007cba;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            margin-bottom: 40px;
+        }
+
+        .section {
+            background: white;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .section-title {
+            color: #333;
+            border-bottom: 2px solid #007cba;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .demo-buttons {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            background: #007cba;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.2s ease;
+        }
+
+        .btn:hover {
+            background: #005a8b;
+        }
+
+        .btn.secondary {
+            background: #6c757d;
+        }
+
+        .btn.secondary:hover {
+            background: #545b62;
+        }
+
+        .api-info {
+            background: #f8f9fa;
+            border-left: 4px solid #007cba;
+            padding: 15px;
+            margin: 20px 0;
+            font-family: monospace;
+            font-size: 14px;
+        }
+
+        .status-indicator {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-right: 5px;
+        }
+
+        .status-online {
+            background: #28a745;
+        }
+
+        .status-offline {
+            background: #dc3545;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🏥 미소핀의원 CMS 연동 데모</h1>
+        <p>정적 사이트와 CMS의 완벽한 통합</p>
+        <div id="connection-status">
+            <span class="status-indicator status-offline"></span>
+            CMS 연결 확인 중...
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- API 연결 상태 섹션 -->
+        <div class="section">
+            <h2 class="section-title">🔌 CMS API 연결 상태</h2>
+            <div class="api-info">
+                <strong>CMS 서버:</strong> http://localhost:3004<br>
+                <strong>공개 API:</strong> /api/public/*<br>
+                <strong>캐시:</strong> 5분 TTL
+            </div>
+            <div class="demo-buttons">
+                <button class="btn" onclick="testConnection()">연결 테스트</button>
+                <button class="btn secondary" onclick="clearCache()">캐시 초기화</button>
+            </div>
+            <div id="api-status"></div>
+        </div>
+
+        <!-- 공지사항 섹션 -->
+        <div class="section">
+            <h2 class="section-title">📢 공지사항</h2>
+            <div class="demo-buttons">
+                <button class="btn" onclick="loadNotices()">공지사항 불러오기</button>
+                <button class="btn secondary" onclick="loadNotices(1)">페이지 1</button>
+                <button class="btn secondary" onclick="loadNotices(2)">페이지 2</button>
+            </div>
+            <div id="notice-board"></div>
+        </div>
+
+        <!-- 이벤트 섹션 -->
+        <div class="section">
+            <h2 class="section-title">🎉 이벤트</h2>
+            <div class="demo-buttons">
+                <button class="btn" onclick="loadEvents()">이벤트 불러오기</button>
+                <button class="btn secondary" onclick="loadEvents(1, 3)">최근 3개만</button>
+            </div>
+            <div id="event-board"></div>
+        </div>
+
+        <!-- 전체 게시글 섹션 -->
+        <div class="section">
+            <h2 class="section-title">📋 전체 게시글</h2>
+            <div class="demo-buttons">
+                <button class="btn" onclick="loadAllPosts()">전체 게시글</button>
+                <button class="btn secondary" onclick="showPopupDemo()">팝업 테스트</button>
+            </div>
+            <div id="all-posts"></div>
+        </div>
+
+        <!-- 사용법 안내 -->
+        <div class="section">
+            <h2 class="section-title">📖 사용법 안내</h2>
+            <h3>1. HTML에 라이브러리 추가</h3>
+            <div class="api-info">
+&lt;!-- CMS 연동 스타일 --&gt;
+&lt;link rel="stylesheet" href="css/misopin-cms.css"&gt;
+
+&lt;!-- CMS 연동 스크립트 --&gt;
+&lt;script src="js/misopin-cms.js"&gt;&lt;/script&gt;
+            </div>
+
+            <h3>2. 게시판 목록 표시</h3>
+            <div class="api-info">
+&lt;!-- HTML --&gt;
+&lt;div id="notice-list"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+// 공지사항 불러오기
+misopinCMS.renderBoardList('notice-list', {
+    type: 'NOTICE',
+    limit: 5
+});
+
+// 이벤트 불러오기
+misopinCMS.renderBoardList('event-list', {
+    type: 'EVENT',
+    limit: 10
+});
+&lt;/script&gt;
+            </div>
+
+            <h3>3. 수동 API 호출</h3>
+            <div class="api-info">
+// 게시글 가져오기
+const posts = await misopinCMS.getBoardPosts({type: 'NOTICE'});
+
+// 특정 페이지 가져오기
+const page = await misopinCMS.getPage('about');
+
+// 활성 팝업 가져오기
+const popups = await misopinCMS.getActivePopups();
+            </div>
+
+            <h3>4. 자동 팝업 표시</h3>
+            <p>페이지 로드 시 CMS에서 설정한 팝업이 자동으로 표시됩니다. 사용자가 "오늘 하루 보지 않기"를 선택하면 24시간 동안 표시되지 않습니다.</p>
+        </div>
+    </div>
+
+    <!-- CMS 연동 스크립트 -->
+    <script src="js/misopin-cms.js"></script>
+
+    <script>
+        // 연결 상태 확인
+        async function testConnection() {
+            const statusDiv = document.getElementById('connection-status');
+            const apiStatusDiv = document.getElementById('api-status');
+
+            try {
+                statusDiv.innerHTML = '<span class="status-indicator status-offline"></span>연결 확인 중...';
+
+                const response = await fetch('http://localhost:3004/api/public/pages');
+                if (response.ok) {
+                    statusDiv.innerHTML = '<span class="status-indicator status-online"></span>CMS 연결됨';
+                    apiStatusDiv.innerHTML = '<div style="color: green; margin-top: 10px;">✅ API 연결 성공</div>';
+                } else {
+                    throw new Error(`HTTP ${response.status}`);
+                }
+            } catch (error) {
+                statusDiv.innerHTML = '<span class="status-indicator status-offline"></span>CMS 연결 실패';
+                apiStatusDiv.innerHTML = `<div style="color: red; margin-top: 10px;">❌ 연결 실패: ${error.message}</div>`;
+            }
+        }
+
+        // 캐시 초기화
+        function clearCache() {
+            misopinCMS.cache.clear();
+            alert('캐시가 초기화되었습니다.');
+        }
+
+        // 공지사항 불러오기
+        function loadNotices(page = 1) {
+            misopinCMS.renderBoardList('notice-board', {
+                type: 'NOTICE',
+                limit: 5,
+                page: page
+            });
+        }
+
+        // 이벤트 불러오기
+        function loadEvents(page = 1, limit = 5) {
+            misopinCMS.renderBoardList('event-board', {
+                type: 'EVENT',
+                limit: limit,
+                page: page
+            });
+        }
+
+        // 전체 게시글 불러오기
+        function loadAllPosts() {
+            misopinCMS.renderBoardList('all-posts', {
+                limit: 10,
+                page: 1
+            });
+        }
+
+        // 팝업 테스트
+        function showPopupDemo() {
+            misopinCMS.showPopups();
+        }
+
+        // 페이지 로드 시 연결 테스트
+        window.addEventListener('load', () => {
+            setTimeout(testConnection, 1000);
+        });
+    </script>
+</body>
+</html>

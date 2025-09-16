@@ -1,0 +1,173 @@
+/* Misopin CMS Integration Styles */
+
+/* 로딩 및 상태 메시지 */
+.loading, .error, .no-posts {
+  text-align: center;
+  padding: 40px 20px;
+  color: #666;
+  font-size: 16px;
+}
+
+.error {
+  color: #e74c3c;
+  background: #fdf2f2;
+  border: 1px solid #f5c6cb;
+  border-radius: 4px;
+}
+
+/* 게시판 목록 스타일 */
+.board-list {
+  margin: 20px 0;
+}
+
+.board-item {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  padding: 20px;
+  background: #fff;
+  transition: box-shadow 0.2s ease;
+}
+
+.board-item:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.board-title {
+  margin: 0 0 10px 0;
+  color: #333;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.board-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  color: #666;
+}
+
+.board-type {
+  background: #007cba;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+}
+
+.board-content {
+  color: #555;
+  line-height: 1.6;
+  margin-top: 10px;
+}
+
+/* 페이지네이션 스타일 */
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.page-btn {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  background: #fff;
+  color: #333;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.page-btn:hover {
+  background: #f5f5f5;
+  border-color: #999;
+}
+
+.page-btn.active {
+  background: #007cba;
+  color: white;
+  border-color: #007cba;
+}
+
+.page-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* 팝업 스타일 개선 */
+.cms-popup {
+  font-family: 'Noto Sans KR', Arial, sans-serif !important;
+}
+
+.cms-popup h3 {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.cms-popup button {
+  transition: all 0.2s ease;
+}
+
+.cms-popup button:hover {
+  opacity: 0.8;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .board-item {
+    padding: 15px;
+    margin-bottom: 15px;
+  }
+
+  .board-title {
+    font-size: 16px;
+  }
+
+  .board-meta {
+    gap: 10px;
+    font-size: 13px;
+  }
+
+  .pagination {
+    gap: 3px;
+  }
+
+  .page-btn {
+    padding: 6px 10px;
+    font-size: 14px;
+  }
+
+  .cms-popup {
+    width: 90% !important;
+    max-width: 400px !important;
+    height: auto !important;
+    max-height: 80vh;
+    padding: 15px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .board-meta {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .board-meta span {
+    display: block;
+  }
+}
+
+/* 유틸리티 클래스 */
+.cms-hidden {
+  display: none !important;
+}
+
+.cms-loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
