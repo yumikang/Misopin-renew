@@ -325,14 +325,14 @@ h1, h2, h3, h4, h5, h6, input, button, textarea, select{font-family:var(--k-font
     #sh_ft .copy .top {
         grid-template-columns: 1fr;
         gap: 0;
-        padding: 30px 20px; /* 내부 컨텐츠는 적절한 여백 유지 */
+        padding: 20px 20px; /* 상하 패딩 줄임 */
         text-align: center;
     }
 
     /* 로고 영역 - 모바일 크기 증가 */
     #sh_ft .copy .top .logo_area {
         justify-content: center;
-        padding: 25px 0 20px;
+        padding: 15px 0 10px; /* 패딩 줄임 */
     }
     #sh_ft .copy .top .logo_area img {
         height: 3.5rem !important; /* 2.5rem → 3.5rem 크기 증가 */
@@ -355,9 +355,10 @@ h1, h2, h3, h4, h5, h6, input, button, textarea, select{font-family:var(--k-font
     #sh_ft .copy .top .hours_info {
         background: rgba(255,255,255,0.03);
         border-radius: 12px;
-        padding: 20px;
-        max-width: 320px;
-        margin: 20px auto 25px;
+        padding: 20px 25px;
+        max-width: 90%; /* 화면 너비의 90%로 확대 */
+        width: 100%;
+        margin: 15px auto 20px; /* 상하 여백 줄임 */
         position: relative;
     }
 
@@ -365,7 +366,7 @@ h1, h2, h3, h4, h5, h6, input, button, textarea, select{font-family:var(--k-font
     #sh_ft .copy .top .hours_info:before {
         content: "진료시간";
         display: block;
-        font-size: 1rem;
+        font-size: 1.125rem; /* 18px로 증가 */
         font-weight: 600;
         color: rgba(255,255,255,0.9);
         text-align: center;
@@ -376,17 +377,17 @@ h1, h2, h3, h4, h5, h6, input, button, textarea, select{font-family:var(--k-font
     #sh_ft .copy .top .hours_info .hours_row {
         display: flex;
         justify-content: space-between;
-        padding: 8px 0;
+        padding: 10px 0; /* 행 간격 늘림 */
     }
     #sh_ft .copy .top .hours_info .hours_row .day {
-        font-size: 0.938rem;
+        font-size: 1.063rem; /* 17px로 증가 */
         color: rgba(255,255,255,0.7);
         font-weight: 400;
         flex: 1;
         text-align: left;
     }
     #sh_ft .copy .top .hours_info .hours_row .time {
-        font-size: 0.938rem;
+        font-size: 1.063rem; /* 17px로 증가 */
         color: #fff;
         font-weight: 500;
         flex: 1;
@@ -394,7 +395,7 @@ h1, h2, h3, h4, h5, h6, input, button, textarea, select{font-family:var(--k-font
     }
     #sh_ft .copy .top .hours_info .notice {
         margin-top: 15px;
-        font-size: 0.813rem;
+        font-size: 0.875rem; /* 14px로 증가 */
         color: rgba(255,255,255,0.5);
         text-align: center;
         line-height: 1.5;
@@ -407,7 +408,7 @@ h1, h2, h3, h4, h5, h6, input, button, textarea, select{font-family:var(--k-font
         justify-content: center !important;
         align-items: center;
         gap: 15px;
-        padding: 25px 10px;
+        padding: 15px 10px; /* 패딩 줄임 */
         flex-wrap: nowrap;
         text-align: center !important;
         width: 100%;
@@ -441,7 +442,7 @@ h1, h2, h3, h4, h5, h6, input, button, textarea, select{font-family:var(--k-font
 
     /* 사업자 정보 - 깔끔한 정렬 */
     #sh_ft .copy .main_info {
-        padding: 15px 20px;
+        padding: 10px 20px; /* 패딩 줄임 */
         font-size: 0.75rem;
         line-height: 1.8;
         color: rgba(255,255,255,0.5);
@@ -451,7 +452,7 @@ h1, h2, h3, h4, h5, h6, input, button, textarea, select{font-family:var(--k-font
 
     /* 카피라이트 영역 */
     #sh_ft .copy .bottom {
-        padding: 15px 20px;
+        padding: 10px 20px; /* 패딩 줄임 */
         text-align: center;
     }
     #sh_ft .copy .bottom p {
@@ -505,11 +506,11 @@ body.dist-page {
     /* 푸터 섹션 작은 모바일 최적화 */
     #sh_ft { padding: 0 !important; } /* 작은 화면에서도 외부 여백 제거 */
     #sh_ft .footer_wrapper { padding: 0 !important; }
-    #sh_ft .copy .top { padding: 20px 15px !important; } /* 내부 컨텐츠 여백은 약간 줄임 */
+    #sh_ft .copy .top { padding: 15px 15px !important; } /* 내부 컨텐츠 여백 더 줄임 */
 
     /* 로고 크기 조정 - 작은 모바일에서도 적절한 크기 유지 */
     #sh_ft .copy .top .logo_area {
-        padding: 20px 0;
+        padding: 10px 0; /* 패딩 줄임 */
     }
     #sh_ft .copy .top .logo_area img {
         height: 3rem !important; /* 작은 화면에서도 충분한 크기 */
@@ -526,25 +527,26 @@ body.dist-page {
     }
 
     #sh_ft .copy .top .hours_info {
-        max-width: 280px;
-        padding: 15px;
+        max-width: 95%; /* 화면 너비의 95%로 확대 */
+        width: 100%;
+        padding: 18px 20px;
     }
     #sh_ft .copy .top .hours_info .hours_row {
-        padding: 6px 0;
+        padding: 8px 0; /* 행 간격 약간 늘림 */
     }
     #sh_ft .copy .top .hours_info .hours_row .day,
     #sh_ft .copy .top .hours_info .hours_row .time {
-        font-size: 0.875rem;
+        font-size: 1rem; /* 16px로 증가 */
     }
     #sh_ft .copy .top .hours_info .notice {
-        font-size: 0.75rem;
+        font-size: 0.813rem; /* 13px로 증가 */
         margin-top: 10px;
         padding-top: 10px;
     }
 
     /* 메뉴 링크 - 작은 모바일에서도 가로 유지 및 중앙 정렬 */
     #sh_ft .copy .top .menu_links {
-        padding: 20px 10px;
+        padding: 12px 10px; /* 패딩 줄임 */
         gap: 12px;
     }
     #sh_ft .copy .top .menu_links a {
@@ -559,11 +561,11 @@ body.dist-page {
     /* 하단 정보 크기 조정 */
     #sh_ft .copy .main_info {
         font-size: 0.688rem;
-        padding: 15px;
+        padding: 8px 15px; /* 패딩 줄임 */
     }
 
     #sh_ft .copy .bottom {
-        padding: 15px;
+        padding: 8px 15px; /* 패딩 줄임 */
     }
     #sh_ft .copy .bottom p {
         font-size: 0.688rem;
