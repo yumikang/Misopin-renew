@@ -244,15 +244,236 @@ h1, h2, h3, h4, h5, h6, input, button, textarea, select{font-family:var(--k-font
 }
 
 @media (max-width: 768px) {
-    #sh_ft .form_area h2 { font-size: 2.1875rem; }  /* 35px */
-    #sh_ft .form_area p { font-size: var(--font-base); }
-    #sh_ft .form_area .p_info { flex-direction: column; gap: 0; }
-    #sh_ft .form_area .p_info ul { width: 100%; }
-    #sh_ft .map_area { height: 300px; }
+    /* Contact Us 섹션 모바일 최적화 */
+    #contact_section { padding: 80px 0 20px; }
+    #contact_section .contact_content {
+        flex-direction: column;
+        padding: 0 20px;
+        gap: 40px;
+    }
+    #contact_section .form_area,
+    #contact_section .map_area {
+        width: 100%;
+    }
+    #contact_section .form_area form {
+        width: 100%;
+        max-width: 400px;
+        margin: 30px auto 0;
+    }
+    #contact_section .form_area h2 {
+        font-size: 2.5rem;  /* CONTACT US 크기 조정 */
+        text-align: center;
+    }
+    #contact_section .form_area p {
+        font-size: 1rem;
+        text-align: center;
+        padding: 0 10px;
+    }
+    #contact_section .form_area .p_info {
+        flex-direction: column;
+        gap: 0;
+    }
+    #contact_section .form_area .p_info ul {
+        width: 100%;
+    }
+    #contact_section .form_area .sh_input {
+        font-size: 16px; /* iOS 자동 확대 방지 */
+        padding: 15px 0;
+    }
+    #contact_section .form_area .send_btn {
+        width: 100%;
+        justify-content: center;
+        padding-top: 30px;
+    }
+    #contact_section .form_area .send_btn button {
+        min-width: 180px;
+        height: 52px;
+        font-size: 1rem;
+    }
+    #contact_section .form_area .prv_area {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        text-align: center;
+    }
+    #contact_section .form_area .consent {
+        justify-content: center;
+    }
+    #contact_section .form_area .consent a {
+        font-size: 0.875rem;
+    }
+    #contact_section .form_area .ck_box {
+        width: 20px;
+        height: 20px;
+    }
+    #contact_section .map_area {
+        height: 350px;
+        border-radius: 10px;
+        margin-top: 20px;
+    }
+
+    /* 푸터 섹션 모바일 최적화 - 컴팩트한 디자인 */
+    #sh_ft {
+        padding: 0 !important; /* 외부 여백 완전 제거 */
+        margin: 0 !important;
+        background: linear-gradient(180deg, #2a2a2a 0%, #1a1a1a 100%);
+    }
+    #sh_ft .footer_wrapper {
+        padding: 0 !important; /* 래퍼 여백도 제거 */
+        margin: 0 !important;
+    }
+    #sh_ft .copy .top {
+        grid-template-columns: 1fr;
+        gap: 0;
+        padding: 30px 20px; /* 내부 컨텐츠는 적절한 여백 유지 */
+        text-align: center;
+    }
+
+    /* 로고 영역 - 모바일 크기 증가 */
+    #sh_ft .copy .top .logo_area {
+        justify-content: center;
+        padding: 25px 0 20px;
+    }
+    #sh_ft .copy .top .logo_area img {
+        height: 3.5rem !important; /* 2.5rem → 3.5rem 크기 증가 */
+    }
+
+    /* 전화번호 영역 - 모바일에서 숨김 */
+    #sh_ft .copy .top .phone_info {
+        display: none !important;
+    }
+
+    /* 진료시간 섹션 - 통합 스타일 */
+    #sh_ft .copy .top .hours_title {
+        padding: 0;
+        margin: 0;
+    }
+    #sh_ft .copy .top .hours_title .cate {
+        display: none; /* 진료시간 텍스트를 hours_info 안으로 이동 */
+    }
+
+    #sh_ft .copy .top .hours_info {
+        background: rgba(255,255,255,0.03);
+        border-radius: 12px;
+        padding: 20px;
+        max-width: 320px;
+        margin: 20px auto 25px;
+        position: relative;
+    }
+
+    /* 진료시간 타이틀을 info 박스 안에 추가 */
+    #sh_ft .copy .top .hours_info:before {
+        content: "진료시간";
+        display: block;
+        font-size: 1rem;
+        font-weight: 600;
+        color: rgba(255,255,255,0.9);
+        text-align: center;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    #sh_ft .copy .top .hours_info .hours_row {
+        display: flex;
+        justify-content: space-between;
+        padding: 8px 0;
+    }
+    #sh_ft .copy .top .hours_info .hours_row .day {
+        font-size: 0.938rem;
+        color: rgba(255,255,255,0.7);
+        font-weight: 400;
+        flex: 1;
+        text-align: left;
+    }
+    #sh_ft .copy .top .hours_info .hours_row .time {
+        font-size: 0.938rem;
+        color: #fff;
+        font-weight: 500;
+        flex: 1;
+        text-align: right;
+    }
+    #sh_ft .copy .top .hours_info .notice {
+        margin-top: 15px;
+        font-size: 0.813rem;
+        color: rgba(255,255,255,0.5);
+        text-align: center;
+        line-height: 1.5;
+    }
+
+    /* 메뉴 링크 - 모바일 가로 한 줄 스타일 */
+    #sh_ft .copy .top .menu_links {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: center !important;
+        align-items: center;
+        gap: 15px;
+        padding: 25px 10px;
+        flex-wrap: nowrap;
+        text-align: center !important;
+        width: 100%;
+    }
+    #sh_ft .copy .top .menu_links a {
+        display: inline-block !important;
+        font-size: 0.875rem; /* 폰트 크기 증가 */
+        font-weight: 500;
+        color: rgba(255,255,255,0.7);
+        transition: all 0.2s;
+        white-space: nowrap;
+        position: relative;
+        padding: 0 !important;
+        border: none !important;
+        width: auto !important;
+        max-width: none !important;
+        margin: 0 !important;
+    }
+    /* 구분선 추가 */
+    #sh_ft .copy .top .menu_links a:not(:last-child):after {
+        content: "|";
+        position: absolute;
+        right: -9px;
+        color: rgba(255,255,255,0.3);
+        font-size: 0.813rem;
+    }
+    #sh_ft .copy .top .menu_links a:active {
+        color: #fff;
+        background: none !important;
+    }
+
+    /* 사업자 정보 - 깔끔한 정렬 */
+    #sh_ft .copy .main_info {
+        padding: 15px 20px;
+        font-size: 0.75rem;
+        line-height: 1.8;
+        color: rgba(255,255,255,0.5);
+        text-align: center;
+        word-break: keep-all;
+    }
+
+    /* 카피라이트 영역 */
+    #sh_ft .copy .bottom {
+        padding: 15px 20px;
+        text-align: center;
+    }
+    #sh_ft .copy .bottom p {
+        font-size: 0.75rem;
+        color: rgba(255,255,255,0.4);
+        margin-bottom: 12px;
+    }
+    #sh_ft .copy .bottom .adm {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+    #sh_ft .copy .bottom .adm a {
+        font-size: 0.75rem;
+        color: rgba(255,255,255,0.3);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    /* 기타 푸터 요소 */
     #sh_ft .info_box .day, #sh_ft .bottom .info_box .time { font-size: var(--font-base); }
     #sh_ft .same_as address { font-size: var(--font-base); }
-    #sh_ft .copy .top { flex-direction: column; align-items: center; gap: 20px; }
-    #sh_ft .copy .bottom { flex-direction: column; align-items: center; gap: 10px; }
 }
 
 /* dist 폴더 페이지 전용 폰트 설정 */
@@ -267,13 +488,89 @@ body.dist-page {
 }
 
 @media (max-width: 480px) {
-    #sh_ft .top { padding: 0 15px; }
-    #sh_ft .form_area h2 { font-size: 1.75rem; }  /* 28px */
-    #sh_ft .form_area .sh_input { font-size: var(--font-sm); padding: 15px 0; }
-    #sh_ft .form_area .send_btn button { width: 120px; height: 48px; font-size: var(--font-sm); }
-    #sh_ft .map_area { height: 250px; }
-    #sh_ft .info_box .number { font-size: var(--font-xl); }
-    #sh_ft .same_as address { font-size: var(--font-sm); }
+    /* Contact Us 섹션 작은 모바일 최적화 */
+    #contact_section { padding: 60px 0 20px; }
+    #contact_section .contact_content { padding: 0 15px; }
+    #contact_section .form_area h2 { font-size: 2rem; }  /* CONTACT US 더 작게 */
+    #contact_section .form_area p { font-size: 0.875rem; }
+    #contact_section .form_area form { max-width: 100%; }
+    #contact_section .form_area .sh_input { font-size: 16px; padding: 12px 0; }
+    #contact_section .form_area .send_btn button {
+        min-width: 150px;
+        height: 48px;
+        font-size: 0.9rem;
+    }
+    #contact_section .map_area { height: 300px; }
+
+    /* 푸터 섹션 작은 모바일 최적화 */
+    #sh_ft { padding: 0 !important; } /* 작은 화면에서도 외부 여백 제거 */
+    #sh_ft .footer_wrapper { padding: 0 !important; }
+    #sh_ft .copy .top { padding: 20px 15px !important; } /* 내부 컨텐츠 여백은 약간 줄임 */
+
+    /* 로고 크기 조정 - 작은 모바일에서도 적절한 크기 유지 */
+    #sh_ft .copy .top .logo_area {
+        padding: 20px 0;
+    }
+    #sh_ft .copy .top .logo_area img {
+        height: 3rem !important; /* 작은 화면에서도 충분한 크기 */
+    }
+
+    /* 전화번호 - 작은 모바일에서도 숨김 (768px에서 이미 숨겨짐) */
+
+    /* 진료시간 크기 조정 */
+    #sh_ft .copy .top .hours_title {
+        padding: 20px 0 12px;
+    }
+    #sh_ft .copy .top .hours_title .cate {
+        font-size: 0.875rem;
+    }
+
+    #sh_ft .copy .top .hours_info {
+        max-width: 280px;
+        padding: 15px;
+    }
+    #sh_ft .copy .top .hours_info .hours_row {
+        padding: 6px 0;
+    }
+    #sh_ft .copy .top .hours_info .hours_row .day,
+    #sh_ft .copy .top .hours_info .hours_row .time {
+        font-size: 0.875rem;
+    }
+    #sh_ft .copy .top .hours_info .notice {
+        font-size: 0.75rem;
+        margin-top: 10px;
+        padding-top: 10px;
+    }
+
+    /* 메뉴 링크 - 작은 모바일에서도 가로 유지 및 중앙 정렬 */
+    #sh_ft .copy .top .menu_links {
+        padding: 20px 10px;
+        gap: 12px;
+    }
+    #sh_ft .copy .top .menu_links a {
+        font-size: 0.813rem; /* 작은 모바일에서도 읽기 쉬운 크기 */
+        font-weight: 500;
+    }
+    #sh_ft .copy .top .menu_links a:not(:last-child):after {
+        right: -7px;
+        font-size: 0.75rem;
+    }
+
+    /* 하단 정보 크기 조정 */
+    #sh_ft .copy .main_info {
+        font-size: 0.688rem;
+        padding: 15px;
+    }
+
+    #sh_ft .copy .bottom {
+        padding: 15px;
+    }
+    #sh_ft .copy .bottom p {
+        font-size: 0.688rem;
+    }
+    #sh_ft .copy .bottom .adm a {
+        font-size: 0.688rem;
+    }
 }
 
 /* 사이트맵 */
