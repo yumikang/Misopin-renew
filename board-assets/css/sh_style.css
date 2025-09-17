@@ -25,7 +25,7 @@ a.sh_adm_btn{display:block;text-align:center}
 .btn_submit:hover{background:#555}
 
 /* 버튼 공통 */
-.btn_type01{display:inline-block;width:180px;height:55px;margin:0 auto;border-radius:2px;font-size:15px;color:#fff;text-align:center;line-height:55px;background-color:#0054a6;-webkit-transition:all .2s;transition:all .2s;font-family:'notokr-medium'}
+.btn_type01{display:inline-block;width:180px;height:55px;margin:0 auto;border-radius:2px;font-size:15px;color:#fff;text-align:center;line-height:55px;background-color:#9F988C;-webkit-transition:all .2s;transition:all .2s;font-family:'notokr-medium'}
 .btn_type01:hover{background-color:#0064c5}
 a.cancel_btn{display:inline-block;vertical-align:top;width:75px;height:55px;border:none;border-radius:2px;font-size:15px;text-align:center;color:#fff;line-height:55px;background-color:#bbb;font-family:'notokr-medium'}
 a.btn_normal{display:inline-block;vertical-align:top;width:75px;height:55px;border:none;border-radius:2px;font-size:15px;text-align:center;color:#fff;line-height:55px;background-color:#bbb;font-family:'notokr-medium'}
@@ -90,19 +90,19 @@ a.btn_line{display:inline-block;vertical-align:top;width:75px;height:55px;border
 #sh_list_tbl th{height:60px} 
 #sh_list_tbl td{height:60px}
 #sh_list_tbl td.num{width:10%;text-align:center}
-#sh_list_tbl td.num .fa-bell-o{color:#0054a6}
+#sh_list_tbl td.num .fa-bell-o{color:#9F988C}
 #sh_list_tbl td.subject{font-size:15px;color:#222;font-family:'notokr-medium'}
 #sh_list_tbl td.subject .fa-lock{display:inline-block;vertical-align:1px;margin-right:5px;padding:2px 4px 1px;border:1px solid #e1e1e1;border-radius:2px;font-size:12px;color:#bbb;background-color:#f6f6f6}
 #sh_list_tbl td.subject .fa-download{padding-left:5px;font-size:14px;color:#bbb}
-#sh_list_tbl td.subject .new{display:inline-block;vertical-align:2px;width:14px;height:15px;margin-left:5px;border-radius:2px;font-size:10px;font-weight:500;line-height:15px;color:#fff;text-align:center;background-color:#0054a6;font-family:'Poppins'}
+#sh_list_tbl td.subject .new{display:inline-block;vertical-align:2px;width:14px;height:15px;margin-left:5px;border-radius:2px;font-size:10px;font-weight:500;line-height:15px;color:#fff;text-align:center;background-color:#9F988C;font-family:'Poppins'}
 #sh_list_tbl td.subject .new.flash{display:none}
-#sh_list_tbl td.subject .fa-long-arrow-right{padding-right:8px;font-size:14px;color:#0054a6}
+#sh_list_tbl td.subject .fa-long-arrow-right{padding-right:8px;font-size:14px;color:#9F988C}
 #sh_list_tbl td.name{width:11%;text-align:center}
 #sh_list_tbl td.datetime{width:11%;text-align:center}
 #sh_list_tbl .bo_notice{background-color:#f5f6f8}
-#sh_list_tbl .notice{color:#0054a6}
+#sh_list_tbl .notice{color:#9F988C}
 #sh_list_tbl .notice:after{display:inline-block;content:"";width:1px;height:10px;margin:0 12px;background-color:#ccc}
-#sh_list_tbl .cate_link span{color:#0054a6}
+#sh_list_tbl .cate_link span{color:#9F988C}
 #sh_list_tbl .cate_link span:after{display:inline-block;content:"";width:1px;height:10px;margin:0 12px;background-color:#ccc}
 
 /* 리스트 버튼 */
@@ -147,7 +147,7 @@ a.btn_line{display:inline-block;vertical-align:top;width:75px;height:55px;border
 /* -------- 뷰 시작 [s] */
 #sh_bo_v{border-top:1px solid #555;font-size:15px;letter-spacing:-.3px;line-height:1.8;color:#666;font-family:'notokr-regular'}
 #sh_bo_v .tit{min-height:60px;padding:15px;border-bottom:1px solid #eee;font-size:17px;color:#222;background-color:#f5f6f8;font-family:'notokr-medium'}
-#sh_bo_v .tit .cate{color:#0054a6}
+#sh_bo_v .tit .cate{color:#9F988C}
 #sh_bo_v .tit .cate:after{display:inline-block;content:"";width:1px;height:10px;margin:0 12px;background-color:#ccc}
 
 /* 상단 정보 */
