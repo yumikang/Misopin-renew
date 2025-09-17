@@ -205,9 +205,15 @@ var g5_cookie_domain = "";
     --primary: #9F988C !important;
 }
 
-/* Notice 카테고리 링크 색상을 브라운으로 변경 */
-#sh_list_tbl .cate_link span {
-    color: #9F988C !important;
+/* Notice 태그 강제 색상 변경 - 최고 우선순위 */
+.cate_link,
+.cate_link span,
+a.cate_link,
+a.cate_link span {
+    background-color: #9F988C !important;
+    background: #9F988C !important;
+    color: #ffffff !important;
+    border-color: #9F988C !important;
 }
 
 /* 버튼 호버 효과 브라운으로 변경 */
