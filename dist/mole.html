@@ -53,6 +53,7 @@
         --misopin-text-dark: #2C2C2C;
         --misopin-text-light: #555555;
         --misopin-border: #E0E0E0;
+        --font-base: 1rem;
     }
     
     /* 헤더 색상 오버라이드 */
@@ -272,6 +273,12 @@
     #sh_ft .copy .top .hours_info .hours_row {
         margin-bottom: 0.25rem !important;
         padding: 0.25rem 0 !important;
+    }
+
+    /* 푸터 "진료시간" 텍스트 크기 키우기 */
+    #sh_ft .copy .top .hours_title .cate {
+        font-size: calc(var(--font-base) * 1.125);
+        font-weight: 700;
     }
     </style>
     
