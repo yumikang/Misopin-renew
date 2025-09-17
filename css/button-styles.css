@@ -179,6 +179,43 @@ tr .cate_link span {
 }
 
 /* ========================================
+   검색 버튼 스타일
+   ======================================== */
+
+/* 검색 버튼 */
+.search-btn {
+    width: 40px;
+    height: 40px;
+    background-color: var(--misopin-primary) !important;
+    border: 1px solid var(--misopin-primary) !important;
+    border-radius: 2px;
+    color: #fff !important;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    margin-left: 2px;
+    font-size: 14px;
+}
+
+.search-btn:hover {
+    background-color: var(--misopin-secondary) !important;
+    border-color: var(--misopin-secondary) !important;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.search-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(159, 152, 140, 0.3);
+}
+
+.search-btn i {
+    color: #fff !important;
+}
+
+/* ========================================
    헤더 드롭다운 메뉴 스타일 (브라운 배경)
    ======================================== */
 
