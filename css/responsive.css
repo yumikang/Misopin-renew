@@ -42,6 +42,16 @@
     #quickList {
         display: none !important;
     }
+
+    /* 서브페이지 퀵메뉴 iframe 숨김 */
+    iframe[src*="quickmenu.html"] {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+        width: 0 !important;
+        height: 0 !important;
+    }
     
     /* 모바일 래퍼 설정 */
     #mo_wrapper {
