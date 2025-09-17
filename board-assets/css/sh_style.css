@@ -103,7 +103,7 @@ a.btn_line{display:inline-block;vertical-align:top;width:75px;height:55px;border
 #sh_list_tbl .notice{color:#9F988C}
 #sh_list_tbl .notice:after{display:inline-block;content:"";width:1px;height:10px;margin:0 12px;background-color:#ccc}
 #sh_list_tbl .cate_link span{color:#9F988C}
-#sh_list_tbl .cate_link span:after{display:inline-block;content:"";width:1px;height:10px;margin:0 12px;background-color:#ccc}
+#sh_list_tbl .cate_link span:after{display:none}
 
 /* 리스트 버튼 */
 #sh_bo_list .btn_area{position:relative;margin:20px 0}
