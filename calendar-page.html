@@ -11,9 +11,7 @@
 <link rel="stylesheet" href="css/components/top_menu.css">
 <link rel="stylesheet" href="css/components/sub_main_banner.css">
 <link rel="stylesheet" href="css/components/aside.css">
-<!-- 외부 CSS 파일 주석처리 (예약가능 텍스트 가시성 문제)
 <link rel="stylesheet" href="https://skincare1007.shiningcorp.com/skin/board/hos_calendar/sh_style.css?ver=171222">
--->
 <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/themes/base/jquery-ui.css"  />
 <link rel="stylesheet" href="https://skincare1007.shiningcorp.com/plugin/jquery-ui/style.css?ver=171222">
 <link rel="stylesheet" href="css/vendor/user.css">
@@ -270,29 +268,19 @@ textarea:focus {
     border-color: #87857E !important;
 }
 
-/* 캘린더 예약가능 텍스트 스타일 */
-#sh_calender_body td a {
+/* 캘린더 예약가능 텍스트 색상 오버라이드 */
+#sh_calender_body td a[onclick*="calendar_inqOpen"] {
     color: #fff !important;
-    background-color: #9F988C !important;
-    padding: 4px 8px !important;
-    border-radius: 4px !important;
-    text-decoration: none !important;
-    display: inline-block !important;
-    margin-top: 5px !important;
-    font-size: 12px !important;
-    font-weight: 500 !important;
 }
 
-#sh_calender_body td a:hover {
-    background-color: #87857E !important;
-    transform: translateY(-1px);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+/* 캘린더 테이블 예약가능 링크 텍스트 */
+#sh_calender_body table tbody td > a {
+    color: #fff !important;
 }
 
-/* 예약종료 텍스트 스타일 */
-#sh_calender_body td.null {
-    color: #999 !important;
-    font-size: 12px !important;
+/* 더 구체적인 선택자로 예약가능 텍스트 색상 강제 */
+#sh_calender_body table tbody tr td a[href="javascript:void(0)"] {
+    color: #fff !important;
 }
 </style>
 <link rel="stylesheet" href="css/index-custom.css">
