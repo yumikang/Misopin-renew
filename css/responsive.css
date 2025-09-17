@@ -52,6 +52,54 @@
         width: 0 !important;
         height: 0 !important;
     }
+
+    /* 캘린더 페이지 모바일 최적화 */
+    .sh_board_list {
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .sh_board_list table {
+        min-width: 600px;
+    }
+
+    #mara_cal_view {
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    #mara_cal_view table {
+        min-width: 500px;
+    }
+
+    /* 캘린더 테이블 반응형 처리 */
+    .sh_board_list col,
+    #mara_cal_view col {
+        width: auto !important;
+    }
+
+    /* 전체 페이지 가로 스크롤 방지 */
+    body {
+        overflow-x: hidden !important;
+    }
+
+    #sh_container,
+    #sh_content,
+    .container {
+        overflow-x: hidden !important;
+        max-width: 100% !important;
+    }
+
+    /* 캘린더 페이지 특정 요소 너비 제한 */
+    #sh_aside {
+        display: none !important; /* 모바일에서 사이드바 숨김 */
+    }
+
+    #sh_content {
+        width: 100% !important;
+        padding: 0 15px !important;
+        box-sizing: border-box !important;
+    }
     
     /* 모바일 래퍼 설정 */
     #mo_wrapper {
