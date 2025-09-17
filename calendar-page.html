@@ -287,7 +287,9 @@ textarea:focus {
 .sbm_btn,
 .submit_btn,
 .btn_type01,
-#sh_rsv_sch input[type=submit] {
+#sh_rsv_sch input[type=submit],
+.rsv_btn_t,
+.rsv_sch {
     background-color: #9F988C !important;
     border-color: #9F988C !important;
 }
@@ -295,9 +297,22 @@ textarea:focus {
 .sbm_btn:hover,
 .submit_btn:hover,
 .btn_type01:hover,
-#sh_rsv_sch input[type=submit]:hover {
+#sh_rsv_sch input[type=submit]:hover,
+.rsv_btn_t:hover,
+.rsv_sch:hover {
     background-color: #87857E !important;
     border-color: #87857E !important;
+}
+
+/* 모바일 예약가능 텍스트 강제 흰색 */
+@media (max-width: 768px) {
+    #sh_calender_body td a,
+    #sh_calender_body table tbody td > a,
+    #sh_calender_body table tbody tr td a[href="javascript:void(0)"],
+    .tbl_mara td a,
+    #mara_cal_view td a {
+        color: #fff !important;
+    }
 }
 </style>
 <link rel="stylesheet" href="css/index-custom.css">
