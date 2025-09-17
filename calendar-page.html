@@ -11,7 +11,9 @@
 <link rel="stylesheet" href="css/components/top_menu.css">
 <link rel="stylesheet" href="css/components/sub_main_banner.css">
 <link rel="stylesheet" href="css/components/aside.css">
+<!-- 외부 CSS 파일 주석처리 (예약가능 텍스트 가시성 문제)
 <link rel="stylesheet" href="https://skincare1007.shiningcorp.com/skin/board/hos_calendar/sh_style.css?ver=171222">
+-->
 <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/themes/base/jquery-ui.css"  />
 <link rel="stylesheet" href="https://skincare1007.shiningcorp.com/plugin/jquery-ui/style.css?ver=171222">
 <link rel="stylesheet" href="css/vendor/user.css">
@@ -266,6 +268,31 @@ textarea:focus {
 .sbm_btn:hover {
     background: #87857E !important;
     border-color: #87857E !important;
+}
+
+/* 캘린더 예약가능 텍스트 스타일 */
+#sh_calender_body td a {
+    color: #fff !important;
+    background-color: #9F988C !important;
+    padding: 4px 8px !important;
+    border-radius: 4px !important;
+    text-decoration: none !important;
+    display: inline-block !important;
+    margin-top: 5px !important;
+    font-size: 12px !important;
+    font-weight: 500 !important;
+}
+
+#sh_calender_body td a:hover {
+    background-color: #87857E !important;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* 예약종료 텍스트 스타일 */
+#sh_calender_body td.null {
+    color: #999 !important;
+    font-size: 12px !important;
 }
 </style>
 <link rel="stylesheet" href="css/index-custom.css">
