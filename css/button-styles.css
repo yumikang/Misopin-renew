@@ -167,6 +167,7 @@ tr .cate_link span {
     background: var(--misopin-primary) !important;
     color: #fff !important;
     border-color: var(--misopin-primary) !important;
+    margin-right: 8px !important;
 }
 
 /* 가장 구체적인 선택자로 강제 적용 */
