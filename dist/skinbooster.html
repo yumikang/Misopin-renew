@@ -439,7 +439,7 @@
         <section class="treatment-section">
             <div class="container">
                 <div class="row">
-                    <div class="col col-sm-12 col-md-12 col-lg-6" style="margin-bottom: 2rem;">
+                    <div class="col col-sm-12 col-md-12 col-lg-6" style="margin-bottom: 2rem;" data-aos="fade-right" data-aos-duration="1000">
                         <div style="color: #d4a574; font-size: 0.8125rem; font-weight: 300; letter-spacing: 0.15em; margin-bottom: 1rem;">MISOPIN SKINBOOSTER</div>
                         <h2 style="font-size: 2.625rem; font-weight: 600; line-height: 1.3; margin-bottom: 2rem; color: #6a6a6a;">
                             피부 재생력부터 다른<br>
@@ -459,7 +459,7 @@
                             <span style="display: inline-block; padding: 0.625rem 1.25rem; background: linear-gradient(135deg, #c5b9a7 0%, #b3a695 100%); color: white; border-radius: 25px; font-size: 0.875rem; font-weight: 500;">탄력 개선</span>
                         </div>
                     </div>
-                    <div class="col col-sm-12 col-md-12 col-lg-6">
+                    <div class="col col-sm-12 col-md-12 col-lg-6" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
                         <img src="../images/skinbooster/blog4_cd04.webp" alt="스킨부스터 시술" style="width: 100%; border-radius: 12px;">
                     </div>
                 </div>
@@ -471,7 +471,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col col-sm-12">
-                        <div class="section_tit" style="text-align: center;">
+                        <div class="section_tit" style="text-align: center;" data-aos="fade-up" data-aos-duration="800">
                             <h2 class="section_h2" style="font-size: 2rem; margin-bottom: 1.25rem;">한 번의 시술로 완성하는 피부 밸런스</h2>
                             <p style="margin-top: 1.25rem; color: var(--misopin-text-light); max-width: 43.75rem; margin-left: auto; margin-right: auto; font-size: 1rem; line-height: 1.8;">
                     쥬베룩은 피부 겉을 단순히 채우는 것이 아니라, 내부 콜라겐 구조를 탄탄하게 만들어 피부 본연의 힘을 회복시킵니다. 얼굴 전체에 고르게 시술할 수도 있으며 눈가·볼·이마 등 고민 부위만 집중적으로 관리할 수도 있습니다. 즉각적인 볼륨 개선보다 자연스럽고 점진적인 변화를 원하는 분들에게 적합하며, 개인 상태에 따라 효과가 서서히 나타나 장기간 유지됩니다.
@@ -701,5 +701,12 @@ function korean_ck(obj) {
     <!-- 퀵메뉴 iframe -->
     <iframe src="../quickmenu.html" style="position:fixed;top:50%;right:1.5%;transform:translateY(-50%);width:140px;height:800px;border:none;z-index:8;background:transparent;" scrolling="no"></iframe>
 <script src="../js/mobile-nav.js" defer></script>
+<script>
+    AOS.init({
+        duration: 1000,
+        easing: "ease-in-out",
+        once: true
+    });
+</script>
 </body>
 </html>

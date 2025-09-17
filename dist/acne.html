@@ -444,7 +444,7 @@
         <section class="treatment-section">
             <div class="container">
                 <div class="row">
-                    <div class="col col-sm-12 col-md-12 col-lg-6" style="margin-bottom: 2rem;">
+                    <div class="col col-sm-12 col-md-12 col-lg-6" style="margin-bottom: 2rem;" data-aos="fade-right" data-aos-duration="1000">
                         <div style="color: var(--misopin-text-light); font-size: 1rem; font-weight: 400; margin-bottom: 1.5rem;">깨끗한 피부로 되돌리는</div>
                         <h2 style="font-size: 3rem; font-weight: 700; line-height: 1.2; margin-bottom: 2rem; color: #2c2c2c;">
                             착! 가라앉는 여드름
@@ -476,7 +476,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col col-sm-12 col-md-12 col-lg-6">
+                    <div class="col col-sm-12 col-md-12 col-lg-6" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
                         <img src="../images/acne/blog6_cd02.webp" alt="여드름 치료 시술" style="width: 100%; border-radius: 12px;">
                     </div>
                 </div>
@@ -678,5 +678,12 @@ function korean_ck(obj) {
     <!-- 퀵메뉴 iframe -->
     <iframe src="../quickmenu.html" style="position:fixed;top:50%;right:1.5%;transform:translateY(-50%);width:140px;height:800px;border:none;z-index:8;background:transparent;" scrolling="no"></iframe>
 <script src="../js/mobile-nav.js" defer></script>
+<script>
+    AOS.init({
+        duration: 1000,
+        easing: "ease-in-out",
+        once: true
+    });
+</script>
 </body>
 </html>
