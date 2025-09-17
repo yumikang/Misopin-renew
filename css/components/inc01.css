@@ -19,8 +19,8 @@
 #atc01 .inc01_slide .pager{position:absolute;top:2.5rem;bottom:unset;left:50%;transform:translateX(-50%);width:auto}
 #atc01 .inc01_slide .pager span{opacity:1;background:rgb(0, 0, 0, 0.2);transition:all.3s}
 #atc01 .inc01_slide .pager span.on{width:1.75rem;height:0.5rem;border-radius:0.25rem;background-color:var(--primary)}
-#atc01 .inc01_slide .nav_container{display:flex;justify-content:space-between;position:absolute;top:39%;left:50%;transform:translate(-50%, -50%);width:70%}
-#atc01 .inc01_slide .nav_container div{display:flex;justify-content:center;align-items:center;width:4.375rem;height:4.375rem;border:0.125rem solid #e1e1e1;border-radius:50%;cursor:pointer;transition:all .3s}
+#atc01 .inc01_slide .nav_container{display:flex;justify-content:space-between;position:absolute;top:39%;left:50%;transform:translate(-50%, -50%);width:70%;z-index:10}
+#atc01 .inc01_slide .nav_container div{display:flex;justify-content:center;align-items:center;width:4.375rem;height:4.375rem;border:0.125rem solid #e1e1e1;border-radius:50%;cursor:pointer;transition:all .3s;background-color:rgba(255, 255, 255, 0.9)}
 #atc01 .inc01_slide .nav_container span{display:block;width:0.75rem;height:0.75rem;border-top:0.1875rem solid #999;border-right:0.1875rem solid #999;transition:all .3s}
 #atc01 .inc01_slide .nav_container div:first-child span{transform:rotate(-135deg)}
 #atc01 .inc01_slide .nav_container div:last-child span{transform:rotate(45deg)}
@@ -50,8 +50,8 @@
 #atc01 .inc01_slide li .img_cont{height:25rem}
 #atc01 .inc01_slide li img{width:85%;max-width:22rem;height:auto;aspect-ratio:6/4}
 #atc01 .inc01_slide li.on img{width:90%;max-width:24rem;height:auto;aspect-ratio:6/4}
-#atc01 .inc01_slide .nav_container{width:95%;top:45%}
-#atc01 .inc01_slide .nav_container div{width:2.8125rem;height:2.8125rem;border-width:0.09375rem}
+#atc01 .inc01_slide .nav_container{width:85%;top:45%;z-index:20}
+#atc01 .inc01_slide .nav_container div{width:2.8125rem;height:2.8125rem;border-width:0.09375rem;background-color:rgba(255, 255, 255, 0.95)}
 #atc01 .inc01_slide .nav_container span{width:0.5rem;height:0.5rem;border-width:0.125rem}
 #atc01 .inc01_slide li .info{padding:1.5rem 1.25rem;width:90%;margin:0 auto}
 #atc01 .inc01_slide li .info h3, #atc01 .inc01_slide li .info div{font-size:1.25rem}
@@ -70,8 +70,8 @@
 #atc01 .inc01_slide li .img_cont{height:20rem}
 #atc01 .inc01_slide li img{width:90%;max-width:18rem;height:auto;aspect-ratio:6/4}
 #atc01 .inc01_slide li.on img{width:95%;max-width:20rem;height:auto;aspect-ratio:6/4}
-#atc01 .inc01_slide .nav_container{width:95%}
-#atc01 .inc01_slide .nav_container div{width:2.5rem;height:2.5rem}
+#atc01 .inc01_slide .nav_container{width:80%;z-index:20}
+#atc01 .inc01_slide .nav_container div{width:2.5rem;height:2.5rem;background-color:rgba(255, 255, 255, 0.95);box-shadow:0 2px 8px rgba(0,0,0,0.15)}
 #atc01 .inc01_slide .nav_container span{width:0.4375rem;height:0.4375rem;border-width:0.1125rem}
 #atc01 .inc01_slide li .info{padding:1.25rem 1rem;width:95%;margin:0 auto}
 #atc01 .inc01_slide li .info h3, #atc01 .inc01_slide li .info div{font-size:1.125rem}
