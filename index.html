@@ -1167,49 +1167,49 @@ table thead, th {
     // GSAP 히어로 애니메이션
     window.addEventListener('load', function() {
         if (typeof gsap !== 'undefined') {
-            // MISOPIN 텍스트 애니메이션
-            gsap.fromTo('.h1_mst01 .ltr', 
-                { 
-                    opacity: 0, 
-                    y: 50,
-                    scale: 0.8
+            // MISOPIN 텍스트 애니메이션 (최적화)
+            gsap.fromTo('.h1_mst01 .ltr',
+                {
+                    opacity: 0,
+                    y: 30,
+                    scale: 0.9
                 },
-                { 
-                    opacity: 1, 
+                {
+                    opacity: 1,
                     y: 0,
                     scale: 1,
-                    duration: 1.2,
-                    stagger: 0.1,
+                    duration: 0.8,
+                    stagger: 0.06,
                     ease: "power2.out",
-                    delay: 0.5
+                    delay: 0.2
                 }
             );
-            
-            // CLINIC 텍스트 애니메이션
-            gsap.fromTo('.h1_mst02 .ltr', 
-                { 
-                    opacity: 0, 
-                    y: 50,
-                    scale: 0.8
+
+            // CLINIC 텍스트 애니메이션 (최적화)
+            gsap.fromTo('.h1_mst02 .ltr',
+                {
+                    opacity: 0,
+                    y: 30,
+                    scale: 0.9
                 },
-                { 
-                    opacity: 1, 
+                {
+                    opacity: 1,
                     y: 0,
                     scale: 1,
-                    duration: 1.2,
-                    stagger: 0.1,
+                    duration: 0.8,
+                    stagger: 0.06,
                     ease: "power2.out",
-                    delay: 1
+                    delay: 0.6
                 }
             );
-            
-            // 서브타이틀 애니메이션
+
+            // 서브타이틀 애니메이션 (최적화)
             gsap.to('.subtitle', {
                 opacity: 1,
                 y: -20,
-                duration: 1,
+                duration: 0.6,
                 ease: "power2.out",
-                delay: 2
+                delay: 1.2
             });
         }
     });
