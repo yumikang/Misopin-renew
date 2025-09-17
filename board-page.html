@@ -205,15 +205,21 @@ var g5_cookie_domain = "";
     --primary: #9F988C !important;
 }
 
-/* Notice 태그 강제 색상 변경 - 최고 우선순위 */
+/* Notice 태그 색상 변경 - 외부 CSS 덮어쓰기 */
+#sh_list_tbl .cate_link span {
+    color: #ffffff;
+    background-color: #9F988C;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
 .cate_link,
 .cate_link span,
 a.cate_link,
 a.cate_link span {
-    background-color: #9F988C !important;
-    background: #9F988C !important;
-    color: #ffffff !important;
-    border-color: #9F988C !important;
+    background-color: #9F988C;
+    color: #ffffff;
+    border-color: #9F988C;
 }
 
 /* 버튼 호버 효과 브라운으로 변경 */
