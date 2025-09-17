@@ -235,17 +235,37 @@
         .content-row.reverse {
             flex-direction: column;
         }
-        
+
         .treatment-container {
-            padding: 40px 20px;
+            padding: 2.5rem 1.25rem;
         }
-        
+
         .hero-image {
-            height: 300px;
+            height: 18.75rem;
         }
-        
+
         #shSub .txt_area p {
             font-size: 1.75rem;
+        }
+
+        /* 첫 번째 섹션 모바일 최적화 */
+        .two-column-layout {
+            grid-template-columns: 1fr !important;
+            gap: 1.5rem !important;
+            text-align: center;
+        }
+
+        .col-text {
+            order: 2;
+        }
+
+        .col-image {
+            order: 1;
+        }
+
+        .col-image img {
+            max-width: 100%;
+            height: auto;
         }
     }
     </style>
@@ -433,7 +453,7 @@
         <div class="container">
             <!-- 메인 소개 섹션 -->
             <section class="treatment-section">
-                <div class="two-column-layout" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; margin-top: 40px;">
+                <div class="two-column-layout" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: center; margin-top: 2.5rem;">
                     <div class="col-text">
                         <div class="section-subtitle" style="color: var(--misopin-secondary); font-size: 0.875rem; font-weight: 600; margin-bottom: 0.625rem;">제거시술</div>
                         <h2 class="section_h2" style="margin-bottom: 25px;">
@@ -457,9 +477,11 @@
                 <div class="section_tit">
                     <h2 class="section_h2" style="color: #888;">점 제거 원리</h2>
                     <p style="margin-top: 1.25rem; color: var(--misopin-text-light); line-height: 1.8; font-size: 1.25rem;">
-                        <span style="background: linear-gradient(180deg, transparent 60%, #f5e6d3 60%); padding: 0 0.25rem;"><strong style="color: #8B6914;">레이저</strong><span style="color: #888;">는 특정 파장의 빛 에너지를 피부에 조사하여</span></span> <span style="background: linear-gradient(180deg, transparent 60%, #f5e6d3 60%); padding: 0 0.25rem;"><strong style="color: #8B6914;">색소를 선택적으로 파괴</strong><span style="color: #888;">합니다.</span></span> <br/>
-                        <span style="background: linear-gradient(180deg, transparent 60%, #f5e6d3 60%); padding: 0 0.25rem;"><span style="color: #888;">점의</span> <strong style="color: #8B6914;">색소를 흡수</strong><span style="color: #888;">한 후 주변 정상 피부에는</span></span> <span style="background: linear-gradient(180deg, transparent 60%, #f5e6d3 60%); padding: 0 0.25rem;"><strong style="color: #8B6914;">최소한의 손상</strong><span style="color: #888;">을 주기 때문에</span></span> <strong style="color: #8B6914;">회복이 빠른</strong> <span style="color: #888;">편입니다.</span> <br/>
-                        <span style="color: #888;">점의 형태나 위치에 따라</span> <span style="background: linear-gradient(180deg, transparent 60%, #f5e6d3 60%); padding: 0 0.25rem;"><strong style="color: #8B6914;">고주파 전기소작술</strong><span style="color: #888;">,</span> <strong style="color: #8B6914;">수술적 절제법</strong> <span style="color: #888;">등도</span></span> <span style="color: #888;">활용됩니다.</span>
+                        <span style="color: #888;"><span style="background: linear-gradient(180deg, transparent 60%, #f5e6d3 60%); padding: 0 0.25rem;"><strong style="color: #8B6914;">레이저</strong>는 특정 파장의 빛 에너지를 피부에 조사하여</span> <span style="background: linear-gradient(180deg, transparent 60%, #f5e6d3 60%); padding: 0 0.25rem;"><strong style="color: #8B6914;">색소를 선택적으로 파괴</strong>합니다.</span></span>
+                        <br/><br/>
+                        <span style="color: #888;">점의 <span style="background: linear-gradient(180deg, transparent 60%, #f5e6d3 60%); padding: 0 0.25rem;"><strong style="color: #8B6914;">색소를 흡수</strong>한 후 주변 정상 피부에는</span> <span style="background: linear-gradient(180deg, transparent 60%, #f5e6d3 60%); padding: 0 0.25rem;"><strong style="color: #8B6914;">최소한의 손상</strong>을 주기 때문에</span> <strong style="color: #8B6914;">회복이 빠른</strong> 편입니다.</span>
+                        <br/><br/>
+                        <span style="color: #888;">점의 형태나 위치에 따라 <span style="background: linear-gradient(180deg, transparent 60%, #f5e6d3 60%); padding: 0 0.25rem;"><strong style="color: #8B6914;">고주파 전기소작술</strong>, <strong style="color: #8B6914;">수술적 절제법</strong> 등도</span> 활용됩니다.</span>
                     </p>
                 </div>
             </section>
