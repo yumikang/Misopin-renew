@@ -492,7 +492,7 @@
         text-align: center;
         line-height: 65px;
         color: #fff;
-        background-color: #38b0c9;
+        background-color: #9F988C;
         box-shadow: 5px 5px 5px rgba(0,0,0,.2);
         -webkit-transition: all .2s;
         transition: all .2s;
@@ -537,8 +537,8 @@
     
     .mobile-bottom-nav a:hover,
     .mobile-bottom-nav a:active {
-        background: rgba(56, 176, 201, 0.1);
-        color: #38b0c9;
+        background: rgba(159, 152, 140, 0.1);
+        color: #9F988C;
     }
     
     .mobile-bottom-nav a i {
@@ -552,8 +552,8 @@
     }
     
     .mobile-bottom-nav a.kakao:hover {
-        background: rgba(56, 176, 201, 0.1);
-        color: #38b0c9;
+        background: rgba(159, 152, 140, 0.1);
+        color: #9F988C;
     }
     
     .mobile-bottom-nav a.phone {
@@ -561,8 +561,8 @@
     }
     
     .mobile-bottom-nav a.phone:hover {
-        background: rgba(56, 176, 201, 0.1);
-        color: #38b0c9;
+        background: rgba(159, 152, 140, 0.1);
+        color: #9F988C;
     }
     
     .mobile-bottom-nav a.instagram {
@@ -570,8 +570,8 @@
     }
     
     .mobile-bottom-nav a.instagram:hover {
-        background: rgba(56, 176, 201, 0.1);
-        color: #38b0c9;
+        background: rgba(159, 152, 140, 0.1);
+        color: #9F988C;
     }
     
     .mobile-bottom-nav a.event {
@@ -579,8 +579,8 @@
     }
     
     .mobile-bottom-nav a.event:hover {
-        background: rgba(56, 176, 201, 0.1);
-        color: #38b0c9;
+        background: rgba(159, 152, 140, 0.1);
+        color: #9F988C;
     }
     
     /* 데스크톱에서 모바일 전용 요소 숨김 */
@@ -866,7 +866,7 @@
         line-height: 55px;
         color: #fff;
         text-align: center;
-        background-color: #38b0c9;
+        background-color: #9F988C;
         font-family: 'notokr-bold';
     }
     
@@ -998,7 +998,7 @@
     #mara_cal_view .tbl_mara td a:not(.day) {
         display: block !important;
         font-size: 0.65rem !important;
-        color: #38b0c9 !important;
+        color: #9F988C !important;
         text-decoration: none !important;
     }
 
@@ -1019,7 +1019,7 @@
     #calendar_form .tit {
         font-size: 1.2rem !important;
         padding: 15px 0 !important;
-        border-bottom: 2px solid #38b0c9 !important;
+        border-bottom: 2px solid #9F988C !important;
         margin-bottom: 20px !important;
     }
 
@@ -1080,7 +1080,7 @@
     }
 
     #calendar_form .btn_area .btn_submit {
-        background: #38b0c9 !important;
+        background: #9F988C !important;
         color: #fff !important;
     }
 
@@ -1244,8 +1244,8 @@
     }
 
     #bo_cate_ul_line li a#bo_cate_on {
-        color: #38b0c9;
-        border-bottom-color: #38b0c9;
+        color: #9F988C;
+        border-bottom-color: #9F988C;
         font-weight: 600;
     }
 }
