@@ -140,43 +140,68 @@
 }
 
 /* Notice 태그 색상 - 구체적인 선택자로 우선순위 높임 */
-.cate_link,
 .cate_link span,
-a.cate_link,
 a.cate_link span,
 .notice_tag {
     background-color: var(--misopin-primary) !important;
     color: #fff !important;
     border-color: var(--misopin-primary) !important;
+    padding: 4px 8px !important;
+    border-radius: 4px !important;
+    margin-right: 8px !important;
 }
 
-/* 외부 스타일 강력 오버라이드 - 모든 가능한 조합 */
-#sh_list_tbl .cate_link,
+/* cate_link 자체는 배경 없이 */
+.cate_link,
+a.cate_link {
+    background: transparent !important;
+    border: none !important;
+    text-decoration: none !important;
+}
+
+/* 외부 스타일 강력 오버라이드 - span에만 배경 적용 */
 #sh_list_tbl .cate_link span,
-td .cate_link,
 td .cate_link span,
-.sh_tbl_common .cate_link,
 .sh_tbl_common .cate_link span,
-table .cate_link,
 table .cate_link span,
-tbody .cate_link,
 tbody .cate_link span,
-tr .cate_link,
 tr .cate_link span {
     background-color: var(--misopin-primary) !important;
     background: var(--misopin-primary) !important;
     color: #fff !important;
     border-color: var(--misopin-primary) !important;
+    padding: 4px 8px !important;
+    border-radius: 4px !important;
     margin-right: 8px !important;
 }
 
+/* cate_link 자체는 투명 배경 */
+#sh_list_tbl .cate_link,
+td .cate_link,
+.sh_tbl_common .cate_link,
+table .cate_link,
+tbody .cate_link,
+tr .cate_link {
+    background: transparent !important;
+    border: none !important;
+    text-decoration: none !important;
+}
+
 /* 가장 구체적인 선택자로 강제 적용 */
-#sh_bo_list #sh_list_tbl .sh_tbl_common table tbody tr td .cate_link,
 #sh_bo_list #sh_list_tbl .sh_tbl_common table tbody tr td .cate_link span {
     background-color: var(--misopin-primary) !important;
     background: var(--misopin-primary) !important;
     color: #fff !important;
     border-color: var(--misopin-primary) !important;
+    padding: 4px 8px !important;
+    border-radius: 4px !important;
+    margin-right: 8px !important;
+}
+
+#sh_bo_list #sh_list_tbl .sh_tbl_common table tbody tr td .cate_link {
+    background: transparent !important;
+    border: none !important;
+    text-decoration: none !important;
 }
 
 /* ========================================
