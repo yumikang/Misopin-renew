@@ -7,9 +7,9 @@
 <link rel="icon" type="image/svg+xml" href="img/misopin-temporary-logo%201.svg">
 <link rel="shortcut icon" type="image/svg+xml" href="img/misopin-temporary-logo%201.svg">
 <link rel="apple-touch-icon" href="img/misopin-temporary-logo%201.svg">
-    <script src="js/libs/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </script>
-    <link rel="stylesheet" href="css/libs/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         /* Reset CSS */
         * {
@@ -37,7 +37,7 @@
         }
 
         /* QuickMenu CSS */
-        @import url('css/fonts/aggro-dynamic-subset.css');
+        @import url('https://cdn.jsdelivr.net/gh/fonts-archive/Aggro/subsets/Aggro-dynamic-subset.css');
         #quickList{position:fixed;z-index:8;top:50%;right:1.5%;transform:translateY(-50%)}
         #quickList .pl{white-space:pre-line}
         #quickList .plus_link{display:flex;flex-direction:column;align-items:center;gap:6px;padding-top:15px;width:94px;height:159px;background:url(./img01.png) no-repeat center / cover}
