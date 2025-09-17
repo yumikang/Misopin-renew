@@ -9,6 +9,7 @@
     --misopin-primary: #9F988C;    /* 메인 브랜드 색상 */
     --misopin-secondary: #87857E;  /* 보조 색상 */
     --misopin-accent: #EFEDE5;     /* 강조 색상 */
+    --primary: #9F988C;            /* 외부 템플릿 호환용 */
 }
 
 /* 이벤트 버튼 (헤더) */
@@ -106,6 +107,43 @@
 #sh_ft .copy .bottom p {
     color: #fff !important;
     opacity: 0.9;
+}
+
+/* ========================================
+   보드 페이지 블루 컬러 오버라이드
+   ======================================== */
+
+/* 탭 메뉴 활성화 상태 */
+#bo_cate_on {
+    background-color: var(--misopin-primary) !important;
+    border-color: var(--misopin-primary) !important;
+    color: #fff !important;
+}
+
+/* 페이지네이션 현재 페이지 */
+.pg_current {
+    background-color: var(--misopin-primary) !important;
+    border-color: var(--misopin-primary) !important;
+    color: #fff !important;
+}
+
+/* 기본 버튼 스타일 */
+.btn_type01 {
+    background-color: var(--misopin-primary) !important;
+    border-color: var(--misopin-primary) !important;
+    color: #fff !important;
+}
+
+.btn_type01:hover {
+    background-color: var(--misopin-secondary) !important;
+    border-color: var(--misopin-secondary) !important;
+}
+
+/* Notice 태그 색상 */
+.cate_link,
+.notice_tag {
+    background-color: var(--misopin-primary) !important;
+    color: #fff !important;
 }
 
 /* ========================================
