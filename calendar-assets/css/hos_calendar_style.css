@@ -26,8 +26,8 @@ a.sh_adm_btn{display:block;text-align:center}
 a.btn_cancel{border-radius:3px;font-size:14px}
 
 /* 버튼 공통 */
-.btn_type01{display:inline-block;width:180px;height:55px;margin:0 auto;border-radius:2px;font-size:15px;color:#fff;text-align:center;line-height:55px;background-color:#0054a6;-webkit-transition:all .2s;transition:all .2s;font-family:'notokr-medium'}
-.btn_type01:hover{background-color:#0064c5}
+.btn_type01{display:inline-block;width:180px;height:55px;margin:0 auto;border-radius:2px;font-size:15px;color:#fff;text-align:center;line-height:55px;background-color:#9F988C;-webkit-transition:all .2s;transition:all .2s;font-family:'notokr-medium'}
+.btn_type01:hover{background-color:#87857E}
 a.cancel_btn{display:inline-block;vertical-align:top;width:75px;height:55px;border:none;border-radius:2px;font-size:15px;text-align:center;color:#fff;line-height:55px;background-color:#bbb;font-family:'notokr-medium'}
 a.btn_normal{display:inline-block;vertical-align:top;width:75px;height:55px;border:none;border-radius:2px;font-size:15px;text-align:center;color:#fff;line-height:55px;background-color:#bbb;font-family:'notokr-medium'}
 a.btn_line{display:inline-block;vertical-align:top;width:75px;height:55px;border:none;border-radius:2px;border:1px solid #d1d1d1;font-size:15px;text-align:center;color:#777;line-height:53px;font-family:'notokr-medium'}
@@ -207,8 +207,8 @@ a.btn_line{display:inline-block;vertical-align:top;width:75px;height:55px;border
 #sh_rsv_sch select{min-width:125px;height:40px;padding:0 0 0 10px;border:1px solid #e1e1e1;border-radius:2px;font-size:15px;color:#777;-webkit-appearance:none;appearance:none;background:url(../sh_basic/img/select_arr.png) 95% center no-repeat #fff;font-family:'notokr-regular'}
 #sh_rsv_sch select::-ms-expand{display:none}
 #sh_rsv_sch select:focus, #sh_rsv_sch select:active{border:1px solid #e1e1e1!important}
-#sh_rsv_sch input[type=submit]{width:110px;height:40px;border-radius:2px;font-size:14px;color:#fff;background-color:#0054a6;-webkit-transition:all .2s;transition:all .2s;font-family:'notokr-medium'}
-#sh_rsv_sch input[type=submit]:hover{background-color:#0064c5}
+#sh_rsv_sch input[type=submit]{width:110px;height:40px;border-radius:2px;font-size:14px;color:#fff;background-color:#9F988C;-webkit-transition:all .2s;transition:all .2s;font-family:'notokr-medium'}
+#sh_rsv_sch input[type=submit]:hover{background-color:#87857E}
 #sh_rsv_sch .reset{display:block;width:65px;height:40px;border-radius:2px;font-size:14px;line-height:40px;color:#fff;background-color:#bbb;-webkit-transition:all .2s;transition:all .2s;font-family:'notokr-medium'}
 #sh_rsv_sch .reset:hover{background-color:#b1b1b1}
 
