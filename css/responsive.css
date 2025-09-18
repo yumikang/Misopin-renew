@@ -117,8 +117,76 @@ body {
 
     #sh_content {
         width: 100% !important;
-        padding: 0 15px !important;
+        padding: 20px 15px !important;
         box-sizing: border-box !important;
+        min-height: auto !important;
+    }
+
+    /* 게시판 관련 모바일 스타일 */
+    #sh_bo_list {
+        width: 100% !important;
+        overflow-x: hidden !important;
+    }
+
+    /* 게시판 카테고리 탭 모바일 대응 */
+    #bo_cate_ul_line {
+        display: flex !important;
+        justify-content: center !important;
+        flex-wrap: wrap !important;
+        gap: 10px !important;
+        margin-bottom: 20px !important;
+    }
+
+    #bo_cate_ul_line li {
+        margin: 0 !important;
+    }
+
+    #bo_cate_ul_line li a {
+        padding: 5px 15px !important;
+        font-size: 14px !important;
+    }
+
+    /* 게시판 검색 영역 모바일 대응 */
+    #sh_bo_list .list_top {
+        margin-bottom: 20px !important;
+    }
+
+    #sh_bo_sch {
+        float: none !important;
+        width: 100% !important;
+        display: flex !important;
+        padding: 10px !important;
+        margin-bottom: 15px !important;
+    }
+
+    #sh_bo_sch select {
+        width: auto !important;
+        flex: 0 0 auto !important;
+    }
+
+    #sh_bo_sch .sch_input {
+        flex: 1 !important;
+        margin: 0 10px !important;
+    }
+
+    /* 게시판 테이블 모바일 대응 */
+    #sh_list_tbl {
+        width: 100% !important;
+        table-layout: fixed !important;
+    }
+
+    #sh_list_tbl th,
+    #sh_list_tbl td {
+        padding: 10px 5px !important;
+        font-size: 13px !important;
+    }
+
+    /* 모바일에서 불필요한 컬럼 숨김 */
+    #sh_list_tbl th:nth-child(1),
+    #sh_list_tbl td:nth-child(1),
+    #sh_list_tbl th:nth-child(5),
+    #sh_list_tbl td:nth-child(5) {
+        display: none !important;
     }
     
     /* 모바일 래퍼 설정 */
