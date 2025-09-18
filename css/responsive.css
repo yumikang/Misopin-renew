@@ -116,7 +116,6 @@ body {
     }
 
     #sh_content {
-        width: 100% !important;
         padding: 20px 15px !important;
         box-sizing: border-box !important;
         min-height: auto !important;

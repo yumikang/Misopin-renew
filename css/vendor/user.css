@@ -128,11 +128,11 @@ h1, h2, h3, h4, h5, h6, input, button, textarea, select{font-family:var(--k-font
 /* CONTENT */
 #sh_container{position:relative;width:100%}
 #sh_container_wrapper{position:relative;width:100%}
-#sh_content{position:relative;width:1200px;min-height:620px;padding:70px 0;margin:0 auto}
+#sh_content{position:relative;max-width:1450px;width:100%;min-height:620px;padding:70px 0;margin:0 auto}
 
 /* SNB */
 #sh_aside{position:relative;width:100%;border-bottom:solid 1px #e5e5e5}
-#sh_aside_wrapper{position:relative;width:1200px;margin:0 auto;zoom:1}
+#sh_aside_wrapper{position:relative;max-width:1450px;width:100%;margin:0 auto;zoom:1}
 
 /* FOOTER */
 /* CONTACT US 섹션 스타일 */
