@@ -590,6 +590,30 @@ var g5_cookie_domain = "";
         width: 100%;
         padding: 1.5625rem 1.875rem;
         margin-bottom: 0.625rem;  /* 카드 사이 여백 추가 */
+        min-height: 7.5rem;  /* 최소 높이 증가 */
+        box-sizing: border-box;  /* 패딩을 포함한 박스 사이징 */
+        display: flex;  /* 플렉스 유지 */
+        align-items: center;  /* 수직 가운데 정렬 */
+    }
+
+    .sns_icon {
+        width: 3.125rem;  /* 아이콘 영역 고정 너비 */
+        height: 3.125rem;  /* 아이콘 영역 고정 높이 */
+        flex-shrink: 0;  /* 축소 방지 */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .sns_icon img {
+        max-width: 100%;  /* 최대 너비 */
+        max-height: 100%;  /* 최대 높이 */
+        width: auto;  /* 자동 너비 */
+        height: auto;  /* 자동 높이 */
+    }
+
+    .sns_info {
+        flex: 1;  /* 남은 공간 차지 */
     }
     
     .section_title {
