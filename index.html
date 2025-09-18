@@ -567,25 +567,29 @@ var g5_cookie_domain = "";
 
     .sns_section {
         padding: 7.5rem 0 !important;
-        min-height: 43.75rem !important;
-        height: 90vh !important;
-        max-height: 50rem !important;
+        min-height: auto !important;  /* 최소 높이 제거 */
+        height: auto !important;  /* 자동 높이로 변경 */
+        max-height: none !important;  /* 최대 높이 제한 제거 */
+        overflow: visible !important;  /* overflow hidden 해제 */
     }
-    
+
     .sns_content {
-        padding: 6.25rem 0;
+        padding: 4rem 0;  /* 패딩 줄임 */
     }
     
     .sns_grid {
         flex-direction: column;
         gap: 1.25rem;
         padding: 0 1.25rem;
+        position: relative;  /* 포지션 설정 */
+        z-index: 2;  /* 비디오 위에 표시 */
     }
-    
+
     .sns_card {
         min-width: unset;
         width: 100%;
         padding: 1.5625rem 1.875rem;
+        margin-bottom: 0.625rem;  /* 카드 사이 여백 추가 */
     }
     
     .section_title {
