@@ -227,15 +227,31 @@ var g5_cookie_domain = "";
     background-color: #9F988C !important;
 }
 
-/* 콘텐츠 영역에서 1450px 그리드 시스템 비활성화 */
+/* 콘텐츠 영역 1450px 최대 너비 설정 */
 #sh_container_wrapper {
-    max-width: 100% !important;
-    padding: 0 !important;
+    max-width: 1450px !important;
+    margin: 0 auto !important;
+    padding: 0 30px !important;
 }
 
 #sh_content {
     max-width: 100% !important;
     width: 100% !important;
+}
+
+/* 모바일 반응형 */
+@media (max-width: 768px) {
+    #sh_container_wrapper {
+        max-width: 100% !important;
+        padding: 0 15px !important;
+    }
+}
+
+/* 태블릿 반응형 */
+@media (min-width: 769px) and (max-width: 1023px) {
+    #sh_container_wrapper {
+        padding: 0 20px !important;
+    }
 }
 </style>
 <link rel="stylesheet" href="css/index-custom.css">
