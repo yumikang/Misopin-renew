@@ -558,7 +558,33 @@ var g5_cookie_domain = "";
     color: #999;
 }
 
-/* 반응형 */
+/* 태블릿 반응형 (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .sns_section {
+        padding: 6rem 0 !important;
+        min-height: 500px !important;
+        height: 70vh !important;
+        max-height: 600px !important;
+    }
+
+    .section_title {
+        font-size: 2.5rem;
+    }
+
+    .section_desc {
+        font-size: 1rem;
+    }
+
+    .sns_grid {
+        gap: 2rem;
+    }
+
+    .sns_card {
+        padding: 1.875rem 2rem;
+    }
+}
+
+/* 모바일 반응형 (768px 이하) */
 @media (max-width: 768px) {
     /* 모바일에서 전체적으로 작게 - 가이드에 따른 설정 */
     html {
@@ -566,11 +592,12 @@ var g5_cookie_domain = "";
     }
 
     .sns_section {
-        padding: 7.5rem 0 !important;
-        min-height: auto !important;  /* 최소 높이 제거 */
-        height: auto !important;  /* 자동 높이로 변경 */
-        max-height: none !important;  /* 최대 높이 제한 제거 */
-        overflow: visible !important;  /* overflow hidden 해제 */
+        padding: 3rem 0 !important;  /* 상하 패딩 줄임 */
+        min-height: 400px !important;  /* 최소 높이 설정 */
+        height: 60vh !important;  /* 모바일에서는 뷰포트의 60% 높이 */
+        max-height: 500px !important;  /* 최대 높이 제한 */
+        overflow: hidden !important;  /* overflow hidden 유지 */
+        position: relative !important;
     }
 
     /* 모바일에서 비디오 화면 꽉 차게 설정 */
@@ -609,9 +636,29 @@ var g5_cookie_domain = "";
     }
 
     .sns_content {
-        padding: 4rem 0;  /* 패딩 줄임 */
+        padding: 2rem 0;  /* 패딩 더 줄임 */
+        height: 100%;  /* 부모 요소 높이에 맞춤 */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;  /* 세로 중앙 정렬 */
     }
-    
+
+    /* 모바일에서 텍스트 크기 조정 */
+    .section_intro {
+        margin-bottom: 2rem;  /* 여백 줄임 */
+        padding: 0 20px;
+    }
+
+    .section_title {
+        font-size: 1.75rem;  /* 제목 크기 줄임 */
+        margin-bottom: 1rem;
+    }
+
+    .section_desc {
+        font-size: 0.95rem;  /* 설명 크기 줄임 */
+        line-height: 1.5;
+    }
+
     .sns_grid {
         flex-direction: column;
         gap: 1.25rem;
@@ -1003,9 +1050,46 @@ table thead, th {
     .cols01 .nm {
         font-size: 1.25rem;
     }
-    
+
     .everyday p {
         font-size: 1rem;
+    }
+}
+
+/* 작은 모바일 디바이스 (480px 이하) */
+@media (max-width: 480px) {
+    .sns_section {
+        padding: 2rem 0 !important;
+        min-height: 350px !important;
+        height: 50vh !important;
+        max-height: 400px !important;
+    }
+
+    .section_title {
+        font-size: 1.5rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .section_desc {
+        font-size: 0.875rem;
+    }
+
+    .sns_card {
+        padding: 1.25rem 1.5rem;
+        min-height: 6rem;
+    }
+
+    .sns_icon img {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+    .sns_title {
+        font-size: 0.9375rem;
+    }
+
+    .sns_desc {
+        font-size: 0.8125rem;
     }
 }
 </style>
