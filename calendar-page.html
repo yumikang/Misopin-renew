@@ -318,7 +318,13 @@ textarea:focus {
     #sh_calender_body table tbody td > a,
     #sh_calender_body table tbody tr td a[href="javascript:void(0)"],
     .tbl_mara td a,
-    #mara_cal_view td a {
+    #mara_cal_view td a,
+    /* 추가: 모든 캘린더 테이블 내 링크 */
+    .tbl_mara tbody td a,
+    #mara_cal_view tbody td a,
+    #sh_calender_body tbody td a[onclick*="selectday"],
+    /* 예약가능 텍스트 링크 특별 처리 */
+    td a[onclick*="calendar_inqOpen"][onclick*="selectday"] {
         color: #fff !important;
     }
 }
