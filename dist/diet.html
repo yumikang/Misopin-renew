@@ -518,110 +518,256 @@
                         </p>
                     </div>
                     <div class="col-image">
-                        <img src="../images/diet-01.webp" alt="의학적 다이어트 프로그램" style="width: 100%; border-radius: 12px;">
+                        <img src="../images/diet/diet-01.webp" alt="의학적 다이어트 프로그램" style="width: 100%; border-radius: 12px;">
                     </div>
                 </div>
             </section>
 
-            <!-- 바디 윤곽 지방분해주사 섹션 -->
-            <section class="treatment-section" style="margin: 80px 0;">
-                <div class="two-column-layout" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;">
-                    <div class="col-image">
-                        <img src="../images/blog2/blog_cd01.png" alt="바디 윤곽 지방분해주사" style="width: 100%; border-radius: 12px;">
+            <!-- 시술 종류 소개 섹션 - 지그재그 레이아웃 -->
+            <section class="diet-treatments-zigzag" style="margin: 80px 0;">
+                <style>
+                .diet-treatments-zigzag {
+                    max-width: 1400px;
+                    margin: 0 auto;
+                    padding: 0 20px;
+                }
+
+                .zigzag-grid {
+                    display: grid;
+                    grid-template-columns: repeat(4, 1fr);
+                    gap: 0;
+                    height: 600px;
+                }
+
+                .zigzag-item {
+                    position: relative;
+                    border-radius: 16px;
+                    overflow: hidden;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                    background-size: cover;
+                    background-position: center;
+                    height: 450px;
+                }
+
+                .zigzag-item:nth-child(1) {
+                    background-image: url('../images/diet/diet-02.png');
+                    margin-top: 0;
+                }
+
+                .zigzag-item:nth-child(2) {
+                    background-image: url('../images/blog2/blog_cd02.png');
+                    margin-top: 50px;
+                }
+
+                .zigzag-item:nth-child(3) {
+                    background-image: url('../images/blog2/blog_cd03.png');
+                    margin-top: 25px;
+                }
+
+                .zigzag-item:nth-child(4) {
+                    background-image: url('../images/blog2/blog_cd04.png');
+                    margin-top: 75px;
+                }
+
+                .zigzag-overlay {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: linear-gradient(135deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.2) 100%);
+                    display: flex;
+                    align-items: flex-end;
+                    padding: 30px;
+                    transition: all 0.3s ease;
+                }
+
+                .zigzag-title {
+                    color: white;
+                    font-size: 22px;
+                    font-weight: 700;
+                    line-height: 1.3;
+                    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+                    transform: translateY(0);
+                    transition: all 0.3s ease;
+                }
+
+                .zigzag-content {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: rgba(159, 152, 140, 0.95);
+                    padding: 30px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    opacity: 0;
+                    transform: translateY(20px);
+                    transition: all 0.3s ease;
+                }
+
+                .zigzag-content h3 {
+                    color: white;
+                    font-size: 24px;
+                    font-weight: 700;
+                    margin-bottom: 20px;
+                    line-height: 1.3;
+                }
+
+                .zigzag-content p {
+                    color: rgba(255,255,255,0.9);
+                    font-size: 15px;
+                    line-height: 1.6;
+                    margin-bottom: 15px;
+                }
+
+                .zigzag-item:hover .zigzag-overlay {
+                    opacity: 0;
+                }
+
+                .zigzag-item:hover .zigzag-content {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+
+                .zigzag-item:hover {
+                    transform: translateY(-5px);
+                    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+                }
+
+                /* 반응형 */
+                @media (max-width: 1024px) {
+                    .zigzag-grid {
+                        grid-template-columns: repeat(2, 1fr);
+                        height: auto;
+                        gap: 0;
+                    }
+
+                    .zigzag-item {
+                        height: 400px;
+                    }
+
+                    .zigzag-item:nth-child(1) {
+                        margin-top: 0;
+                    }
+
+                    .zigzag-item:nth-child(2) {
+                        margin-top: 50px;
+                    }
+
+                    .zigzag-item:nth-child(3) {
+                        margin-top: 0;
+                    }
+
+                    .zigzag-item:nth-child(4) {
+                        margin-top: 50px;
+                    }
+
+                    .zigzag-title {
+                        font-size: 20px;
+                    }
+
+                    .zigzag-content h3 {
+                        font-size: 20px;
+                    }
+
+                    .zigzag-content p {
+                        font-size: 14px;
+                    }
+                }
+
+                @media (max-width: 768px) {
+                    .zigzag-grid {
+                        grid-template-columns: 1fr;
+                        gap: 0;
+                    }
+
+                    .zigzag-item:nth-child(1),
+                    .zigzag-item:nth-child(2),
+                    .zigzag-item:nth-child(3),
+                    .zigzag-item:nth-child(4) {
+                        margin-top: 0;
+                        height: 350px;
+                    }
+
+                    .zigzag-overlay,
+                    .zigzag-content {
+                        padding: 20px;
+                    }
+
+                    .zigzag-title {
+                        font-size: 18px;
+                    }
+
+                    .zigzag-content h3 {
+                        font-size: 18px;
+                        margin-bottom: 15px;
+                    }
+
+                    .zigzag-content p {
+                        font-size: 13px;
+                        margin-bottom: 10px;
+                    }
+                }
+                </style>
+
+                <div class="zigzag-grid">
+                    <!-- 바디 윤곽 지방분해주사 -->
+                    <div class="zigzag-item">
+                        <div class="zigzag-overlay">
+                            <h3 class="zigzag-title">바디 윤곽<br>지방분해주사</h3>
+                        </div>
+                        <div class="zigzag-content">
+                            <h3>바디 윤곽 지방분해주사</h3>
+                            <p>바디 윤곽 지방분해주사는 지방세포를 직접 분해하여 체형을 개선하는 시술입니다. 이중턱, 팔뚝, 복부, 허벅지 등 부분적으로 축적된 지방을 효과적으로 감소시킵니다.</p>
+                            <p>FDA 승인을 받은 안전한 성분으로 지방세포막을 파괴하여 자연스럽게 체외로 배출시키며, 시술 후 즉시 일상생활이 가능합니다.</p>
+                        </div>
                     </div>
-                    <div class="col-text">
-                        <h3 class="section_h3" style="color: var(--misopin-text-dark); font-size: 24px; margin-bottom: 20px;">
-                            <span style="background: linear-gradient(180deg, transparent 60%, #f5e6d3 60%); padding: 0 0.25rem;">바디 윤곽 지방분해주사</span>
-                        </h3>
-                        <p style="line-height: 1.8; margin-bottom: 20px; color: var(--misopin-text-light);">
-                            바디 윤곽 지방분해주사는 지방세포를 직접 분해하여 체형을 개선하는 시술입니다. 이중턱, 팔뚝, 복부, 허벅지 등 부분적으로 축적된 지방을 효과적으로 감소시킵니다.
-                        </p>
-                        <p style="line-height: 1.8; color: var(--misopin-text-light);">
-                            FDA 승인을 받은 안전한 성분으로 지방세포막을 파괴하여 자연스럽게 체외로 배출시키며, 시술 후 즉시 일상생활이 가능합니다.
-                        </p>
+
+                    <!-- 다이어트 처방의약품 -->
+                    <div class="zigzag-item">
+                        <div class="zigzag-overlay">
+                            <h3 class="zigzag-title">다이어트<br>처방의약품</h3>
+                        </div>
+                        <div class="zigzag-content">
+                            <h3>다이어트 처방의약품</h3>
+                            <p>체질과 현재 상태에 맞는 처방의약품으로 건강한 체중감량을 돕습니다. 식욕억제제, 지방흡수억제제 등을 개인별 상태에 따라 안전하게 처방합니다.</p>
+                            <p>정기적인 상담과 모니터링을 통해 부작용을 최소화하고 최적의 효과를 얻을 수 있도록 관리합니다.</p>
+                        </div>
+                    </div>
+
+                    <!-- 다이어트 수액 -->
+                    <div class="zigzag-item">
+                        <div class="zigzag-overlay">
+                            <h3 class="zigzag-title">다이어트<br>수액</h3>
+                        </div>
+                        <div class="zigzag-content">
+                            <h3>다이어트 수액</h3>
+                            <p>지방 분해를 촉진하고 신진대사를 활성화하는 다이어트 수액입니다. 비타민, 미네랄, 아미노산 등의 영양소를 직접 혈관에 공급하여 빠른 효과를 얻을 수 있습니다.</p>
+                            <p>다이어트 중 부족해지기 쉬운 영양소를 보충하여 건강한 체중감량을 지원하며, 피로감 개선과 면역력 향상에도 도움이 됩니다.</p>
+                        </div>
+                    </div>
+
+                    <!-- 다이어트 주사 -->
+                    <div class="zigzag-item">
+                        <div class="zigzag-overlay">
+                            <h3 class="zigzag-title">다이어트<br>주사</h3>
+                        </div>
+                        <div class="zigzag-content">
+                            <h3>다이어트 주사</h3>
+                            <p>FDA 승인을 받은 최신 비만 치료제로, 뇌의 식욕 중추에 작용하여 자연스럽게 식욕을 억제하고 위 배출을 지연시켜 포만감을 오래 유지시킵니다.</p>
+                            <p>주 1회 자가주사로 간편하게 사용할 수 있으며, 평균 15-25%의 체중감량 효과를 보입니다. 당뇨가 있는 환자에게도 혈당 조절에 도움이 됩니다.</p>
+                            <p style="margin-top: 20px; font-weight: 600;">주사 종류:<br>
+                            - 위고비(Wegovy)<br>
+                            - 마운자로(Mounjaro)</p>
+                        </div>
                     </div>
                 </div>
             </section>
 
-            <!-- 다이어트 처방의약품 섹션 -->
-            <section class="treatment-section" style="background: var(--misopin-bg-accent); padding: 60px 40px; margin: 80px 0; border-radius: 12px;">
-                <div class="two-column-layout" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;">
-                    <div class="col-text">
-                        <h3 class="section_h3" style="color: var(--misopin-text-dark); font-size: 24px; margin-bottom: 20px;">
-                            <span style="background: linear-gradient(180deg, transparent 60%, #f5e6d3 60%); padding: 0 0.25rem;">다이어트 처방의약품</span>
-                        </h3>
-                        <p style="line-height: 1.8; margin-bottom: 20px; color: var(--misopin-text-light);">
-                            체질과 현재 상태에 맞는 처방의약품으로 건강한 체중감량을 돕습니다. 식욕억제제, 지방흡수억제제 등을 개인별 상태에 따라 안전하게 처방합니다.
-                        </p>
-                        <p style="line-height: 1.8; color: var(--misopin-text-light);">
-                            정기적인 상담과 모니터링을 통해 부작용을 최소화하고 최적의 효과를 얻을 수 있도록 관리합니다.
-                        </p>
-                    </div>
-                    <div class="col-image">
-                        <img src="../images/blog2/blog_cd02.png" alt="다이어트 처방의약품" style="width: 100%; border-radius: 12px;">
-                    </div>
-                </div>
-            </section>
-
-            <!-- 다이어트 수액 섹션 -->
-            <section class="treatment-section" style="margin: 80px 0;">
-                <div class="two-column-layout" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;">
-                    <div class="col-image">
-                        <img src="../images/blog2/blog_cd03.png" alt="다이어트 수액" style="width: 100%; border-radius: 12px;">
-                    </div>
-                    <div class="col-text">
-                        <h3 class="section_h3" style="color: var(--misopin-text-dark); font-size: 24px; margin-bottom: 20px;">
-                            <span style="background: linear-gradient(180deg, transparent 60%, #f5e6d3 60%); padding: 0 0.25rem;">다이어트 수액</span>
-                        </h3>
-                        <p style="line-height: 1.8; margin-bottom: 20px; color: var(--misopin-text-light);">
-                            지방 분해를 촉진하고 신진대사를 활성화하는 다이어트 수액입니다. 비타민, 미네랄, 아미노산 등의 영양소를 직접 혈관에 공급하여 빠른 효과를 얻을 수 있습니다.
-                        </p>
-                        <p style="line-height: 1.8; color: var(--misopin-text-light);">
-                            다이어트 중 부족해지기 쉬운 영양소를 보충하여 건강한 체중감량을 지원하며, 피로감 개선과 면역력 향상에도 도움이 됩니다.
-                        </p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- 위고비 주사 섹션 -->
-            <section class="treatment-section" style="background: var(--misopin-bg-accent); padding: 60px 40px; margin: 80px 0; border-radius: 12px;">
-                <div class="two-column-layout" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;">
-                    <div class="col-text">
-                        <h3 class="section_h3" style="color: var(--misopin-text-dark); font-size: 24px; margin-bottom: 20px;">
-                            <span style="background: linear-gradient(180deg, transparent 60%, #f5e6d3 60%); padding: 0 0.25rem;">위고비(Wegovy) 주사</span>
-                        </h3>
-                        <p style="line-height: 1.8; margin-bottom: 20px; color: var(--misopin-text-light);">
-                            FDA 승인을 받은 비만 치료제로, GLP-1 수용체 작용제입니다. 뇌의 식욕 중추에 작용하여 자연스럽게 식욕을 억제하고 위 배출을 지연시켜 포만감을 오래 유지시킵니다.
-                        </p>
-                        <p style="line-height: 1.8; color: var(--misopin-text-light);">
-                            주 1회 자가주사로 간편하게 사용할 수 있으며, 평균 15-20%의 체중감량 효과를 보입니다. 당뇨가 있는 환자에게도 혈당 조절에 도움이 됩니다.
-                        </p>
-                    </div>
-                    <div class="col-image">
-                        <img src="../images/blog2/blog_cd04.png" alt="위고비 주사" style="width: 100%; border-radius: 12px;">
-                    </div>
-                </div>
-            </section>
-
-            <!-- 마운자로 주사 섹션 -->
-            <section class="treatment-section" style="margin: 80px 0;">
-                <div class="two-column-layout" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;">
-                    <div class="col-image">
-                        <img src="../images/blog2/blog_cd05.png" alt="마운자로 주사" style="width: 100%; border-radius: 12px;">
-                    </div>
-                    <div class="col-text">
-                        <h3 class="section_h3" style="color: var(--misopin-text-dark); font-size: 24px; margin-bottom: 20px;">
-                            <span style="background: linear-gradient(180deg, transparent 60%, #f5e6d3 60%); padding: 0 0.25rem;">마운자로(Mounjaro) 주사</span>
-                        </h3>
-                        <p style="line-height: 1.8; margin-bottom: 20px; color: var(--misopin-text-light);">
-                            세계 최초의 이중 호르몬 작용제로 GLP-1과 GIP 수용체를 동시에 활성화합니다. 위고비보다 더 강력한 체중감량 효과를 보이며, 평균 20-25%의 체중감량이 가능합니다.
-                        </p>
-                        <p style="line-height: 1.8; color: var(--misopin-text-light);">
-                            식욕억제뿐만 아니라 혈당조절, 지방분해 촉진 등 다각적인 작용으로 더욱 효과적인 체중관리가 가능합니다. 주 1회 투여로 편리하게 사용할 수 있습니다.
-                        </p>
-                    </div>
-                </div>
-            </section>
 
             <!-- 맞춤형 다이어트 프로그램 섹션 -->
             <section class="treatment-section" style="background: var(--misopin-bg-accent); padding: 60px 40px; margin: 80px 0; border-radius: 12px;">
