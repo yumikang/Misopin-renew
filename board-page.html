@@ -27,6 +27,8 @@
 <link rel="stylesheet" href="css/button-styles.css">
 <!-- 1450px Grid System CSS 추가 -->
 <link rel="stylesheet" href="css/grid-system-1450.css">
+<!-- API 클라이언트 추가 -->
+<script src="js/api-client.js"></script>
 <style>
 /* rem 기준 설정 - 16px 기준 */
 html {
@@ -555,7 +557,7 @@ var g5_cookie_domain = "";
                         <th scope="col">등록일</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="board-posts-list">
                                         <tr class="">
                                                 <td class="num" data-label="번호">
                         3                        </td>
@@ -725,6 +727,102 @@ $(function() {
 <![endif]-->
 
 <script src="js/mobile-nav.js"></script>
+
+<!-- 게시판 API 연동 스크립트 -->
+<script>
+// 페이지 로드 시 게시판 데이터 가져오기
+document.addEventListener('DOMContentLoaded', async function() {
+    try {
+        // API 클라이언트가 로드되었는지 확인
+        if (typeof MisopinAPI === 'undefined') {
+            console.error('API client not loaded');
+            return;
+        }
+
+        const api = new MisopinAPI();
+        console.log('Loading board posts from:', api.baseURL);
+
+        // 게시판 데이터 가져오기
+        const response = await api.getBoardPosts(null, 20, 0);
+        console.log('Board posts loaded:', response);
+
+        if (response && response.posts) {
+            renderBoardPosts(response.posts);
+        }
+    } catch (error) {
+        console.error('Error loading board posts:', error);
+        // 에러 발생시 기존 정적 데이터 유지
+    }
+});
+
+// 게시판 목록 렌더링 함수
+function renderBoardPosts(posts) {
+    const tbody = document.getElementById('board-posts-list');
+    if (!tbody) return;
+
+    // 기존 내용 지우기
+    tbody.innerHTML = '';
+
+    // 데이터가 없으면 기본 메시지 표시
+    if (!posts || posts.length === 0) {
+        tbody.innerHTML = `
+            <tr>
+                <td colspan="4" style="text-align: center; padding: 40px;">
+                    등록된 게시글이 없습니다.
+                </td>
+            </tr>
+        `;
+        return;
+    }
+
+    // 게시글 렌더링
+    posts.forEach((post, index) => {
+        const tr = document.createElement('tr');
+        tr.className = '';
+
+        // 카테고리 색상
+        const categoryClass = post.board_type === 'NOTICE' ? 'Notice' : 'Event';
+        const categoryText = post.board_type === 'NOTICE' ? 'Notice' : 'Event';
+        const categoryLink = post.board_type === 'NOTICE' ? 'board-notice.html' : 'board-event.html';
+
+        // 날짜 포맷
+        const date = new Date(post.created_at);
+        const dateStr = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
+
+        tr.innerHTML = `
+            <td class="num" data-label="번호">
+                ${posts.length - index}
+            </td>
+            <td class="subject" style="padding-left:0" data-label="제목">
+                <div>
+                    <a href="${categoryLink}" class="cate_link"><span>${categoryText}</span></a>
+                    <a href="board-detail.html?id=${post.id}">
+                        ${post.is_pinned ? '📌 ' : ''}${post.title}
+                    </a>
+                </div>
+            </td>
+            <td class="name sv_use" data-label="작성자">
+                <span class="sv_member">${post.author || '관리자'}</span>
+            </td>
+            <td class="datetime" data-label="등록일">${dateStr}</td>
+        `;
+
+        tbody.appendChild(tr);
+    });
+}
+
+// 카테고리 필터링 함수 (옵션)
+function filterByCategory(category) {
+    const api = new MisopinAPI();
+    api.getBoardPosts(category, 20, 0).then(response => {
+        if (response && response.posts) {
+            renderBoardPosts(response.posts);
+        }
+    }).catch(error => {
+        console.error('Error filtering posts:', error);
+    });
+}
+</script>
 </body>
 <!-- 자체 분석 도구 -->
 <script src="js/analytics-setup.js"></script>
