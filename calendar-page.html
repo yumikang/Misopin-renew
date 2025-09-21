@@ -646,7 +646,7 @@ jQuery(function($){
 	<button class="close" type="button" onclick="calendar_inqClose()"><span></span><p class="sound_only">닫기</p></button>
   	<div class="tit">예약자 정보</div>
 	<div class="inner">
-        <form name="inq_popup" autocomplete="off" onsubmit="return submitReservation(event);">
+        <form name="inq_popup" autocomplete="off" onsubmit="submitReservation(event); return false;">
             <input type="hidden" name="bo_table" value="table36" />
             <input type="hidden" name="max_date" value="90">
             <input type="hidden" name="today_date" value="0">
@@ -736,7 +736,7 @@ jQuery(function($){
                 </ul>
             </div>    
         </div>
-        <button type="submit" class="sbm_btn">예약신청</button>  
+        <button type="button" class="sbm_btn" onclick="submitReservation(event);">예약신청</button>  
     </form>
 </div>    </div>
 
@@ -917,10 +917,12 @@ $(function() {
 // 예약 폼 제출 함수
 async function submitReservation(event) {
     console.log('submitReservation called');
-    event.preventDefault();
-    event.stopPropagation();
+    if (event && event.preventDefault) {
+        event.preventDefault();
+        event.stopPropagation();
+    }
 
-    const form = event.target;
+    const form = document.forms['inq_popup'];
     const formData = new FormData(form);
 
     // 폰 번호 포맷팅 (숫자만 있으면 하이픈 추가)
