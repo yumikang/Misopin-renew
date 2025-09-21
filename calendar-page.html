@@ -28,6 +28,9 @@
 <link rel="stylesheet" href="css/button-styles.css">
 <!-- 1450px Grid System CSS 추가 -->
 <link rel="stylesheet" href="css/grid-system-1450.css">
+<!-- API Integration -->
+<link rel="stylesheet" href="css/api-components.css">
+<script src="js/api-client.js"></script>
 <style>
 @import url(//fonts.googleapis.com/earlyaccess/nanumpenscript.css);
 @import url(//fonts.googleapis.com/earlyaccess/nanumbrushscript.css);
@@ -643,7 +646,7 @@ jQuery(function($){
 	<button class="close" type="button" onclick="calendar_inqClose()"><span></span><p class="sound_only">닫기</p></button>
   	<div class="tit">예약자 정보</div>
 	<div class="inner">
-        <form name="inq_popup" method="post" action="https://skincare1007.shiningcorp.com/skin/board/hos_calendar/calendar_form_update.php" autocomplete="off" onsubmit="return view_submit(this);">
+        <form name="inq_popup" method="post" action="#" autocomplete="off" onsubmit="return submitReservation(event);">
             <input type="hidden" name="bo_table" value="table36" />
             <input type="hidden" name="max_date" value="90">
             <input type="hidden" name="today_date" value="0">
@@ -664,7 +667,11 @@ jQuery(function($){
                 </li>
                 <li>
                     <label for="sh_phone">연락처</label>
-                    <input type="text" name="sh_phone" id="sh_phone" required class="sh_input required" placeholder="- 를 제외한 숫자만 입력" oninput='Num_ck(this);' inputmode="tel">             
+                    <input type="text" name="sh_phone" id="sh_phone" required class="sh_input required" placeholder="- 를 제외한 숫자만 입력" oninput='Num_ck(this);' inputmode="tel">
+                </li>
+                <li>
+                    <label for="sh_email">이메일 (선택)</label>
+                    <input type="email" name="sh_email" id="sh_email" class="sh_input" placeholder="example@email.com">
                 </li>
             	<li>
                 	<label for="sh_birth">생년월일</label>
@@ -680,9 +687,21 @@ jQuery(function($){
                                 <li class="type">
                     <label for="sh_type">진료종류</label>
                     <div>
-                                                <span><input type="radio" name="sh_type" value="초진" id="sh_type_0"> <label for="sh_type_0">초진</label></span>
-                                                <span><input type="radio" name="sh_type" value="재진" id="sh_type_1"> <label for="sh_type_1">재진</label></span>
+                                                <span><input type="radio" name="sh_type" value="초진" id="sh_type_0" required> <label for="sh_type_0">초진</label></span>
+                                                <span><input type="radio" name="sh_type" value="재진" id="sh_type_1" required> <label for="sh_type_1">재진</label></span>
                                             </div>
+                </li>
+                <li>
+                    <label for="sh_service">진료 항목</label>
+                    <select name="sh_service" id="sh_service" required class="sh_input required">
+                        <option value="">진료 항목을 선택해주세요</option>
+                        <option value="정기검진">정기검진</option>
+                        <option value="피부진료">피부진료</option>
+                        <option value="비만클리닉">비만클리닉</option>
+                        <option value="피부과">피부과</option>
+                        <option value="내과">내과</option>
+                        <option value="기타">기타</option>
+                    </select>
                 </li>
                 <li>
             	   	<label for="wr_content">희망진료사항</label>
@@ -880,6 +899,72 @@ $(function() {
 <![endif]-->
 
 <script src="js/mobile-nav.js"></script>
+
+<!-- 예약 폼 API 연동 스크립트 -->
+<script>
+// 예약 폼 제출 함수
+async function submitReservation(event) {
+    event.preventDefault();
+
+    const form = event.target;
+    const formData = new FormData(form);
+
+    // 폰 번호 포맷팅 (숫자만 있으면 하이픈 추가)
+    let phone = formData.get('sh_phone');
+    if (phone && phone.length === 11) {
+        phone = phone.replace(/(\d{3})(\d{4})(\d{4})/, '$1-$2-$3');
+    } else if (phone && phone.length === 10) {
+        phone = phone.replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2-$3');
+    }
+
+    // 진료종류를 treatment_type으로 변환
+    const treatmentType = formData.get('sh_type') === '초진' ? 'FIRST_VISIT' : 'FOLLOW_UP';
+
+    // 성별을 gender로 변환
+    const gender = formData.get('sh_sex') === '남' ? 'MALE' : 'FEMALE';
+
+    // API 요청 데이터 구성
+    const reservationData = {
+        patient_name: formData.get('wr_name'),
+        phone: phone,
+        email: formData.get('sh_email') || null,
+        birth_date: formData.get('sh_birth'),
+        gender: gender,
+        treatment_type: treatmentType,
+        service: formData.get('sh_service'),
+        preferred_date: formData.get('sh_checkday'),
+        preferred_time: formData.get('sh_checktime'),
+        notes: formData.get('wr_content') || null
+    };
+
+    try {
+        // API 호출
+        const api = new MisopinAPI();
+        const result = await api.submitReservation(reservationData);
+
+        if (result.success) {
+            alert('예약이 성공적으로 접수되었습니다.\n확인 후 연락드리겠습니다.');
+            // 폼 초기화
+            form.reset();
+            // 모달 닫기
+            calendar_inqClose();
+        } else {
+            alert('예약 접수 중 오류가 발생했습니다.\n잠시 후 다시 시도해주세요.');
+        }
+    } catch (error) {
+        console.error('Reservation error:', error);
+        alert('예약 접수 중 오류가 발생했습니다.\n전화로 문의해주시기 바랍니다. (02-1234-5678)');
+    }
+
+    return false;
+}
+
+// 기존 view_submit 함수 대체
+function view_submit(f) {
+    return false; // 기존 제출 방지
+}
+</script>
+
 </body>
 <!-- 자체 분석 도구 -->
 <script src="js/analytics-setup.js"></script>

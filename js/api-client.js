@@ -21,8 +21,8 @@ class MisopinAPI {
     const hostname = window.location.hostname;
 
     if (hostname === 'localhost' || hostname === '127.0.0.1') {
-      // Development - CMS running on port 3000
-      return 'http://localhost:3000/api';
+      // Development - CMS running on port 3001 (changed due to port conflict)
+      return 'http://localhost:3001/api';
     } else if (hostname === 'misopin.com' || hostname === 'www.misopin.com') {
       // Production - Use admin subdomain
       return 'https://admin.misopin.com/api';
