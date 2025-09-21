@@ -24,11 +24,11 @@ class MisopinAPI {
       // Development - CMS running on port 3001 (changed due to port conflict)
       return 'http://localhost:3001/api';
     } else if (hostname === 'misopin-renew.vercel.app') {
-      // Production - Use admin subdomain
-      return 'https://admin.misopin.com/api';
+      // Production - Use CMS Vercel domain
+      return 'https://misopin-cms.vercel.app/api';
     } else if (hostname === 'misopin.com' || hostname === 'www.misopin.com') {
       // Future production domain
-      return 'https://admin.misopin.com/api';
+      return 'https://misopin-cms.vercel.app/api';
     } else {
       // Fallback to relative URL
       return '/api';
