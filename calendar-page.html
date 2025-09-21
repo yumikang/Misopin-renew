@@ -916,7 +916,9 @@ $(function() {
 <script>
 // 예약 폼 제출 함수
 async function submitReservation(event) {
+    console.log('submitReservation called');
     event.preventDefault();
+    event.stopPropagation();
 
     const form = event.target;
     const formData = new FormData(form);
@@ -950,9 +952,21 @@ async function submitReservation(event) {
     };
 
     try {
+        console.log('Sending reservation data:', reservationData);
+
+        // API 클라이언트 체크
+        if (typeof MisopinAPI === 'undefined') {
+            console.error('MisopinAPI is not loaded');
+            alert('API 클라이언트가 로드되지 않았습니다. 페이지를 새로고침해주세요.');
+            return false;
+        }
+
         // API 호출
         const api = new MisopinAPI();
+        console.log('API base URL:', api.baseURL);
+
         const result = await api.submitReservation(reservationData);
+        console.log('API response:', result);
 
         if (result.success) {
             alert('예약이 성공적으로 접수되었습니다.\n확인 후 연락드리겠습니다.');
@@ -965,7 +979,8 @@ async function submitReservation(event) {
         }
     } catch (error) {
         console.error('Reservation error:', error);
-        alert('예약 접수 중 오류가 발생했습니다.\n전화로 문의해주시기 바랍니다. (02-1234-5678)');
+        console.error('Error details:', error.message, error.stack);
+        alert('예약 접수 중 오류가 발생했습니다.\n전화로 문의해주시기 바랍니다. (02-1234-5678)\n\n에러: ' + error.message);
     }
 
     return false;
