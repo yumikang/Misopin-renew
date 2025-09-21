@@ -25,6 +25,7 @@
 <link rel="stylesheet" href="css/responsive.css">
 <link rel="stylesheet" href="css/button-styles.css">
 <link rel="stylesheet" href="css/grid-system-1450.css">
+<link rel="stylesheet" href="css/api-components.css">
 <style>
 /* rem 기준 설정 - 16px 기준 */
 html {
@@ -720,6 +721,30 @@ $(function() {
 <![endif]-->
 
 <script src="js/mobile-nav.js"></script>
+<script src="js/api-client.js"></script>
+<script>
+// CMS API 연동 - 공지사항 로드
+window.addEventListener('DOMContentLoaded', function() {
+    // 기존 테이블 숨기기 (더미 데이터)
+    var existingTable = document.querySelector('table');
+    if (existingTable) {
+        existingTable.style.display = 'none';
+    }
+
+    // API 데이터 표시할 컨테이너 추가
+    var container = document.createElement('div');
+    container.id = 'api-board-posts';
+    container.style.marginTop = '20px';
+    container.innerHTML = '<div class="loading" style="text-align: center; padding: 40px;"><p>공지사항을 불러오는 중...</p></div>';
+
+    if (existingTable && existingTable.parentNode) {
+        existingTable.parentNode.appendChild(container);
+    }
+
+    // CMS에서 공지사항 로드
+    MisopinHelpers.loadBoardPosts('NOTICE', '#api-board-posts');
+});
+</script>
 </body>
 <!-- 자체 분석 도구 -->
 <script src="js/analytics-setup.js"></script>
