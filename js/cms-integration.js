@@ -4,9 +4,9 @@
  */
 
 // CMS 설정
-window.CMS_API_URL = 'https://admin.misopin.com/api/public'; // 프로덕션 URL
-// window.CMS_API_URL = 'http://localhost:3000/api/public'; // 개발 환경
-window.CMS_DEBUG = false; // 디버그 모드
+window.CMS_API_URL = 'https://misopin-cms.vercel.app/api/public'; // Vercel 배포 URL
+// window.CMS_API_URL = 'http://localhost:3007/api/public'; // 로컬 개발 환경
+window.CMS_DEBUG = true; // 디버그 모드
 
 // CMS 로더 초기화
 document.addEventListener('DOMContentLoaded', function() {

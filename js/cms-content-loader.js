@@ -9,7 +9,7 @@
 
   // 설정
   const CONFIG = {
-    API_BASE_URL: window.CMS_API_URL || 'https://admin.misopin.com/api/public',
+    API_BASE_URL: window.CMS_API_URL || 'https://misopin-cms.vercel.app/api/public',
     CACHE_DURATION: 5 * 60 * 1000, // 5분 캐시
     RETRY_ATTEMPTS: 3,
     RETRY_DELAY: 1000, // 1초
