@@ -84,6 +84,7 @@ class MisopinAPI {
    * Get active popups
    */
   async getPopups() {
+    console.log('Fetching popups from:', this.baseURL + '/public/popups');
     return this.fetchAPI('/public/popups');
   }
 
@@ -204,11 +205,19 @@ const MisopinHelpers = {
    * Initialize popups on page load
    */
   async initPopups() {
+    console.log('Initializing popups...');
     try {
       const popups = await misopinAPI.getPopups();
+      console.log('Fetched popups:', popups);
+
+      if (!popups || popups.length === 0) {
+        console.log('No active popups found');
+        return;
+      }
 
       // Sort by priority and show popups
       popups.forEach((popup, index) => {
+        console.log(`Showing popup ${index + 1}:`, popup);
         setTimeout(() => {
           this.showPopup(popup);
         }, index * 1000); // Stagger popup display
