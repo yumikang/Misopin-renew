@@ -23,8 +23,11 @@ class MisopinAPI {
     if (hostname === 'localhost' || hostname === '127.0.0.1') {
       // Development - CMS running on port 3001 (changed due to port conflict)
       return 'http://localhost:3001/api';
-    } else if (hostname === 'misopin.com' || hostname === 'www.misopin.com') {
+    } else if (hostname === 'misopin-renew.vercel.app') {
       // Production - Use admin subdomain
+      return 'https://admin.misopin.com/api';
+    } else if (hostname === 'misopin.com' || hostname === 'www.misopin.com') {
+      // Future production domain
       return 'https://admin.misopin.com/api';
     } else {
       // Fallback to relative URL
