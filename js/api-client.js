@@ -180,11 +180,14 @@ const MisopinHelpers = {
    * Show popup
    */
   showPopup(popup) {
+    console.log('showPopup called for:', popup);
+
     // Check if popup was already shown today
     const todayClosedPopups = JSON.parse(localStorage.getItem('closedPopups') || '{}');
     const today = new Date().toDateString();
 
     if (todayClosedPopups[popup.id] === today) {
+      console.log('Popup already closed today:', popup.id);
       return; // Skip if already closed today
     }
 
@@ -208,7 +211,9 @@ const MisopinHelpers = {
       </div>
     `;
 
+    console.log('Adding popup to DOM...');
     document.body.insertAdjacentHTML('beforeend', popupHTML);
+    console.log('Popup added to DOM:', document.getElementById(`popup-${popup.id}`));
   },
 
   /**
