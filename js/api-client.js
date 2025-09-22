@@ -276,10 +276,15 @@ const MisopinHelpers = {
 };
 
 // Auto-initialize popups when DOM is ready
+console.log('API Client loaded, document readyState:', document.readyState);
+
 if (document.readyState === 'loading') {
+  console.log('Document still loading, waiting for DOMContentLoaded...');
   document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOMContentLoaded fired, initializing popups...');
     MisopinHelpers.initPopups();
   });
 } else {
+  console.log('Document already loaded, initializing popups immediately...');
   MisopinHelpers.initPopups();
 }
