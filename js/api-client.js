@@ -179,16 +179,19 @@ const MisopinHelpers = {
   /**
    * Show popup
    */
-  showPopup(popup) {
+  showPopup(popup, forceShow = false) {
     console.log('showPopup called for:', popup);
 
-    // Check if popup was already shown today
-    const todayClosedPopups = JSON.parse(localStorage.getItem('closedPopups') || '{}');
-    const today = new Date().toDateString();
+    // forceShow가 true면 localStorage 체크 건너뛰기
+    if (!forceShow) {
+      // Check if popup was already shown today
+      const todayClosedPopups = JSON.parse(localStorage.getItem('closedPopups') || '{}');
+      const today = new Date().toDateString();
 
-    if (todayClosedPopups[popup.id] === today) {
-      console.log('Popup already closed today:', popup.id);
-      return; // Skip if already closed today
+      if (todayClosedPopups[popup.id] === today) {
+        console.log('Popup already closed today:', popup.id);
+        return; // Skip if already closed today
+      }
     }
 
     const popupHTML = `
@@ -246,11 +249,25 @@ const MisopinHelpers = {
         return;
       }
 
+      // URL 파라미터 확인 (강제 표시 옵션)
+      const urlParams = new URLSearchParams(window.location.search);
+      const forceShow = urlParams.get('showPopups') === 'true' ||
+                       urlParams.get('forcePopups') === 'true';
+
+      // 첫 방문 확인 (세션 스토리지 사용)
+      const hasVisitedToday = sessionStorage.getItem('hasVisitedToday');
+      const shouldForceShow = forceShow || !hasVisitedToday;
+
+      if (!hasVisitedToday) {
+        sessionStorage.setItem('hasVisitedToday', 'true');
+        console.log('First visit today - showing popups');
+      }
+
       // Sort by priority and show popups
       popups.forEach((popup, index) => {
         console.log(`Showing popup ${index + 1}:`, popup);
         setTimeout(() => {
-          this.showPopup(popup);
+          this.showPopup(popup, shouldForceShow);
         }, index * 1000); // Stagger popup display
       });
     } catch (error) {
@@ -304,9 +321,35 @@ const MisopinHelpers = {
     userAgent: navigator.userAgent.substring(0, 100)
   });
 
+  // Auto-clear old popup storage (24시간 이상 된 데이터 자동 삭제)
+  function autoCleanPopupStorage() {
+    try {
+      const closedPopups = JSON.parse(localStorage.getItem('closedPopups') || '{}');
+      const today = new Date().toDateString();
+      let hasOldData = false;
+
+      // 오늘이 아닌 날짜의 데이터가 있으면 삭제
+      Object.keys(closedPopups).forEach(popupId => {
+        if (closedPopups[popupId] !== today) {
+          hasOldData = true;
+        }
+      });
+
+      if (hasOldData) {
+        system.log('Clearing old popup storage data');
+        localStorage.removeItem('closedPopups');
+      }
+    } catch (e) {
+      system.log('Error cleaning popup storage:', e);
+    }
+  }
+
   // Enhanced initialization with multiple fallbacks
   function initializePopups() {
     system.log('Starting popup initialization...');
+
+    // 오래된 팝업 데이터 자동 정리
+    autoCleanPopupStorage();
 
     try {
       if (system.initialized) {
