@@ -100,6 +100,32 @@ class MisopinAPI {
   }
 
   /**
+   * Query reservations
+   * @param {Object} queryData - Query data (name, phone, birth_date)
+   */
+  async queryReservations(queryData) {
+    const params = new URLSearchParams({
+      name: queryData.name,
+      phone: queryData.phone,
+      birth_date: queryData.birth_date
+    });
+
+    return this.fetchAPI(`/public/reservations/query?${params}`);
+  }
+
+  /**
+   * Cancel reservation
+   * @param {string} reservationId - Reservation ID
+   * @param {Object} verifyData - Verification data (phone, birth_date)
+   */
+  async cancelReservation(reservationId, verifyData) {
+    return this.fetchAPI(`/public/reservations/${reservationId}/cancel`, {
+      method: 'POST',
+      body: JSON.stringify(verifyData)
+    });
+  }
+
+  /**
    * Get page content by slug
    * @param {string} slug - Page slug
    */
