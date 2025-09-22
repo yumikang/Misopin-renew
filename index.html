@@ -31,7 +31,30 @@
 <link rel="stylesheet" href="css/grid-system-1450.css">
 <!-- API Integration for Popups -->
 <link rel="stylesheet" href="css/api-components.css">
-<script src="js/api-client.js"></script>
+<script>
+// Cache-busting script loader for api-client.js
+(function() {
+  'use strict';
+
+  const timestamp = Date.now();
+  const buildVersion = '1.2.0'; // Update this when making changes
+  const cacheBuster = `v=${buildVersion}&t=${timestamp}`;
+
+  console.log('[Cache Buster] Loading api-client.js with:', cacheBuster);
+
+  const script = document.createElement('script');
+  script.src = `js/api-client.js?${cacheBuster}`;
+  script.async = false; // Ensure synchronous loading
+  script.onload = function() {
+    console.log('[Cache Buster] api-client.js loaded successfully');
+  };
+  script.onerror = function() {
+    console.error('[Cache Buster] Failed to load api-client.js');
+  };
+
+  document.head.appendChild(script);
+})();
+</script>
 <style>
 @import url(//fonts.googleapis.com/earlyaccess/nanumpenscript.css);
 @import url(//fonts.googleapis.com/earlyaccess/nanumbrushscript.css);
@@ -2126,6 +2149,33 @@ $(function() {
 <!-- CMS 콘텐츠 로더 -->
 <script src="js/cms-content-loader.js"></script>
 <script src="js/cms-integration.js"></script>
+
+<!-- Popup System Test Suite (Development) -->
+<script>
+// Load test suite in development or when manually requested
+if (window.location.hostname === 'localhost' ||
+    window.location.hostname === '127.0.0.1' ||
+    window.location.search.includes('debug=true') ||
+    window.location.search.includes('test=true')) {
+
+  const testScript = document.createElement('script');
+  testScript.src = 'js/popup-test-suite.js';
+  testScript.onload = function() {
+    console.log('[Debug] Popup test suite loaded');
+  };
+  document.head.appendChild(testScript);
+}
+
+// Always load deployment verification in production
+if (window.location.hostname === 'misopin-renew.vercel.app' ||
+    window.location.hostname === 'misopin.com' ||
+    window.location.hostname === 'www.misopin.com') {
+
+  const deployScript = document.createElement('script');
+  deployScript.src = 'js/deployment-check.js';
+  document.head.appendChild(deployScript);
+}
+</script>
 
 </body>
 <!-- 자체 분석 도구 -->

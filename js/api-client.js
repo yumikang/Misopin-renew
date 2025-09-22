@@ -275,16 +275,112 @@ const MisopinHelpers = {
   }
 };
 
-// Auto-initialize popups when DOM is ready
-console.log('API Client loaded, document readyState:', document.readyState);
+// Popup System Initialization with Robust Error Handling
+(function() {
+  'use strict';
 
-if (document.readyState === 'loading') {
-  console.log('Document still loading, waiting for DOMContentLoaded...');
-  document.addEventListener('DOMContentLoaded', () => {
-    console.log('DOMContentLoaded fired, initializing popups...');
-    MisopinHelpers.initPopups();
+  // System monitoring
+  window.MisopinPopupSystem = {
+    version: '1.2.0',
+    loadTime: new Date().toISOString(),
+    initialized: false,
+    debug: true,
+
+    log: function(message, data = null) {
+      if (this.debug) {
+        console.log(`[Misopin Popup System] ${message}`, data || '');
+      }
+    },
+
+    error: function(message, error = null) {
+      console.error(`[Misopin Popup System ERROR] ${message}`, error || '');
+    }
+  };
+
+  const system = window.MisopinPopupSystem;
+  system.log('API Client loaded', {
+    readyState: document.readyState,
+    timestamp: system.loadTime,
+    userAgent: navigator.userAgent.substring(0, 100)
   });
-} else {
-  console.log('Document already loaded, initializing popups immediately...');
-  MisopinHelpers.initPopups();
-}
+
+  // Enhanced initialization with multiple fallbacks
+  function initializePopups() {
+    system.log('Starting popup initialization...');
+
+    try {
+      if (system.initialized) {
+        system.log('System already initialized, skipping...');
+        return;
+      }
+
+      // Verify dependencies
+      if (typeof MisopinHelpers === 'undefined') {
+        system.error('MisopinHelpers not found - critical error');
+        return;
+      }
+
+      if (typeof misopinAPI === 'undefined') {
+        system.error('misopinAPI not found - critical error');
+        return;
+      }
+
+      system.log('Dependencies verified, calling initPopups...');
+      MisopinHelpers.initPopups()
+        .then(() => {
+          system.initialized = true;
+          system.log('Popup initialization completed successfully');
+        })
+        .catch(error => {
+          system.error('Popup initialization failed', error);
+        });
+
+    } catch (error) {
+      system.error('Critical error during initialization', error);
+    }
+  }
+
+  // Multi-strategy initialization
+  if (document.readyState === 'loading') {
+    system.log('Document still loading, setting up event listeners...');
+
+    document.addEventListener('DOMContentLoaded', () => {
+      system.log('DOMContentLoaded fired');
+      initializePopups();
+    });
+
+    // Backup timer in case DOMContentLoaded fails
+    setTimeout(() => {
+      if (!system.initialized) {
+        system.log('Backup initialization triggered after 2 seconds');
+        initializePopups();
+      }
+    }, 2000);
+
+  } else {
+    system.log('Document already loaded, initializing immediately...');
+    // Small delay to ensure all scripts are loaded
+    setTimeout(initializePopups, 100);
+  }
+
+  // Additional backup timer
+  setTimeout(() => {
+    if (!system.initialized) {
+      system.log('Final backup initialization triggered after 5 seconds');
+      initializePopups();
+    }
+  }, 5000);
+
+  // Expose system status for debugging
+  window.checkPopupSystem = function() {
+    console.log('Popup System Status:', {
+      version: system.version,
+      initialized: system.initialized,
+      loadTime: system.loadTime,
+      misopinAPI: typeof misopinAPI !== 'undefined',
+      misopinHelpers: typeof MisopinHelpers !== 'undefined',
+      activePopups: document.querySelectorAll('.popup-overlay').length
+    });
+  };
+
+})();
