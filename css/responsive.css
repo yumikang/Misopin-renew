@@ -1166,13 +1166,32 @@ body {
 
     #calendar_form .form li.type div {
         display: flex !important;
-        gap: 15px !important;
+        flex-wrap: wrap !important;
+        gap: 10px !important;
     }
 
     #calendar_form .form li.type span {
-        display: flex !important;
+        display: inline-flex !important;
         align-items: center !important;
         gap: 5px !important;
+        flex: 0 0 auto !important;
+        white-space: nowrap !important;
+        padding: 5px 10px !important;
+        background: #f8f8f8 !important;
+        border-radius: 20px !important;
+        font-size: 0.9rem !important;
+    }
+
+    #calendar_form .form li.type input[type="radio"] {
+        width: auto !important;
+        margin: 0 !important;
+    }
+
+    #calendar_form .form li.type label[for^="sh_sex"],
+    #calendar_form .form li.type label[for^="sh_type"] {
+        margin-bottom: 0 !important;
+        font-weight: normal !important;
+        cursor: pointer !important;
     }
 
     #calendar_form .agree_area {
@@ -1368,6 +1387,37 @@ body {
     }
 }
 
+/* ===== 작은 화면 (360px 이하) 추가 최적화 ===== */
+@media (max-width: 360px) {
+    /* 예약 폼 라디오 버튼 블록 레이아웃 */
+    #calendar_form .form li.type div {
+        flex-direction: column !important;
+        gap: 8px !important;
+    }
+
+    #calendar_form .form li.type span {
+        display: flex !important;
+        width: 100% !important;
+        justify-content: center !important;
+        padding: 8px !important;
+        background: #f5f5f5 !important;
+        border: 1px solid #e0e0e0 !important;
+        border-radius: 8px !important;
+        font-size: 0.95rem !important;
+        transition: background 0.2s ease !important;
+    }
+
+    #calendar_form .form li.type span:has(input:checked) {
+        background: #9F988C !important;
+        color: #fff !important;
+        border-color: #9F988C !important;
+    }
+
+    #calendar_form .form li.type input[type="radio"] {
+        margin-right: 8px !important;
+    }
+}
+
 /* ===== 극소형 모바일 (320px) ===== */
 @media (max-width: 320px) {
     /* 최소 너비 보장 제거 - 가로 스크롤 방지 */
@@ -1375,13 +1425,29 @@ body {
         width: 100%;
         overflow-x: hidden;
     }
-    
+
     /* 폰트 크기 추가 축소 */
     #matc02 ul li {
         font-size: 13px !important;
     }
-    
+
     #matc02 ul li a {
         padding-left: 18px !important;
+    }
+
+    /* 예약 폼 패딩 조정 */
+    #calendar_form {
+        padding: 15px !important;
+    }
+
+    #calendar_form .form li label {
+        font-size: 0.85rem !important;
+    }
+
+    #calendar_form .form li input,
+    #calendar_form .form li select,
+    #calendar_form .form li textarea {
+        font-size: 0.9rem !important;
+        padding: 8px !important;
     }
 }
