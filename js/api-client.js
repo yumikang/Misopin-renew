@@ -47,7 +47,8 @@ class MisopinAPI {
         headers: {
           ...this.headers,
           ...options.headers
-        }
+        },
+        cache: 'no-cache' // Prevent browser caching
       });
 
       if (!response.ok) {
@@ -70,7 +71,8 @@ class MisopinAPI {
   async getBoardPosts(type = null, limit = 10, offset = 0) {
     const params = new URLSearchParams({
       limit: limit.toString(),
-      offset: offset.toString()
+      offset: offset.toString(),
+      t: Date.now().toString() // Add cache buster
     });
 
     if (type) {
@@ -85,7 +87,9 @@ class MisopinAPI {
    */
   async getPopups() {
     console.log('Fetching popups from:', this.baseURL + '/public/popups');
-    return this.fetchAPI('/public/popups');
+    // Add cache buster to prevent browser caching
+    const cacheBuster = `t=${Date.now()}`;
+    return this.fetchAPI(`/public/popups?${cacheBuster}`);
   }
 
   /**
@@ -254,6 +258,20 @@ const MisopinHelpers = {
    */
   async initPopups() {
     console.log('Initializing popups...');
+
+    // Clear old popup data from previous day
+    const todayClosedPopups = JSON.parse(localStorage.getItem('closedPopups') || '{}');
+    const today = new Date().toDateString();
+    const cleanedPopups = {};
+
+    // Keep only today's closed popups
+    for (const [popupId, closeDate] of Object.entries(todayClosedPopups)) {
+      if (closeDate === today) {
+        cleanedPopups[popupId] = closeDate;
+      }
+    }
+    localStorage.setItem('closedPopups', JSON.stringify(cleanedPopups));
+
     try {
       const popups = await misopinAPI.getPopups();
       console.log('Fetched popups:', popups);
