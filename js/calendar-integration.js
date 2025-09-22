@@ -6,19 +6,41 @@
 (function() {
   'use strict';
 
-  // Get current month and year from calendar
+  // Get current month and year from calendar or URL
   function getCurrentMonthYear() {
+    // 먼저 URL 파라미터에서 가져오기
+    const urlParams = new URLSearchParams(window.location.search);
+    const selectParam = urlParams.get('select');
+
+    if (selectParam) {
+      const match = selectParam.match(/(\d{4})-(\d{2})/);
+      if (match) {
+        return {
+          year: parseInt(match[1]),
+          month: parseInt(match[2])
+        };
+      }
+    }
+
+    // URL에 없으면 달력 제목에서 가져오기
     const titleElement = document.querySelector('#mara_cal_view .title');
     if (!titleElement) return null;
 
     const titleText = titleElement.textContent.trim();
-    const match = titleText.match(/(\d{4})년\s+(\d{2})월/);
+    const titleMatch = titleText.match(/(\d{4})년\s+(\d{2})월/);
 
-    if (!match) return null;
+    if (!titleMatch) {
+      // 기본값으로 현재 날짜 사용
+      const now = new Date();
+      return {
+        year: now.getFullYear(),
+        month: now.getMonth() + 1
+      };
+    }
 
     return {
-      year: parseInt(match[1]),
-      month: parseInt(match[2])
+      year: parseInt(titleMatch[1]),
+      month: parseInt(titleMatch[2])
     };
   }
 
