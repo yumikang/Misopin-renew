@@ -547,9 +547,12 @@ var g5_cookie_domain = "";
                         <th scope="col">등록일</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="board-posts-list">
+                    <!-- 로딩 상태 표시 -->
                     <tr>
-                        <td colspan="4" class="empty_table">게시물이 없습니다.</td>
+                        <td colspan="4" style="text-align: center; padding: 40px;">
+                            <div style="color: #666;">게시글을 불러오는 중입니다...</div>
+                        </td>
                     </tr>
                 </tbody>
             </table>
@@ -675,27 +678,84 @@ $(function() {
 
 <script src="js/mobile-nav.js"></script>
 <script src="js/api-client.js"></script>
+
+<!-- 게시판 API 연동 스크립트 -->
 <script>
-// CMS API 연동 - 이벤트 로드
-window.addEventListener('DOMContentLoaded', function() {
-    // 기존 테이블 숨기기 (더미 데이터)
-    var existingTable = document.querySelector('table');
-    if (existingTable) {
-        existingTable.style.display = 'none';
+// 페이지 로드 시 게시판 데이터 가져오기
+document.addEventListener('DOMContentLoaded', async function() {
+    try {
+        // API 클라이언트가 로드되었는지 확인
+        if (typeof MisopinAPI === 'undefined') {
+            console.error('API client not loaded');
+            return;
+        }
+
+        const api = new MisopinAPI();
+
+        // 이벤트(EVENT)만 가져오기
+        const response = await api.getBoardPosts('EVENT');
+        const posts = response.posts || [];
+
+        // tbody 요소 찾기
+        const tbody = document.getElementById('board-posts-list');
+        if (!tbody) {
+            console.error('Board posts list container not found');
+            return;
+        }
+
+        // 게시글이 없는 경우
+        if (posts.length === 0) {
+            tbody.innerHTML = `
+                <tr>
+                    <td colspan="4" style="text-align: center; padding: 40px;">
+                        등록된 이벤트가 없습니다.
+                    </td>
+                </tr>
+            `;
+            return;
+        }
+
+        // 게시글 HTML 생성
+        let html = '';
+        posts.forEach((post, index) => {
+            const postNumber = posts.length - index; // 역순 번호
+            const postDate = new Date(post.created_at).toLocaleDateString('ko-KR').replace(/\. /g, '-').replace('.', '');
+
+            html += `
+                <tr class="">
+                    <td class="num">${postNumber}</td>
+                    <td class="subject" style="padding-left:0">
+                        <div>
+                            <a href="#" class="cate_link"><span>Event</span></a>
+                            <a href="board-detail.html?id=${post.id}">
+                                ${post.is_pinned ? '<span class="icon_pin">[고정]</span> ' : ''}
+                                ${post.title}
+                            </a>
+                        </div>
+                    </td>
+                    <td class="name sv_use"><span class="sv_member">${post.author || '관리자'}</span></td>
+                    <td class="datetime">${postDate}</td>
+                </tr>
+            `;
+        });
+
+        tbody.innerHTML = html;
+
+    } catch (error) {
+        console.error('Failed to load board posts:', error);
+
+        const tbody = document.getElementById('board-posts-list');
+        if (tbody) {
+            tbody.innerHTML = `
+                <tr>
+                    <td colspan="4" style="text-align: center; padding: 40px;">
+                        <div style="color: #d00;">게시글을 불러오는데 실패했습니다.</div>
+                        <div style="color: #666; font-size: 0.9em; margin-top: 10px;">잠시 후 다시 시도해주세요.</div>
+                    </td>
+                </tr>
+            `;
+        }
     }
-
-    // API 데이터 표시할 컨테이너 추가
-    var container = document.createElement('div');
-    container.id = 'api-board-posts';
-    container.style.marginTop = '20px';
-    container.innerHTML = '<div class="loading" style="text-align: center; padding: 40px;"><p>이벤트를 불러오는 중...</p></div>';
-
-    if (existingTable && existingTable.parentNode) {
-        existingTable.parentNode.appendChild(container);
-    }
-
-    // CMS에서 이벤트 로드
-    MisopinHelpers.loadBoardPosts('EVENT', '#api-board-posts');
 });
 </script>
 </body>

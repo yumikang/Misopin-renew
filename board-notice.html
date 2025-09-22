@@ -551,53 +551,14 @@ var g5_cookie_domain = "";
                         <th scope="col">등록일</th>
                     </tr>
                 </thead>
-                <tbody>
-                                        <tr class="">
-                                                <td class="num">
-                        3                        </td>
-                        
-                        <td class="subject" style="padding-left:0">
-                            <div>
-                                                                <a href="https://skincare1007.shiningcorp.com/bbs/board.php?bo_table=table18&amp;sca=Notice" class="cate_link"><span>Notice</span></a>
-                                    
-                                <a href="board-detail.html">
-                                                                        불필요한 시술 없이 꼭 필요한 케어만 권장합니다.                                </a>
-                                                            </div>
+                <tbody id="board-posts-list">
+                    <!-- 로딩 상태 표시 -->
+                    <tr>
+                        <td colspan="4" style="text-align: center; padding: 40px;">
+                            <div style="color: #666;">게시글을 불러오는 중입니다...</div>
                         </td>
-                        <td class="name sv_use"><span class="sv_member">최고관리자</span></td>
-                        <td class="datetime">2025-04-02</td>
                     </tr>
-                                        <tr class="">
-                                                <td class="num">
-                        2                        </td>
-                        
-                        <td class="subject" style="padding-left:0">
-                            <div>
-                                                                <a href="https://skincare1007.shiningcorp.com/bbs/board.php?bo_table=table18&amp;sca=Notice" class="cate_link"><span>Notice</span></a>
-                                    
-                                <a href="board-detail.html">
-                                                                        과장 없는 솔직한 상담과 합리적인 시술을 제공합니다.                                </a>
-                                                            </div>
-                        </td>
-                        <td class="name sv_use"><span class="sv_member">최고관리자</span></td>
-                        <td class="datetime">2025-04-02</td>
-                    </tr>
-                                        <tr class="">
-                                                <td class="num">
-                        1                        </td>
-                        
-                        <td class="subject" style="padding-left:0">
-                            <div>
-                                                                <a href="https://skincare1007.shiningcorp.com/bbs/board.php?bo_table=table18&amp;sca=Notice" class="cate_link"><span>Notice</span></a>
-                                    
-                                <a href="board-detail.html">
-                                                                        3正 정품·정량·정성으로 꼭 맞는 시술만을 제안합니다.                                </a>
-                                                            </div>
-                        </td>
-                        <td class="name sv_use"><span class="sv_member">최고관리자</span></td>
-                        <td class="datetime">2025-04-02</td>
-                    </tr>
-                                                        </tbody>
+                </tbody>
             </table>
         </div>
                 
@@ -722,27 +683,84 @@ $(function() {
 
 <script src="js/mobile-nav.js"></script>
 <script src="js/api-client.js"></script>
+
+<!-- 게시판 API 연동 스크립트 -->
 <script>
-// CMS API 연동 - 공지사항 로드
-window.addEventListener('DOMContentLoaded', function() {
-    // 기존 테이블 숨기기 (더미 데이터)
-    var existingTable = document.querySelector('table');
-    if (existingTable) {
-        existingTable.style.display = 'none';
+// 페이지 로드 시 게시판 데이터 가져오기
+document.addEventListener('DOMContentLoaded', async function() {
+    try {
+        // API 클라이언트가 로드되었는지 확인
+        if (typeof MisopinAPI === 'undefined') {
+            console.error('API client not loaded');
+            return;
+        }
+
+        const api = new MisopinAPI();
+
+        // 공지사항(NOTICE)만 가져오기
+        const response = await api.getBoardPosts('NOTICE');
+        const posts = response.posts || [];
+
+        // tbody 요소 찾기
+        const tbody = document.getElementById('board-posts-list');
+        if (!tbody) {
+            console.error('Board posts list container not found');
+            return;
+        }
+
+        // 게시글이 없는 경우
+        if (posts.length === 0) {
+            tbody.innerHTML = `
+                <tr>
+                    <td colspan="4" style="text-align: center; padding: 40px;">
+                        등록된 공지사항이 없습니다.
+                    </td>
+                </tr>
+            `;
+            return;
+        }
+
+        // 게시글 HTML 생성
+        let html = '';
+        posts.forEach((post, index) => {
+            const postNumber = posts.length - index; // 역순 번호
+            const postDate = new Date(post.created_at).toLocaleDateString('ko-KR').replace(/\. /g, '-').replace('.', '');
+
+            html += `
+                <tr class="">
+                    <td class="num">${postNumber}</td>
+                    <td class="subject" style="padding-left:0">
+                        <div>
+                            <a href="#" class="cate_link"><span>Notice</span></a>
+                            <a href="board-detail.html?id=${post.id}">
+                                ${post.is_pinned ? '<span class="icon_pin">[고정]</span> ' : ''}
+                                ${post.title}
+                            </a>
+                        </div>
+                    </td>
+                    <td class="name sv_use"><span class="sv_member">${post.author || '관리자'}</span></td>
+                    <td class="datetime">${postDate}</td>
+                </tr>
+            `;
+        });
+
+        tbody.innerHTML = html;
+
+    } catch (error) {
+        console.error('Failed to load board posts:', error);
+
+        const tbody = document.getElementById('board-posts-list');
+        if (tbody) {
+            tbody.innerHTML = `
+                <tr>
+                    <td colspan="4" style="text-align: center; padding: 40px;">
+                        <div style="color: #d00;">게시글을 불러오는데 실패했습니다.</div>
+                        <div style="color: #666; font-size: 0.9em; margin-top: 10px;">잠시 후 다시 시도해주세요.</div>
+                    </td>
+                </tr>
+            `;
+        }
     }
-
-    // API 데이터 표시할 컨테이너 추가
-    var container = document.createElement('div');
-    container.id = 'api-board-posts';
-    container.style.marginTop = '20px';
-    container.innerHTML = '<div class="loading" style="text-align: center; padding: 40px;"><p>공지사항을 불러오는 중...</p></div>';
-
-    if (existingTable && existingTable.parentNode) {
-        existingTable.parentNode.appendChild(container);
-    }
-
-    // CMS에서 공지사항 로드
-    MisopinHelpers.loadBoardPosts('NOTICE', '#api-board-posts');
 });
 </script>
 </body>
