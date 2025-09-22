@@ -132,6 +132,20 @@ class MisopinAPI {
   async getPageContent(slug) {
     return this.fetchAPI(`/public/pages/${slug}`);
   }
+
+  /**
+   * Get reservation status for a month
+   * @param {number} year - Year
+   * @param {number} month - Month (1-12)
+   */
+  async getReservationStatus(year, month) {
+    const params = new URLSearchParams({
+      year: year.toString(),
+      month: month.toString()
+    });
+
+    return this.fetchAPI(`/public/reservation-status?${params}`);
+  }
 }
 
 // Create global instance
