@@ -53,6 +53,13 @@
   };
 
   document.head.appendChild(script);
+
+  // 개발/테스트를 위한 팝업 제어 스크립트 로드
+  if (window.location.hostname === 'localhost' || window.location.search.includes('debug=true')) {
+    const clearScript = document.createElement('script');
+    clearScript.src = 'js/clear-popups.js';
+    document.head.appendChild(clearScript);
+  }
 })();
 </script>
 <style>
