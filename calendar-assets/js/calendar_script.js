@@ -159,13 +159,26 @@ function close_date(link,type,date,time){
 }
 
 function movePage(select){
+    console.log('movePage called with:', select);
+    console.log('g5_bo_table:', typeof g5_bo_table !== 'undefined' ? g5_bo_table : 'undefined');
+
     if (select) {
-        document.location.replace("?bo_table=" + g5_bo_table + "&select=" + select);
+        // g5_bo_table이 정의되어 있는지 확인
+        if (typeof g5_bo_table === 'undefined') {
+            console.error('g5_bo_table is not defined');
+            // g5_bo_table이 없으면 기본값 사용
+            document.location.replace("?select=" + select);
+        } else {
+            document.location.replace("?bo_table=" + g5_bo_table + "&select=" + select);
+        }
     } else {
         window.alert("이용할 수 없는 예약일자를 선택하였습니다.");
     }
     return;
 }
+
+// 전역으로 노출
+window.movePage = movePage;
 
 //캘린더 start
 function rsv_chk(link,type){

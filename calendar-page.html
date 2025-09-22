@@ -199,6 +199,28 @@ var g5_cookie_domain = "";
 <script src="js/libs/placeholders.min.js"></script>
 <script src="calendar-assets/js/calendar_script.js"></script>
 <script src="js/calendar-integration.js"></script>
+<script>
+// 캘린더 네비게이션 함수 재정의 (스크립트 로드 후)
+$(document).ready(function() {
+    // movePage 함수가 정의되어 있는지 확인
+    if (typeof window.movePage !== 'function') {
+        console.log('Defining movePage function');
+        window.movePage = function(select) {
+            console.log('movePage called with:', select);
+            if (select) {
+                // g5_bo_table 확인
+                var tableParam = (typeof g5_bo_table !== 'undefined' && g5_bo_table)
+                    ? "?bo_table=" + g5_bo_table + "&select=" + select
+                    : "?select=" + select;
+                console.log('Redirecting to:', tableParam);
+                document.location.href = tableParam;
+            } else {
+                window.alert("이용할 수 없는 예약일자를 선택하였습니다.");
+            }
+        };
+    }
+});
+</script>
 <link rel="stylesheet" href="css/vendor/font-awesome.min.css">
 <script src="js/vendor/feather.min.js"></script>
 <script src="js/components/top_menu.js"></script>
