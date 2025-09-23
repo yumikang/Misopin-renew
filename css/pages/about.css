@@ -754,6 +754,25 @@ html {
         height: 20rem;
     }
 
+    .facility-pagination {
+        position: absolute;
+        top: auto;
+        bottom: 1rem;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 10;
+    }
+
+    .facility-pagination .swiper-pagination-bullet {
+        background: rgba(255, 255, 255, 0.7);
+        border: 1px solid rgba(255, 255, 255, 0.9);
+    }
+
+    .facility-pagination .swiper-pagination-bullet-active {
+        background-color: #fff;
+        border: 1px solid #fff;
+    }
+
     .facility-content {
         padding: 1.25rem 1rem;
     }
