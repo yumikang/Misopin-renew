@@ -343,6 +343,7 @@ textarea:focus {
 
 /* 모바일 예약가능 텍스트 강제 흰색 */
 @media (max-width: 768px) {
+    /* 예약가능 버튼 텍스트 흰색 */
     #sh_calender_body td a,
     #sh_calender_body table tbody td > a,
     #sh_calender_body table tbody tr td a[href="javascript:void(0)"],
@@ -356,16 +357,57 @@ textarea:focus {
     td a[onclick*="calendar_inqOpen"][onclick*="selectday"] {
         color: #fff !important;
     }
+
+    /* 날짜 숫자는 검정색으로 - 더 구체적인 선택자 사용 */
+    body .tbl_mara table tbody td,
+    body .tbl_mara table td {
+        color: #333 !important;
+    }
+
+    /* 요일 헤더도 검정색 유지 */
+    body .tbl_mara table thead th,
+    body .tbl_mara table th {
+        color: #333 !important;
+    }
+
+    /* 일요일은 빨간색 */
+    body .tbl_mara table th.red,
+    body .tbl_mara table thead th:first-child,
+    body .tbl_mara table tbody td:first-child {
+        color: #ff0000 !important;
+    }
 }
 </style>
 <link rel="stylesheet" href="css/index-custom.css">
 </head>
 <body>
 <style>
-/* 디자인샘플 보러가기 */
-#goToDesign{position:relative;width:100%;padding:7px 0;border-bottom:1px solid #fff073;font-size:12px;text-align:center;background-color:#fffbd9;font-family:dotum} 
-#goToDesign a{padding-left:10px;font-weight:bold;color:#f96319}
-#goToDesign a:hover{text-decoration:underline}
+/* 모바일 달력 색상 수정 - body 안에서 로드 */
+@media screen and (max-width: 768px) {
+    /* 날짜 숫자는 검정색으로 */
+    div.tbl_mara table tbody td,
+    .tbl_mara td {
+        color: #333 !important;
+    }
+
+    /* 요일 헤더도 검정색 유지 */
+    div.tbl_mara table thead th,
+    .tbl_mara th {
+        color: #333 !important;
+    }
+
+    /* 일요일은 빨간색 */
+    .tbl_mara th.red,
+    .tbl_mara td:first-child {
+        color: #ff0000 !important;
+    }
+
+    /* 예약가능 버튼은 흰색 텍스트 유지 */
+    .tbl_mara td a,
+    .tbl_mara tbody td a {
+        color: #fff !important;
+    }
+}
 </style>
 
 <script>
