@@ -204,12 +204,45 @@
     background: var(--misopin-bg-accent);
     border-radius: 10px;
     height: 100%;
+    max-width: 300px;
+    margin: 0 auto;
 }
 
 .process-number {
     font-size: var(--font-xl);
     color: var(--misopin-primary);
     margin-bottom: var(--spacing-sm);
+}
+
+/* 프로세스 카드 한국어 텍스트 최적화 */
+.process-step h4 {
+    word-break: keep-all;
+    line-height: 1.4;
+}
+
+.process-step p,
+.process-step .text-small {
+    word-break: keep-all; /* 단어 단위 줄바꿈 */
+    line-height: 1.6; /* 행간 늘리기 */
+    text-align: center; /* 중앙 정렬 유지 (프로세스 카드 특성) */
+    hyphens: auto; /* 필요시 하이픈 처리 */
+    font-size: clamp(0.875rem, 2.2vw, 0.95rem); /* 약간 키운 폰트 */
+    letter-spacing: -0.01em; /* 자간 미세 조정 */
+    color: var(--misopin-text-light);
+}
+
+/* 모바일 반응형 - 프로세스 카드 */
+@media (max-width: 768px) {
+    .process-step {
+        max-width: 100%;
+        padding: 1rem;
+    }
+
+    .process-step p,
+    .process-step .text-small {
+        font-size: 0.9rem;
+        line-height: 1.7;
+    }
 }
 
 /* 버튼 */
