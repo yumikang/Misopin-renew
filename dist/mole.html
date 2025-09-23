@@ -235,6 +235,19 @@
     }
     
     /* 반응형 */
+    
+        /* H2 모바일 반응형 추가 */
+        h2[style*="font-size: 2.25rem"] {
+            font-size: 2.25rem;
+        }
+
+        @media (max-width: 768px) {
+            h2[style*="font-size: 2.25rem"] {
+                font-size: 1.75rem !important;
+            }
+        }
+
+
     @media (max-width: 768px) {
         .content-row,
         .content-row.reverse {

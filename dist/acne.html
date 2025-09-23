@@ -242,6 +242,34 @@
     }
     
     /* 반응형 */
+    
+        /* H2 모바일 반응형 추가 */
+        h2[style*="font-size: 2.25rem"] {
+            font-size: 2.25rem;
+        }
+
+        @media (max-width: 768px) {
+            h2[style*="font-size: 2.25rem"] {
+                font-size: 1.75rem !important;
+            }
+
+            /* p 태그 모바일 반응형 추가 */
+            .treatment-section p {
+                font-size: 0.9375rem !important; /* 15px */
+                line-height: 1.7 !important;
+            }
+
+            /* 특정 섹션의 p 태그는 제외 */
+            #shSub .txt_area p {
+                font-size: 1.75rem !important; /* 서브 배너는 유지 */
+            }
+
+            .related-card p {
+                font-size: 0.8125rem !important; /* 13px */
+            }
+        }
+
+
     @media (max-width: 768px) {
         .content-row,
         .content-row.reverse {
