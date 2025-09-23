@@ -201,7 +201,146 @@
 }
 
 /* ========================================
-   4. 컴포넌트 스타일
+   4. 첫 번째 섹션 (메인 소개) 전용 스타일
+   ======================================== */
+
+/* 첫 번째 섹션 컨테이너 */
+.first-section {
+    padding: var(--spacing-xl) 0;
+}
+
+.first-section .row {
+    align-items: center;
+    gap: var(--spacing-xl);
+}
+
+/* 첫 번째 섹션 텍스트 영역 */
+.first-section-content {
+    max-width: 600px; /* 텍스트 영역 최대 너비 제한 */
+}
+
+/* 첫 번째 섹션 라벨 */
+.first-section-label {
+    color: #d4a574;
+    font-size: clamp(0.75rem, 1.5vw, 0.875rem);
+    font-weight: 300;
+    letter-spacing: 0.15em;
+    margin-bottom: var(--spacing-sm);
+    text-transform: uppercase;
+}
+
+/* 첫 번째 섹션 제목 */
+.first-section h2,
+.first-section .heading-main {
+    font-size: var(--font-2xl);
+    font-weight: 700;
+    line-height: 1.3;
+    color: #666666;
+    margin-bottom: var(--spacing-md);
+    word-break: keep-all; /* 한국어 단어 단위 줄바꿈 */
+}
+
+/* 하이라이트 효과 */
+.first-section h2 span,
+.highlight-text {
+    background: linear-gradient(180deg, transparent 60%, #f5e6d3 60%);
+    padding: 0 0.25rem;
+}
+
+/* 첫 번째 섹션 리드 텍스트 */
+.first-section .text-lead,
+.first-section p {
+    font-size: clamp(1rem, 2.2vw, 1.125rem);
+    line-height: 1.8; /* 행간 늘리기 */
+    color: var(--misopin-text-base);
+    margin-bottom: var(--spacing-md);
+    word-break: keep-all; /* 한국어 최적화 */
+    letter-spacing: -0.01em; /* 자간 미세 조정 */
+}
+
+/* 첫 번째 섹션 서브 제목 */
+.first-section h3,
+.first-section .heading-sub {
+    font-size: var(--font-xl);
+    font-weight: 600;
+    line-height: 1.4;
+    color: #666666;
+    margin-bottom: var(--spacing-md);
+    word-break: keep-all;
+}
+
+/* 태그 버튼들 */
+.tag-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: var(--spacing-lg);
+}
+
+.tag-button {
+    display: inline-block;
+    padding: 0.625rem 1.25rem;
+    background: linear-gradient(135deg, #d4a574 0%, #c19b6c 100%);
+    color: white;
+    border-radius: 25px;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+/* 첫 번째 섹션 이미지 */
+.first-section-image {
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.first-section-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* 모바일 반응형 - 첫 번째 섹션 */
+@media (max-width: 768px) {
+    .first-section .row {
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+
+    .first-section-content {
+        max-width: 100%;
+        padding: 0 var(--spacing-sm);
+    }
+
+    .first-section h2,
+    .first-section .heading-main {
+        font-size: var(--font-xl);
+        line-height: 1.4;
+    }
+
+    .first-section .text-lead,
+    .first-section p {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+
+    .first-section h3,
+    .first-section .heading-sub {
+        font-size: var(--font-lg);
+    }
+
+    .tag-buttons {
+        gap: 0.5rem;
+    }
+
+    .tag-button {
+        padding: 0.5rem 1rem;
+        font-size: 0.8125rem;
+    }
+}
+
+/* ========================================
+   5. 컴포넌트 스타일
    ======================================== */
 
 /* 카드 컴포넌트 */
