@@ -808,7 +808,7 @@
 
 /* Treatment section 라벨 (원리/효과 섹션용) */
 .treatment-section .section_tit .text-label {
-    color: var(--misopin-secondary);
+    color: #d4a574;
     font-size: clamp(0.875rem, 2vw, 1rem);
     font-weight: 600;
     letter-spacing: 0.1em;
@@ -841,7 +841,7 @@
 }
 
 .treatment-section .section-header .text-label {
-    color: var(--misopin-secondary);
+    color: #d4a574;
     font-size: clamp(0.875rem, 2vw, 1rem);
     font-weight: 600;
     letter-spacing: 0.1em;
