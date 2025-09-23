@@ -27,7 +27,10 @@
     <link rel="stylesheet" href="../css/grid-system-1450.css">
     <link rel="stylesheet" href="../css/responsive.css">
     
-    <!-- Swiper CSS -->
+        <!-- 통합 반응형 시스템 CSS -->
+    <link rel="stylesheet" href="../css/dist-responsive-system.css">
+
+<!-- Swiper CSS -->
     <link rel="stylesheet" href="../css/vendor/swiper.min.css">
     
     <!-- AOS Animation -->
@@ -447,13 +450,13 @@
     
     <!-- 메인 컨텐츠 -->
     <main class="treatment-container">
-        <div class="container">
+        <div class="container responsive-container">
             <!-- 메인 소개 섹션 -->
             <section class="treatment-section">
                 <div class="two-column-layout" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; margin-top: 40px;">
                     <div class="col-text" data-aos="fade-right" data-aos-duration="1000">
                         <div class="section-subtitle" style="color: var(--misopin-secondary); font-size: 0.875rem; font-weight: 600; margin-bottom: 0.625rem;">제거시술</div>
-                        <h2 style="font-size: 2.25rem; font-weight: 700; color: #666666; line-height: 1.3; margin-bottom: 25px;">
+                        <h2 class="heading-main">
                             <span style="background: linear-gradient(180deg, transparent 60%, #f5e6d3 60%); padding: 0 0.25rem;">문신 제거는<br>
                             단순한 미용 시술이<br>
                             아닙니다.</span>
@@ -473,7 +476,7 @@
             <section class="treatment-section" style="background: var(--misopin-bg-accent); padding: 60px 0; margin: 60px 0;">
                 <div class="section_tit" style="text-align: center;" data-aos="fade-up" data-aos-duration="800">
                     <div class="section-subtitle" style="color: var(--misopin-secondary); font-size: 0.875rem; font-weight: 600; margin-bottom: 0.625rem;">제거시술</div>
-                    <h2 style="font-size: 2.25rem; font-weight: 700; color: #666666; line-height: 1.3; margin-bottom: 30px;">
+                    <h2 class="heading-main">
                         <span style="background: linear-gradient(180deg, transparent 60%, #f5e6d3 60%); padding: 0 0.25rem;">문신 제거란</span>
                     </h2>
                 </div>
@@ -523,7 +526,7 @@
                             }
                             </style>
 
-                            <h3 style="font-size: 1.75rem; font-weight: 700; color: #666666; line-height: 1.3; margin-bottom: 20px;">시술 원리</h3>
+                            <h3 class="heading-sub">시술 원리</h3>
 
                             <div style="margin-bottom: 25px;">
                                 <h4 style="color: var(--misopin-text-dark); margin-bottom: 10px; font-size: 1rem;">정밀한 레이저 조사</h4>
@@ -567,8 +570,8 @@
             <!-- 개인별 맞춤 계획 섹션 -->
             <section class="treatment-section">
                 <div class="section-header" style="text-align: center; margin-bottom: 2.5rem;" data-aos="fade-up" data-aos-duration="800">
-                    <div style="color: var(--misopin-secondary); font-size: 0.875rem; font-weight: 600; margin-bottom: 10px;">Clinical Steps</div>
-                    <h2 style="font-size: 2.25rem; font-weight: 700; color: #666666; line-height: 1.3; margin-bottom: 1.25rem;">시술단계</h2>
+                    <div class="text-label">Clinical Steps</div>
+                    <h2 class="heading-main">시술단계</h2>
                     <p class="section-subtitle">
                         미소핀에서는 모든 시술을 안전하고<br>
                         검증된 과정으로 시행합니다.
@@ -582,7 +585,7 @@
                             <div style="width: 60px; height: 60px; background: var(--misopin-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
                                 <span style="color: white; font-size: 1.75rem; font-weight: bold;">1</span>
                             </div>
-                            <h4 style="color: var(--misopin-text-dark); margin-bottom: 15px; font-size: 1.125rem;">색상별 분석</h4>
+                            <h4 class="heading-section">색상별 분석</h4>
                             <p style="color: var(--misopin-text-light); font-size: 0.875rem; line-height: 1.6; margin: 0;">
                                 검은색은 비교적 쉽게 제거되지만, 빨강, 노랑, 파랑 등 컬러 문신은 각각 다른 파장의 레이저가 필요합니다. 색상 조합과 농도를 면밀히 분석하여 최적의 레이저를 선택합니다.
                             </p>
@@ -592,7 +595,7 @@
                             <div style="width: 60px; height: 60px; background: var(--misopin-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
                                 <span style="color: white; font-size: 1.75rem; font-weight: bold;">2</span>
                             </div>
-                            <h4 style="color: var(--misopin-text-dark); margin-bottom: 15px; font-size: 1.125rem;">깊이별 접근</h4>
+                            <h4 class="heading-section">깊이별 접근</h4>
                             <p style="color: var(--misopin-text-light); font-size: 0.875rem; line-height: 1.6; margin: 0;">
                                 얕은 문신은 상대적으로 빠른 개선을 보이지만, 깊은 문신은 점진적인 접근이 필요합니다. 안전한 범위 내에서 효과를 극대화하는 에너지 설정을 적용합니다.
                             </p>
@@ -602,7 +605,7 @@
                             <div style="width: 60px; height: 60px; background: var(--misopin-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
                                 <span style="color: white; font-size: 1.75rem; font-weight: bold;">3</span>
                             </div>
-                            <h4 style="color: var(--misopin-text-dark); margin-bottom: 15px; font-size: 1.125rem;">부위별 고려</h4>
+                            <h4 class="heading-section">부위별 고려</h4>
                             <p style="color: var(--misopin-text-light); font-size: 0.875rem; line-height: 1.6; margin: 0;">
                                 얼굴, 목, 손처럼 민감한 부위는 더욱 섬세한 접근이 필요합니다. 각 부위의 특성을 고려하여 시술 강도와 간격을 조절하며, 일상생활에 지장이 없도록 계획합니다.
                             </p>
@@ -690,13 +693,13 @@
                 <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5);"></div>
                 <div style="position: relative; z-index: 2; text-align: center; color: white;">
                     <div class="section-subtitle" style="color: #d4af37; font-size: 0.875rem; font-weight: 600; margin-bottom: 15px; letter-spacing: 0.1em;">Clear skin begins with precise removal</div>
-                    <h2 style="font-size: 2.25rem; font-weight: 700; margin-bottom: 20px; line-height: 1.3;">
+                    <h2 class="heading-main">
                         과거를 지우고 새로운 시작
                     </h2>
                     <p style="font-size: 1.25rem; color: rgba(255,255,255,0.9); line-height: 1.6; margin-bottom: 30px; font-weight: 500;">
                         개인별 문신 특성에 맞춘 정밀한 레이저 치료로 안전하게 제거합니다.
                     </p>
-                    <p style="font-size: 1.125rem; color: rgba(255,255,255,0.95); line-height: 1.8;">
+                    <p class="text-lead">
                         시간이 지날수록 더 자연스럽고 깨끗한 피부를 미소핀에서 경험하세요.
                     </p>
                 </div>

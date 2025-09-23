@@ -27,7 +27,10 @@
     <link rel="stylesheet" href="../css/grid-system-1450.css">
     <link rel="stylesheet" href="../css/responsive.css">
     
-    <!-- Swiper CSS -->
+        <!-- 통합 반응형 시스템 CSS -->
+    <link rel="stylesheet" href="../css/dist-responsive-system.css">
+
+<!-- Swiper CSS -->
     <link rel="stylesheet" href="../css/vendor/swiper.min.css">
     
     <!-- AOS Animation -->
@@ -446,21 +449,21 @@
     <!-- 메인 컨텐츠 -->
     <!-- 시술 페이지 본문 템플릿 -->
 <main class="treatment-container">
-    <div class="container">
+    <div class="container responsive-container">
         <!-- 메인 소개 섹션 -->
         <section class="treatment-section">
-            <div class="container">
+            <div class="container responsive-container">
                 <div class="row">
                     <div class="col col-sm-12 col-md-12 col-lg-6" style="margin-bottom: 2rem;" data-aos="fade-right" data-aos-duration="1000">
                         <div style="color: #d4a574; font-size: 0.8125rem; font-weight: 300; letter-spacing: 0.15em; margin-bottom: 1rem;">MISOPIN ONEDAY LIFTING</div>
-                        <h2 style="font-size: 2.25rem; font-weight: 600; line-height: 1.3; margin-bottom: 2rem; color: #666666;">
+                        <h2 class="heading-main">
                             단순한 당김이 아닌<br>
                             <span style="background: linear-gradient(180deg, transparent 60%, #f5e6d3 60%); padding: 0 0.25rem;">구조부터 개선하는 리프팅</span>
                         </h2>
-                        <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 1.5rem; color: #555;">
+                        <p class="text-lead">
                             개인의 얼굴 구조·탄력·껏짐 정도에 맞춰 조합하여
                         </p>
-                        <h3 style="font-size: 1.75rem; font-weight: 700; color: #666666; margin-bottom: 1.5rem;">
+                        <h3 class="heading-sub">
                             한 번의 진행으로 조화롭고 자연스러운 개선을 추구합니다
                         </h3>
 
@@ -480,14 +483,14 @@
 
         <!-- 원리/효과 섹션 -->
         <section class="treatment-section" style="background: var(--misopin-bg-accent); padding: 3.75rem 0; margin: 3.75rem 0;">
-            <div class="container">
+            <div class="container responsive-container">
                 <div class="row" style="align-items: center;">
                     <div class="col col-sm-12 col-md-12 col-lg-6" style="padding: 2rem;">
                         <img src="../images/lifting/lifting-04.webp" alt="리프팅 시술 원리" style="width: 100%; max-width: 30rem; margin: 0 auto; display: block;">
                     </div>
                     <div class="col col-sm-12 col-md-12 col-lg-6" style="padding: 2rem;">
                         <div style="text-align: left;">
-                            <h2 style="font-size: 2.25rem; font-weight: 700; color: #666666; line-height: 1.3; margin-bottom: 1.5rem;">리프팅 맞춤 솔루션</h2>
+                            <h2 class="heading-main">리프팅 맞춤 솔루션</h2>
                             <div style="font-size: 1.25rem; line-height: 2.5;">
                                 <p style="margin-bottom: 1rem; display: flex; align-items: center;">
                                     <span style="color: #c4a582; font-size: 1.75rem; font-weight: 700; margin-right: 1rem;">01</span>
@@ -521,8 +524,8 @@
             <div class="row">
                 <div class="col col-sm-12">
                     <div class="section-header" style="text-align: center; margin-bottom: 2.5rem;" data-aos="fade-up" data-aos-duration="800">
-                        <div style="color: var(--misopin-secondary); font-size: 0.875rem; font-weight: 600; margin-bottom: 10px;">Clinical Steps</div>
-                        <h2 style="font-size: 2.25rem; font-weight: 700; color: #666666; line-height: 1.3; margin-bottom: 1.25rem;">시술단계</h2>
+                        <div class="text-label">Clinical Steps</div>
+                        <h2 class="heading-main">시술단계</h2>
                         <p class="section-subtitle">
                             미소핀에서는 모든 시술을 안전하고<br>
                             검증된 과정으로 시행합니다.
@@ -531,53 +534,47 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col col-sm-12 col-md-6 col-lg-3" style="margin-bottom: 1.875rem;">
-                    <div class="process-step" style="text-align: center; padding: 1.875rem; background: var(--misopin-bg-accent); border-radius: 0.625rem;">
-                        <div style="font-size: 1.75rem; color: var(--misopin-primary); margin-bottom: 1.25rem;">01</div>
+                <div class="col grid-4-cols" style="margin-bottom: 1.875rem;">
+                    <div class="process-step">
+                        <div class="process-number">01</div>
                         <h4 style="margin-bottom: 0.9375rem; color: var(--misopin-text-dark);">1:1 맞춤 상담</h4>
-                        <p style="font-size: 0.875rem; color: var(--misopin-text-light);">고객님의 고민과 목표를 듣고, 피부·지방·근육층 상태를 층별로 분석합니다.</p>
+                        <p class="text-small">고객님의 고민과 목표를 듣고, 피부·지방·근육층 상태를 층별로 분석합니다.</p>
                     </div>
                 </div>
-                <div class="col col-sm-12 col-md-6 col-lg-3" style="margin-bottom: 1.875rem;">
-                    <div class="process-step" style="text-align: center; padding: 1.875rem; background: var(--misopin-bg-accent); border-radius: 0.625rem;">
-                        <div style="font-size: 1.75rem; color: var(--misopin-primary); margin-bottom: 1.25rem;">02</div>
+                <div class="col grid-4-cols" style="margin-bottom: 1.875rem;">
+                    <div class="process-step">
+                        <div class="process-number">02</div>
                         <h4 style="margin-bottom: 0.9375rem; color: var(--misopin-text-dark);">시술 부위 소독 및 마취</h4>
-                        <p style="font-size: 0.875rem; color: var(--misopin-text-light);">시술 효과와 위생을 위해 메이크업과 노폐물을 제거하고 소독·마취를 진행합니다.</p>
+                        <p class="text-small">시술 효과와 위생을 위해 메이크업과 노폐물을 제거하고 소독·마취를 진행합니다.</p>
                     </div>
                 </div>
-                <div class="col col-sm-12 col-md-6 col-lg-3" style="margin-bottom: 1.875rem;">
-                    <div class="process-step" style="text-align: center; padding: 1.875rem; background: var(--misopin-bg-accent); border-radius: 0.625rem;">
-                        <div style="font-size: 1.75rem; color: var(--misopin-primary); margin-bottom: 1.25rem;">03</div>
+                <div class="col grid-4-cols" style="margin-bottom: 1.875rem;">
+                    <div class="process-step">
+                        <div class="process-number">03</div>
                         <h4 style="margin-bottom: 0.9375rem; color: var(--misopin-text-dark);">개인 맞춤 시술</h4>
-                        <p style="font-size: 0.875rem; color: var(--misopin-text-light);">고객님께 가장 적합한 방식을 최종 선택하여 장비 리프팅 또는 시술 리프팅을 시행합니다.</p>
+                        <p class="text-small">고객님께 가장 적합한 방식을 최종 선택하여 장비 리프팅 또는 시술 리프팅을 시행합니다.</p>
                     </div>
                 </div>
-                <div class="col col-sm-12 col-md-6 col-lg-3" style="margin-bottom: 1.875rem;">
-                    <div class="process-step" style="text-align: center; padding: 1.875rem; background: var(--misopin-bg-accent); border-radius: 0.625rem;">
-                        <div style="font-size: 1.75rem; color: var(--misopin-primary); margin-bottom: 1.25rem;">04</div>
+                <div class="col grid-4-cols" style="margin-bottom: 1.875rem;">
+                    <div class="process-step">
+                        <div class="process-number">04</div>
                         <h4 style="margin-bottom: 0.9375rem; color: var(--misopin-text-dark);">사후 케어 안내</h4>
-                        <p style="font-size: 0.875rem; color: var(--misopin-text-light);">쿨링과 진정 케어를 실시하고 회복 기간 중 주의사항, 홈케어 방법까지 상세히 안내합니다.</p>
+                        <p class="text-small">쿨링과 진정 케어를 실시하고 회복 기간 중 주의사항, 홈케어 방법까지 상세히 안내합니다.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- 마무리 메시지 섹션 -->
-        <section class="treatment-section" style="background-image: url('../images/lifting/lifting-02.webp'); background-size: cover; background-position: center; position: relative; padding: 6.25rem 0; margin: 3.75rem 0;">
-            <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5);"></div>
-            <div class="row">
-                <div class="col col-sm-12">
-                    <div style="position: relative; z-index: 2; text-align: center; color: white;">
-                        <div class="section-subtitle" style="color: #d4af37; font-size: 0.875rem; font-weight: 600; margin-bottom: 0.625rem;">Youth begins with balanced lifting</div>
-                        <h2 style="font-size: 2.25rem; font-weight: 700; margin-bottom: 1.875rem; line-height: 1.3;">
-                            속부터 시작되는 진짜 리프팅
-                        </h2>
-                        <p style="font-size: 1.125rem; color: rgba(255,255,255,0.95); line-height: 1.8; margin-bottom: 0.625rem;">
-                            각 층의 원인에 맞춰 구조적 개선으로
-                        </p>
-                        <p style="font-size: 1.125rem; color: rgba(255,255,255,0.95); line-height: 1.8;">
-                            시간이 지날수록 더 자연스럽고 균형 잡힌 변화를 미소핀에서 경험하세요.
-                        </p>
+        <section class="treatment-section banner-section" style="background-image: url('../images/lifting/lifting-02.webp');">
+            <div class="banner-overlay"></div>
+            <div class="container responsive-container banner-content">
+                <div class="row">
+                    <div class="col col-sm-12">
+                        <div class="text-label">Youth begins with balanced lifting</div>
+                        <h2 class="heading-main">속부터 시작되는 진짜 리프팅</h2>
+                        <p class="text-lead">각 층의 원인에 맞춰 구조적 개선으로</p>
+                        <p class="text-lead">시간이 지날수록 더 자연스럽고 균형 잡힌 변화를 미소핀에서 경험하세요.</p>
                     </div>
                 </div>
             </div>

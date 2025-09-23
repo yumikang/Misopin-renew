@@ -1,0 +1,465 @@
+/**
+ * 미소핀의원 DIST 페이지 통합 반응형 시스템
+ *
+ * 1. Clamp() 기반 반응형 폰트 시스템
+ * 2. CSS Grid/Flexbox 레이아웃
+ * 3. 3단계 미디어쿼리 (모바일/태블릿/데스크톱)
+ */
+
+/* ========================================
+   1. CSS 변수 정의
+   ======================================== */
+:root {
+    /* 브레이크포인트 */
+    --breakpoint-mobile: 480px;
+    --breakpoint-tablet: 768px;
+    --breakpoint-desktop: 1200px;
+
+    /* 컨테이너 최대 너비 */
+    --container-max-width: 1200px;
+
+    /* 반응형 간격 */
+    --spacing-xs: clamp(0.5rem, 1vw, 0.75rem);
+    --spacing-sm: clamp(0.75rem, 1.5vw, 1rem);
+    --spacing-md: clamp(1rem, 2vw, 1.5rem);
+    --spacing-lg: clamp(1.5rem, 3vw, 2.5rem);
+    --spacing-xl: clamp(2rem, 4vw, 3.75rem);
+    --spacing-xxl: clamp(3rem, 5vw, 5rem);
+
+    /* Clamp 기반 반응형 폰트 사이즈 */
+    --font-xs: clamp(0.75rem, 1.5vw, 0.875rem);      /* 12px ~ 14px */
+    --font-sm: clamp(0.875rem, 1.8vw, 1rem);         /* 14px ~ 16px */
+    --font-base: clamp(1rem, 2vw, 1.125rem);         /* 16px ~ 18px */
+    --font-md: clamp(1.125rem, 2.3vw, 1.25rem);      /* 18px ~ 20px */
+    --font-lg: clamp(1.25rem, 2.5vw, 1.5rem);        /* 20px ~ 24px */
+    --font-xl: clamp(1.5rem, 3vw, 1.75rem);          /* 24px ~ 28px */
+    --font-2xl: clamp(1.75rem, 3.5vw, 2.25rem);      /* 28px ~ 36px */
+    --font-3xl: clamp(2rem, 4vw, 2.5rem);            /* 32px ~ 40px */
+    --font-4xl: clamp(2.25rem, 5vw, 3rem);           /* 36px ~ 48px */
+
+    /* 행간 */
+    --line-height-tight: 1.3;
+    --line-height-base: 1.6;
+    --line-height-relaxed: 1.8;
+    --line-height-loose: 2;
+
+    /* 미소핀 브랜드 색상 */
+    --misopin-primary: #9F988C;
+    --misopin-secondary: #87857E;
+    --misopin-accent: #EFEDE5;
+    --misopin-bg-main: #FFFFFF;
+    --misopin-bg-accent: #F5F5F0;
+    --misopin-text-dark: #2C2C2C;
+    --misopin-text-base: #555555;
+    --misopin-text-light: #777777;
+    --misopin-border: #E0E0E0;
+}
+
+/* ========================================
+   2. 기본 타이포그래피 클래스
+   ======================================== */
+
+/* 제목 스타일 */
+.heading-hero {
+    font-size: var(--font-4xl);
+    font-weight: 700;
+    line-height: var(--line-height-tight);
+    color: #666666;
+    margin-bottom: var(--spacing-lg);
+}
+
+.heading-main {
+    font-size: var(--font-2xl);
+    font-weight: 700;
+    line-height: var(--line-height-tight);
+    color: #666666;
+    margin-bottom: var(--spacing-md);
+}
+
+.heading-sub {
+    font-size: var(--font-xl);
+    font-weight: 600;
+    line-height: var(--line-height-tight);
+    color: #666666;
+    margin-bottom: var(--spacing-md);
+}
+
+.heading-section {
+    font-size: var(--font-lg);
+    font-weight: 600;
+    line-height: var(--line-height-base);
+    color: var(--misopin-text-dark);
+    margin-bottom: var(--spacing-sm);
+}
+
+/* 본문 스타일 */
+.text-lead {
+    font-size: var(--font-md);
+    line-height: var(--line-height-relaxed);
+    color: var(--misopin-text-base);
+    margin-bottom: var(--spacing-md);
+}
+
+.text-body {
+    font-size: var(--font-base);
+    line-height: var(--line-height-relaxed);
+    color: var(--misopin-text-base);
+    margin-bottom: var(--spacing-sm);
+}
+
+.text-small {
+    font-size: var(--font-sm);
+    line-height: var(--line-height-base);
+    color: var(--misopin-text-light);
+}
+
+.text-caption {
+    font-size: var(--font-xs);
+    line-height: var(--line-height-base);
+    color: var(--misopin-text-light);
+}
+
+/* 카테고리/라벨 */
+.text-label {
+    font-size: var(--font-xs);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--misopin-primary);
+    margin-bottom: var(--spacing-xs);
+}
+
+/* ========================================
+   3. 레이아웃 컨테이너
+   ======================================== */
+
+.responsive-container {
+    width: 100%;
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+/* Flexbox 유틸리티 */
+.flex-container {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Grid 시스템 */
+.grid-container {
+    display: grid;
+    gap: var(--spacing-md);
+}
+
+.grid-2-cols {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3-cols {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-4-cols {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+/* 섹션 간격 */
+.section {
+    padding: var(--spacing-xl) 0;
+}
+
+.section-lg {
+    padding: var(--spacing-xxl) 0;
+}
+
+/* ========================================
+   4. 컴포넌트 스타일
+   ======================================== */
+
+/* 카드 컴포넌트 */
+.card {
+    background: var(--misopin-bg-accent);
+    border-radius: 10px;
+    padding: var(--spacing-lg);
+    height: 100%;
+}
+
+/* 프로세스 스텝 */
+.process-step {
+    text-align: center;
+    padding: var(--spacing-lg);
+    background: var(--misopin-bg-accent);
+    border-radius: 10px;
+    height: 100%;
+}
+
+.process-number {
+    font-size: var(--font-xl);
+    color: var(--misopin-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+/* 버튼 */
+.btn {
+    display: inline-block;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    font-size: var(--font-base);
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background: var(--misopin-primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--misopin-secondary);
+}
+
+/* ========================================
+   5. 미디어 쿼리 - 3단계 반응형
+   ======================================== */
+
+/* 태블릿 (768px 이하) */
+@media (max-width: 768px) {
+    /* Grid 자동 변환 */
+    .grid-2-cols,
+    .grid-3-cols,
+    .grid-4-cols {
+        grid-template-columns: 1fr;
+    }
+
+    .grid-2-cols-tablet {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Flexbox 방향 변경 */
+    .flex-container {
+        flex-direction: column;
+    }
+
+    .flex-row-tablet {
+        flex-direction: row;
+    }
+
+    /* 텍스트 정렬 */
+    .text-center-mobile {
+        text-align: center;
+    }
+
+    .text-left-mobile {
+        text-align: left;
+    }
+
+    /* 섹션 타이틀 모바일 정렬 */
+    .section_tit {
+        text-align: left !important;
+    }
+
+    .section_tit h2 {
+        text-align: left !important;
+    }
+
+    .section_tit p {
+        text-align: left !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+}
+
+/* 모바일 (480px 이하) */
+@media (max-width: 480px) {
+    /* 모바일용 추가 조정 */
+    .responsive-container {
+        padding: 0 var(--spacing-sm);
+    }
+
+    /* 모바일 전용 그리드 */
+    .grid-2-cols-tablet {
+        grid-template-columns: 1fr;
+    }
+
+    /* 이미지 최적화 */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* 테이블 반응형 */
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}
+
+/* 대형 데스크톱 (1200px 이상) */
+@media (min-width: 1200px) {
+    /* 대형 화면 최적화 */
+    .grid-5-cols-desktop {
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    .grid-6-cols-desktop {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+
+/* ========================================
+   6. 배너 섹션 전용 스타일
+   ======================================== */
+
+/* 어두운 배경 이미지가 있는 배너 섹션 */
+.banner-section {
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    padding: var(--spacing-xxl) 0;
+    margin: var(--spacing-xl) 0;
+}
+
+/* 배너 오버레이 */
+.banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+}
+
+/* 배너 콘텐츠 컨테이너 */
+.banner-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+}
+
+/* 배너 섹션 내부의 모든 텍스트를 흰색으로 */
+.banner-content .text-label {
+    color: #d4af37 !important; /* 골드 라벨 */
+    margin-bottom: var(--spacing-xs);
+}
+
+.banner-content .heading-main,
+.banner-content .heading-hero,
+.banner-content h2 {
+    color: white !important;
+    margin-bottom: var(--spacing-lg);
+}
+
+.banner-content .text-lead,
+.banner-content .text-body,
+.banner-content p {
+    color: rgba(255,255,255,0.9) !important;
+    margin-bottom: var(--spacing-sm);
+}
+
+.banner-content .text-small {
+    color: rgba(255,255,255,0.8) !important;
+}
+
+/* 모바일 반응형 */
+@media (max-width: 768px) {
+    .banner-section {
+        padding: var(--spacing-xl) 0;
+        margin: var(--spacing-lg) 0;
+    }
+
+    .banner-content .heading-main {
+        font-size: var(--font-xl) !important;
+    }
+}
+
+/* ========================================
+   7. 유틸리티 클래스
+   ======================================== */
+
+/* 마진 유틸리티 */
+.mt-xs { margin-top: var(--spacing-xs); }
+.mt-sm { margin-top: var(--spacing-sm); }
+.mt-md { margin-top: var(--spacing-md); }
+.mt-lg { margin-top: var(--spacing-lg); }
+.mt-xl { margin-top: var(--spacing-xl); }
+
+.mb-xs { margin-bottom: var(--spacing-xs); }
+.mb-sm { margin-bottom: var(--spacing-sm); }
+.mb-md { margin-bottom: var(--spacing-md); }
+.mb-lg { margin-bottom: var(--spacing-lg); }
+.mb-xl { margin-bottom: var(--spacing-xl); }
+
+/* 패딩 유틸리티 */
+.pt-xs { padding-top: var(--spacing-xs); }
+.pt-sm { padding-top: var(--spacing-sm); }
+.pt-md { padding-top: var(--spacing-md); }
+.pt-lg { padding-top: var(--spacing-lg); }
+.pt-xl { padding-top: var(--spacing-xl); }
+
+.pb-xs { padding-bottom: var(--spacing-xs); }
+.pb-sm { padding-bottom: var(--spacing-sm); }
+.pb-md { padding-bottom: var(--spacing-md); }
+.pb-lg { padding-bottom: var(--spacing-lg); }
+.pb-xl { padding-bottom: var(--spacing-xl); }
+
+/* 텍스트 정렬 */
+.text-left { text-align: left; }
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+
+/* 표시/숨김 */
+.mobile-only { display: none; }
+.tablet-only { display: none; }
+.desktop-only { display: block; }
+
+@media (max-width: 768px) {
+    .mobile-only { display: block; }
+    .desktop-only { display: none; }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .tablet-only { display: block; }
+}
+
+/* ========================================
+   7. 애니메이션
+   ======================================== */
+
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.slide-up {
+    animation: slideUp 0.5s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
