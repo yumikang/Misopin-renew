@@ -770,3 +770,108 @@
     }
 }
 
+/* ========================================
+   9. Treatment Section (기본 시술 섹션)
+   ======================================== */
+
+/* 모든 dist 페이지에서 공통으로 사용하는 treatment-section */
+.treatment-section {
+    padding: var(--spacing-xl) 0;
+    margin: var(--spacing-lg) 0;
+    position: relative;
+}
+
+/* 배경색이 있는 treatment-section */
+.treatment-section.has-background {
+    background: var(--misopin-bg-accent);
+    padding: var(--spacing-xxl) 0;
+    margin: var(--spacing-xl) 0;
+    border-radius: 12px;
+}
+
+/* Treatment section 내부 컨테이너 */
+.treatment-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+/* Treatment section 제목 영역 */
+.treatment-section .section_tit {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+.treatment-section .section_tit h2 {
+    font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+    font-weight: 700;
+    color: var(--misopin-text-dark);
+    margin-bottom: var(--spacing-md);
+    word-break: keep-all;
+    line-height: 1.4;
+}
+
+.treatment-section .section_tit p {
+    font-size: clamp(1rem, 2.2vw, 1.125rem);
+    color: var(--misopin-text-light);
+    line-height: 1.8;
+    word-break: keep-all;
+    letter-spacing: -0.01em;
+}
+
+/* Treatment section 헤더 (Clinical Steps 등) */
+.treatment-section .section-header {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+.treatment-section .section-header .text-label {
+    color: var(--misopin-secondary);
+    font-size: clamp(0.875rem, 2vw, 1rem);
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: var(--spacing-sm);
+}
+
+.treatment-section .section-header h2 {
+    font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+    font-weight: 700;
+    color: var(--misopin-text-dark);
+    margin-bottom: var(--spacing-sm);
+    word-break: keep-all;
+    line-height: 1.4;
+}
+
+.treatment-section .section-header .section-subtitle {
+    font-size: clamp(1rem, 2.2vw, 1.125rem);
+    color: var(--misopin-text-light);
+    line-height: 1.8;
+    word-break: keep-all;
+    margin-top: var(--spacing-sm);
+}
+
+/* 모바일 반응형 */
+@media (max-width: 768px) {
+    .treatment-section {
+        padding: var(--spacing-lg) 0;
+        margin: var(--spacing-md) 0;
+    }
+
+    .treatment-section.has-background {
+        padding: var(--spacing-lg) 0;
+        margin: var(--spacing-lg) 0;
+        border-radius: 8px;
+    }
+
+    .treatment-section .section_tit,
+    .treatment-section .section-header {
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .treatment-section .section_tit h2,
+    .treatment-section .section-header h2 {
+        font-size: clamp(1.5rem, 4vw, 1.75rem);
+    }
+}
+
