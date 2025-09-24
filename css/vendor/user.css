@@ -323,9 +323,9 @@ h1, h2, h3, h4, h5, h6, input, button, textarea, select{font-family:var(--k-font
         margin: 0 !important;
     }
     #sh_ft .copy .top {
-        grid-template-columns: 1fr;
-        gap: 0;
-        padding: 15px 20px; /* 상하 패딩 더 줄임 */
+        grid-template-columns: 1fr !important;
+        gap: 0 !important;
+        padding: 12px 15px !important; /* 상하 패딩 더 줄임 */
         text-align: center;
     }
 
@@ -442,7 +442,7 @@ h1, h2, h3, h4, h5, h6, input, button, textarea, select{font-family:var(--k-font
 
     /* 사업자 정보 - 깔끔한 정렬 */
     #sh_ft .copy .main_info {
-        padding: 8px 20px; /* 패딩 더 줄임 */
+        padding: 8px 15px !important; /* 패딩 더 줄임 */
         font-size: 0.75rem;
         line-height: 1.6;
         color: rgba(255,255,255,0.5);
@@ -452,7 +452,7 @@ h1, h2, h3, h4, h5, h6, input, button, textarea, select{font-family:var(--k-font
 
     /* 카피라이트 영역 */
     #sh_ft .copy .bottom {
-        padding: 8px 20px; /* 패딩 더 줄임 */
+        padding: 8px 15px !important; /* 패딩 더 줄임 */
         text-align: center;
     }
     #sh_ft .copy .bottom p {
