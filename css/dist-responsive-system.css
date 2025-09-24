@@ -441,7 +441,7 @@
 }
 
 .jeomin-balance-section h2 {
-    font-size: clamp(1.25rem, 4vw, 1.75rem);
+    font-size: var(--font-2xl);  /* 다른 섹션의 heading-main과 동일 */
     font-weight: 400;
     line-height: 1.4;
     margin-bottom: 10px;
@@ -450,7 +450,7 @@
 }
 
 .jeomin-balance-section h3 {
-    font-size: clamp(1.5rem, 5vw, 2.25rem);
+    font-size: var(--font-xl);  /* 부제목 크기 */
     font-weight: 700;
     margin-bottom: 30px;
     color: #666666;
@@ -520,12 +520,12 @@
     }
 
     .jeomin-balance-section h2 {
-        font-size: 1.25rem;
+        font-size: var(--font-xl) !important;  /* 다른 섹션과 동일하게 통일 */
         line-height: 1.5;
     }
 
     .jeomin-balance-section h3 {
-        font-size: 1.5rem;
+        font-size: var(--font-lg) !important;  /* 계층에 맞게 조정 */
         line-height: 1.4;
         margin-bottom: 20px;
     }
@@ -544,6 +544,8 @@
         text-align: center;
         display: block;
         margin-bottom: 1rem;
+        font-size: 0.875rem;  /* 모바일에서 라벨 크기 증가 */
+        letter-spacing: 0.08em;  /* 자간 넓혀서 가독성 향상 */
     }
 
     /* 모바일 이미지 마진 */
