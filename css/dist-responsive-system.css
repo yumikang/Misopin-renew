@@ -416,22 +416,72 @@
 }
 
 /* ========================================
-   제오민 페이지 전용 반응형
+   공통 한국어 텍스트 최적화 & 반응형 시스템
    ======================================== */
 
-/* 제오민 첫 번째 섹션 - 소개 */
-.jeomin-intro-section p.jeomin-intro-text {
-    font-size: clamp(0.9rem, 2.5vw, 1rem);
-    line-height: 1.8;
-    margin-bottom: 20px;
-    color: #666;
+/* 한국어 텍스트 최적화 - 모든 시술 페이지 공통 */
+.treatment-text-ko {
     word-break: keep-all;  /* 한국어 단어 단위 줄바꿈 */
+    line-height: 1.8;
     text-align: justify;   /* 양쪽 정렬 */
     letter-spacing: -0.01em;  /* 자간 미세 조정 */
     hyphens: auto;
 }
 
-/* 제오민 두 번째 섹션 - 밸런스 교정 */
+/* 시술 소개 텍스트 - 공통 */
+.treatment-intro-text {
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: #666;
+    word-break: keep-all;
+    text-align: justify;
+    letter-spacing: -0.01em;
+    hyphens: auto;
+}
+
+/* ========================================
+   제오민 페이지 전용 반응형
+   ======================================== */
+
+/* 시술 설명 섹션 - 공통 반응형 */
+.treatment-detail-section {
+    max-width: 100%;
+}
+
+.treatment-detail-section .col {
+    padding: 20px;
+}
+
+.treatment-detail-section h2 {
+    font-size: var(--font-2xl);
+    font-weight: 400;
+    line-height: 1.4;
+    margin-bottom: 10px;
+    color: #666;
+    word-break: keep-all;
+}
+
+.treatment-detail-section h3 {
+    font-size: var(--font-xl);
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #666666;
+    word-break: keep-all;
+}
+
+.treatment-detail-section p {
+    font-size: clamp(0.875rem, 2.2vw, 0.95rem);
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: #666;
+    word-break: keep-all;
+    text-align: justify;
+    letter-spacing: -0.01em;
+    hyphens: auto;
+}
+
+/* 제오민 두 번째 섹션 - 밸런스 교정 (제오민 특화 유지) */
 .jeomin-balance-section {
     max-width: 100%;
 }
@@ -506,10 +556,12 @@
     font-weight: 700;
 }
 
-/* 모바일 반응형 - 제오민 섹션 */
+/* ========================================
+   공통 모바일 반응형 (768px 이하)
+   ======================================== */
 @media (max-width: 768px) {
-    /* 첫 번째 섹션 모바일 */
-    .jeomin-intro-section p.jeomin-intro-text {
+    /* 공통 시술 소개 텍스트 */
+    .treatment-intro-text {
         font-size: 0.875rem;
         line-height: 1.75;
         padding: 0 1rem;
@@ -517,6 +569,51 @@
         word-break: keep-all;
         letter-spacing: -0.02em;
     }
+
+    /* 공통 시술 설명 섹션 */
+    .treatment-detail-section {
+        padding: 2rem 0;
+    }
+
+    .treatment-detail-section h2,
+    .treatment-detail-section h3 {
+        text-align: left;
+        padding: 0 1rem;
+    }
+
+    .treatment-detail-section h2 {
+        font-size: var(--font-xl) !important;
+        line-height: 1.5;
+    }
+
+    .treatment-detail-section h3 {
+        font-size: var(--font-lg) !important;
+        line-height: 1.4;
+        margin-bottom: 20px;
+    }
+
+    .treatment-detail-section p {
+        text-align: left;
+        padding: 0 1rem;
+        font-size: 0.875rem;
+        line-height: 1.75;
+        word-break: keep-all;
+        letter-spacing: -0.02em;
+    }
+
+    .treatment-detail-section .section-label,
+    .treatment-detail-section .text-label {
+        text-align: left;
+        display: block;
+        margin-bottom: 1rem;
+        padding: 0 1rem;
+        font-size: 0.875rem;
+        letter-spacing: 0.08em;
+    }
+}
+
+/* 제오민 전용 모바일 반응형 */
+@media (max-width: 768px) {
 
     /* 두 번째 섹션 모바일 */
     .jeomin-balance-section {
@@ -578,6 +675,63 @@
     .jeomin-duration-box .duration-text {
         font-size: 0.875rem;
         text-align: left;
+    }
+}
+
+/* ========================================
+   공통 작은 모바일 반응형 (480px 이하)
+   ======================================== */
+@media (max-width: 480px) {
+    /* 공통 시술 텍스트 */
+    .treatment-intro-text,
+    .treatment-detail-section p {
+        font-size: 0.8125rem;
+        line-height: 1.65;
+        padding: 0 0.75rem;
+    }
+
+    .treatment-detail-section h2 {
+        font-size: 1.25rem !important;
+        padding: 0 0.75rem;
+    }
+
+    .treatment-detail-section h3 {
+        font-size: 1.125rem !important;
+        padding: 0 0.75rem;
+    }
+
+    .treatment-detail-section .text-label {
+        font-size: 0.75rem;
+        padding: 0 0.75rem;
+    }
+}
+
+/* 제오민 전용 작은 모바일 (480px 이하) */
+@media (max-width: 480px) {
+
+    .jeomin-balance-section h2 {
+        font-size: 1.25rem !important;  /* 작은 화면 최적화 */
+        padding: 0 0.75rem;
+    }
+
+    .jeomin-balance-section h3 {
+        font-size: 1.125rem !important;
+        padding: 0 0.75rem;
+    }
+
+    .jeomin-balance-section .text-label {
+        font-size: 0.75rem;
+        padding: 0 0.75rem;
+    }
+
+    .jeomin-duration-box {
+        margin-left: 0.75rem;
+        margin-right: 0.75rem;
+        padding: 8px 12px;  /* 더 컴팩트하게 */
+    }
+
+    .jeomin-duration-box .duration-text {
+        font-size: 0.8125rem;
     }
 }
 
