@@ -66,6 +66,7 @@
     line-height: var(--line-height-tight);
     color: #666666;
     margin-bottom: var(--spacing-lg);
+    word-break: keep-all;  /* 한국어 단어 단위 줄바꿈 */
 }
 
 .heading-main {
@@ -74,6 +75,7 @@
     line-height: var(--line-height-tight);
     color: #666666;
     margin-bottom: var(--spacing-md);
+    word-break: keep-all;  /* 한국어 단어 단위 줄바꿈 */
 }
 
 .heading-sub {
@@ -82,6 +84,7 @@
     line-height: var(--line-height-tight);
     color: #666666;
     margin-bottom: var(--spacing-md);
+    word-break: keep-all;  /* 한국어 단어 단위 줄바꿈 */
 }
 
 .heading-section {
@@ -90,6 +93,7 @@
     line-height: var(--line-height-base);
     color: var(--misopin-text-dark);
     margin-bottom: var(--spacing-sm);
+    word-break: keep-all;  /* 한국어 단어 단위 줄바꿈 */
 }
 
 /* 본문 스타일 */
