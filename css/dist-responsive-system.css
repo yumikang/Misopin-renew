@@ -481,20 +481,24 @@
 
 /* 지속 기간 박스 */
 .jeomin-duration-box {
-    padding: 15px 20px;
+    padding: 12px 16px;  /* 패딩 줄임 */
     background: #f8f8f8;
     border-left: 3px solid #d4a574;
     margin-top: 30px;
+    display: inline-block;  /* 내용 크기에 맞게 너비 조정 */
 }
 
 .jeomin-duration-box .duration-label {
     color: #d4a574;
     font-weight: 600;
-    margin-bottom: 5px;
+    margin-bottom: 3px;  /* 간격 줄임 */
 }
 
 .jeomin-duration-box .duration-text {
     color: #666;
+    margin: 0;  /* p 태그 기본 마진 제거 */
+    padding: 0;  /* 패딩 제거 */
+    line-height: 1.5;  /* 행간 조정 */
 }
 
 /* 모바일 반응형 - 제오민 섹션 */
@@ -556,7 +560,13 @@
     /* 지속 기간 박스 모바일 */
     .jeomin-duration-box {
         margin-top: 20px;
-        padding: 12px 16px;
+        padding: 10px 14px;
+        display: block;  /* 모바일에서는 전체 너비 */
+        width: 100%;
+    }
+
+    .jeomin-duration-box .duration-text {
+        font-size: 0.875rem;
     }
 }
 
