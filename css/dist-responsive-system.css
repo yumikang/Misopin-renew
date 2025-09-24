@@ -416,6 +416,149 @@
 }
 
 /* ========================================
+   제오민 페이지 전용 반응형
+   ======================================== */
+
+/* 제오민 첫 번째 섹션 - 소개 */
+.jeomin-intro-section p.jeomin-intro-text {
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: #666;
+    word-break: keep-all;  /* 한국어 단어 단위 줄바꿈 */
+    text-align: justify;   /* 양쪽 정렬 */
+    letter-spacing: -0.01em;  /* 자간 미세 조정 */
+    hyphens: auto;
+}
+
+/* 제오민 두 번째 섹션 - 밸런스 교정 */
+.jeomin-balance-section {
+    max-width: 100%;
+}
+
+.jeomin-balance-section .col {
+    padding: 20px;
+}
+
+.jeomin-balance-section h2 {
+    font-size: clamp(1.25rem, 4vw, 1.75rem);
+    font-weight: 400;
+    line-height: 1.4;
+    margin-bottom: 10px;
+    color: #666;
+    word-break: keep-all;
+}
+
+.jeomin-balance-section h3 {
+    font-size: clamp(1.5rem, 5vw, 2.25rem);
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #666666;
+    word-break: keep-all;
+}
+
+.jeomin-balance-section p {
+    font-size: clamp(0.875rem, 2.2vw, 0.95rem);  /* 약간 키운 폰트 크기 */
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: #666;
+    word-break: keep-all;  /* 한국어 단어 단위 줄바꿈 */
+    text-align: justify;   /* 양쪽 정렬 */
+    letter-spacing: -0.01em;  /* 자간 미세 조정 */
+    hyphens: auto;  /* 필요시 하이픈 처리 */
+}
+
+/* 데스크톱 - 그라디언트 텍스트 */
+.jeomin-gradient-text {
+    display: inline-block;
+    background: linear-gradient(135deg, #d4a574 0%, #c19a6b 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+}
+
+/* 지속 기간 박스 */
+.jeomin-duration-box {
+    padding: 15px 20px;
+    background: #f8f8f8;
+    border-left: 3px solid #d4a574;
+    margin-top: 30px;
+}
+
+.jeomin-duration-box .duration-label {
+    color: #d4a574;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.jeomin-duration-box .duration-text {
+    color: #666;
+}
+
+/* 모바일 반응형 - 제오민 섹션 */
+@media (max-width: 768px) {
+    /* 첫 번째 섹션 모바일 */
+    .jeomin-intro-section p.jeomin-intro-text {
+        font-size: 0.875rem;
+        line-height: 1.75;
+        padding: 0 1rem;
+        text-align: left;
+        word-break: keep-all;
+        letter-spacing: -0.02em;
+    }
+
+    /* 두 번째 섹션 모바일 */
+    .jeomin-balance-section {
+        padding: 2rem 0;
+    }
+
+    .jeomin-balance-section h2,
+    .jeomin-balance-section h3 {
+        text-align: center;
+    }
+
+    .jeomin-balance-section h2 {
+        font-size: 1.25rem;
+        line-height: 1.5;
+    }
+
+    .jeomin-balance-section h3 {
+        font-size: 1.5rem;
+        line-height: 1.4;
+        margin-bottom: 20px;
+    }
+
+    .jeomin-balance-section p {
+        text-align: left;  /* 모바일에서는 왼쪽 정렬이 더 읽기 편함 */
+        padding: 0 1rem;
+        font-size: 0.875rem;
+        line-height: 1.75;  /* 모바일 행간 약간 증가 */
+        word-break: keep-all;
+        letter-spacing: -0.02em;  /* 모바일에서 자간 조금 더 타이트하게 */
+    }
+
+    .jeomin-balance-section .section-label,
+    .jeomin-balance-section .text-label {
+        text-align: center;
+        display: block;
+        margin-bottom: 1rem;
+    }
+
+    /* 모바일 이미지 마진 */
+    .jeomin-balance-section img {
+        margin-bottom: 2rem;
+    }
+
+    /* 지속 기간 박스 모바일 */
+    .jeomin-duration-box {
+        margin-top: 20px;
+        padding: 12px 16px;
+    }
+}
+
+/* ========================================
    체크마크 리스트 (AQUA PEEL TECHNOLOGY 섹션)
    ======================================== */
 
