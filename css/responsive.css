@@ -1118,6 +1118,23 @@ body {
         height: 24px !important;
         line-height: 24px !important;
         border-radius: 50% !important;
+        color: #9F988C !important; /* 날짜 숫자 갈색으로 통일 */
+        font-weight: 600 !important;
+    }
+
+    /* 회색 예약종료 날짜는 회색 유지 */
+    #mara_cal_view .tbl_mara .day.t_gray {
+        color: #999 !important;
+    }
+
+    /* 일요일 빨간색 */
+    #mara_cal_view .tbl_mara .day.t_red {
+        color: #e74c3c !important;
+    }
+
+    /* 토요일 파란색 */
+    #mara_cal_view .tbl_mara .day.t_blue {
+        color: #3498db !important;
     }
 
     #mara_cal_view .tbl_mara td a:not(.day) {
