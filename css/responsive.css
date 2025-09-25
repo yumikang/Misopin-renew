@@ -1079,12 +1079,19 @@ body {
         table-layout: fixed !important;
     }
 
+    /* 각 요일 컬럼 너비 균등 분배 */
+    #mara_cal_view .tbl_mara col {
+        width: 14.28% !important; /* 7개 열 균등 분배 */
+    }
+
     #mara_cal_view .tbl_mara th,
     #mara_cal_view .tbl_mara td {
         padding: 8px 2px !important;
         font-size: 0.75rem !important;
         text-align: center !important;
         vertical-align: middle !important;
+        width: 14.28% !important; /* 7개 열 균등 분배 */
+        min-width: 45px !important; /* 최소 너비 보장 */
     }
 
     #mara_cal_view .tbl_mara th {
@@ -1114,16 +1121,29 @@ body {
     }
 
     #mara_cal_view .tbl_mara td a:not(.day) {
-        display: block !important;
+        display: inline-block !important;
         font-size: 0.65rem !important;
         color: #9F988C !important;
         text-decoration: none !important;
+        padding: 2px 4px !important;
+        background: #9F988C !important;
+        color: white !important;
+        border-radius: 4px !important;
+        min-width: 50px !important; /* 버튼 최소 너비 보장 */
     }
 
     #mara_cal_view .tbl_mara td.null {
         background: #fafafa !important;
         color: #ccc !important;
         font-size: 0.65rem !important;
+        min-height: 60px !important; /* 빈 셀도 동일한 높이 유지 */
+    }
+
+    /* 모든 td에 빈 콘텐츠라도 최소 공간 확보 */
+    #mara_cal_view .tbl_mara td:empty::after {
+        content: '\00a0'; /* non-breaking space */
+        display: inline-block;
+        min-height: 60px;
     }
 
     /* 예약 폼 모바일 스타일 */
