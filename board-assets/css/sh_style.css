@@ -40,11 +40,11 @@ a.btn_line{display:inline-block;vertical-align:top;width:75px;height:55px;border
 .pg_start, .pg_end{width:30px;height:30px;border-radius:2px;border:1px solid #e1e1e1;font-size:0;text-indent:0;background-color:#fff}
 .pg_start{margin-right:5px}
 .pg_next, .pg_prev{width:30px;height:30px;border-radius:2px;border:1px solid #e1e1e1;font-size:0;text-indent:0;background-color:#fff}
-.pg_next:before,.pg_prev:before{content:"\f105";padding:0;font-size:12px;text-align:center;color:#555;line-height:28px;letter-spacing:.5px;font-family:'fontawesome'}
+.pg_next:before,.pg_prev:before{content:"\f105";padding:0;font-size:12px;text-align:center;color:#555;line-height:28px;letter-spacing:.5px;font-family:'FontAwesome'}
 .pg_prev:before{content:"\f104"}
 .pg_prev:hover, .pg_prev:hover{background-color:#f6f6f6}
 .pg_end{margin-left:5px}
-.pg_start:before, .pg_end:before{content:"\f104 \f104";padding:0;font-size:12px;text-align:center;color:#555;line-height:28px;letter-spacing:.5px;font-family:'fontawesome'}
+.pg_start:before, .pg_end:before{content:"\f104 \f104";padding:0;font-size:12px;text-align:center;color:#555;line-height:28px;letter-spacing:.5px;font-family:'FontAwesome'}
 .pg_end:before{padding-left:3px;content:"\f105 \f105"}
 .pg_start:hover, .pg_end:hover{background-color:#f6f6f6}
 
@@ -202,7 +202,7 @@ a.btn_line{display:inline-block;vertical-align:top;width:75px;height:55px;border
 /* 게시판 댓글 시작 [s] */
 #sh_bo_cmt{padding:20px 15px;border-bottom:1px solid #eee;font-size:14px;letter-spacing:-.3px;line-height:1.8;color:#666;font-family:'notokr-regular'}
 .sh_cmt_btn{border:none;font-size:15px;color:#222;background-color:transparent;font-family:'notokr-medium'}
-.sh_cmt_btn:after{content:"\f106";padding-left:15px;font-family:'fontawesome'}
+.sh_cmt_btn:after{content:"\f106";padding-left:15px;font-family:'FontAwesome'}
 .sh_cmt_btn_op:after{content:"\f107"}
 #sh_bo_vc h2{position:absolute;font-size:0;line-height:0;overflow:hidden}
 #sh_bo_vc article{margin:20px 0;position:relative}

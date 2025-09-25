@@ -8,8 +8,8 @@
 .ui-datepicker .ui-datepicker-prev-hover, .ui-datepicker .ui-datepicker-next-hover{top:0}
 .ui-datepicker .ui-datepicker-prev-hover{left:0}
 .ui-datepicker .ui-datepicker-next-hover{right:0}
-.ui-datepicker .ui-datepicker-prev:before{content:"\f053";font-size:10px;color:#fff;font-weight:normal;font-family:'fontawesome'}
-.ui-datepicker .ui-datepicker-next:before{content:"\f054";font-size:10px;color:#fff;font-weight:normal;font-family:'fontawesome'}
+.ui-datepicker .ui-datepicker-prev:before{content:"\f053";font-size:10px;color:#fff;font-weight:normal;font-family:'FontAwesome'}
+.ui-datepicker .ui-datepicker-next:before{content:"\f054";font-size:10px;color:#fff;font-weight:normal;font-family:'FontAwesome'}
 .ui-datepicker .ui-datepicker-prev span, .ui-datepicker .ui-datepicker-next span{display:none}
 .ui-datepicker select.ui-datepicker-month, .ui-datepicker select.ui-datepicker-year{width:70px;font-size:14px;border:none;background-color:transparent;cursor:pointer;font-family:'notokr-medium'}
 .ui-datepicker table{width:95%;margin:0 auto;font-size:13px;font-family:'notokr-medium'}

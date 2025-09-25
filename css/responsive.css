@@ -399,7 +399,7 @@ body {
     #mo_hd .lnb .bmenu:after {
         float: right;
         content: "\f107";
-        font-family: 'fontawesome';
+        font-family: 'FontAwesome';
     }
     
     #mo_hd .lnb .bmenu.on:after {
