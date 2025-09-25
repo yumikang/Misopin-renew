@@ -337,34 +337,10 @@ body {
         transition: all .4s;
     }
     
-    #navWrap .inner:before, 
+    /* 상단/하단 흰색 블럭 제거 또는 최소화 */
+    #navWrap .inner:before,
     #navWrap .inner:after {
-        opacity: 0;
-        display: block;
-        position: fixed;
-        top: 0;
-        right: -40px;
-        z-index: 1;
-        content: "";
-        min-width: 300px;
-        width: 70%;
-        height: 60px;
-        background-color: #fff;
-        -webkit-transition: all .1s;
-        transition: all .1s;
-    }
-    
-    #navWrap .inner:after {
-        top: auto;
-        bottom: 0;
-    }
-    
-    #navWrap.on .inner:before, 
-    #navWrap.on .inner:after {
-        opacity: 1;
-        right: 0;
-        -webkit-transition: all .4s;
-        transition: all .4s;
+        display: none;  /* 불필요한 흰색 블럭 제거 */
     }
     
     #navWrap .inner .copy {
@@ -372,7 +348,7 @@ body {
         right: 0;
         bottom: 15px;
         z-index: 2;
-        min-width: 300px;
+        min-width: 280px;  /* 300px → 280px로 통일 */
         width: 70%;
         font-size: 12px;
         text-align: center;
