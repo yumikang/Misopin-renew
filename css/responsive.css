@@ -1069,14 +1069,14 @@ body {
 
     /* 달력 테이블 모바일 최적화 */
     #mara_cal_view .tbl_mara {
-        overflow-x: auto !important;
-        -webkit-overflow-scrolling: touch !important;
+        overflow-x: hidden !important; /* 가로 스크롤 제거 */
+        width: 100% !important;
     }
 
     #mara_cal_view .tbl_mara table {
-        min-width: 320px !important;
         width: 100% !important;
         table-layout: fixed !important;
+        /* min-width 제거하여 화면에 맞춤 */
     }
 
     /* 각 요일 컬럼 너비 균등 분배 */
@@ -1086,12 +1086,13 @@ body {
 
     #mara_cal_view .tbl_mara th,
     #mara_cal_view .tbl_mara td {
-        padding: 8px 2px !important;
-        font-size: 0.75rem !important;
+        padding: 4px 1px !important; /* 패딩 줄임 */
+        font-size: 0.7rem !important; /* 폰트 크기 약간 줄임 */
         text-align: center !important;
         vertical-align: middle !important;
         width: 14.28% !important; /* 7개 열 균등 분배 */
-        min-width: 45px !important; /* 최소 너비 보장 */
+        /* min-width 제거하여 유동적으로 조정 */
+        box-sizing: border-box !important;
     }
 
     #mara_cal_view .tbl_mara th {
@@ -1139,14 +1140,14 @@ body {
 
     #mara_cal_view .tbl_mara td a:not(.day) {
         display: inline-block !important;
-        font-size: 0.65rem !important;
+        font-size: 0.6rem !important; /* 폰트 크기 줄임 */
         color: #9F988C !important;
         text-decoration: none !important;
-        padding: 2px 4px !important;
+        padding: 2px 2px !important; /* 패딩 줄임 */
         background: #9F988C !important;
         color: white !important;
         border-radius: 4px !important;
-        min-width: 50px !important; /* 버튼 최소 너비 보장 */
+        /* min-width 제거하여 콘텐츠에 맞춤 */
     }
 
     #mara_cal_view .tbl_mara td.null {
