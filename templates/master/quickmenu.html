@@ -1,3 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퀵메뉴</title>
+    <link rel="stylesheet" href="../../css/components/quickmenu.css">
+    <script src="../../js/libs/jquery-3.6.0.min.js"></script>
+    <script src="../../js/vendor/feather.min.js"></script>
+    <style>
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            background: transparent;
+        }
+        /* CSS 변수 정의 */
+        :root {
+            --primary: #9F988C;
+        }
+    </style>
+</head>
+<body>
+
 <!-- 퀵메뉴 시작 -->
 <div id="quickList">
     <ul class="list">
@@ -14,13 +42,13 @@
             </a>
         </li>
         <li>
-            <a href="board-page.html">
+            <a href="../../board-page.html" target="_parent">
                 <i data-feather="gift"></i>
                 <div class="cate">이벤트</div>
             </a>
         </li>
         <li>
-            <a href="calendar-page.html">
+            <a href="../../calendar-page.html" target="_parent">
                 <i data-feather="edit-3"></i>
                 <div class="cate">예약하기</div>
             </a>
@@ -41,3 +69,46 @@
     </div>
 </div>
 <!-- 퀵메뉴 끝 -->
+
+<script>
+$(document).ready(function() {
+    // Feather Icons 초기화
+    feather.replace();
+
+    // 스크롤 기능 초기화
+    scrollTop();
+});
+
+function scrollTop(){
+    var progressPath = document.querySelector('.progress-wrap path');
+    var pathLength = progressPath.getTotalLength();
+    progressPath.style.transition = progressPath.style.WebkitTransition = 'none';
+    progressPath.style.strokeDasharray = pathLength + ' ' + pathLength;
+    progressPath.style.strokeDashoffset = pathLength;
+    progressPath.getBoundingClientRect();
+    progressPath.style.transition = progressPath.style.WebkitTransition = 'stroke-dashoffset 10ms linear';
+    var updateProgress = function() {
+        var scroll = $(window.parent).scrollTop();
+        var height = $(window.parent.document).height() - $(window.parent).height();
+        var progress = pathLength - scroll * pathLength / height;
+        progressPath.style.strokeDashoffset = progress;
+    };
+    updateProgress();
+    $(window.parent).scroll(updateProgress);
+    jQuery(window.parent).on('scroll', function() {
+        if (jQuery(this).scrollTop() > 50) {
+            jQuery('.progress-wrap').addClass('active');
+        } else {
+            jQuery('.progress-wrap').removeClass('active');
+        }
+    });
+    jQuery('.progress-wrap').on('click', function(event) {
+        event.preventDefault();
+        jQuery(window.parent.document.documentElement, window.parent.document.body).animate({scrollTop: 0}, 550);
+        return false;
+    });
+}
+</script>
+
+</body>
+</html>
