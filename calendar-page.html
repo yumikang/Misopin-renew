@@ -709,7 +709,8 @@ jQuery(function($){
         </tbody>
         </table>
         
-<div id="calendar_form">
+<div id="calendar_bg" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 100;"></div>
+<div id="calendar_form" style="display: none;">
 	<button class="close" type="button" onclick="calendar_inqClose()"><span></span><p class="sound_only">닫기</p></button>
   	<div class="tit">예약자 정보</div>
 	<div class="inner">
@@ -1063,6 +1064,113 @@ function view_submit(f) {
 
 <!-- 예약 확인 기능 스크립트 (외부 스크립트 이후 로드) -->
 <script src="js/reservation-check.js"></script>
+
+<!-- 모달 제어 개선 스크립트 -->
+<script>
+$(document).ready(function() {
+    // 페이지 로드시 모달이 표시되는 것을 방지
+    $("#calendar_form").hide();
+    $("#calendar_bg").hide();
+
+    // 기존 calendar_inqOpen 함수 오버라이드
+    window.calendar_inqOpen_original = window.calendar_inqOpen;
+    window.calendar_inqOpen = function() {
+        // 모바일에서 body 스크롤 방지
+        $("body").addClass("modal-open").css({
+            overflow: 'hidden',
+            position: 'fixed',
+            width: '100%',
+            top: -$(window).scrollTop()
+        }).data('scrollTop', $(window).scrollTop());
+
+        // 모달과 배경 표시
+        $("#calendar_bg").fadeIn(200);
+
+        // 원래 함수 실행
+        if (window.calendar_inqOpen_original) {
+            window.calendar_inqOpen_original();
+        } else {
+            $("#calendar_form").appendTo("body");
+            $("#calendar_form").fadeIn(200);
+        }
+    };
+
+    // 기존 calendar_inqClose 함수 오버라이드
+    window.calendar_inqClose_original = window.calendar_inqClose;
+    window.calendar_inqClose = function() {
+        // body 스크롤 복원
+        var scrollTop = $("body").data('scrollTop');
+        $("body").removeClass("modal-open").css({
+            overflow: '',
+            position: '',
+            width: '',
+            top: ''
+        });
+        $(window).scrollTop(scrollTop);
+
+        // 모달과 배경 숨기기
+        $("#calendar_form").fadeOut(200);
+        $("#calendar_bg").fadeOut(200);
+
+        // 원래 함수 실행
+        if (window.calendar_inqClose_original) {
+            window.calendar_inqClose_original();
+        }
+    };
+
+    // 배경 클릭시 모달 닫기
+    $("#calendar_bg").on('click', function() {
+        calendar_inqClose();
+    });
+
+    // ESC 키로 모달 닫기
+    $(document).on('keydown', function(e) {
+        if (e.keyCode === 27 && $("#calendar_form").is(":visible")) {
+            calendar_inqClose();
+        }
+    });
+});
+
+// 모바일 스크롤 개선을 위한 CSS
+if (!document.getElementById('modal-mobile-fix-style')) {
+    var style = document.createElement('style');
+    style.id = 'modal-mobile-fix-style';
+    style.innerHTML = `
+        body.modal-open {
+            overflow: hidden !important;
+            position: fixed !important;
+            width: 100% !important;
+        }
+
+        @media (max-width: 768px) {
+            #calendar_form {
+                width: 95% !important;
+                max-width: 95% !important;
+                height: 90vh !important;
+                max-height: 90vh !important;
+                top: 5vh !important;
+                transform: translateX(-50%) !important;
+                overflow: hidden !important;
+            }
+
+            #calendar_form .inner {
+                max-height: calc(90vh - 100px) !important;
+                overflow-y: auto !important;
+                -webkit-overflow-scrolling: touch !important;
+                overscroll-behavior-y: contain !important;
+            }
+
+            #calendar_form .close {
+                position: fixed !important;
+                right: 20px !important;
+                top: 20px !important;
+                z-index: 102 !important;
+            }
+        }
+    `;
+    document.head.appendChild(style);
+}
+</script>
 
 </body>
 <!-- 자체 분석 도구 -->
