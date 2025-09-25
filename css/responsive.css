@@ -1069,14 +1069,15 @@ body {
 
     /* 달력 테이블 모바일 최적화 */
     #mara_cal_view .tbl_mara {
-        overflow-x: hidden !important; /* 가로 스크롤 제거 */
+        overflow-x: auto !important; /* 필요시 스크롤 허용 */
+        -webkit-overflow-scrolling: touch !important;
         width: 100% !important;
     }
 
     #mara_cal_view .tbl_mara table {
+        min-width: 100% !important; /* 최소한 컨테이너 너비만큼 */
         width: 100% !important;
         table-layout: fixed !important;
-        /* min-width 제거하여 화면에 맞춤 */
     }
 
     /* 각 요일 컬럼 너비 균등 분배 */
@@ -1086,12 +1087,11 @@ body {
 
     #mara_cal_view .tbl_mara th,
     #mara_cal_view .tbl_mara td {
-        padding: 4px 1px !important; /* 패딩 줄임 */
-        font-size: 0.7rem !important; /* 폰트 크기 약간 줄임 */
+        padding: 6px 2px !important; /* 적절한 패딩 */
+        font-size: 0.75rem !important; /* 읽기 좋은 폰트 크기 */
         text-align: center !important;
         vertical-align: middle !important;
         width: 14.28% !important; /* 7개 열 균등 분배 */
-        /* min-width 제거하여 유동적으로 조정 */
         box-sizing: border-box !important;
     }
 
@@ -1140,14 +1140,14 @@ body {
 
     #mara_cal_view .tbl_mara td a:not(.day) {
         display: inline-block !important;
-        font-size: 0.6rem !important; /* 폰트 크기 줄임 */
+        font-size: 0.65rem !important; /* 적절한 폰트 크기 */
         color: #9F988C !important;
         text-decoration: none !important;
-        padding: 2px 2px !important; /* 패딩 줄임 */
+        padding: 3px 6px !important; /* 적절한 패딩 */
         background: #9F988C !important;
         color: white !important;
         border-radius: 4px !important;
-        /* min-width 제거하여 콘텐츠에 맞춤 */
+        white-space: nowrap !important; /* 텍스트 줄바꿈 방지 */
     }
 
     #mara_cal_view .tbl_mara td.null {
@@ -1162,6 +1162,20 @@ body {
         content: '\00a0'; /* non-breaking space */
         display: inline-block;
         min-height: 60px;
+    }
+
+    /* 매우 작은 화면 (320px 이하) 특별 처리 */
+    @media (max-width: 320px) {
+        #mara_cal_view .tbl_mara td a:not(.day) {
+            font-size: 0.6rem !important;
+            padding: 2px 4px !important;
+        }
+
+        #mara_cal_view .tbl_mara th,
+        #mara_cal_view .tbl_mara td {
+            padding: 4px 1px !important;
+            font-size: 0.7rem !important;
+        }
     }
 
     /* 예약 폼 모바일 스타일 */
