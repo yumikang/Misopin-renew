@@ -369,7 +369,8 @@ body {
         line-height: 45px;  /* 52px → 45px로 축소 */
         color: #222;
         text-align: left;
-        font-family: 'notokr-medium';
+        font-family: 'notokr-regular';  /* medium → regular로 변경 */
+        font-weight: normal;  /* 기본 두께 명시 */
     }
     
     #mo_hd .lnb .bmenu:after {
