@@ -215,7 +215,7 @@
 
 .first-section .row {
     align-items: center;
-    gap: var(--spacing-xl);
+    gap: 0;
 }
 
 /* 첫 번째 섹션 텍스트 영역 */
@@ -348,6 +348,7 @@
     .first-section .row {
         flex-direction: column;
         gap: var(--spacing-md);
+        margin: 0;
     }
 
     .first-section-content {
