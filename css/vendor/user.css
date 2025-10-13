@@ -109,7 +109,7 @@ h1, h2, h3, h4, h5, h6, input, button, textarea, select{font-family:var(--k-font
 
 /* 공통 섹션 타이틀 스타일 - 모든 페이지 통일 */
 .section_tit{text-align:center;margin-bottom:60px}
-.section_h2{font-size:var(--font-5xl);font-weight:400;font-family:var(--k-font), var(--e-font);color:#666666;line-height:1.3;margin-bottom:20px}
+.section_h2{font-size:var(--font-5xl);font-weight:400;font-family:var(--e-font);color:var(--primary);line-height:1.3;margin-bottom:20px}
 .section_h2 span{color:var(--primary)}
 .section_p{font-size:var(--font-xl);font-weight:500;color:var(--primary);line-height:1.6}
 
