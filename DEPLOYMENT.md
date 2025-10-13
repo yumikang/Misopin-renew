@@ -46,9 +46,97 @@ tbv9xhgawUo/ccAtTXQ4AAAAHWdpdGh1Yi1hY3Rpb25zQG1pc29waW4tZGVwbG95
 
 ---
 
+## 🎯 배포 전략
+
+### 개발 단계 vs 운영 단계
+
+이 프로젝트는 **단일 브랜치(master) + 수동 제어** 방식을 사용합니다.
+
+#### 🚧 개발 단계 (현재)
+```yaml
+# .github/workflows/deploy.yml
+env:
+  AUTO_DEPLOY: true  # ✅ 자동 배포 활성화
+```
+
+**워크플로우:**
+1. ✏️ 로컬에서 HTML/CSS/JS 수정
+2. 📤 `git push origin master`
+3. 🤖 GitHub Actions 자동 실행
+4. 🚀 서버에 자동 배포
+5. ✅ 완료 (1-2분 소요)
+
+**CMS 역할:** 테스트 전용 (Git이 최종 진실의 원천)
+
+#### 🏭 운영 단계 (미래)
+```yaml
+# .github/workflows/deploy.yml
+env:
+  AUTO_DEPLOY: false  # ❌ 자동 배포 비활성화
+```
+
+**워크플로우:**
+1. 🚫 로컬 수정 중단
+2. 🖥️ CMS에서만 콘텐츠 편집
+3. 💾 변경사항이 HTML 파일에 직접 저장
+4. ✅ 즉시 반영 (배포 불필요)
+
+**Git 역할:** 수동 배포만 가능 (workflow_dispatch)
+
+---
+
+### 🔄 개발 → 운영 전환 방법
+
+#### 1단계: 자동 배포 비활성화
+```bash
+# 로컬에서 수정
+vim .github/workflows/deploy.yml
+
+# AUTO_DEPLOY를 false로 변경
+env:
+  AUTO_DEPLOY: false
+
+# Git에 커밋 & 푸시 (마지막 자동 배포)
+git add .github/workflows/deploy.yml
+git commit -m "chore: 운영 모드로 전환 - 자동 배포 비활성화"
+git push origin master
+```
+
+#### 2단계: 팀에 공지
+- 📢 로컬 수정 중단 안내
+- 📢 CMS 전용 편집 안내
+- 📢 긴급 시 수동 배포 방법 안내
+
+#### 3단계: 운영 시작
+- ✅ CMS에서 콘텐츠 편집
+- ✅ 변경사항 즉시 반영
+- ⚠️ Git push 해도 자동 배포 안됨
+
+---
+
+### ❓ 왜 브랜치 분리 방식을 사용하지 않나요?
+
+**제안된 방식 (문제 있음):**
+```
+develop 브랜치 → /var/www/misopin.com
+master 브랜치 → /var/www/misopin.com
+```
+
+**문제점:**
+1. 💥 **동일 경로 충돌**: 두 브랜치가 같은 파일을 덮어씀
+2. 🔄 **CMS 혼란**: CMS가 어느 브랜치 파일을 수정하는지 알 수 없음
+3. 🚨 **데이터 손실 위험**: 한 브랜치의 변경사항이 다른 브랜치에 의해 삭제될 수 있음
+
+**권장 방식:**
+- ✅ 단일 브랜치(master)
+- ✅ `AUTO_DEPLOY` 환경 변수로 제어
+- ✅ 명확한 책임 분리 (개발: Git, 운영: CMS)
+
+---
+
 ## 🎯 사용 방법
 
-### 자동 배포 (권장)
+### 자동 배포 (개발 단계)
 
 1. **파일 수정**
    ```bash
@@ -71,12 +159,15 @@ tbv9xhgawUo/ccAtTXQ4AAAAHWdpdGh1Yi1hY3Rpb25zQG1pc29waW4tZGVwbG95
    - 약 1-2분 후 자동 배포 완료
    - 사이트 확인: http://misopin.one-q.xyz
 
-### 수동 배포 (긴급 상황)
+### 수동 배포 (운영 단계 또는 긴급 상황)
+
+**조건:** `AUTO_DEPLOY: false`로 설정되어 있어야 함
 
 GitHub Actions 페이지에서:
 1. "Deploy to Production" 워크플로우 선택
 2. "Run workflow" 버튼 클릭
-3. "Run workflow" 재확인
+3. 배포 사유 입력 (선택)
+4. "Run workflow" 재확인
 
 ---
 
@@ -163,6 +254,28 @@ ls -lh /var/www/misopin.com/.backups/ | tail -5
 - 🛡️ 배포 후 HTTP 200 검증
 - 🛡️ 실패 시 자동 중단
 - 🛡️ 롤백 가능 (백업에서 복원)
+
+### ⚠️ Git vs CMS 충돌 방지
+
+**중요:** 동시에 Git과 CMS로 수정하면 데이터 손실 발생 가능
+
+**개발 단계 (AUTO_DEPLOY: true):**
+```
+✅ Git으로만 수정 → 자동 배포 → 서버 파일 업데이트
+⚠️ CMS 수정은 테스트만 (Git push 시 덮어씌워짐)
+```
+
+**운영 단계 (AUTO_DEPLOY: false):**
+```
+✅ CMS로만 수정 → 서버 파일 직접 업데이트 → 즉시 반영
+⚠️ Git push 해도 자동 배포 안됨 (수동 배포만 가능)
+🚨 수동 배포 시 CMS 변경사항 덮어씌워짐 주의!
+```
+
+**권장 사항:**
+1. 개발 단계에서는 CMS를 편집기로만 사용 (저장 후 Git에 반영)
+2. 운영 단계로 전환 전 최종 Git 커밋 & 푸시 확인
+3. 운영 중에는 긴급 상황이 아니면 수동 배포 금지
 
 ---
 

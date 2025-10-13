@@ -9,7 +9,7 @@ The best luxury CLINIC
 
 ## 🚀 빠른 시작
 
-### 자동 배포 (권장)
+### 현재 상태: 개발 단계 (자동 배포 활성화)
 
 ```bash
 # 1. 파일 수정
@@ -21,6 +21,13 @@ git commit -m "feat: 메인 페이지 업데이트"
 git push origin master
 
 # 3. 자동 배포 완료! (1-2분 소요)
+```
+
+### 운영 단계로 전환 시
+
+```bash
+# .github/workflows/deploy.yml에서 AUTO_DEPLOY를 false로 변경
+# 이후: CMS에서만 편집, Git 자동 배포 중단
 ```
 
 자세한 내용은 [DEPLOYMENT.md](./DEPLOYMENT.md) 참고

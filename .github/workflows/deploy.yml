@@ -1,10 +1,21 @@
 name: Deploy to Production
 
+# 🎯 배포 전략:
+# 개발 중: auto_deploy = true → 자동 배포
+# 운영 중: auto_deploy = false → CMS 전용
+
+env:
+  AUTO_DEPLOY: true  # false로 변경하면 자동 배포 중단
+
 on:
   push:
     branches:
-      - master  # master 브랜치에 푸시할 때마다 실행
-  workflow_dispatch:  # 수동 실행 가능
+      - master
+  workflow_dispatch:  # 수동 배포 가능
+    inputs:
+      reason:
+        description: '배포 사유 (선택)'
+        required: false
 
 jobs:
   deploy:
