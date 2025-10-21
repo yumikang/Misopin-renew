@@ -90,7 +90,18 @@
     if (dayOfWeek === 0) dayClass = 't_red'; // 일요일
     else if (dayOfWeek === 6) dayClass = 't_blue'; // 토요일
 
-    // 모든 날짜를 기본적으로 예약가능으로 표시 (API에서 실제 상태로 업데이트됨)
+    // 한국 시간 기준으로 과거 날짜 확인 (UTC+9)
+    const now = new Date();
+    const koreaOffset = 9 * 60; // 9시간을 분으로
+    const koreaTime = new Date(now.getTime() + (now.getTimezoneOffset() + koreaOffset) * 60000);
+    const koreaToday = new Date(koreaTime.getFullYear(), koreaTime.getMonth(), koreaTime.getDate());
+
+    // 과거 날짜인지 확인 (한국 시간 기준)
+    if (cellDate < koreaToday) {
+      return `<td class="null" data-date="${dateStr}"><p class="title_day t_gray"><span class="day t_gray">${day} </span></p>예약종료</td>`;
+    }
+
+    // 예약 가능한 날짜
     const weekDay = dayOfWeek + 1; // 1-7로 변환
     return `
       <td class="" data-date="${dateStr}">
