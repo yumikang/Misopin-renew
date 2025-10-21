@@ -46,47 +46,53 @@
 
   // Update calendar cell with reservation status
   function updateCalendarCell(date, status) {
-    // Find all calendar cells
-    const cells = document.querySelectorAll('#mara_cal_view tbody td');
+    // Find cell by data-date attribute for exact matching
+    const cell = document.querySelector(`#mara_cal_view tbody td[data-date="${date}"]`);
+    if (!cell) {
+      console.log(`Cell not found for date: ${date}`);
+      return;
+    }
 
-    cells.forEach(cell => {
-      const dayLink = cell.querySelector('.day');
-      if (!dayLink) return;
+    // Find the status text element (예약가능/예약종료/예약마감)
+    const statusElement = cell.querySelector('a:not(.day)');
+    const dayLink = cell.querySelector('.day');
 
-      const dayNum = parseInt(dayLink.textContent.trim());
-      const dateObj = new Date(date);
-
-      if (dayNum === dateObj.getDate()) {
-        // Find the status text element (예약가능/예약종료/예약마감)
-        const statusElement = cell.querySelector('a:not(.day)') || cell;
-
-        if (status.status === 'closed') {
-          // Past date
-          cell.className = 'null';
-          if (statusElement && statusElement !== cell) {
-            statusElement.textContent = '예약종료';
-            statusElement.removeAttribute('href');
-            statusElement.removeAttribute('onclick');
-          } else {
-            cell.innerHTML = cell.innerHTML.replace(/예약가능|예약마감/g, '예약종료');
-          }
-        } else if (status.status === 'full') {
-          // Fully booked
-          cell.className = 'full';
-          if (statusElement && statusElement !== cell) {
-            statusElement.textContent = '예약마감';
-            statusElement.style.color = '#999';
-            statusElement.removeAttribute('href');
-            statusElement.removeAttribute('onclick');
-          }
-        } else {
-          // Available
-          if (statusElement && statusElement !== cell) {
-            statusElement.textContent = '예약가능';
-          }
-        }
+    if (status.status === 'closed') {
+      // Past date - remove interactivity and show closed
+      cell.className = 'null';
+      if (dayLink) {
+        dayLink.className = 'day t_gray';
+        dayLink.removeAttribute('href');
+        dayLink.removeAttribute('onclick');
       }
-    });
+      if (statusElement) {
+        statusElement.textContent = '예약종료';
+        statusElement.removeAttribute('href');
+        statusElement.removeAttribute('onclick');
+        statusElement.style.color = '#999';
+      }
+    } else if (status.status === 'full') {
+      // Fully booked - show as full but keep some styling
+      cell.className = 'full';
+      if (statusElement) {
+        statusElement.textContent = '예약마감';
+        statusElement.style.color = '#999';
+        statusElement.removeAttribute('href');
+        statusElement.removeAttribute('onclick');
+      }
+      if (dayLink) {
+        dayLink.removeAttribute('href');
+        dayLink.removeAttribute('onclick');
+      }
+    } else {
+      // Available - ensure it's clickable
+      cell.className = '';
+      if (statusElement) {
+        statusElement.textContent = '예약가능';
+        statusElement.style.color = '';
+        // href and onclick should already be set from initial HTML
+      }
+    }
   }
 
   // Load reservation status from API

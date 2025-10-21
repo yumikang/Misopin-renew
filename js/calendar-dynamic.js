@@ -90,15 +90,10 @@
     if (dayOfWeek === 0) dayClass = 't_red'; // 일요일
     else if (dayOfWeek === 6) dayClass = 't_blue'; // 토요일
 
-    // 과거 날짜인지 확인
-    if (cellDate < today) {
-      return `<td class="null"><p class="title_day t_gray"><span class="day t_gray">${day} </span></p>예약종료</td>`;
-    }
-
-    // 예약 가능한 날짜
+    // 모든 날짜를 기본적으로 예약가능으로 표시 (API에서 실제 상태로 업데이트됨)
     const weekDay = dayOfWeek + 1; // 1-7로 변환
     return `
-      <td class="">
+      <td class="" data-date="${dateStr}">
         <p class="title_day ${dayClass}">
           <a class="day ${dayClass}" href="javascript:void(0)" onclick="calendar_inqOpen();selectday('https://skincare1007.shiningcorp.com/skin/board/hos_calendar','${dateStr}','','${weekDay}','','')">${day} </a>
         </p>
