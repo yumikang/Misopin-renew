@@ -607,7 +607,7 @@ textarea:focus {
 
 <script>
     $(function(){
-        $('#r_menu').sh_menu();
+        try { $('#r_menu').sh_menu(); } catch(e) { console.log('sh_menu plugin not available'); }
     });
 </script>
 
