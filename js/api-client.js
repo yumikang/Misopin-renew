@@ -217,8 +217,8 @@ const MisopinHelpers = {
     const containerClass = isImageOnly ? 'popup-image-only' : '';
 
     const popupHTML = `
-      <div class="popup-overlay" id="popup-${popup.id}" data-type="${popup.display_type}">
-        <div class="popup-container popup-${popup.display_type.toLowerCase()} popup-${popup.position.toLowerCase()} ${containerClass}">
+      <div class="popup-overlay" id="popup-${popup.id}" data-type="${popup.display_type}" data-position="${popup.position}">
+        <div class="popup-container popup-${popup.display_type.toLowerCase()} ${containerClass}">
           ${!popup.image_url && popup.title ? `<h3 class="popup-title">${popup.title}</h3>` : ''}
           <div class="popup-content">
             ${popup.image_url ? (popup.link_url ? `<a href="${popup.link_url}" target="_blank"><img src="${popup.image_url}" alt="${popup.title}" style="cursor: pointer;" /></a>` : `<img src="${popup.image_url}" alt="${popup.title}" />`) : ''}
