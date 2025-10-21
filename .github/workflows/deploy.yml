@@ -86,7 +86,7 @@ jobs:
       - name: 🌐 Test site availability
         run: |
           echo "🔍 Testing site..."
-          response=$(curl -s -o /dev/null -w "%{http_code}" http://misopin.one-q.xyz/)
+          response=$(curl -s -o /dev/null -w "%{http_code}" https://misopin.one-q.xyz/)
           if [ "$response" = "200" ]; then
             echo "✅ Site is live and responding with HTTP 200"
           else
@@ -103,6 +103,6 @@ jobs:
         run: |
           echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
           echo "✅ Deployment completed successfully!"
-          echo "🌐 Live site: http://misopin.one-q.xyz"
+          echo "🌐 Live site: https://misopin.one-q.xyz"
           echo "📅 Deployed at: $(date)"
           echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
