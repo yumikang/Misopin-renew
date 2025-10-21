@@ -212,9 +212,13 @@ const MisopinHelpers = {
       }
     }
 
+    // 이미지만 있는 팝업인지 확인 (제목과 내용 없음)
+    const isImageOnly = popup.image_url && !popup.title && !popup.content;
+    const containerClass = isImageOnly ? 'popup-image-only' : '';
+
     const popupHTML = `
       <div class="popup-overlay" id="popup-${popup.id}" data-type="${popup.display_type}">
-        <div class="popup-container popup-${popup.display_type.toLowerCase()} popup-${popup.position.toLowerCase()}">
+        <div class="popup-container popup-${popup.display_type.toLowerCase()} popup-${popup.position.toLowerCase()} ${containerClass}">
           <div class="popup-header">
             ${!popup.image_url && popup.title ? `<h3 class="popup-title">${popup.title}</h3>` : ''}
             <button class="popup-close" onclick="MisopinHelpers.closePopup('${popup.id}')">✕</button>
