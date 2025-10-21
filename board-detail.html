@@ -495,9 +495,22 @@ async function loadPostDetail() {
         `;
 
         // 내용 표시
+        let contentHTML = '';
+
+        // 이미지가 있으면 먼저 표시
+        if (post.image_url) {
+            contentHTML += `<div class="post-image" style="margin-bottom: 20px; text-align: center;">
+                <img src="${post.image_url}" alt="${post.title}" style="max-width: 100%; height: auto; border-radius: 8px;" />
+            </div>`;
+        }
+
+        // 내용 추가
         if (post.content) {
-            // HTML 콘텐츠를 그대로 표시 (XSS 방지를 위해 실제 운영 시에는 sanitize 필요)
-            document.getElementById('post-content').innerHTML = post.content;
+            contentHTML += post.content;
+        }
+
+        if (contentHTML) {
+            document.getElementById('post-content').innerHTML = contentHTML;
         } else {
             document.getElementById('post-content').innerHTML = '<p>내용이 없습니다.</p>';
         }
