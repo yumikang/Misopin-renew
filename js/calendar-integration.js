@@ -113,23 +113,23 @@
         updateCalendarCell(date, status);
       });
 
-      // Add summary information
-      const calendarView = document.querySelector('#mara_cal_view');
-      let summaryElement = document.querySelector('.reservation-summary');
+      // Add summary information - 숨김 처리
+      // const calendarView = document.querySelector('#mara_cal_view');
+      // let summaryElement = document.querySelector('.reservation-summary');
 
-      if (!summaryElement) {
-        summaryElement = document.createElement('div');
-        summaryElement.className = 'reservation-summary';
-        summaryElement.style.cssText = 'margin: 20px 0; padding: 15px; background: #f5f5f5; border-radius: 5px; text-align: center;';
-        calendarView.appendChild(summaryElement);
-      }
+      // if (!summaryElement) {
+      //   summaryElement = document.createElement('div');
+      //   summaryElement.className = 'reservation-summary';
+      //   summaryElement.style.cssText = 'margin: 20px 0; padding: 15px; background: #f5f5f5; border-radius: 5px; text-align: center;';
+      //   calendarView.appendChild(summaryElement);
+      // }
 
-      summaryElement.innerHTML = `
-        <strong>이번 달 예약 현황:</strong>
-        예약 가능일 ${data.summary.availableDays}일 |
-        예약 마감 ${data.summary.fullDays}일 |
-        예약 종료 ${data.summary.closedDays}일
-      `;
+      // summaryElement.innerHTML = `
+      //   <strong>이번 달 예약 현황:</strong>
+      //   예약 가능일 ${data.summary.availableDays}일 |
+      //   예약 마감 ${data.summary.fullDays}일 |
+      //   예약 종료 ${data.summary.closedDays}일
+      // `;
 
     } catch (error) {
       console.error('Failed to load reservation status:', error);
