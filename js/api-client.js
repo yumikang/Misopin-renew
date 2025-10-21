@@ -216,12 +216,26 @@ const MisopinHelpers = {
     const isImageOnly = popup.image_url && !popup.title && !popup.content;
     const containerClass = isImageOnly ? 'popup-image-only' : '';
 
+    // 이미지 URL이 상대 경로인 경우 CMS 도메인으로 절대 경로 변환
+    let imageUrl = popup.image_url;
+    if (imageUrl && !imageUrl.startsWith('http')) {
+      const cmsBaseUrl = 'https://cms.one-q.xyz';
+      // /uploads로 시작하면 /api/uploads로 변경
+      if (imageUrl.startsWith('/uploads/')) {
+        imageUrl = `${cmsBaseUrl}/api${imageUrl}`;
+      } else if (!imageUrl.startsWith('/api/')) {
+        imageUrl = `${cmsBaseUrl}${imageUrl}`;
+      } else {
+        imageUrl = `${cmsBaseUrl}${imageUrl}`;
+      }
+    }
+
     const popupHTML = `
       <div class="popup-overlay" id="popup-${popup.id}" data-type="${popup.display_type}" data-position="${popup.position}">
         <div class="popup-container popup-${popup.display_type.toLowerCase()} ${containerClass}">
           ${!popup.image_url && popup.title ? `<h3 class="popup-title">${popup.title}</h3>` : ''}
           <div class="popup-content">
-            ${popup.image_url ? (popup.link_url ? `<a href="${popup.link_url}" target="_blank"><img src="${popup.image_url}" alt="${popup.title}" style="cursor: pointer;" /></a>` : `<img src="${popup.image_url}" alt="${popup.title}" />`) : ''}
+            ${popup.image_url ? (popup.link_url ? `<a href="${popup.link_url}" target="_blank"><img src="${imageUrl}" alt="${popup.title}" style="cursor: pointer;" /></a>` : `<img src="${imageUrl}" alt="${popup.title}" />`) : ''}
             ${!popup.image_url && popup.content ? `<p>${popup.content}</p>` : ''}
           </div>
           <div class="popup-footer">
@@ -232,7 +246,7 @@ const MisopinHelpers = {
       </div>
     `;
 
-    console.log('Adding popup to DOM...');
+    console.log('Adding popup to DOM with position:', popup.position);
     document.body.insertAdjacentHTML('beforeend', popupHTML);
     console.log('Popup added to DOM:', document.getElementById(`popup-${popup.id}`));
   },
