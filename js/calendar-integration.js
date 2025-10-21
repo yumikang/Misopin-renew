@@ -82,7 +82,7 @@
         } else {
           // Available
           if (statusElement && statusElement !== cell) {
-            statusElement.textContent = `예약가능 (${status.availableSlots.length}슬롯)`;
+            statusElement.textContent = '예약가능';
           }
         }
       }
