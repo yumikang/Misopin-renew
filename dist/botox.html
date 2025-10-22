@@ -260,8 +260,47 @@
         color: #666666 !important;
     }
 
+    /* USP 텍스트 스타일 */
+    .usp-text {
+        font-size: 1.125rem;
+        line-height: 1.6;
+        color: var(--misopin-primary);
+        font-weight: 600;
+        margin: 20px 0 30px 0;
+        padding: 15px 0;
+        border-top: 2px solid var(--misopin-accent);
+        border-bottom: 2px solid var(--misopin-accent);
+    }
+
+    /* 태그 버튼 공통 스타일 */
+    .tag-button {
+        display: inline-block;
+        padding: 10px 24px;
+        color: white;
+        border-radius: 25px;
+        font-size: 0.875rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    /* 각 버튼별 색상 */
+    .tag-button-1 { background: #d4a574; }
+    .tag-button-2 { background: #c19a6b; }
+    .tag-button-3 { background: #b8956a; }
+    .tag-button-4 { background: #a08060; }
+    .tag-button-5 { background: #c4a077; }
+    .tag-button-6 { background: #b39068; }
+
+    /* Hover 효과 */
+    .tag-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        filter: brightness(1.1);
+    }
+
     /* 반응형 */
-    
+
         /* H2 모바일 반응형 추가 */
         h2[style*="font-size: 2.25rem"] {
             font-size: 2.25rem;
@@ -285,6 +324,11 @@
 
             .related-card p {
                 font-size: 0.8125rem !important; /* 13px */
+            }
+
+            /* USP 텍스트 모바일 반응형 */
+            .usp-text {
+                font-size: 1rem;
             }
         }
 
@@ -505,17 +549,23 @@
                     한 번에 개선하는 보톡스
                 </h2>
 
+                <!-- USP 문구 -->
+                <p class="usp-text">
+                    빠른 효과, 자연스러운 표정 회복을 위한<br>
+                    미소핀의 프리미엄 보톡스
+                </p>
+
                 <!-- 태그 버튼들 -->
                 <div class="tag-buttons">
-                    <span style="display: inline-block; padding: 10px 24px; background: #d4a574; color: white; border-radius: 25px; font-size: 0.875rem; font-weight: 500;">#이마주름</span>
-                    <span style="display: inline-block; padding: 10px 24px; background: #c19a6b; color: white; border-radius: 25px; font-size: 0.875rem; font-weight: 500;">#미간주름</span>
-                    <span style="display: inline-block; padding: 10px 24px; background: #b8956a; color: white; border-radius: 25px; font-size: 0.875rem; font-weight: 500;">#눈가주름</span>
+                    <span class="tag-button tag-button-1">#이마주름</span>
+                    <span class="tag-button tag-button-2">#미간주름</span>
+                    <span class="tag-button tag-button-3">#눈가주름</span>
                 </div>
 
                 <div class="tag-buttons">
-                    <span style="display: inline-block; padding: 10px 24px; background: #a08060; color: white; border-radius: 25px; font-size: 0.875rem; font-weight: 500;">#사각턱</span>
-                    <span style="display: inline-block; padding: 10px 24px; background: #c4a077; color: white; border-radius: 25px; font-size: 0.875rem; font-weight: 500;">#승모근</span>
-                    <span style="display: inline-block; padding: 10px 24px; background: #b39068; color: white; border-radius: 25px; font-size: 0.875rem; font-weight: 500;">#종아리</span>
+                    <span class="tag-button tag-button-4">#사각턱</span>
+                    <span class="tag-button tag-button-5">#승모근</span>
+                    <span class="tag-button tag-button-6">#종아리</span>
                 </div>
 
                 <p style="line-height: 1.8; margin-bottom: 20px; color: #666; font-size: 1rem;">
