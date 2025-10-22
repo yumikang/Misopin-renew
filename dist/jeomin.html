@@ -258,6 +258,28 @@
             h2[style*="font-size: 2.25rem"] {
                 font-size: 1.75rem !important;
             }
+
+            /* p 태그 모바일 반응형 추가 */
+            .treatment-section p {
+                font-size: 0.9375rem !important; /* 15px */
+                line-height: 1.7 !important;
+            }
+
+            /* 특정 섹션의 p 태그는 제외 */
+            #shSub .txt_area p {
+                font-size: 1.75rem !important; /* 서브 배너는 유지 */
+            }
+
+            .related-card p {
+                font-size: 0.8125rem !important; /* 13px */
+            }
+
+            /* USP 텍스트 모바일 반응형 */
+            .usp-text {
+                font-size: 1rem;
+                margin: 15px 0 20px 0;
+                padding: 12px 0;
+            }
         }
 
 
@@ -312,6 +334,18 @@
         img[alt="XEOMIN 제품"] {
             max-width: 150px !important;
         }
+    }
+
+    /* USP 텍스트 스타일 */
+    .usp-text {
+        font-size: 1.125rem;
+        line-height: 1.6;
+        color: var(--misopin-primary);
+        font-weight: 600;
+        margin: 20px 0 30px 0;
+        padding: 15px 0;
+        border-top: 2px solid var(--misopin-accent);
+        border-bottom: 2px solid var(--misopin-accent);
     }
     </style>
     
@@ -504,39 +538,33 @@
         <!-- 동적 컨텐츠 영역 -->
         <!-- 제오민 시술 컨텐츠 -->
 <!-- 첫 번째 섹션: 제오민 소개 -->
-<section class="treatment-section first-section treatment-detail-section jeomin-intro-section">
+<section class="treatment-section first-section">
     <div class="container responsive-container">
         <div class="row">
-            <div class="col col-sm-12 col-md-12 col-lg-6" data-aos="fade-right" data-aos-duration="1000" first-section-content>
+            <div class="col col-sm-12 col-md-6 col-lg-6" data-aos="fade-right" data-aos-duration="1000">
                 <div class="first-section-label">XEOMIN</div>
-                <h2 class="heading-main">
+                <h2 class="heading-main" style="color: #9F988C;">
                     나만의 특별한 프리미엄 톡신
                 </h2>
 
-                <!-- 태그 버튼들 - 제오민 특징 -->
-                <div class="tag-buttons">
-                    <span style="display: inline-block; padding: 10px 24px; background: #d4a574; color: white; border-radius: 25px; font-size: 0.875rem; font-weight: 500;">#이마주름</span>
-                    <span style="display: inline-block; padding: 10px 24px; background: #c19a6b; color: white; border-radius: 25px; font-size: 0.875rem; font-weight: 500;">#팔자주름</span>
-                    <span style="display: inline-block; padding: 10px 24px; background: #b8956a; color: white; border-radius: 25px; font-size: 0.875rem; font-weight: 500;">#미간주름</span>
-                </div>
+                <!-- USP 문구 -->
+                <p class="usp-text">
+                    내성 위험을 낮춘 순수 톡신,<br>
+                    미소핀의 프리미엄 제오민
+                </p>
 
-                <div class="tag-buttons">
-                    <span style="display: inline-block; padding: 10px 24px; background: #a08060; color: white; border-radius: 25px; font-size: 0.875rem; font-weight: 500;">#사각턱보톡스</span>
-                    <span style="display: inline-block; padding: 10px 24px; background: #c4a077; color: white; border-radius: 25px; font-size: 0.875rem; font-weight: 500;">#광대축소</span>
-                    <span style="display: inline-block; padding: 10px 24px; background: #b39068; color: white; border-radius: 25px; font-size: 0.875rem; font-weight: 500;">#토끼볼주름</span>
-                </div>
-
-                <p class="treatment-intro-text">
-                    제오민(Xeomin)은 독일 MERZ에서 개발한 보툴리눔 톡신 A형 제제로,
+                <p style="line-height: 1.8; margin-bottom: 20px; color: #666; font-size: 1rem;">
+                    제오민(Xeomin)은 독일 MERZ에서 개발한 보툴리눔 톡신 A형 제제로,<br>
                     불필요한 복합 단백질을 제거해 내성 위험을 낮춘 것이 특징입니다.
                 </p>
 
-                <p class="treatment-intro-text">
-                    주름 완화, 사각턱·바디라인 개선, 겨드랑이 땀 분비 억제까지 폭넓게 활용됩니다.
+                <p style="line-height: 1.8; color: #666; font-size: 1rem;">
+                    주름 완화, 사각턱·바디라인 개선, 겨드랑이 땀 분비 억제까지<br>
+                    폭넓게 활용되며, 반복 시술이 필요한 경우 장기적인 관리에 적합합니다.
                 </p>
             </div>
-            <div class="col col-sm-12 col-md-6 col-lg-6 d-none d-md-block" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200" first-section-image>
-                <img src="../images/jeomin/blog2_cd.webp" alt="제오민 시술" style="width: 100%; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+            <div class="col col-sm-12 col-md-6 col-lg-6" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                <img src="../images/jeomin/blog2_cd.webp" alt="제오민 시술" style="width: 100%;">
             </div>
         </div>
     </div>
@@ -547,12 +575,12 @@
     <div class="container responsive-container">
         <div class="row">
             <div class="col col-sm-12 col-md-6 col-lg-6 order-md-2" style="display: flex; align-items: center; justify-content: center;" data-aos="fade-left" data-aos-duration="1000">
-                <img src="../images/jeomin/blog2_cd06.webp" alt="제오민 효과" style="width: 100%; max-width: 400px; height: auto; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                <img src="../images/jeomin/blog2_cd06.webp" alt="제오민 효과" style="width: 100%; max-width: 400px; height: auto;">
             </div>
             <div class="col col-sm-12 col-md-6 col-lg-6 order-md-1" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
             <div class="first-section-label">BALANCE EFFECT</div>
-            <h2 class="heading-main">
-                한 번의 시술로 완성하는 자연스러운 라인
+            <h2 class="heading-main" style="color: #9F988C;">
+                한 번의 시술로 완성하는<br>자연스러운 라인
             </h2>
             <h3>
                 동안 밸런스
@@ -575,7 +603,7 @@
 <section class="section treatment-section">
     <div class="container responsive-container">
         <div class="section-header" data-aos="fade-up" data-aos-duration="800">
-            <h2 class="heading-main">시술단계</h2>
+            <h2 class="heading-main" style="color: #9F988C;">시술단계</h2>
             <p class="section-subtitle">
                 미소핀에서는 모든 시술을 안전하고<br>
                 검증된 과정으로 시행합니다.

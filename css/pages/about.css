@@ -310,7 +310,7 @@ html {
 
 .special-card {
     position: relative;
-    height: 300px;
+    height: 450px;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -691,7 +691,7 @@ html {
     }
 
     .special-card {
-        height: 250px;
+        height: 350px;
         padding: 20px;
         width: 100%;
         max-width: 100%;
