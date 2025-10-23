@@ -318,8 +318,8 @@
 .feature-card-oval {
     background: #f5f3ed;
     border-radius: 50%;
-    width: 10rem;
-    height: 12.5rem;
+    width: 8.5rem;
+    height: 10.5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -330,7 +330,7 @@
 
 .feature-card-oval .card-number {
     color: #b8a997;
-    font-size: 2.25rem;
+    font-size: 1.75rem;
     font-weight: 300;
     margin-bottom: 1rem;
 }
@@ -391,13 +391,13 @@
     }
 
     .feature-card-oval {
-        width: 8rem;
-        height: 10rem;
+        width: 7rem;
+        height: 8.5rem;
         padding: 1rem;
     }
 
     .feature-card-oval .card-number {
-        font-size: 1.75rem;
+        font-size: 1.5rem;
         margin-bottom: 0.75rem;
     }
 
@@ -415,8 +415,8 @@
     }
 
     .feature-card-oval {
-        width: 9rem;
-        height: 9rem;
+        width: 7.5rem;
+        height: 7.5rem;
     }
 }
 

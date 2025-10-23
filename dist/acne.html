@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+.<!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
@@ -291,6 +291,65 @@
             font-size: 1.75rem;
         }
     }
+
+    /* 치료 추천 대상 카드 스타일 */
+    .recommendation-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .recommendation-card {
+        padding: 20px 10px;
+        text-align: center;
+        position: relative;
+    }
+
+    .case-badge {
+        display: inline-block;
+        background-color: var(--misopin-primary);
+        color: white;
+        font-family: var(--e-font), serif;
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 1px;
+        padding: 6px 18px;
+        border-radius: 20px;
+        margin-bottom: 25px;
+    }
+
+    .case-description {
+        font-size: 1rem;
+        line-height: 1.7;
+        color: var(--misopin-text-dark);
+        margin: 0;
+    }
+
+    /* 반응형: 태블릿 */
+    @media (max-width: 1024px) {
+        .recommendation-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+    }
+
+    /* 반응형: 모바일 */
+    @media (max-width: 640px) {
+        .recommendation-grid {
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        .recommendation-card {
+            padding: 30px 20px;
+        }
+
+        .case-description {
+            font-size: 0.9375rem;
+        }
+    }
     </style>
     
     <!-- jQuery -->
@@ -528,6 +587,43 @@
                     피지선의 과활성, 피부 장벽의 손상, 염증 반응의 과도함,<br>
                     회복력 저하가 복합적으로 얽혀 나타나는 피부 질환입니다.
                 </p>
+            </div>
+
+            <!-- 치료 추천 대상 카드 -->
+            <div style="margin-top: 60px;">
+                <div class="recommendation-grid">
+                    <div class="recommendation-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="0">
+                        <div class="case-badge">CASE 01</div>
+                        <p class="case-description">
+                            <strong>면포성 여드름</strong><br>
+                            블랙헤드·화이트헤드
+                        </p>
+                    </div>
+
+                    <div class="recommendation-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                        <div class="case-badge">CASE 02</div>
+                        <p class="case-description">
+                            <strong>구진성 여드름</strong><br>
+                            염증성 붉은 여드름
+                        </p>
+                    </div>
+
+                    <div class="recommendation-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                        <div class="case-badge">CASE 03</div>
+                        <p class="case-description">
+                            <strong>농포성 여드름</strong><br>
+                            고름이 찬 여드름
+                        </p>
+                    </div>
+
+                    <div class="recommendation-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+                        <div class="case-badge">CASE 04</div>
+                        <p class="case-description">
+                            <strong>낭종성 여드름</strong><br>
+                            깊고 큰 여드름
+                        </p>
+                    </div>
+                </div>
             </div>
         </section>
 

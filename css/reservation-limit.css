@@ -1,0 +1,188 @@
+/**
+ * 예약 한도 표시 UI 스타일
+ */
+
+.availability-display {
+  margin-top: 15px;
+  padding: 15px;
+  border-radius: 8px;
+  background: #f8f9fa;
+  border: 2px solid #dee2e6;
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.availability-content {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.availability-icon {
+  font-size: 32px;
+  flex-shrink: 0;
+}
+
+.availability-info {
+  flex: 1;
+}
+
+.service-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #495057;
+  margin-bottom: 5px;
+}
+
+.availability-message {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.remaining-count {
+  font-size: 13px;
+  color: #6c757d;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.remaining-count .label {
+  color: #868e96;
+}
+
+.remaining-count .count {
+  font-weight: 700;
+  color: #495057;
+}
+
+.remaining-count .count.remaining {
+  color: #9F988C;
+  font-size: 16px;
+}
+
+.remaining-count .separator {
+  color: #dee2e6;
+  margin: 0 3px;
+}
+
+/* 상태별 스타일 */
+.availability-display.status-available {
+  background: #d4edda;
+  border-color: #c3e6cb;
+}
+
+.availability-display.status-available .availability-icon {
+  color: #28a745;
+}
+
+.availability-display.status-available .availability-message {
+  color: #155724;
+}
+
+.availability-display.status-limited {
+  background: #fff3cd;
+  border-color: #ffeaa7;
+}
+
+.availability-display.status-limited .availability-icon {
+  color: #ffc107;
+}
+
+.availability-display.status-limited .availability-message {
+  color: #856404;
+}
+
+.availability-display.status-full {
+  background: #f8d7da;
+  border-color: #f5c6cb;
+}
+
+.availability-display.status-full .availability-icon {
+  color: #dc3545;
+}
+
+.availability-display.status-full .availability-message {
+  color: #721c24;
+  font-size: 16px;
+}
+
+/* 모바일 대응 */
+@media (max-width: 768px) {
+  .availability-display {
+    padding: 12px;
+    margin-top: 12px;
+  }
+
+  .availability-content {
+    gap: 12px;
+  }
+
+  .availability-icon {
+    font-size: 28px;
+  }
+
+  .service-name {
+    font-size: 13px;
+  }
+
+  .availability-message {
+    font-size: 14px;
+  }
+
+  .remaining-count {
+    font-size: 12px;
+  }
+
+  .remaining-count .count.remaining {
+    font-size: 15px;
+  }
+}
+
+/* 작은 모바일 */
+@media (max-width: 480px) {
+  .availability-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .availability-icon {
+    align-self: center;
+  }
+
+  .remaining-count {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3px;
+  }
+
+  .remaining-count .separator {
+    display: none;
+  }
+}
+
+/* 버튼 비활성화 스타일 */
+button.sbm_btn:disabled {
+  background-color: #6c757d !important;
+  border-color: #6c757d !important;
+  cursor: not-allowed !important;
+  opacity: 0.5 !important;
+}
+
+button.sbm_btn:disabled:hover {
+  background-color: #6c757d !important;
+  border-color: #6c757d !important;
+}

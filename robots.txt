@@ -1,0 +1,14 @@
+# 미소핀의원 Robots.txt
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://misopin.one-q.xyz/sitemap.xml
+
+# 크롤링 제외 경로
+Disallow: /css/
+Disallow: /js/
+Disallow: /fonts/
+Disallow: /images/
+Disallow: /auto-clear-popups.html
+Disallow: /quickmenu.html
